@@ -1,0 +1,131 @@
+{
+  "_note": "KNOWS and LIES. Mallory is the club's own man, so she has both the truth and a reason. Her cover story is a real claim from her, which the player can later catch out -- and the runtime records it as a lie with her name on it.",
+  "id": "agent:reyes",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Reyes",
+    "objective": "Reyes",
+    "aliases": [
+      "reyes",
+      "doorwoman",
+      "door",
+      "club",
+      "lyric"
+    ]
+  },
+  "big_five": {
+    "openness": 0.4,
+    "conscientiousness": 0.7,
+    "extraversion": 0.55,
+    "agreeableness": 0.35,
+    "emotional_stability": 0.8
+  },
+  "schwartz": {
+    "security": 0.6,
+    "self_direction": 0.5,
+    "power": 0.35
+  },
+  "needs": {
+    "income": 0.5,
+    "recognition": 0.4
+  },
+  "identities": [
+    {
+      "id": "lyric_staff",
+      "group": "org:the_lyric",
+      "accessibility": 0.9
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:doorstaff",
+      "context": "org:the_lyric"
+    }
+  ],
+  "education": {
+    "domains": {
+      "general": 0.5,
+      "street": 0.9,
+      "gossip": 0.5
+    }
+  },
+  "relationships": {},
+  "secrets": [
+    {
+      "id": "secret:mallory",
+      "_note": "The most important thing in this pack, and I left it out of the first draft -- so she answered truthfully and the whole demo had no lie in it. Her cover story is not invented: it is the RADIO's version, which is what makes it plausible and what makes catching her out possible. She is repeating what the town already believes.",
+      "avoid_label": "who_came_back_through_the_door",
+      "guards_topics": [
+        "killing"
+      ],
+      "summary": "Mallory works the Lyric. Reyes let him back in and saw his hands.",
+      "surface_forms": [
+        "mallory",
+        "the lyric",
+        "our man",
+        "came back in",
+        "through the door",
+        "on the door"
+      ],
+      "protects": [
+        "shot_by(who=person:cortez,by=person:mallory)[None,None,None]"
+      ],
+      "min_trust": 0.8,
+      "cover_story": {
+        "predicate": "shot_by",
+        "slots": {
+          "who": "person:cortez",
+          "by": "person:unknown_man"
+        },
+        "polarity": "+"
+      },
+      "cover_phrasings": {
+        "formal": "Whoever it was did not come past me. I would have seen him.",
+        "neutral": "Nobody came past this door. Ask the street, not me.",
+        "vernacular": "Didn't come past me. I'd have seen him."
+      }
+    }
+  ],
+  "goals": [
+    {
+      "content": "keep the Lyric out of it",
+      "priority": 0.95,
+      "about": [
+        "shot_by",
+        "works_for"
+      ]
+    }
+  ],
+  "social_status": 0.5,
+  "location": "place:club_door",
+  "routine": [
+    {
+      "from": "20:00",
+      "place": "place:club_door",
+      "activity": "on the door"
+    },
+    {
+      "from": "23:30",
+      "place": "place:street",
+      "activity": "a smoke at the corner"
+    },
+    {
+      "from": "00:00",
+      "place": "place:club_door",
+      "activity": "on the door"
+    },
+    {
+      "from": "04:00",
+      "place": "place:bar",
+      "activity": "after the door shuts"
+    },
+    {
+      "from": "05:00",
+      "place": "place:club_door",
+      "activity": "on the door"
+    }
+  ],
+  "epistemic": {
+    "will_lie_when_cornered": 0.85
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "id": "agent:pfarrer_konrad",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Konrad",
+    "objective": "Pater Konrad",
+    "aliases": [
+      "konrad",
+      "pfarrer",
+      "pater",
+      "priester"
+    ]
+  },
+  "big_five": {
+    "openness": 0.5,
+    "conscientiousness": 0.8,
+    "extraversion": 0.4,
+    "agreeableness": 0.7,
+    "emotional_stability": 0.7
+  },
+  "schwartz": {
+    "benevolence": 0.8,
+    "conformity": 0.7,
+    "tradition": 0.8
+  },
+  "needs": {
+    "recognition": 0.4,
+    "safety": 0.3
+  },
+  "identities": [
+    {
+      "id": "pfarrer",
+      "group": "group:zunft",
+      "accessibility": 0.9
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:officer",
+      "context": "place:kapelle"
+    }
+  ],
+  "appearance": {
+    "garment": "item:kutte"
+  },
+  "education": {
+    "domains": {
+      "general": 0.85,
+      "schrift": 0.9,
+      "gossip": 0.6
+    }
+  },
+  "relationships": {
+    "agent:player_1": {
+      "trust": 0.42,
+      "liking": 0.1,
+      "familiarity": 0.0
+    },
+    "agent:schmied_hanns": {
+      "trust": 0.6,
+      "liking": 0.4,
+      "familiarity": 0.8
+    }
+  },
+  "secrets": [],
+  "goals": [
+    {
+      "content": "frieden_im_dorf",
+      "priority": 0.8
+    }
+  ],
+  "social_status": 0.75,
+  "resources": 0.5,
+  "location": "place:kapelle",
+  "routine": [
+    {
+      "from": "05:30",
+      "place": "place:kapelle",
+      "activity": "Frühmesse"
+    },
+    {
+      "from": "13:00",
+      "place": "place:dorfplatz",
+      "activity": "die Runde machen"
+    },
+    {
+      "from": "16:00",
+      "place": "place:kapelle",
+      "activity": "Beichte hören"
+    },
+    {
+      "from": "18:00",
+      "place": "place:dorfplatz",
+      "activity": "Abendsegen"
+    },
+    {
+      "from": "21:00",
+      "place": "place:kapelle",
+      "activity": "schlafen"
+    }
+  ]
+}

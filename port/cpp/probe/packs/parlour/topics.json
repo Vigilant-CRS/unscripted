@@ -1,0 +1,77 @@
+{
+  "topics": [
+    {
+      "id": "topic:the_deal",
+      "label": "the deal",
+      "aliases": [
+        "deal",
+        "the deal"
+      ],
+      "query": {
+        "predicate": "dealt_with",
+        "slots": {
+          "a": "agent:anna",
+          "b": "agent:bo"
+        }
+      },
+      "player_claim": {
+        "predicate": "dealt_with",
+        "slots": {
+          "a": "agent:anna",
+          "b": "agent:bo"
+        }
+      },
+      "phrasings": {
+        "affirm": {
+          "neutral": "They dealt with each other, yes."
+        },
+        "deny": {
+          "neutral": "No such thing happened."
+        }
+      },
+      "player_assertion": {
+        "predicate": "dealt_with",
+        "slots": {
+          "a": "agent:anna",
+          "b": "agent:bo"
+        }
+      }
+    },
+    {
+      "id": "topic:the_ledger",
+      "label": "the ledger",
+      "aliases": [
+        "ledger"
+      ],
+      "query": {
+        "predicate": "hid",
+        "slots": {
+          "who": "agent:anna",
+          "what": "ledger"
+        }
+      }
+    },
+    {
+      "id": "topic:the_cheat",
+      "label": "the cheat",
+      "aliases": [
+        "cheat",
+        "the cheat"
+      ],
+      "query": {
+        "predicate": "cheated",
+        "slots": {
+          "by": "$player",
+          "who": "agent:cyd"
+        }
+      },
+      "player_assertion": {
+        "predicate": "cheated",
+        "slots": {
+          "by": "$player",
+          "who": "agent:cyd"
+        }
+      }
+    }
+  ]
+}

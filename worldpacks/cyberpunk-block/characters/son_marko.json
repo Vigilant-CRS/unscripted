@@ -1,0 +1,82 @@
+{
+  "id": "agent:son_marko",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Marko",
+    "objective": "Marko Toma",
+    "aliases": [
+      "marko"
+    ]
+  },
+  "big_five": {
+    "openness": 0.5,
+    "conscientiousness": 0.5,
+    "extraversion": 0.6,
+    "agreeableness": 0.5,
+    "emotional_stability": 0.5
+  },
+  "schwartz": {
+    "benevolence": 0.7,
+    "power": 0.5,
+    "security": 0.5
+  },
+  "needs": {
+    "safety": 0.4
+  },
+  "identities": [
+    {
+      "id": "son",
+      "group": "family:toma",
+      "accessibility": 0.9
+    }
+  ],
+  "roles": [],
+  "appearance": {},
+  "education": {
+    "domains": {
+      "general": 0.4,
+      "street": 0.6
+    }
+  },
+  "relationships": {
+    "agent:pavel": {
+      "trust": 0.9,
+      "liking": 0.8,
+      "familiarity": 0.95,
+      "kinship": 0.95,
+      "loyalty": 0.9
+    }
+  },
+  "secrets": [],
+  "goals": [
+    {
+      "content": "support_family",
+      "priority": 0.8
+    }
+  ],
+  "social_status": 0.3,
+  "resources": 0.3,
+  "location": "place:bar",
+  "routine": [
+    {
+      "from": "00:00",
+      "place": "place:bar",
+      "activity": "drinking"
+    },
+    {
+      "from": "02:00",
+      "place": "place:market",
+      "activity": "home"
+    },
+    {
+      "from": "12:00",
+      "place": "place:main_street",
+      "activity": "hanging around"
+    },
+    {
+      "from": "17:00",
+      "place": "place:bar",
+      "activity": "drinking"
+    }
+  ]
+}

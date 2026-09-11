@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    A console program that exercises the Unity binding without Unity.
+
+    The editor is not the thing under test: the MARSHALLING is, and it is the
+    same code either way. Running it here means a P/Invoke signature that frees
+    a pointer it does not own, or forgets a null terminator, fails on a
+    developer's machine in two seconds instead of in a build on a console.
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <AssemblyName>UnscriptedAbiTest</AssemblyName>
+    <RootNamespace>Unscripted.Test</RootNamespace>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../Unscripted.cs" />
+  </ItemGroup>
+</Project>

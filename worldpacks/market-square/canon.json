@@ -1,0 +1,28 @@
+{
+  "predicates": {
+    "killed_by": {
+      "slots": [
+        "who",
+        "by"
+      ],
+      "functional_in": 1
+    },
+    "was_present": {
+      "slots": [
+        "who",
+        "place"
+      ],
+      "functional_in": null
+    }
+  },
+  "canon_facts": [
+    {
+      "predicate": "killed_by",
+      "slots": {
+        "who": "person:councillor",
+        "by": "group:contractors"
+      },
+      "polarity": "+"
+    }
+  ]
+}

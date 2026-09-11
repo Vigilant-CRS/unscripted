@@ -1,0 +1,69 @@
+{
+  "beliefs": [
+    {
+      "agent": "agent:clara",
+      "proposition": {
+        "predicate": "was_at",
+        "slots": {
+          "agent": "agent:marlow",
+          "place": "place:pier",
+          "when": "last_night"
+        },
+        "polarity": "+"
+      },
+      "summary": "Clara saw Marlow by the pier after midnight.",
+      "origin_event": "seed_clara_saw_marlow",
+      "trust": 0.86,
+      "competence": 0.8,
+      "importance": 0.7
+    },
+    {
+      "agent": "agent:marlow",
+      "proposition": {
+        "predicate": "premises_open",
+        "slots": {
+          "place": "place:office",
+          "when": "last_night"
+        },
+        "polarity": "+"
+      },
+      "summary": "Marlow's duty log says the office was open last night.",
+      "origin_event": "seed_marlow_log",
+      "trust": 0.84,
+      "competence": 0.8,
+      "importance": 0.6
+    },
+    {
+      "agent": "agent:clara",
+      "proposition": {
+        "predicate": "cargo_logged",
+        "slots": {
+          "cargo": "cargo:crate_19",
+          "when": "last_night"
+        },
+        "polarity": "-"
+      },
+      "summary": "Clara's dock source says crate 19 never made the manifest.",
+      "origin_event": "seed_clara_manifest",
+      "trust": 0.78,
+      "competence": 0.7,
+      "importance": 0.75
+    },
+    {
+      "agent": "agent:marlow",
+      "proposition": {
+        "predicate": "moved_cargo",
+        "slots": {
+          "agent": "agent:marlow",
+          "cargo": "cargo:crate_19"
+        },
+        "polarity": "+"
+      },
+      "summary": "Marlow knows what he did with crate 19.",
+      "origin_event": "seed_marlow_did_it",
+      "trust": 0.99,
+      "competence": 0.99,
+      "importance": 0.95
+    }
+  ]
+}

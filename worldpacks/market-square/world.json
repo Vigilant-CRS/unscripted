@@ -1,0 +1,177 @@
+{
+  "places": {
+    "place:market": {
+      "label": "Market Square",
+      "aliases": [
+        "market",
+        "square",
+        "stalls"
+      ],
+      "exits": [
+        "place:bar",
+        "place:alley",
+        "place:radio",
+        "place:precinct"
+      ],
+      "noise_level": 0.6,
+      "surveillance_level": 0.4,
+      "privacy_level": 0.1,
+      "formality": 0.3,
+      "gossip_factor": 1.8
+    },
+    "place:bar": {
+      "label": "The Filament",
+      "aliases": [
+        "bar",
+        "filament",
+        "pub"
+      ],
+      "exits": [
+        "place:market"
+      ],
+      "noise_level": 0.55,
+      "surveillance_level": 0.1,
+      "privacy_level": 0.5,
+      "formality": 0.25,
+      "gossip_factor": 1.6
+    },
+    "place:alley": {
+      "label": "Back Alley",
+      "aliases": [
+        "alley",
+        "back alley"
+      ],
+      "exits": [
+        "place:market"
+      ],
+      "noise_level": 0.2,
+      "surveillance_level": 0.05,
+      "privacy_level": 0.85,
+      "formality": 0.1,
+      "gossip_factor": 0.8
+    },
+    "place:radio": {
+      "label": "City Radio",
+      "aliases": [
+        "radio",
+        "station",
+        "newsroom"
+      ],
+      "exits": [
+        "place:market"
+      ],
+      "noise_level": 0.3,
+      "surveillance_level": 0.5,
+      "privacy_level": 0.4,
+      "formality": 0.6,
+      "gossip_factor": 1.1
+    },
+    "place:precinct": {
+      "label": "Precinct",
+      "aliases": [
+        "precinct",
+        "police",
+        "station house"
+      ],
+      "exits": [
+        "place:market"
+      ],
+      "noise_level": 0.25,
+      "surveillance_level": 0.9,
+      "privacy_level": 0.5,
+      "formality": 0.8,
+      "gossip_factor": 0.7
+    }
+  },
+  "identity_values": {
+    "trader": [
+      "achievement",
+      "security"
+    ],
+    "reporter": [
+      "universalism",
+      "achievement"
+    ],
+    "officer": [
+      "conformity",
+      "security"
+    ],
+    "aide": [
+      "power",
+      "conformity"
+    ],
+    "keeper": [
+      "benevolence",
+      "security"
+    ],
+    "kid": [
+      "stimulation",
+      "hedonism"
+    ]
+  },
+  "channels": {
+    "channel:city_radio": {
+      "type": "radio",
+      "reach": "citywide",
+      "directionality": "broadcast"
+    }
+  },
+  "media_exposure": [
+    {
+      "agent": "agent:bran",
+      "channel": "channel:city_radio",
+      "attention": 0.9
+    },
+    {
+      "agent": "agent:dale",
+      "channel": "channel:city_radio",
+      "attention": 0.8
+    },
+    {
+      "agent": "agent:otto",
+      "channel": "channel:city_radio",
+      "attention": 0.7
+    },
+    {
+      "agent": "agent:nadia",
+      "channel": "channel:city_radio",
+      "attention": 0.6
+    },
+    {
+      "agent": "agent:tomas",
+      "channel": "channel:city_radio",
+      "attention": 0.5
+    },
+    {
+      "agent": "agent:sela",
+      "channel": "channel:city_radio",
+      "attention": 0.35
+    },
+    {
+      "agent": "agent:yara",
+      "channel": "channel:city_radio",
+      "attention": 0.05
+    }
+  ],
+  "entities": {
+    "person:councillor": {
+      "label": "Councillor Ruiz",
+      "kind": "person"
+    },
+    "group:eastside": {
+      "label": "the east-side kids",
+      "kind": "group"
+    },
+    "group:contractors": {
+      "label": "contract men",
+      "kind": "group"
+    },
+    "place:market": {
+      "label": "Market Square",
+      "kind": "place"
+    }
+  },
+  "factions": [],
+  "slang_lexicon": {},
+  "diffusion": {}
+}

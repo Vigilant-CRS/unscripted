@@ -1,0 +1,51 @@
+{
+  "name": "fourth_pack_relay_station",
+  "world_pack": "worldpacks/relay-station",
+  "player_start": "place:hub",
+  "commands": [
+    {
+      "input": "look",
+      "expect_contains": [
+        "Hub",
+        "Voss"
+      ],
+      "expect_absent": [
+        "place:hub",
+        "Main Street"
+      ]
+    },
+    {
+      "input": "ask Voss about the breach",
+      "expect_contains": [
+        "Voss",
+        "seal"
+      ],
+      "expect_absent": [
+        "clinic",
+        "Kein Korn"
+      ],
+      "expect_trace": [
+        "dialogue.direct_answer"
+      ]
+    },
+    {
+      "input": "go mess",
+      "expect_contains": [
+        "Mess"
+      ],
+      "expect_absent": [
+        "cannot move",
+        "could not map"
+      ]
+    },
+    {
+      "input": "ask Lindqvist about the check",
+      "expect_absent": [
+        "i skipped",
+        "never checked",
+        "no sealant",
+        "my fault"
+      ]
+    }
+  ]
+}

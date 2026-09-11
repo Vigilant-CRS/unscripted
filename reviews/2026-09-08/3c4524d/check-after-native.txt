@@ -1,0 +1,7 @@
+prior_repeats=8 cycles=1 after_reentry=0 logit=3.2715988654133281 ceiling=3.2715988657404882 spent=1 p=0.96344152862979038
+prior_repeats=0 cycles=100 after_reentry=1 logit=3.2715988657404882 ceiling=3.2715988657404882 spent=100 p=0.9634415286413136
+turn=1 verdict=ACCEPT spoken=1 text=Far as I know, the place was shut that night.
+turn=2 verdict=ACCEPT spoken=1 text=As far as I am aware, the establishment was closed during that period.
+turn=3 verdict=ACCEPT spoken=1 text=Place was shut that night. That's all I got.
+turn=4 verdict=ACCEPT spoken=1 text=Far as I know, the place was shut that night.
+turn=5 verdict=ACCEPT spoken=1 text=Far as I know, the place was shut that night.

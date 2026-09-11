@@ -1,0 +1,173 @@
+{
+  "places": {
+    "place:dorfplatz": {
+      "label": "Dorfplatz",
+      "aliases": [
+        "dorfplatz",
+        "platz",
+        "markt",
+        "dorf"
+      ],
+      "exits": [
+        "place:schmiede",
+        "place:kapelle"
+      ],
+      "noise_level": 0.45,
+      "surveillance_level": 0.35,
+      "privacy_level": 0.15,
+      "formality": 0.35,
+      "gossip_factor": 1.9
+    },
+    "place:schmiede": {
+      "label": "Schmiede",
+      "aliases": [
+        "schmiede",
+        "esse",
+        "werkstatt"
+      ],
+      "exits": [
+        "place:dorfplatz"
+      ],
+      "noise_level": 0.75,
+      "surveillance_level": 0.1,
+      "privacy_level": 0.55,
+      "formality": 0.2,
+      "gossip_factor": 1.1
+    },
+    "place:kapelle": {
+      "label": "Kapelle",
+      "aliases": [
+        "kapelle",
+        "kirche",
+        "gotteshaus"
+      ],
+      "exits": [
+        "place:dorfplatz"
+      ],
+      "noise_level": 0.05,
+      "surveillance_level": 0.25,
+      "privacy_level": 0.8,
+      "formality": 0.85,
+      "gossip_factor": 0.5
+    }
+  },
+  "identity_values": {
+    "schmied": [
+      "achievement",
+      "tradition"
+    ],
+    "pfarrer": [
+      "benevolence",
+      "conformity"
+    ],
+    "muellerin": [
+      "security",
+      "self_direction"
+    ]
+  },
+  "command_aliases": {
+    "observe": [
+      "schau",
+      "umsehen",
+      "umschauen",
+      "sieh dich um",
+      "look"
+    ],
+    "move": [
+      "geh ",
+      "gehe ",
+      "nach ",
+      "zur ",
+      "zum ",
+      "go "
+    ],
+    "ask": [
+      "frag",
+      "frage",
+      "sprich",
+      "rede",
+      "ask"
+    ],
+    "wait": [
+      "warte",
+      "schlaf",
+      "wait"
+    ]
+  },
+  "slang_lexicon": {
+    "ja": "freilich",
+    "nein": "mitnichten",
+    "geld": "heller",
+    "herr": "meister"
+  },
+  "channels": {
+    "channel:kanzel": {
+      "type": "sermon",
+      "reach": "village",
+      "directionality": "broadcast"
+    }
+  },
+  "entities": {
+    "group:zunft": {
+      "class": "core:Organization",
+      "name": "Schmiedezunft"
+    }
+  },
+  "media_exposure": [
+    {
+      "agent": "agent:muellerin_greta",
+      "channel": "channel:kanzel",
+      "attention": 0.8
+    },
+    {
+      "agent": "agent:schmied_hanns",
+      "channel": "channel:kanzel",
+      "attention": 0.3
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction:zunft",
+      "influence": 0.5,
+      "resources": 0.4,
+      "territory": [
+        "place:schmiede",
+        "place:dorfplatz"
+      ],
+      "goals": [
+        "preise_halten"
+      ]
+    }
+  ],
+  "dialogue_templates": {
+    "evade": {
+      "formal": "Das steht mir nicht zu, darueber zu reden.",
+      "neutral": "Das geht Euch nichts an.",
+      "vernacular": "Geht Euch nix an."
+    },
+    "threaten": {
+      "formal": "Ich rate Euch dringend, davon abzulassen.",
+      "neutral": "Geht weiter, solange Ihr noch koennt.",
+      "vernacular": "Verschwindet."
+    },
+    "request": {
+      "formal": "Ich waere Euch verbunden, wuerdet Ihr begleichen, was aussteht.",
+      "neutral": "Ihr schuldet mir noch. Zahlt.",
+      "vernacular": "Wo ist mein Geld?"
+    },
+    "greet": {
+      "formal": "Gott zum Gruusse.",
+      "neutral": "Gruess Euch.",
+      "vernacular": "Tag."
+    },
+    "deflect": {
+      "formal": "Dem habe ich nichts hinzuzufuegen.",
+      "neutral": "Ich habe nichts fuer Euch.",
+      "vernacular": "Nichts zu sagen."
+    }
+  },
+  "diffusion": {
+    "encounters_per_hour": 0.5,
+    "distortion_prob": 0.1
+  }
+}

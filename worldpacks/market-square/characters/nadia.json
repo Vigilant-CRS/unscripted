@@ -1,0 +1,89 @@
+{
+  "id": "agent:nadia",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Nadia",
+    "objective": "Nadia Ilek",
+    "aliases": [
+      "nadia",
+      "keeper",
+      "barkeep"
+    ]
+  },
+  "big_five": {
+    "openness": 0.5,
+    "conscientiousness": 0.6,
+    "extraversion": 0.75,
+    "agreeableness": 0.65,
+    "emotional_stability": 0.55
+  },
+  "schwartz": {
+    "security": 0.5
+  },
+  "needs": {
+    "income": 0.6,
+    "belonging": 0.5
+  },
+  "identities": [
+    {
+      "id": "keeper",
+      "group": "district:square",
+      "accessibility": 0.8
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:keeper",
+      "context": "district:square"
+    }
+  ],
+  "education": {
+    "domains": {
+      "general": 0.55,
+      "gossip": 0.85,
+      "trade": 0.6
+    }
+  },
+  "relationships": {
+    "agent:player_1": {
+      "trust": 0.35,
+      "liking": 0.1,
+      "familiarity": 0.0
+    },
+    "agent:yara": {
+      "trust": 0.75,
+      "liking": 0.6,
+      "familiarity": 0.8
+    }
+  },
+  "secrets": [],
+  "goals": [
+    {
+      "content": "keep the room calm",
+      "priority": 0.7,
+      "about": [
+        "killed_by"
+      ]
+    }
+  ],
+  "social_status": 0.5,
+  "resources": 0.4,
+  "location": "place:bar",
+  "routine": [
+    {
+      "from": "11:00",
+      "place": "place:bar",
+      "activity": "opening up"
+    },
+    {
+      "from": "16:00",
+      "place": "place:market",
+      "activity": "buying in"
+    },
+    {
+      "from": "18:00",
+      "place": "place:bar",
+      "activity": "behind the bar"
+    }
+  ]
+}

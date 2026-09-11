@@ -1,0 +1,17 @@
+{
+  "world_pack": "worldpacks/relay-station",
+  "depth": 2,
+  "budget": 900,
+  "rules": [
+    {
+      "id": "nobody_invents_knowledge",
+      "type": "provenance_complete"
+    },
+    {
+      "id": "the_breach_has_one_witness",
+      "type": "max_independent_sources",
+      "predicate": "seal_breached",
+      "max": 1
+    }
+  ]
+}

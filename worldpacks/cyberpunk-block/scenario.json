@@ -1,0 +1,37 @@
+{
+  "global_seed": "cyberpunk-demo-001",
+  "world_id": "block-17",
+  "world_time": 4334,
+  "events": [
+    {
+      "world_time": 4360,
+      "type": "broadcast",
+      "actor": "channel:city_news",
+      "location": null,
+      "payload": {
+        "channel": "channel:city_news",
+        "credibility": 0.64,
+        "proposition": {
+          "predicate": "connected_to_attack",
+          "slots": {
+            "agent": "agent:player_1"
+          },
+          "polarity": "+"
+        },
+        "summary": "City News: the stranger is linked to the market attack",
+        "appraisal": {
+          "desirability": -0.3,
+          "expectedness": 0.4
+        },
+        "origin_event": "evt_market_attack"
+      }
+    }
+  ],
+  "focus_agents": [
+    "agent:npc_red_jacket",
+    "agent:barkeep_12",
+    "agent:officer_kane"
+  ],
+  "player_start": "place:main_street",
+  "intro": "Block 17: The Missing Medic\n\nYou are investigating why Milan, a clinic medic, disappeared after a night-time security incident."
+}

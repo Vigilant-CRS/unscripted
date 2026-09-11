@@ -1,0 +1,96 @@
+{
+  "id": "agent:pavel",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Pavel",
+    "objective": "Pavel Toma",
+    "aliases": [
+      "pavel",
+      "shopkeeper",
+      "haendler",
+      "händler"
+    ]
+  },
+  "big_five": {
+    "openness": 0.4,
+    "conscientiousness": 0.6,
+    "extraversion": 0.5,
+    "agreeableness": 0.5,
+    "emotional_stability": 0.45
+  },
+  "schwartz": {
+    "benevolence": 0.8,
+    "security": 0.7,
+    "tradition": 0.6
+  },
+  "needs": {
+    "safety": 0.5,
+    "income": 0.5
+  },
+  "identities": [
+    {
+      "id": "father",
+      "group": "family:toma",
+      "accessibility": 0.9
+    },
+    {
+      "id": "resident",
+      "group": "district:watson",
+      "accessibility": 0.5
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:shopkeeper",
+      "context": "place:market"
+    }
+  ],
+  "appearance": {
+    "garment": "item:work_coat"
+  },
+  "education": {
+    "domains": {
+      "general": 0.4,
+      "street": 0.5
+    }
+  },
+  "relationships": {
+    "agent:player_1": {
+      "trust": 0.2,
+      "liking": 0.0,
+      "familiarity": 0.0
+    }
+  },
+  "secrets": [],
+  "goals": [
+    {
+      "content": "protect_family",
+      "priority": 0.95
+    }
+  ],
+  "social_status": 0.4,
+  "resources": 0.45,
+  "location": "place:market",
+  "routine": [
+    {
+      "from": "00:00",
+      "place": "place:market",
+      "activity": "sleeping behind the stall"
+    },
+    {
+      "from": "07:00",
+      "place": "place:market",
+      "activity": "the stall"
+    },
+    {
+      "from": "19:00",
+      "place": "place:bar",
+      "activity": "a drink after close"
+    },
+    {
+      "from": "22:00",
+      "place": "place:market",
+      "activity": "sleeping behind the stall"
+    }
+  ]
+}

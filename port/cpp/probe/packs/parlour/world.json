@@ -1,0 +1,30 @@
+{
+  "_note": "A world built for the branches the shipped packs never reach: four bystanders in one room so the earshot bound bites, a character with two sayable facts so the commitment limit is visible, a belief parked between the two confidence floors, a protected proposition that is relevant and would otherwise be said, a target standing somewhere else, and a focus agent who is not first alphabetically. It also declares a SECOND kind of conduct, on a dimension whose name sorts before the shipped one, so that the reputation table being sorted rather than left in insertion order is visible.",
+  "places": {
+    "place:parlour": {
+      "label": "The Parlour",
+      "noise_level": 0.1,
+      "surveillance_level": 0.2,
+      "privacy_level": 0.1,
+      "exits": [
+        "place:cellar"
+      ]
+    },
+    "place:cellar": {
+      "label": "The Cellar",
+      "noise_level": 0.2,
+      "surveillance_level": 0.05,
+      "privacy_level": 0.9,
+      "exits": [
+        "place:parlour"
+      ]
+    }
+  },
+  "standing_conduct": {
+    "cheated": {
+      "dimension": "candid",
+      "sign": -1.0,
+      "weight": 0.9
+    }
+  }
+}

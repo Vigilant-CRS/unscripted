@@ -1,0 +1,49 @@
+{
+  "predicates": {
+    "premises_open": {
+      "slots": [
+        "place",
+        "when"
+      ],
+      "functional_in": 1
+    },
+    "linked_to_incident": {
+      "slots": [
+        "agent"
+      ],
+      "functional_in": null
+    },
+    "cargo_logged": {
+      "slots": [
+        "cargo",
+        "when"
+      ],
+      "functional_in": 1
+    },
+    "moved_cargo": {
+      "slots": [
+        "agent",
+        "cargo"
+      ],
+      "functional_in": null
+    }
+  },
+  "canon_facts": [
+    {
+      "predicate": "premises_open",
+      "slots": {
+        "place": "place:office",
+        "when": "last_night"
+      },
+      "polarity": "+"
+    },
+    {
+      "predicate": "cargo_logged",
+      "slots": {
+        "cargo": "cargo:crate_19",
+        "when": "last_night"
+      },
+      "polarity": "-"
+    }
+  ]
+}

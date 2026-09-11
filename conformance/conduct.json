@@ -1,0 +1,964 @@
+{
+  "commands": [
+    "go to the bar",
+    "help halloran",
+    "threaten halloran",
+    "wait 360 minutes"
+  ],
+  "expected_state": {
+    "agents": [
+      "agent:byrne",
+      "agent:doyle",
+      "agent:halloran",
+      "agent:okonkwo",
+      "agent:player_1",
+      "agent:reyes",
+      "agent:vance"
+    ],
+    "format": "unscripted-state",
+    "format_version": 1,
+    "places": [
+      "place:bar",
+      "place:club_door",
+      "place:hotel_back",
+      "place:kiosk",
+      "place:precinct",
+      "place:shop",
+      "place:street",
+      "place:taxi_rank"
+    ],
+    "runtime_version": "1.21.0",
+    "snapshot_schema_version": 11,
+    "state": {
+      "actions_out": {
+        "counter": 0,
+        "counts": {
+          "FAILED": 0,
+          "INTERRUPTED": 0,
+          "SUCCEEDED": 0,
+          "TIMED_OUT": 0,
+          "UNREACHABLE": 0
+        },
+        "enabled": false,
+        "pending": [],
+        "timeout_minutes": 60
+      },
+      "agents": {
+        "agent:byrne": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.14999999999999997,
+              "dominance": 0.32499999999999996,
+              "valence": 0.3829999999999999
+            },
+            "mood": {
+              "arousal": 0.14999999999999997,
+              "dominance": 0.32499999999999996,
+              "valence": 0.3829999999999999
+            }
+          },
+          "attention_day": -1,
+          "attention_spent": 0,
+          "beliefs": [],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:kiosk",
+          "memory": [],
+          "relationships": {},
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:doyle": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.21,
+              "dominance": 0.03800000000000002,
+              "valence": -0.06499999999999995
+            },
+            "mood": {
+              "arousal": 0.21,
+              "dominance": 0.03800000000000002,
+              "valence": -0.06499999999999995
+            }
+          },
+          "attention_day": -1,
+          "attention_spent": 0,
+          "beliefs": [],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:precinct",
+          "memory": [],
+          "relationships": {},
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:halloran": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.23099999999999998,
+              "dominance": 0.26999999999999996,
+              "valence": 0.27999999999999997
+            },
+            "mood": {
+              "arousal": 0.3155187714991265,
+              "dominance": 0.27499418876695253,
+              "valence": 0.43928832769774484
+            }
+          },
+          "attention_day": 0,
+          "attention_spent": 2,
+          "beliefs": [
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "\u001fincident:lamb_street": [
+                  1.7385280190051764,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.8505000000000001,
+              "hops": 0,
+              "ignorance": 0.3651596744893884,
+              "logit": 1.7385280190051764,
+              "origin_counts": {
+                "incident:lamb_street": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "shot_heard",
+                "slots": {
+                  "hour": "21",
+                  "place": "place:hotel_back"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "seed:incident:lamb_street",
+                  "delta": 1.738528,
+                  "eta": 1.0,
+                  "kappa": 0.851,
+                  "origin_event": "incident:lamb_street",
+                  "speaker": null
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 1.7385280190051764,
+              "txn_time": 1267,
+              "valid_start": 1267
+            },
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "agent:player_1\u001f1003": [
+                  0.9165862468852217,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.7143460196523914,
+              "hops": 0,
+              "ignorance": 0.521761022560383,
+              "logit": 0.9165862468852217,
+              "origin_counts": {
+                "1003": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "helped",
+                "slots": {
+                  "by": "agent:player_1",
+                  "who": "agent:halloran"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": 1267
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1003",
+                  "delta": 0.916586,
+                  "eta": 1.0,
+                  "kappa": 0.714,
+                  "origin_event": 1003,
+                  "speaker": "agent:player_1"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 0.9165862468852217,
+              "txn_time": 1267,
+              "valid_start": 1267
+            },
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "agent:player_1\u001f1005": [
+                  0.9061223140422325,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.7122060133350896,
+              "hops": 0,
+              "ignorance": 0.5246253048049905,
+              "logit": 0.9061223140422325,
+              "origin_counts": {
+                "1005": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "mistreated",
+                "slots": {
+                  "by": "agent:player_1",
+                  "who": "agent:halloran"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": 1267
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1005",
+                  "delta": 0.906122,
+                  "eta": 1.0,
+                  "kappa": 0.712,
+                  "origin_event": 1005,
+                  "speaker": "agent:player_1"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 0.9061223140422325,
+              "txn_time": 1267,
+              "valid_start": 1267
+            }
+          ],
+          "identity_salience": {
+            "_neutral": 0.14185106490048782,
+            "publican": 0.8581489350995123
+          },
+          "identity_threat": {},
+          "location": "place:bar",
+          "memory": [
+            {
+              "about": [],
+              "content": "One flat crack behind the hotel. I was pouring. By the time I got to the door there was nothing to see.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.9,
+              "last_recalled": null,
+              "memory_id": "mem:incident:lamb_street",
+              "owner": "agent:halloran",
+              "presentations": [
+                1267
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "shot_heard",
+                "slots": {
+                  "hour": "21",
+                  "place": "place:hotel_back"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.99,
+              "type": "episodic",
+              "world_time": 1267
+            },
+            {
+              "about": [],
+              "content": "player arrives at place:bar",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.5,
+              "last_recalled": null,
+              "memory_id": "mem_1002_agent:halloran",
+              "owner": "agent:halloran",
+              "presentations": [
+                1267
+              ],
+              "proposition": null,
+              "source_conf": 0.39455340114610377,
+              "type": "episodic",
+              "world_time": 1267
+            },
+            {
+              "about": [],
+              "content": "player helps agent:halloran",
+              "emotional_valence": 0.5,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.5,
+              "last_recalled": null,
+              "memory_id": "mem_1003_agent:halloran",
+              "owner": "agent:halloran",
+              "presentations": [
+                1267
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "helped",
+                "slots": {
+                  "by": "agent:player_1",
+                  "who": "agent:halloran"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": 1267
+              },
+              "source_conf": 0.3653840786095655,
+              "type": "episodic",
+              "world_time": 1267
+            },
+            {
+              "about": [],
+              "content": "player threatens agent:halloran",
+              "emotional_valence": -0.6,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.7,
+              "last_recalled": null,
+              "memory_id": "mem_1005_agent:halloran",
+              "owner": "agent:halloran",
+              "presentations": [
+                1267
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "mistreated",
+                "slots": {
+                  "by": "agent:player_1",
+                  "who": "agent:halloran"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": 1267
+              },
+              "source_conf": 0.35682405334035805,
+              "type": "episodic",
+              "world_time": 1267
+            }
+          ],
+          "relationships": {
+            "agent:player_1": {
+              "familiarity": 0.058519850599,
+              "fear": 0.0341858886400843,
+              "liking": -0.012729827974704934,
+              "respect": 0.01500126641270022,
+              "trust": 0.09872116703987346
+            }
+          },
+          "reputation": {
+            "agent:player_1": {
+              "decent": -0.06364913987352466
+            }
+          },
+          "standing_applied": {
+            "helped(by=agent:player_1,who=agent:halloran)[1267,None,None]": 0.1500126641270022,
+            "mistreated(by=agent:player_1,who=agent:halloran)[1267,None,None]": -0.21366180400052687
+          },
+          "tom_models": []
+        },
+        "agent:okonkwo": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.33299999999999996,
+              "dominance": -0.08899999999999993,
+              "valence": 0.21100000000000002
+            },
+            "mood": {
+              "arousal": 0.33299999999999996,
+              "dominance": -0.08899999999999993,
+              "valence": 0.21100000000000002
+            }
+          },
+          "attention_day": -1,
+          "attention_spent": 0,
+          "beliefs": [
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "\u001fincident:lamb_street": [
+                  1.571518677571807,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.828,
+              "hops": 0,
+              "ignorance": 0.38887526220274793,
+              "logit": 1.571518677571807,
+              "origin_counts": {
+                "incident:lamb_street": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "car_waiting",
+                "slots": {
+                  "place": "place:street",
+                  "plate": "plate:KR_4471"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "seed:incident:lamb_street",
+                  "delta": 1.571519,
+                  "eta": 1.0,
+                  "kappa": 0.828,
+                  "origin_event": "incident:lamb_street",
+                  "speaker": null
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 1.571518677571807,
+              "txn_time": 1267,
+              "valid_start": 1267
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:shop",
+          "memory": [
+            {
+              "about": [],
+              "content": "A car sat outside mine with the engine running for a quarter of an hour. I only thought about it afterwards.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.6,
+              "last_recalled": null,
+              "memory_id": "mem:incident:lamb_street",
+              "owner": "agent:okonkwo",
+              "presentations": [
+                1267
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "car_waiting",
+                "slots": {
+                  "place": "place:street",
+                  "plate": "plate:KR_4471"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.95,
+              "type": "episodic",
+              "world_time": 1267
+            }
+          ],
+          "relationships": {},
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:player_1": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.0,
+              "dominance": 0.0,
+              "valence": 0.0
+            },
+            "mood": {
+              "arousal": 0.0,
+              "dominance": 0.0,
+              "valence": 0.0
+            }
+          },
+          "attention_day": -1,
+          "attention_spent": 0,
+          "beliefs": [],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:bar",
+          "memory": [],
+          "relationships": {
+            "agent:halloran": {
+              "familiarity": 0.058519850599
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": [
+            {
+              "model": {
+                "confidence": 0.6,
+                "value": 0.575
+              },
+              "other": "agent:halloran",
+              "proposition": "fear_of_me"
+            }
+          ]
+        },
+        "agent:reyes": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.22200000000000003,
+              "dominance": 0.17400000000000007,
+              "valence": -0.04199999999999998
+            },
+            "mood": {
+              "arousal": 0.22200000000000003,
+              "dominance": 0.17400000000000007,
+              "valence": -0.04199999999999998
+            }
+          },
+          "attention_day": -1,
+          "attention_spent": 0,
+          "beliefs": [
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "\u001fincident:lamb_street": [
+                  1.7905932883378723,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.857,
+              "hops": 0,
+              "ignorance": 0.35834673729743616,
+              "logit": 1.7905932883378723,
+              "origin_counts": {
+                "incident:lamb_street": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "shot_by",
+                "slots": {
+                  "by": "person:mallory",
+                  "who": "person:cortez"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "seed:incident:lamb_street",
+                  "delta": 1.790593,
+                  "eta": 1.0,
+                  "kappa": 0.857,
+                  "origin_event": "incident:lamb_street",
+                  "speaker": null
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 1.7905932883378723,
+              "txn_time": 1267,
+              "valid_start": 1267
+            },
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "\u001fincident:lyric_payroll": [
+                  1.7905932883378723,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.857,
+              "hops": 0,
+              "ignorance": 0.35834673729743616,
+              "logit": 1.7905932883378723,
+              "origin_counts": {
+                "incident:lyric_payroll": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "works_for",
+                "slots": {
+                  "employer": "org:the_lyric",
+                  "who": "person:mallory"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "seed:incident:lyric_payroll",
+                  "delta": 1.790593,
+                  "eta": 1.0,
+                  "kappa": 0.857,
+                  "origin_event": "incident:lyric_payroll",
+                  "speaker": null
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 1.7905932883378723,
+              "txn_time": 1267,
+              "valid_start": 1267
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:club_door",
+          "memory": [
+            {
+              "about": [],
+              "content": "I was on the door. I know exactly who came back through it and how he looked when he did.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.98,
+              "last_recalled": null,
+              "memory_id": "mem:incident:lamb_street",
+              "owner": "agent:reyes",
+              "presentations": [
+                1267
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "shot_by",
+                "slots": {
+                  "by": "person:mallory",
+                  "who": "person:cortez"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.99,
+              "type": "episodic",
+              "world_time": 1267
+            },
+            {
+              "about": [],
+              "content": "Mallory is ours. That is the whole problem.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.9,
+              "last_recalled": null,
+              "memory_id": "mem:incident:lyric_payroll",
+              "owner": "agent:reyes",
+              "presentations": [
+                1267
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "works_for",
+                "slots": {
+                  "employer": "org:the_lyric",
+                  "who": "person:mallory"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.99,
+              "type": "episodic",
+              "world_time": 1267
+            }
+          ],
+          "relationships": {},
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:vance": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.01200000000000006,
+              "dominance": 0.006999999999999999,
+              "valence": -0.039999999999999966
+            },
+            "mood": {
+              "arousal": 0.01200000000000006,
+              "dominance": 0.006999999999999999,
+              "valence": -0.039999999999999966
+            }
+          },
+          "attention_day": -1,
+          "attention_spent": 0,
+          "beliefs": [
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "\u001fincident:lamb_street": [
+                  1.1308731508863312,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.756,
+              "hops": 0,
+              "ignorance": 0.46929119153998095,
+              "logit": 1.1308731508863312,
+              "origin_counts": {
+                "incident:lamb_street": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "ran_from",
+                "slots": {
+                  "place": "place:hotel_back",
+                  "who": "person:unknown_man"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "seed:incident:lamb_street",
+                  "delta": 1.130873,
+                  "eta": 1.0,
+                  "kappa": 0.756,
+                  "origin_event": "incident:lamb_street",
+                  "speaker": null
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 1.1308731508863312,
+              "txn_time": 1267,
+              "valid_start": 1267
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:taxi_rank",
+          "memory": [
+            {
+              "about": [],
+              "content": "Somebody came out of the back of the Marchmont at a run and went left. Coat, hat, no face. I was three cars back.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.85,
+              "last_recalled": null,
+              "memory_id": "mem:incident:lamb_street",
+              "owner": "agent:vance",
+              "presentations": [
+                1267
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "ran_from",
+                "slots": {
+                  "place": "place:hotel_back",
+                  "who": "person:unknown_man"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.97,
+              "type": "episodic",
+              "world_time": 1267
+            }
+          ],
+          "relationships": {},
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        }
+      },
+      "climate": {
+        "enabled": false,
+        "now": {
+          "place:bar": {
+            "candour": 0.8325,
+            "openness": 0.4925,
+            "suspicion": 0.4025
+          },
+          "place:club_door": {
+            "candour": 0.3725,
+            "openness": 0.425,
+            "suspicion": 0.5425
+          },
+          "place:hotel_back": {
+            "candour": 0.395,
+            "openness": 0.29,
+            "suspicion": 0.385
+          },
+          "place:kiosk": {
+            "candour": 0.7775,
+            "openness": 0.605,
+            "suspicion": 0.4375
+          },
+          "place:precinct": {
+            "candour": 0.2375,
+            "openness": 0.47,
+            "suspicion": 0.6475
+          },
+          "place:shop": {
+            "candour": 0.555,
+            "openness": 0.5375,
+            "suspicion": 0.455
+          },
+          "place:street": {
+            "candour": 0.705,
+            "openness": 0.605,
+            "suspicion": 0.455
+          },
+          "place:taxi_rank": {
+            "candour": 0.67,
+            "openness": 0.56,
+            "suspicion": 0.42
+          }
+        }
+      },
+      "common_knowledge": {
+        "enabled": false,
+        "publics": []
+      },
+      "conversations": {
+        "conv_agent:halloran_agent:player_1": {
+          "active_topic": null,
+          "conv_id": "conv",
+          "discussed_topics": {},
+          "last_acts": [
+            "greet",
+            "evade"
+          ],
+          "last_world_time": 0,
+          "participants": [
+            "agent:halloran",
+            "agent:player_1"
+          ],
+          "recent_lines": [
+            "Evening.",
+            "Not sure that's any of your business."
+          ],
+          "turn_count": 2
+        }
+      },
+      "factions": {},
+      "global_seed": "conformance-conduct",
+      "last_decay": {
+        "agent:byrne": 1627,
+        "agent:doyle": 1627,
+        "agent:halloran": 1627,
+        "agent:okonkwo": 1627,
+        "agent:player_1": 1627,
+        "agent:reyes": 1627,
+        "agent:vance": 1627
+      },
+      "ledger_watermark": 3,
+      "next_event_id": 1006,
+      "notes": {
+        "counter": 0,
+        "enabled": false,
+        "notes": []
+      },
+      "promises": {
+        "counter": 0,
+        "enabled": false,
+        "open": [],
+        "settled": []
+      },
+      "pursuit": {
+        "enabled": true,
+        "last_acted": {}
+      },
+      "scenario_events": [
+        {
+          "actor": "channel:city_radio",
+          "canonical": true,
+          "event_id": 1001,
+          "location": null,
+          "payload": {
+            "channel": "channel:city_radio",
+            "credibility": 0.62,
+            "domain": "street",
+            "importance": 0.8,
+            "origin_event": "evt_morning_bulletin",
+            "proposition": {
+              "polarity": "+",
+              "predicate": "shot_by",
+              "slots": {
+                "by": "person:unknown_man",
+                "who": "person:cortez"
+              }
+            },
+            "summary": "City Radio: police are looking for a lone man seen leaving Lamb Street."
+          },
+          "type": "broadcast",
+          "world_time": 1980
+        }
+      ],
+      "snapshot_schema_version": 11,
+      "world_time": 1627
+    },
+    "world_fingerprint": "c90970a2660e1825",
+    "world_id": "nine-oh-seven",
+    "world_time": 1627
+  },
+  "format": "unscripted/conformance",
+  "format_version": 1,
+  "id": "conduct",
+  "layers": [
+    "pursuit",
+    "standing"
+  ],
+  "seed": "conformance-conduct",
+  "transcript": [
+    {
+      "input": "go to the bar",
+      "message_for_humans": "The Ninepin\nnoise=0.60 surveillance=0.15 privacy=0.35\nNPCs: Halloran\nExits: Lamb Street"
+    },
+    {
+      "input": "help halloran",
+      "message_for_humans": "Halloran: \"Evening.\""
+    },
+    {
+      "input": "threaten halloran",
+      "message_for_humans": "Halloran: \"Not sure that's any of your business.\""
+    },
+    {
+      "input": "wait 360 minutes",
+      "message_for_humans": "Time advances by 360 minutes.\nThe Ninepin\nnoise=0.60 surveillance=0.15 privacy=0.35\nNPCs: Halloran\nExits: Lamb Street"
+    }
+  ],
+  "why": "standing: what the town comes to think of you, including the part that reaches somebody who was told rather than present",
+  "world_pack": "worldpacks/nine-oh-seven"
+}

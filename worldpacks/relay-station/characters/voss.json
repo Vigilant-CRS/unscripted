@@ -1,0 +1,148 @@
+{
+  "id": "agent:voss",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Commander Voss",
+    "objective": "Commander Voss",
+    "aliases": [
+      "voss",
+      "commander",
+      "brass",
+      "cmdr"
+    ]
+  },
+  "big_five": {
+    "openness": 0.5,
+    "conscientiousness": 0.6,
+    "extraversion": 0.5,
+    "agreeableness": 0.5,
+    "emotional_stability": 0.55
+  },
+  "schwartz": {
+    "security": 0.5,
+    "achievement": 0.5
+  },
+  "needs": {
+    "safety": 0.4,
+    "recognition": 0.4
+  },
+  "identities": [
+    {
+      "id": "officer",
+      "group": "group:crew",
+      "accessibility": 0.8
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:officer",
+      "context": "group:crew"
+    }
+  ],
+  "education": {
+    "domains": {
+      "general": 0.6,
+      "gossip": 0.55,
+      "engineering": 0.3,
+      "medicine": 0.2
+    }
+  },
+  "relationships": {
+    "agent:okonkwo": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:rask": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:lindqvist": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:mbeki": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:tan": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:ferro": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:nakamura": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:adeyemi": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:hollis": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:player_1": {
+      "trust": 0.3,
+      "liking": 0.0,
+      "familiarity": 0.0
+    }
+  },
+  "secrets": [],
+  "goals": [
+    {
+      "content": "keep_the_station_running",
+      "priority": 0.7
+    }
+  ],
+  "social_status": 0.85,
+  "resources": 0.55,
+  "location": "place:hub",
+  "routine": [
+    {
+      "from": "06:00",
+      "place": "place:hub",
+      "activity": "morning brief"
+    },
+    {
+      "from": "11:00",
+      "place": "place:lab",
+      "activity": "inspection"
+    },
+    {
+      "from": "13:00",
+      "place": "place:hub",
+      "activity": "duty"
+    },
+    {
+      "from": "19:00",
+      "place": "place:mess",
+      "activity": "evening meal"
+    },
+    {
+      "from": "21:00",
+      "place": "place:quarters",
+      "activity": "off shift"
+    }
+  ],
+  "epistemic": {
+    "curiosity": 0.5,
+    "confirmation_bias": 0.55,
+    "authority_bias": 0.2
+  },
+  "networks": [
+    "shift:day",
+    "clique:command"
+  ]
+}

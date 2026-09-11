@@ -1,0 +1,81 @@
+{
+  "id": "agent:son_ilya",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Ilya",
+    "objective": "Ilya Toma",
+    "aliases": [
+      "ilya"
+    ]
+  },
+  "big_five": {
+    "openness": 0.4,
+    "conscientiousness": 0.6,
+    "extraversion": 0.4,
+    "agreeableness": 0.6,
+    "emotional_stability": 0.55
+  },
+  "schwartz": {
+    "benevolence": 0.8,
+    "security": 0.6
+  },
+  "needs": {
+    "safety": 0.4
+  },
+  "identities": [
+    {
+      "id": "son",
+      "group": "family:toma",
+      "accessibility": 0.9
+    }
+  ],
+  "roles": [],
+  "appearance": {},
+  "education": {
+    "domains": {
+      "general": 0.45,
+      "street": 0.4
+    }
+  },
+  "relationships": {
+    "agent:pavel": {
+      "trust": 0.85,
+      "liking": 0.85,
+      "familiarity": 0.95,
+      "kinship": 0.95,
+      "loyalty": 0.85
+    }
+  },
+  "secrets": [],
+  "goals": [
+    {
+      "content": "support_family",
+      "priority": 0.8
+    }
+  ],
+  "social_status": 0.3,
+  "resources": 0.3,
+  "location": "place:market",
+  "routine": [
+    {
+      "from": "00:00",
+      "place": "place:market",
+      "activity": "home"
+    },
+    {
+      "from": "09:00",
+      "place": "place:market",
+      "activity": "helping at the stall"
+    },
+    {
+      "from": "18:00",
+      "place": "place:main_street",
+      "activity": "hanging around"
+    },
+    {
+      "from": "23:00",
+      "place": "place:market",
+      "activity": "home"
+    }
+  ]
+}

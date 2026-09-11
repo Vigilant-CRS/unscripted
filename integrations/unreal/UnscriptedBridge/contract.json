@@ -1,0 +1,160 @@
+{
+  "contract_version": "1.0.0",
+  "purpose": [
+    "The exact JSON the Unreal plugin parses. Both sides are checked against this",
+    "file: the C++ reads these field names, and tests/test_scenarios.py asserts the",
+    "live service produces them with these types.",
+    "",
+    "This exists because the engine side cannot be compiled in the runtime's own CI.",
+    "A field renamed on the Python side would otherwise break the plugin silently and",
+    "only be discovered by a studio, in Unreal, at integration time. Change this file",
+    "and both sides fail loudly until they agree again."
+  ],
+  "endpoints": {
+    "GET /health": {
+      "called_by": "UUnscriptedSubsystem::Connect",
+      "fields": {
+        "ok": "bool",
+        "runtime_id": "string",
+        "world_time": "int",
+        "schema_version": "string"
+      }
+    },
+    "GET /state/scene": {
+      "called_by": "UUnscriptedSubsystem::RefreshScene",
+      "fields": {
+        "world_time": "int",
+        "location": "string",
+        "label": "string",
+        "npcs": "array<object{id:string,name:string}>",
+        "exits": "array<object{id:string,label:string}>",
+        "attributes": "object"
+      }
+    },
+    "POST /avatar/turn": {
+      "called_by": "UUnscriptedSubsystem::SubmitPlayerLine",
+      "request": {
+        "text": "string"
+      },
+      "fields": {
+        "message": "string",
+        "world_time": "int",
+        "location_id": "string",
+        "done": "bool",
+        "avatar": {
+          "optional": true,
+          "present_when": "an NPC spoke this turn",
+          "fields": {
+            "speaker_id": "string",
+            "text": "string",
+            "act": "string",
+            "verdict": "string",
+            "blendshapes": "object<string,float>",
+            "emotion": "object{dominant:string,intensity:float,valence:float,arousal:float,dominance:float}",
+            "gaze": "object{target:string,aversion:float,make_contact:bool}",
+            "prosody": "object{speech_rate:float,pitch_shift:float,loudness:float}",
+            "posture": "string"
+          }
+        }
+      }
+    },
+    "GET /avatar/face": {
+      "called_by": "UUnscriptedNpcComponent::TickComponent (polls at FacePollSeconds)",
+      "query": {
+        "agent_id": "string",
+        "gaze_target": "string?"
+      },
+      "fields": {
+        "blendshapes": "object<string,float>",
+        "emotion": "object{dominant:string,intensity:float,valence:float,arousal:float,dominance:float}",
+        "gaze": "object{target:string,aversion:float,make_contact:bool}",
+        "prosody": "object{speech_rate:float,pitch_shift:float,loudness:float}",
+        "posture": "string"
+      }
+    },
+    "POST /advance": {
+      "called_by": "UUnscriptedSubsystem::AdvanceWorldTime",
+      "request": {
+        "minutes": "int>=0"
+      },
+      "fields": {
+        "from": "int",
+        "to": "int"
+      }
+    },
+    "GET /state/knowledge": {
+      "called_by": "UUnscriptedSubsystem::RefreshKnowledge (debug HUD)",
+      "fields": {
+        "world_time": "int",
+        "time_of_day": "string",
+        "facts": "array<object{text:string,reach:int,first_hand:int,hearsay:int,max_hops:int,origins:array<string>}>",
+        "transmissions": "array<object{from_name:string,to_name:string,place_label:string,hops:int,distorted:bool,distortion_note:string}>"
+      }
+    },
+    "POST /event": {
+      "called_by": "UUnscriptedSubsystem::SendGameplayEvent",
+      "request": {
+        "type": "string",
+        "actor": "string?",
+        "location": "string?",
+        "payload": "object"
+      },
+      "fields": {
+        "event_id": "int",
+        "event_type": "string",
+        "world_time": "int",
+        "observed_by": "array<string>"
+      }
+    }
+  },
+  "arkit_blendshape_keys": [
+    "browInnerUp",
+    "browDownLeft",
+    "browDownRight",
+    "browOuterUpLeft",
+    "browOuterUpRight",
+    "eyeWideLeft",
+    "eyeWideRight",
+    "eyeSquintLeft",
+    "eyeSquintRight",
+    "eyeLookDownLeft",
+    "eyeLookDownRight",
+    "cheekSquintLeft",
+    "cheekSquintRight",
+    "noseSneerLeft",
+    "noseSneerRight",
+    "jawOpen",
+    "jawForward",
+    "mouthSmileLeft",
+    "mouthSmileRight",
+    "mouthFrownLeft",
+    "mouthFrownRight",
+    "mouthPressLeft",
+    "mouthPressRight",
+    "mouthStretchLeft",
+    "mouthStretchRight",
+    "mouthDimpleLeft",
+    "mouthDimpleRight",
+    "mouthShrugUpper",
+    "mouthShrugLower"
+  ],
+  "error_shape": {
+    "note": "Every 4xx/5xx body has these two fields; the plugin surfaces `error` and branches on `code`.",
+    "fields": {
+      "error": "string",
+      "code": "string"
+    }
+  },
+  "notes": [
+    "Blendshape weights are in [0,1] and only non-zero keys are sent, so a neutral",
+    "face is an empty object rather than 52 zeroes. The plugin must treat a missing",
+    "key as 0.0 rather than as an error.",
+    "",
+    "`avatar` is absent when a turn produced no NPC line (a move, a look, a rejected",
+    "command). The plugin must check for it rather than assume it.",
+    "",
+    "Authentication: when the service runs with a token, every request needs",
+    "`Authorization: Bearer <token>`. Binding off-loopback without one is refused by",
+    "the server."
+  ]
+}

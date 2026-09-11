@@ -1,0 +1,6 @@
+; A project that exists only to load the extension and run one script.
+config_version=5
+
+[application]
+config/name="Unscripted GDExtension check"
+config/features=PackedStringArray("4.3")

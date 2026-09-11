@@ -1,0 +1,87 @@
+{
+  "_note": "SAW the car and did not think about it until later. The third fragment. Also the one a player is most likely to accuse in public, which is what the accusation beat is built on.",
+  "id": "agent:okonkwo",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Okonkwo",
+    "objective": "Okonkwo",
+    "aliases": [
+      "okonkwo",
+      "grocer",
+      "shopkeeper",
+      "shop"
+    ]
+  },
+  "big_five": {
+    "openness": 0.55,
+    "conscientiousness": 0.8,
+    "extraversion": 0.4,
+    "agreeableness": 0.65,
+    "emotional_stability": 0.7
+  },
+  "schwartz": {
+    "security": 0.6,
+    "self_direction": 0.5,
+    "power": 0.35
+  },
+  "needs": {
+    "income": 0.5,
+    "recognition": 0.4
+  },
+  "identities": [
+    {
+      "id": "trader",
+      "group": "district:lamb",
+      "accessibility": 0.8
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:trader",
+      "context": "district:lamb"
+    }
+  ],
+  "education": {
+    "domains": {
+      "general": 0.65,
+      "street": 0.5,
+      "trade": 0.85
+    }
+  },
+  "relationships": {},
+  "secrets": [],
+  "goals": [
+    {
+      "content": "keep the shop out of trouble",
+      "priority": 0.8,
+      "about": [
+        "car_waiting",
+        "shot_by"
+      ]
+    }
+  ],
+  "social_status": 0.4,
+  "location": "place:shop",
+  "routine": [
+    {
+      "from": "06:00",
+      "place": "place:shop",
+      "activity": "taking deliveries"
+    },
+    {
+      "from": "12:30",
+      "place": "place:kiosk",
+      "activity": "buying a paper"
+    },
+    {
+      "from": "13:00",
+      "place": "place:shop",
+      "activity": "minding the shop"
+    },
+    {
+      "from": "19:00",
+      "place": "place:shop",
+      "activity": "cashing up"
+    }
+  ]
+}

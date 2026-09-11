@@ -1,0 +1,205 @@
+[
+  {
+    "case": "negation_scope",
+    "invariant_holds": false,
+    "detail": [
+      {
+        "input": "The clinic was open all night, no doubt.",
+        "released": "The clinic was open all night, no doubt.",
+        "verdict": "ACCEPT",
+        "spoken": [
+          "NOT clinic_open(place=place:clinic, when=last_night)"
+        ],
+        "player_beliefs": [
+          "clinic_open(place=place:clinic,when=last_night)[None,None,None]"
+        ],
+        "reason_codes": [
+          "commitment.selected",
+          "dialogue.direct_answer",
+          "validator.accept"
+        ]
+      },
+      {
+        "input": "The clinic was not closed last night.",
+        "released": "The clinic was not closed last night.",
+        "verdict": "ACCEPT",
+        "spoken": [
+          "NOT clinic_open(place=place:clinic, when=last_night)"
+        ],
+        "player_beliefs": [
+          "clinic_open(place=place:clinic,when=last_night)[None,None,None]"
+        ],
+        "reason_codes": [
+          "commitment.selected",
+          "dialogue.direct_answer",
+          "validator.accept"
+        ]
+      },
+      {
+        "input": "Nobody doubts the clinic was open all night.",
+        "released": "Nobody doubts the clinic was open all night.",
+        "verdict": "ACCEPT",
+        "spoken": [
+          "NOT clinic_open(place=place:clinic, when=last_night)"
+        ],
+        "player_beliefs": [
+          "clinic_open(place=place:clinic,when=last_night)[None,None,None]"
+        ],
+        "reason_codes": [
+          "commitment.selected",
+          "dialogue.direct_answer",
+          "validator.accept"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "provider_failure_changes_state",
+    "invariant_holds": false,
+    "detail": {
+      "valid_provider": {
+        "input": "The clinic was not open last night.",
+        "released": "The clinic was not open last night.",
+        "verdict": "ACCEPT",
+        "spoken": [
+          "NOT clinic_open(place=place:clinic, when=last_night)"
+        ],
+        "player_beliefs": [
+          "clinic_open(place=place:clinic,when=last_night)[None,None,None]"
+        ],
+        "reason_codes": [
+          "commitment.selected",
+          "dialogue.direct_answer",
+          "validator.accept"
+        ]
+      },
+      "provider_failure": {
+        "input": null,
+        "released": "Far as I know, the place was shut that night.",
+        "verdict": "ACCEPT",
+        "spoken": [],
+        "player_beliefs": [],
+        "reason_codes": [
+          "provider.failure",
+          "dialogue.commitment_unexpressed",
+          "commitment.selected",
+          "dialogue.direct_answer",
+          "validator.accept"
+        ]
+      }
+    }
+  },
+  {
+    "case": "secret_paraphrase",
+    "invariant_holds": false,
+    "detail": [
+      {
+        "input": "Milan went outside the city. Now he hides in a room behind where drinks are served.",
+        "released": "Milan left the city months ago. I have no further information.",
+        "verdict": "ACCEPT",
+        "spoken": [],
+        "player_beliefs": [],
+        "reason_codes": [
+          "validator.secret_referent",
+          "dialogue.validation_fallback",
+          "dialogue.commitment_unexpressed",
+          "dialogue.deception",
+          "dialogue.deception",
+          "validator.accept"
+        ]
+      },
+      {
+        "input": "Milan went outside the city. Now he hides behind where drinks are served.",
+        "released": "Milan went outside the city. Now he hides behind where drinks are served.",
+        "verdict": "ACCEPT",
+        "spoken": [
+          "whereabouts(who=agent:npc_red_jacket, place=place:outside_the_city)"
+        ],
+        "player_beliefs": [
+          "whereabouts(who=agent:npc_red_jacket,place=place:outside_the_city)[None,None,None]"
+        ],
+        "reason_codes": [
+          "dialogue.deception",
+          "dialogue.deception",
+          "validator.accept"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "recycled_origin",
+    "invariant_holds": false,
+    "detail": {
+      "origin_limit": 512,
+      "origin_evicted": true,
+      "first_contribution": 2.9444389791664394,
+      "repeat_contribution": 2.9444389791664394,
+      "source_total": 5.888877958332879,
+      "advertised_source_ceiling": 3.271598865740488,
+      "p_before_repeat": 0.9499999999999998,
+      "p_after_repeat": 0.9972375690607735
+    }
+  },
+  {
+    "case": "snapshot_ledger_changes_later",
+    "invariant_holds": false,
+    "detail": {
+      "saved_a_watermark": 1001,
+      "saved_a_history_before": [
+        {
+          "entry": 1,
+          "event_id": 1001,
+          "summary": "branch A"
+        }
+      ],
+      "saved_a_history_after": [
+        {
+          "entry": 1,
+          "event_id": 1001,
+          "summary": "branch A"
+        },
+        {
+          "entry": 2,
+          "event_id": 1001,
+          "summary": "branch B"
+        }
+      ],
+      "note": "Both audit rows survive, but the same snapshot query now includes a future branch."
+    }
+  },
+  {
+    "case": "foreign_world_with_shared_place",
+    "invariant_holds": false,
+    "detail": {
+      "source_pack": "cyberpunk-block",
+      "target_pack": "noir-harbor",
+      "common_place": "place:spawn",
+      "report": {
+        "usable": true,
+        "code": "world_changed",
+        "detail": "",
+        "saved_at_world_time": 4457,
+        "written_by": "1.18.0",
+        "restored": [
+          "agent:player_1"
+        ],
+        "dropped": [
+          "agent:barkeep_12",
+          "agent:corpo_okada",
+          "agent:dima_broke",
+          "agent:npc_red_jacket",
+          "agent:officer_kane",
+          "agent:pavel",
+          "agent:son_ilya",
+          "agent:son_marko"
+        ],
+        "unsaved": [
+          "agent:clara",
+          "agent:marlow"
+        ]
+      },
+      "target_time_before": 1200,
+      "target_time_after": 4457
+    }
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "beliefs": [
+    {
+      "agent": "agent:muellerin_greta",
+      "proposition": {"predicate": "korn_geliefert",
+                      "slots": {"hof": "hof:muehle", "wann": "letzte_woche"},
+                      "polarity": "-"},
+      "summary": "Greta weiss, dass letzte Woche kein Korn hinausging.",
+      "origin_event": "seed_greta_korn",
+      "trust": 0.95, "competence": 0.9, "importance": 0.8
+    },
+    {
+      "agent": "agent:pfarrer_konrad",
+      "proposition": {"predicate": "korn_geliefert",
+                      "slots": {"hof": "hof:muehle", "wann": "letzte_woche"},
+                      "polarity": "-"},
+      "summary": "Konrad hoerte in der Beichte vom ausgebliebenen Korn.",
+      "origin_event": "seed_konrad_beichte",
+      "trust": 0.8, "competence": 0.7, "importance": 0.6
+    },
+    {
+      "agent": "agent:schmied_hanns",
+      "proposition": {"predicate": "schuld_offen",
+                      "slots": {"schuldner": "agent:schmied_hanns",
+                                "glaeubiger": "agent:muellerin_greta"},
+                      "polarity": "+"},
+      "summary": "Hanns weiss um seine Schuld bei der Muellerin.",
+      "origin_event": "seed_hanns_schuld",
+      "trust": 0.98, "competence": 0.95, "importance": 0.9
+    }
+  ]
+}

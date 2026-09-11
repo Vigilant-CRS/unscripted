@@ -1,0 +1,136 @@
+{
+  "id": "agent:npc_red_jacket",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Vee",
+    "objective": "Valeria K.",
+    "aliases": [
+      "vee",
+      "red jacket",
+      "rote jacke",
+      "frau",
+      "fixer",
+      "valeria"
+    ]
+  },
+  "big_five": {
+    "openness": 0.6,
+    "conscientiousness": 0.45,
+    "extraversion": 0.7,
+    "agreeableness": 0.3,
+    "emotional_stability": 0.35
+  },
+  "schwartz": {
+    "security": 0.7,
+    "self_direction": 0.6,
+    "power": 0.5,
+    "benevolence": 0.4
+  },
+  "needs": {
+    "income": 0.6,
+    "safety": 0.5,
+    "recognition": 0.4
+  },
+  "identities": [
+    {
+      "id": "gang_member",
+      "group": "group:reds",
+      "accessibility": 0.8
+    },
+    {
+      "id": "sister",
+      "group": "family:k",
+      "accessibility": 0.9
+    },
+    {
+      "id": "resident",
+      "group": "district:watson",
+      "accessibility": 0.5
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:fixer",
+      "context": "group:reds"
+    }
+  ],
+  "appearance": {
+    "garment": "item:red_cyberjacket",
+    "symbols": [
+      "sym:reds"
+    ]
+  },
+  "education": {
+    "domains": {
+      "street": 0.8,
+      "medicine": 0.2
+    }
+  },
+  "relationships": {
+    "agent:player_1": {
+      "trust": 0.25,
+      "liking": 0.1,
+      "familiarity": 0.0
+    },
+    "agent:barkeep_12": {
+      "trust": 0.55,
+      "liking": 0.4,
+      "familiarity": 0.6
+    }
+  },
+  "secrets": [
+    {
+      "id": "secret:milan_location",
+      "avoid_label": "brother_whereabouts",
+      "guards_topics": [
+        "milan"
+      ],
+      "summary": "Milan is alive and hiding in the back room behind the bar.",
+      "surface_forms": [
+        "clinic",
+        "warehouse",
+        "milan is",
+        "he's at",
+        "he is at",
+        "back room"
+      ],
+      "protects": [
+        "prop:milan_location"
+      ],
+      "about": [
+        "agent:npc_red_jacket"
+      ],
+      "min_trust": 0.45
+    }
+  ],
+  "goals": [
+    {
+      "content": "protect_brother_milan",
+      "priority": 0.9
+    }
+  ],
+  "social_status": 0.35,
+  "location": "place:main_street",
+  "routine": [
+    {
+      "from": "00:00",
+      "place": "place:main_street",
+      "activity": "working the corner"
+    },
+    {
+      "from": "04:00",
+      "place": "place:back_room",
+      "activity": "counting the night"
+    },
+    {
+      "from": "13:00",
+      "place": "place:bar",
+      "activity": "meeting contacts"
+    },
+    {
+      "from": "20:00",
+      "place": "place:main_street",
+      "activity": "working the corner"
+    }
+  ]
+}

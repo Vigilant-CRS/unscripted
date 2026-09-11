@@ -1,0 +1,175 @@
+[
+  {
+    "case": "repeat_allowance_already_spent",
+    "invariant_holds": false,
+    "detail": {
+      "origin_limit": 512,
+      "distinct_origins": 513,
+      "prior_repeats": 8,
+      "before_cycles": 3.271598862468889,
+      "ceiling": 3.271598865740488,
+      "extra_hearings_after_reentry": 0,
+      "steps": [
+        {
+          "cycle": 1,
+          "on_reentry": 0.29444389791664394,
+          "on_recognised_repeats": 0.0,
+          "unrecognised_spent": 0.1,
+          "logit": 3.566042760385533,
+          "p": 0.9725095910784595
+        }
+      ]
+    }
+  },
+  {
+    "case": "recognised_after_budget_exhausted",
+    "invariant_holds": false,
+    "detail": {
+      "origin_limit": 512,
+      "distinct_origins": 513,
+      "prior_repeats": 0,
+      "before_cycles": 2.9444389791664394,
+      "ceiling": 3.271598865740488,
+      "extra_hearings_after_reentry": 1,
+      "steps": [
+        {
+          "cycle": 1,
+          "on_reentry": 0.29444389791664394,
+          "on_recognised_repeats": 0.029444389791664527,
+          "unrecognised_spent": 0.1,
+          "logit": 3.268327266874748,
+          "p": 0.9633261216746766
+        },
+        {
+          "cycle": 2,
+          "on_reentry": 0.0,
+          "on_recognised_repeats": 0.029444389791664527,
+          "unrecognised_spent": 0.11111111111111112,
+          "logit": 3.2977716566664124,
+          "p": 0.9643522862848796
+        },
+        {
+          "cycle": 20,
+          "on_reentry": 0.0,
+          "on_recognised_repeats": 0.029444389791664527,
+          "unrecognised_spent": 0.11111111111111112,
+          "logit": 3.827770672916374,
+          "p": 0.9787052648327679
+        },
+        {
+          "cycle": 100,
+          "on_reentry": 0.0,
+          "on_recognised_repeats": 0.029444389791664527,
+          "unrecognised_spent": 0.11111111111111112,
+          "logit": 6.183321856249536,
+          "p": 0.9979406879157439
+        }
+      ]
+    }
+  },
+  {
+    "case": "controlled_repeat_verdict",
+    "invariant_holds": false,
+    "detail": {
+      "turns": [
+        {
+          "turn": 1,
+          "text": "Far as I know, the place was shut that night.",
+          "verdict": "ACCEPT",
+          "spoken": [
+            "NOT clinic_open(place=place:clinic, when=last_night)"
+          ],
+          "reason_codes": [
+            "commitment.selected",
+            "dialogue.direct_answer",
+            "validator.accept"
+          ]
+        },
+        {
+          "turn": 2,
+          "text": "As far as I am aware, the establishment was closed during that period.",
+          "verdict": "ACCEPT",
+          "spoken": [
+            "NOT clinic_open(place=place:clinic, when=last_night)"
+          ],
+          "reason_codes": [
+            "dialogue.reworded",
+            "commitment.selected",
+            "dialogue.direct_answer",
+            "validator.accept",
+            "dialogue.topic_repeated"
+          ]
+        },
+        {
+          "turn": 3,
+          "text": "Place was shut that night. That's all I got.",
+          "verdict": "ACCEPT",
+          "spoken": [
+            "NOT clinic_open(place=place:clinic, when=last_night)"
+          ],
+          "reason_codes": [
+            "dialogue.reworded",
+            "commitment.selected",
+            "dialogue.direct_answer",
+            "validator.accept",
+            "dialogue.topic_repeated"
+          ]
+        },
+        {
+          "turn": 4,
+          "text": "Far as I know, the place was shut that night.",
+          "verdict": "REJECT_SOFT",
+          "spoken": [
+            "NOT clinic_open(place=place:clinic, when=last_night)"
+          ],
+          "reason_codes": [
+            "validator.repetition",
+            "dialogue.released_anyway",
+            "commitment.selected",
+            "dialogue.direct_answer",
+            "validator.repetition",
+            "dialogue.topic_repeated"
+          ]
+        },
+        {
+          "turn": 5,
+          "text": "Far as I know, the place was shut that night.",
+          "verdict": "REJECT_SOFT",
+          "spoken": [
+            "NOT clinic_open(place=place:clinic, when=last_night)"
+          ],
+          "reason_codes": [
+            "validator.repetition",
+            "dialogue.released_anyway",
+            "commitment.selected",
+            "dialogue.direct_answer",
+            "validator.repetition",
+            "dialogue.topic_repeated"
+          ]
+        }
+      ],
+      "audit": [
+        {
+          "verdict": "ACCEPT",
+          "accepted_output": "Far as I know, the place was shut that night."
+        },
+        {
+          "verdict": "ACCEPT",
+          "accepted_output": "As far as I am aware, the establishment was closed during that period."
+        },
+        {
+          "verdict": "ACCEPT",
+          "accepted_output": "Place was shut that night. That's all I got."
+        },
+        {
+          "verdict": "REJECT_SOFT",
+          "accepted_output": ""
+        },
+        {
+          "verdict": "REJECT_SOFT",
+          "accepted_output": ""
+        }
+      ]
+    }
+  }
+]

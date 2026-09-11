@@ -1,0 +1,60 @@
+{
+  "predicates": {
+    "seal_breached": {
+      "slots": [
+        "section",
+        "when"
+      ],
+      "functional_in": 1,
+      "domain": "engineering",
+      "requires_competence": {
+        "domain": "engineering",
+        "level": 0.6
+      },
+      "classification": "trade"
+    },
+    "logged_out": {
+      "slots": [
+        "agent",
+        "when"
+      ],
+      "functional_in": 1,
+      "domain": "general",
+      "classification": "common"
+    },
+    "supply_short": {
+      "slots": [
+        "item"
+      ],
+      "functional_in": null,
+      "domain": "general",
+      "classification": "public"
+    },
+    "skipped_check": {
+      "slots": [
+        "agent",
+        "check"
+      ],
+      "functional_in": null,
+      "domain": "engineering",
+      "requires_competence": {
+        "domain": "engineering",
+        "level": 0.5
+      },
+      "classification": "restricted",
+      "access": [
+        "role:engineer"
+      ]
+    }
+  },
+  "canon_facts": [
+    {
+      "predicate": "seal_breached",
+      "slots": {
+        "section": "place:store",
+        "when": "night_cycle"
+      },
+      "polarity": "+"
+    }
+  ]
+}

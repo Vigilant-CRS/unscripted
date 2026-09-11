@@ -1,0 +1,100 @@
+{
+  "_note": "KNOWS NOTHING at the start and will know everything by morning. The radio reaches him at 0.95 and he talks to everybody -- he is how the town finds out, and how a claim gets bent on the way.",
+  "id": "agent:byrne",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Byrne",
+    "objective": "Byrne",
+    "aliases": [
+      "byrne",
+      "paper",
+      "papers",
+      "newsstand",
+      "kiosk"
+    ]
+  },
+  "big_five": {
+    "openness": 0.6,
+    "conscientiousness": 0.45,
+    "extraversion": 0.85,
+    "agreeableness": 0.7,
+    "emotional_stability": 0.5
+  },
+  "schwartz": {
+    "security": 0.6,
+    "self_direction": 0.5,
+    "power": 0.35
+  },
+  "needs": {
+    "income": 0.5,
+    "recognition": 0.4
+  },
+  "identities": [
+    {
+      "id": "newsman",
+      "group": "district:lamb",
+      "accessibility": 0.9
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:vendor",
+      "context": "district:lamb"
+    }
+  ],
+  "education": {
+    "domains": {
+      "general": 0.55,
+      "street": 0.6,
+      "gossip": 0.95
+    }
+  },
+  "relationships": {},
+  "secrets": [],
+  "goals": [
+    {
+      "content": "have the story before anyone else",
+      "priority": 0.9,
+      "about": [
+        "shot_by",
+        "shot_heard",
+        "ran_from",
+        "car_waiting"
+      ]
+    }
+  ],
+  "social_status": 0.4,
+  "location": "place:kiosk",
+  "routine": [
+    {
+      "from": "05:30",
+      "place": "place:kiosk",
+      "activity": "setting out the papers"
+    },
+    {
+      "from": "10:00",
+      "place": "place:street",
+      "activity": "working the street"
+    },
+    {
+      "from": "12:00",
+      "place": "place:bar",
+      "activity": "a half and a listen"
+    },
+    {
+      "from": "13:00",
+      "place": "place:kiosk",
+      "activity": "the stand"
+    },
+    {
+      "from": "17:00",
+      "place": "place:taxi_rank",
+      "activity": "selling the evening edition"
+    },
+    {
+      "from": "18:00",
+      "place": "place:kiosk",
+      "activity": "the stand"
+    }
+  ]
+}

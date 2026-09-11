@@ -1,0 +1,87 @@
+{
+  "_note": "HEARD it and saw nothing. He was pouring with his back to the door, so he has a time and a place and no face -- which is exactly the kind of witness a dialogue tree flattens into 'yes I know about the murder'.",
+  "id": "agent:halloran",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Halloran",
+    "objective": "Halloran",
+    "aliases": [
+      "halloran",
+      "barman",
+      "barkeep",
+      "bar"
+    ]
+  },
+  "big_five": {
+    "openness": 0.5,
+    "conscientiousness": 0.6,
+    "extraversion": 0.75,
+    "agreeableness": 0.6,
+    "emotional_stability": 0.65
+  },
+  "schwartz": {
+    "security": 0.6,
+    "self_direction": 0.5,
+    "power": 0.35
+  },
+  "needs": {
+    "income": 0.5,
+    "recognition": 0.4
+  },
+  "identities": [
+    {
+      "id": "publican",
+      "group": "district:lamb",
+      "accessibility": 0.85
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:bartender",
+      "context": "district:lamb"
+    }
+  ],
+  "education": {
+    "domains": {
+      "general": 0.5,
+      "street": 0.8,
+      "gossip": 0.9
+    }
+  },
+  "relationships": {},
+  "secrets": [],
+  "goals": [
+    {
+      "content": "know what happened on my street",
+      "priority": 0.7,
+      "about": [
+        "shot_by",
+        "shot_heard"
+      ]
+    }
+  ],
+  "social_status": 0.4,
+  "location": "place:bar",
+  "routine": [
+    {
+      "from": "11:00",
+      "place": "place:bar",
+      "activity": "opening up"
+    },
+    {
+      "from": "15:00",
+      "place": "place:street",
+      "activity": "a smoke outside"
+    },
+    {
+      "from": "16:00",
+      "place": "place:bar",
+      "activity": "behind the bar"
+    },
+    {
+      "from": "02:00",
+      "place": "place:bar",
+      "activity": "closing"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "contradiction_then_inspect",
+  "world_pack": "worldpacks/cyberpunk-block",
+  "commands": [
+    {
+      "input": "ask Honce about clinic",
+      "expect_contains": [
+        "Honce:"
+      ]
+    },
+    {
+      "input": "claim clinic was open",
+      "expect_contains": []
+    },
+    {
+      "input": "inspect Honce",
+      "expect_contains": [
+        "beliefs of agent:barkeep_12",
+        "clinic_open"
+      ]
+    }
+  ]
+}

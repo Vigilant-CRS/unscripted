@@ -1,0 +1,149 @@
+{
+  "topics": [
+    {
+      "id": "marlow_pier",
+      "label": "Who was on the pier after midnight",
+      "aliases": [
+        "pier",
+        "midnight",
+        "mitternacht",
+        "night",
+        "nacht"
+      ],
+      "query": {
+        "predicate": "was_at",
+        "slots": {
+          "agent": null,
+          "place": "place:pier",
+          "when": "last_night"
+        }
+      },
+      "phrasings": {
+        "affirm": {
+          "formal": "Someone was indeed down on the pier after midnight.",
+          "neutral": "Somebody was on the pier past midnight.",
+          "vernacular": "Aye, someone was down there."
+        },
+        "deny": {
+          "formal": "The pier was empty at that hour, to my knowledge.",
+          "neutral": "Pier was empty, far as I know.",
+          "vernacular": "Nobody down there."
+        }
+      }
+    },
+    {
+      "id": "manifest",
+      "label": "The unlogged cargo",
+      "aliases": [
+        "manifest",
+        "cargo",
+        "crate",
+        "ladung",
+        "kiste",
+        "frachtbrief"
+      ],
+      "query": {
+        "predicate": "cargo_logged",
+        "slots": {
+          "cargo": "cargo:crate_19",
+          "when": "last_night"
+        },
+        "polarity": "-"
+      },
+      "reactions": [
+        {
+          "type": "threat",
+          "payload": {
+            "summary": "a stranger asking about the manifest",
+            "importance": 0.65,
+            "appraisal": {
+              "desirability": -0.6,
+              "expectedness": 0.35,
+              "agency": "other",
+              "praiseworthiness": -0.2,
+              "target": "$player"
+            }
+          }
+        }
+      ],
+      "phrasings": {
+        "affirm": {
+          "formal": "That consignment never made it onto the paperwork.",
+          "neutral": "That load never made the paperwork.",
+          "vernacular": "Never made the paperwork."
+        },
+        "deny": {
+          "formal": "Everything that night was properly recorded.",
+          "neutral": "It was all written up properly.",
+          "vernacular": "All of it's written up."
+        }
+      }
+    },
+    {
+      "id": "logbook",
+      "label": "The duty log",
+      "aliases": [
+        "log",
+        "logbook",
+        "logbuch",
+        "duty log",
+        "record"
+      ],
+      "query": {
+        "predicate": "premises_open",
+        "slots": {
+          "place": "place:office",
+          "when": "last_night"
+        }
+      },
+      "player_claim": {
+        "predicate": "premises_open",
+        "slots": {
+          "place": "place:office",
+          "when": "last_night"
+        }
+      },
+      "phrasings": {
+        "affirm": {
+          "formal": "The duty log records the office as open through the night.",
+          "neutral": "Log says the office was open all night.",
+          "vernacular": "Office was open. It's in the book."
+        },
+        "deny": {
+          "formal": "The log shows the office was shut at that hour.",
+          "neutral": "Log says it was shut.",
+          "vernacular": "Shut. Says so in the book."
+        }
+      }
+    },
+    {
+      "id": "clearance",
+      "label": "Whether the stranger is implicated",
+      "aliases": [
+        "incident",
+        "assault",
+        "vorfall",
+        "implicated",
+        "suspect"
+      ],
+      "query": {
+        "predicate": "linked_to_incident",
+        "slots": {
+          "agent": "$player"
+        }
+      },
+      "phrasings": {
+        "affirm": {
+          "formal": "The wire does place you near the incident.",
+          "neutral": "The wire ties you to it.",
+          "vernacular": "Wire says it's you."
+        },
+        "deny": {
+          "formal": "The wire cleared you of any involvement.",
+          "neutral": "Wire says you're clear.",
+          "vernacular": "You're clear."
+        }
+      }
+    }
+  ]
+}

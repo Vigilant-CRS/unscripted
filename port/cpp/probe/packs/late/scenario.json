@@ -1,0 +1,12 @@
+{
+  "global_seed": "late-seed",
+  "world_time": 480,
+  "player_start": "place:hall",
+  "intro": "It is already the morning.",
+  "focus_agents": ["agent:late"],
+  "events": [
+    {"type": "quiet", "payload": {}},
+    {"type": "loud", "world_time": 600, "actor": "agent:late",
+     "location": "place:hall", "canonical": false, "payload": {"importance": 0.9}}
+  ]
+}

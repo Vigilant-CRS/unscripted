@@ -1,0 +1,123 @@
+{
+  "id": "agent:marlow",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Marlow",
+    "objective": "Eli Marlow",
+    "aliases": [
+      "marlow",
+      "eli",
+      "watchman",
+      "wachmann"
+    ]
+  },
+  "big_five": {
+    "openness": 0.45,
+    "conscientiousness": 0.6,
+    "extraversion": 0.4,
+    "agreeableness": 0.35,
+    "emotional_stability": 0.65
+  },
+  "schwartz": {
+    "security": 0.7,
+    "power": 0.5,
+    "conformity": 0.6
+  },
+  "needs": {
+    "safety": 0.5,
+    "income": 0.3
+  },
+  "identities": [
+    {
+      "id": "watchman",
+      "group": "faction:harbor_watch",
+      "accessibility": 0.8
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:officer",
+      "context": "faction:harbor_watch"
+    }
+  ],
+  "appearance": {
+    "garment": "item:watch_uniform"
+  },
+  "education": {
+    "domains": {
+      "general": 0.6,
+      "law": 0.6,
+      "street": 0.5
+    }
+  },
+  "relationships": {
+    "agent:clara": {
+      "trust": 0.45,
+      "liking": 0.0,
+      "familiarity": 0.4
+    },
+    "agent:player_1": {
+      "trust": 0.25,
+      "liking": 0.0,
+      "familiarity": 0.0
+    }
+  },
+  "secrets": [
+    {
+      "id": "secret:crate_19",
+      "avoid_label": "missing_cargo",
+      "guards_topics": [
+        "manifest"
+      ],
+      "summary": "Marlow himself took crate 19 off the manifest.",
+      "surface_forms": [
+        "crate 19",
+        "crate nineteen",
+        "off the books",
+        "off the manifest",
+        "i moved",
+        "i was on the pier"
+      ],
+      "protects": [
+        {
+          "predicate": "moved_cargo",
+          "slots": {
+            "agent": "agent:marlow",
+            "cargo": "cargo:crate_19"
+          },
+          "polarity": "+"
+        }
+      ],
+      "about": [
+        "agent:marlow"
+      ],
+      "min_trust": 0.5
+    }
+  ],
+  "goals": [
+    {
+      "content": "keep_harbor_quiet",
+      "priority": 0.75
+    }
+  ],
+  "social_status": 0.6,
+  "resources": 0.55,
+  "location": "place:office",
+  "routine": [
+    {
+      "from": "06:00",
+      "place": "place:pier",
+      "activity": "morning rounds"
+    },
+    {
+      "from": "10:00",
+      "place": "place:office",
+      "activity": "desk duty"
+    },
+    {
+      "from": "22:00",
+      "place": "place:pier",
+      "activity": "night rounds"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "provenance_interrogation",
+  "world_pack": "worldpacks/cyberpunk-block",
+  "commands": [
+    {
+      "input": "look",
+      "expect_contains": [
+        "Main Street",
+        "Honce"
+      ]
+    },
+    {
+      "input": "ask Honce about clinic",
+      "expect_contains": [
+        "Honce:",
+        "shut that night"
+      ]
+    },
+    {
+      "input": "inspect Honce",
+      "expect_contains": [
+        "beliefs of agent:barkeep_12",
+        "clinic_open(place=place:clinic",
+        "provenance: seed:seed_bar_clinic"
+      ],
+      "expect_absent": [
+        "clm_1002"
+      ]
+    }
+  ],
+  "note": "Interrogation must reveal provenance without creating any. This golden used to REQUIRE 'clm_1002' in the belief's provenance -- the player's own question, recorded as a supporting source, which is how asking twenty times used to walk a belief towards certainty. The seed source stays; the question must leave no trace in the evidence."
+}

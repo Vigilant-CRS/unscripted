@@ -1,0 +1,150 @@
+{
+  "id": "agent:corpo_okada",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Mr. Okada",
+    "objective": "Kenji Okada",
+    "aliases": [
+      "okada",
+      "corpo",
+      "executive",
+      "suit",
+      "anzug"
+    ]
+  },
+  "big_five": {
+    "openness": 0.5,
+    "conscientiousness": 0.8,
+    "extraversion": 0.4,
+    "agreeableness": 0.4,
+    "emotional_stability": 0.7
+  },
+  "schwartz": {
+    "power": 0.8,
+    "security": 0.6,
+    "achievement": 0.7,
+    "conformity": 0.6
+  },
+  "needs": {
+    "income": 0.2,
+    "recognition": 0.6,
+    "safety": 0.3
+  },
+  "identities": [
+    {
+      "id": "executive",
+      "group": "group:arasaka",
+      "accessibility": 0.9
+    },
+    {
+      "id": "resident",
+      "group": "district:corpo_plaza",
+      "accessibility": 0.4
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:officer",
+      "context": "group:arasaka"
+    }
+  ],
+  "appearance": {
+    "garment": "item:tailored_suit"
+  },
+  "education": {
+    "domains": {
+      "general": 0.9,
+      "corporate": 0.9,
+      "street": 0.2
+    }
+  },
+  "relationships": {
+    "agent:player_1": {
+      "trust": 0.2,
+      "liking": 0.0,
+      "familiarity": 0.0
+    }
+  },
+  "secrets": [
+    {
+      "id": "secret:milan_location",
+      "avoid_label": "brother_whereabouts",
+      "guards_topics": [
+        "milan"
+      ],
+      "summary": "Milan is alive and hiding in the back room behind the bar.",
+      "surface_forms": [
+        "clinic",
+        "warehouse",
+        "milan is",
+        "he's at",
+        "he is at",
+        "back room"
+      ],
+      "protects": [
+        "prop:milan_location"
+      ],
+      "about": [
+        "agent:npc_red_jacket"
+      ],
+      "min_trust": 0.45,
+      "cover_story": {
+        "predicate": "whereabouts",
+        "slots": {
+          "who": "agent:npc_red_jacket",
+          "place": "place:outside_the_city"
+        },
+        "polarity": "+"
+      },
+      "cover_phrasings": {
+        "formal": "Milan left the city months ago. I have no further information.",
+        "neutral": "Milan's gone. Left the city months back.",
+        "vernacular": "Milan? Long gone. Outta the city."
+      }
+    }
+  ],
+  "goals": [
+    {
+      "content": "manage_reputation",
+      "priority": 0.7
+    }
+  ],
+  "social_status": 0.9,
+  "resources": 0.9,
+  "location": "place:main_street",
+  "routine": [
+    {
+      "from": "00:00",
+      "place": "place:main_street",
+      "activity": "waiting for a car"
+    },
+    {
+      "from": "02:00",
+      "place": "place:clinic",
+      "activity": "night inspection"
+    },
+    {
+      "from": "10:00",
+      "place": "place:police_post",
+      "activity": "a quiet word"
+    },
+    {
+      "from": "12:00",
+      "place": "place:clinic",
+      "activity": "paperwork"
+    },
+    {
+      "from": "21:00",
+      "place": "place:main_street",
+      "activity": "walking the block"
+    }
+  ],
+  "values": {
+    "truthfulness": 0.2,
+    "loyalty": 0.8,
+    "self_preservation": 0.9
+  },
+  "voice": {
+    "say_as": "Mister Oh-kah-dah"
+  }
+}

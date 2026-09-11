@@ -1,0 +1,12 @@
+[
+  {
+    "case": "http_token_disclosure",
+    "invariant_holds": false,
+    "detail": {
+      "unauthenticated_api_status": 401,
+      "unauthenticated_demo_status": 200,
+      "synthetic_token_in_html": true,
+      "mutation_using_disclosed_token_status": 200
+    }
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "name": "third_pack_german",
+  "world_pack": "worldpacks/dorf-thornfeld",
+  "player_start": "place:dorfplatz",
+  "commands": [
+    {
+      "input": "schau",
+      "expect_contains": ["Dorfplatz", "Greta", "Schmiede", "Kapelle"],
+      "expect_absent": ["place:dorfplatz", "Main Street", "The Pier"]
+    },
+    {
+      "input": "frage Greta nach dem Korn",
+      "expect_contains": ["Greta", "Kein Korn"],
+      "expect_absent": ["nothing for you", "Evening", "clinic"],
+      "expect_trace": ["dialogue.direct_answer"]
+    },
+    {
+      "input": "geh zur Schmiede",
+      "expect_contains": ["Schmiede"],
+      "expect_absent": ["could not map", "cannot move"]
+    },
+    {
+      "input": "frage Hanns nach seinen Schulden",
+      "expect_absent": ["zwoelf heller", "Schuldschein", "ich schulde", "I've got nothing"],
+      "expect_trace": ["dialogue.secret_gate", "secret:schuldschein"]
+    },
+    {
+      "input": "frage Hanns nach dem Korn",
+      "expect_absent": ["nothing for you", "Evening."]
+    }
+  ]
+}

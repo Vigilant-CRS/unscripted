@@ -1,0 +1,256 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unscripted"
+version = "1.21.0"
+description = "Engine-independent causal social-memory runtime for game NPCs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "Vigilant e.K. (Damir Dulovic)", email = "info@vigilant-crs.de"}]
+keywords = ["games", "npc", "simulation", "dialogue", "memory", "sdk"]
+classifiers = [
+  "License :: Other/Proprietary License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Games/Entertainment",
+  "Topic :: Software Development :: Libraries",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://vigilant-crs.github.io/unscripted/"
+Source = "https://github.com/Vigilant-CRS/unscripted"
+Issues = "https://github.com/Vigilant-CRS/unscripted/issues"
+
+[project.scripts]
+unscripted = "unscripted.cli:main"
+unscripted-play = "unscripted.cli:main"
+
+[tool.setuptools]
+packages = ["unscripted"]
+
+[tool.setuptools.data-files]
+"share/unscripted/worldpacks/market-square" = [
+  "worldpacks/market-square/canon.json",
+  "worldpacks/market-square/initial_state.json",
+  "worldpacks/market-square/scenario.json",
+  "worldpacks/market-square/topics.json",
+  "worldpacks/market-square/world.json",
+]
+"share/unscripted/worldpacks/market-square/characters" = [
+  "worldpacks/market-square/characters/bran.json",
+  "worldpacks/market-square/characters/dale.json",
+  "worldpacks/market-square/characters/nadia.json",
+  "worldpacks/market-square/characters/otto.json",
+  "worldpacks/market-square/characters/sela.json",
+  "worldpacks/market-square/characters/tomas.json",
+  "worldpacks/market-square/characters/yara.json",
+]
+# The reusable addon, as opposed to the demo project: a studio drops this into
+# its own game and never writes process management for the runtime.
+# The Unity package: same two components as the Godot addon, in C#.
+# Automation tests that run INSIDE Unreal, against a live service. Shipped with
+# the plugin because a studio evaluating it should be able to run them.
+"share/unscripted/integrations/unreal/UnscriptedBridge/Source/UnscriptedBridge/Private/Tests" = [
+  "integrations/unreal/UnscriptedBridge/Source/UnscriptedBridge/Private/Tests/UnscriptedBridgeTests.cpp",
+]
+"share/unscripted/integrations/unity/com.vigilant.unscripted" = [
+  "integrations/unity/com.vigilant.unscripted/package.json",
+  "integrations/unity/com.vigilant.unscripted/README.md",
+]
+# The behavioural tests. Shipped with the package because a studio evaluating it
+# should be able to run them against its own service.
+"share/unscripted/integrations/unity/com.vigilant.unscripted/Tests/Runtime" = [
+  "integrations/unity/com.vigilant.unscripted/Tests/Runtime/UnscriptedClientTests.cs",
+  "integrations/unity/com.vigilant.unscripted/Tests/Runtime/Vigilant.Unscripted.Tests.asmdef",
+]
+"share/unscripted/integrations/unity/com.vigilant.unscripted/Runtime" = [
+  "integrations/unity/com.vigilant.unscripted/Runtime/UnscriptedHost.cs",
+  "integrations/unity/com.vigilant.unscripted/Runtime/UnscriptedClient.cs",
+  "integrations/unity/com.vigilant.unscripted/Runtime/Vigilant.Unscripted.asmdef",
+]
+"share/unscripted/integrations/godot/addons/unscripted" = [
+  "integrations/godot/addons/unscripted/UnscriptedHost.gd",
+  "integrations/godot/addons/unscripted/UnscriptedClient.gd",
+]
+"share/unscripted/integrations/godot/UnscriptedDemo" = [
+  "integrations/godot/UnscriptedDemo/project.godot",
+  "integrations/godot/UnscriptedDemo/Main.tscn",
+  "integrations/godot/UnscriptedDemo/Main.gd",
+  "integrations/godot/UnscriptedDemo/Unscripted.gd",
+  "integrations/godot/UnscriptedDemo/Flags.gd",
+  "integrations/godot/UnscriptedDemo/README.md",
+]
+"share/unscripted/qa" = [
+  "qa/relay-station.json",
+]
+"share/unscripted/conformance" = [
+  "conformance/README.md",
+  "conformance/asking.json",
+  "conformance/conduct.json",
+  "conformance/promises.json",
+  "conformance/scenarios.json",
+  "conformance/time.json",
+  "conformance/violence.json",
+]
+
+"share/unscripted/docs" = [
+  "docs/ARCHITECTURE.md",
+  "docs/AUTHORING.md",
+  "docs/CALIBRATION.md",
+  "docs/CONCEPT.md",
+  "docs/COMMERCIAL.md",
+  "docs/DEMO_AND_SALES.md",
+  "docs/IMPLEMENTATION_REVIEW.md",
+  "docs/INTEGRATION.md",
+  "docs/SETTINGS.md",
+  "docs/SPECIFICATION.md",
+  "docs/SPECIFICATION.pdf",
+  "docs/VALUES.md",
+  "docs/CONNECTING.md",
+  "docs/YOUTUBE.md",
+]
+# The noir scenario the showcase demo is built on: one street, one night,
+# three witnesses who each hold a different third of it, and one liar.
+"share/unscripted/worldpacks/nine-oh-seven" = [
+  "worldpacks/nine-oh-seven/canon.json",
+  "worldpacks/nine-oh-seven/initial_state.json",
+  "worldpacks/nine-oh-seven/scenario.json",
+  "worldpacks/nine-oh-seven/topics.json",
+  "worldpacks/nine-oh-seven/world.json",
+]
+"share/unscripted/worldpacks/nine-oh-seven/characters" = [
+  "worldpacks/nine-oh-seven/characters/byrne.json",
+  "worldpacks/nine-oh-seven/characters/doyle.json",
+  "worldpacks/nine-oh-seven/characters/halloran.json",
+  "worldpacks/nine-oh-seven/characters/okonkwo.json",
+  "worldpacks/nine-oh-seven/characters/reyes.json",
+  "worldpacks/nine-oh-seven/characters/vance.json",
+]
+"share/unscripted/docs/images" = [
+  "docs/images/two-accounts.jpg",
+  "docs/images/who-told-whom.jpg",
+  "docs/images/on-whose-word.jpg",
+  "docs/images/lamb-street-toggle.gif",
+  "docs/images/lamb-street-scene.gif",
+  "docs/images/lamb-street-bulletin.jpg",
+  "docs/images/lamb-street-morning.jpg",
+  "docs/images/lamb-street-lie.jpg",
+  "docs/images/tests.png",
+  "docs/images/watch.jpg",
+  "docs/images/engine-tests.png",
+  "docs/images/player-effect.png",
+  "docs/images/rumour-demo.jpg",
+  "docs/images/rumour-compare.jpg",
+  "docs/images/the-square.jpg",
+  "docs/images/the-square.gif",
+  "CONTRIBUTING.md",
+  "IMPRESSUM.md",
+  "docs/SOCIETY.md",
+  "docs/LOCAL_MODELS.md",
+  "docs/METAHUMAN_INTEGRATION.md",
+  "docs/ROADMAP.md",
+  "docs/SALES_DEMO_SCRIPT.md",
+  "docs/SDK_INTEGRATION.md",
+  "docs/UNREAL_INTEGRATION.md",
+  "docs/VISION_2.0.md",
+  "docs/WORLD_PACK_AUTHORING.md",
+]
+"share/unscripted/golden" = [
+  "golden/block17_smoke.json",
+  "golden/contradiction_then_inspect.json",
+  "golden/faction_mobilization.json",
+  "golden/fourth_pack_relay_station.json",
+  "golden/multiturn_terse_resume.json",
+  "golden/offscreen_time_passage.json",
+  "golden/provenance_interrogation.json",
+  "golden/radio_broadcast.json",
+  "golden/reachability_gate.json",
+  "golden/second_pack_noir.json",
+  "golden/secret_non_leak.json",
+  "golden/third_pack_german.json",
+  "golden/trust_then_no_leak.json",
+]
+"share/unscripted/integrations/unreal/UnscriptedBridge" = [
+  "integrations/unreal/UnscriptedBridge/UnscriptedBridge.uplugin",
+  "integrations/unreal/UnscriptedBridge/README.md",
+  "integrations/unreal/UnscriptedBridge/contract.json",
+  "integrations/unreal/UnscriptedBridge/contract.v2.json",
+]
+"share/unscripted/integrations/unreal/UnscriptedBridge/Source/UnscriptedBridge" = [
+  "integrations/unreal/UnscriptedBridge/Source/UnscriptedBridge/UnscriptedBridge.Build.cs",
+]
+"share/unscripted/integrations/unreal/UnscriptedBridge/Source/UnscriptedBridge/Private" = [
+  "integrations/unreal/UnscriptedBridge/Source/UnscriptedBridge/Private/UnscriptedBridge.cpp",
+  "integrations/unreal/UnscriptedBridge/Source/UnscriptedBridge/Private/UnscriptedClient.cpp",
+  "integrations/unreal/UnscriptedBridge/Source/UnscriptedBridge/Private/UnscriptedNpcComponent.cpp",
+  "integrations/unreal/UnscriptedBridge/Source/UnscriptedBridge/Private/UnscriptedSubsystem.cpp",
+]
+"share/unscripted/integrations/unreal/UnscriptedBridge/Source/UnscriptedBridge/Public" = [
+  "integrations/unreal/UnscriptedBridge/Source/UnscriptedBridge/Public/UnscriptedBridge.h",
+  "integrations/unreal/UnscriptedBridge/Source/UnscriptedBridge/Public/UnscriptedClient.h",
+  "integrations/unreal/UnscriptedBridge/Source/UnscriptedBridge/Public/UnscriptedNpcComponent.h",
+  "integrations/unreal/UnscriptedBridge/Source/UnscriptedBridge/Public/UnscriptedSubsystem.h",
+]
+"share/unscripted/worldpacks/cyberpunk-block" = [
+  "worldpacks/cyberpunk-block/canon.json",
+  "worldpacks/cyberpunk-block/initial_state.json",
+  "worldpacks/cyberpunk-block/scenario.json",
+  "worldpacks/cyberpunk-block/topics.json",
+  "worldpacks/cyberpunk-block/world.json",
+]
+"share/unscripted/worldpacks/cyberpunk-block/characters" = [
+  "worldpacks/cyberpunk-block/characters/barkeep_12.json",
+  "worldpacks/cyberpunk-block/characters/corpo_okada.json",
+  "worldpacks/cyberpunk-block/characters/dima_broke.json",
+  "worldpacks/cyberpunk-block/characters/npc_red_jacket.json",
+  "worldpacks/cyberpunk-block/characters/officer_kane.json",
+  "worldpacks/cyberpunk-block/characters/pavel.json",
+  "worldpacks/cyberpunk-block/characters/son_ilya.json",
+  "worldpacks/cyberpunk-block/characters/son_marko.json",
+]
+"share/unscripted/worldpacks/dorf-thornfeld" = [
+  "worldpacks/dorf-thornfeld/canon.json",
+  "worldpacks/dorf-thornfeld/initial_state.json",
+  "worldpacks/dorf-thornfeld/scenario.json",
+  "worldpacks/dorf-thornfeld/topics.json",
+  "worldpacks/dorf-thornfeld/world.json",
+]
+"share/unscripted/worldpacks/dorf-thornfeld/characters" = [
+  "worldpacks/dorf-thornfeld/characters/muellerin_greta.json",
+  "worldpacks/dorf-thornfeld/characters/pfarrer_konrad.json",
+  "worldpacks/dorf-thornfeld/characters/schmied_hanns.json",
+]
+"share/unscripted/worldpacks/noir-harbor" = [
+  "worldpacks/noir-harbor/canon.json",
+  "worldpacks/noir-harbor/initial_state.json",
+  "worldpacks/noir-harbor/scenario.json",
+  "worldpacks/noir-harbor/topics.json",
+  "worldpacks/noir-harbor/world.json",
+]
+"share/unscripted/worldpacks/noir-harbor/characters" = [
+  "worldpacks/noir-harbor/characters/clara.json",
+  "worldpacks/noir-harbor/characters/marlow.json",
+]
+"share/unscripted/worldpacks/relay-station" = [
+  "worldpacks/relay-station/canon.json",
+  "worldpacks/relay-station/initial_state.json",
+  "worldpacks/relay-station/scenario.json",
+  "worldpacks/relay-station/topics.json",
+  "worldpacks/relay-station/world.json",
+]
+"share/unscripted/worldpacks/relay-station/characters" = [
+  "worldpacks/relay-station/characters/adeyemi.json",
+  "worldpacks/relay-station/characters/ferro.json",
+  "worldpacks/relay-station/characters/hollis.json",
+  "worldpacks/relay-station/characters/lindqvist.json",
+  "worldpacks/relay-station/characters/mbeki.json",
+  "worldpacks/relay-station/characters/nakamura.json",
+  "worldpacks/relay-station/characters/okonkwo.json",
+  "worldpacks/relay-station/characters/rask.json",
+  "worldpacks/relay-station/characters/tan.json",
+  "worldpacks/relay-station/characters/voss.json",
+]

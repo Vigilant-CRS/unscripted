@@ -1,0 +1,151 @@
+{
+  "id": "agent:mbeki",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Mbeki",
+    "objective": "Mbeki",
+    "aliases": [
+      "mbeki",
+      "science officer",
+      "scientist"
+    ]
+  },
+  "big_five": {
+    "openness": 0.5,
+    "conscientiousness": 0.6,
+    "extraversion": 0.5,
+    "agreeableness": 0.5,
+    "emotional_stability": 0.55
+  },
+  "schwartz": {
+    "security": 0.5,
+    "achievement": 0.5
+  },
+  "needs": {
+    "safety": 0.4,
+    "recognition": 0.4
+  },
+  "identities": [
+    {
+      "id": "scientist",
+      "group": "group:crew",
+      "accessibility": 0.8
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:scientist",
+      "context": "group:crew"
+    }
+  ],
+  "education": {
+    "domains": {
+      "general": 0.6,
+      "gossip": 0.55,
+      "engineering": 0.3,
+      "medicine": 0.2
+    }
+  },
+  "relationships": {
+    "agent:voss": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:okonkwo": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:rask": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:lindqvist": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:tan": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:ferro": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:nakamura": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:adeyemi": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:hollis": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:player_1": {
+      "trust": 0.3,
+      "liking": 0.0,
+      "familiarity": 0.0
+    }
+  },
+  "secrets": [],
+  "goals": [
+    {
+      "content": "keep_the_station_running",
+      "priority": 0.7
+    }
+  ],
+  "social_status": 0.6,
+  "resources": 0.5,
+  "location": "place:lab",
+  "routine": [
+    {
+      "from": "08:00",
+      "place": "place:lab",
+      "activity": "analysis"
+    },
+    {
+      "from": "12:30",
+      "place": "place:mess",
+      "activity": "lunch"
+    },
+    {
+      "from": "14:00",
+      "place": "place:lab",
+      "activity": "analysis"
+    },
+    {
+      "from": "20:00",
+      "place": "place:hub",
+      "activity": "report"
+    },
+    {
+      "from": "21:30",
+      "place": "place:quarters",
+      "activity": "off shift"
+    }
+  ],
+  "networks": [
+    "shift:day"
+  ],
+  "voice": {
+    "say_as": "Em-beck-ee"
+  },
+  "epistemic": {
+    "source_trust": {
+      "intercom": 1.6,
+      "told": 0.4
+    },
+    "_note": "Whom this person believes. Looked up most specific first: a channel id, then its type, then the speaker's role, then witnessed / broadcast / told. Absent means 1.0."
+  }
+}

@@ -1,0 +1,7 @@
+input={"a":1 accepted_as={"a":1}
+input={"a" 1} accepted_as={"a":1}
+input=[1,] accepted_as=[1,0]
+input=wat accepted_as=0
+input=1e accepted_as=1.0
+input=+1 accepted_as=1
+emoji_utf8=eda0bdedb880 expected=f09f9880

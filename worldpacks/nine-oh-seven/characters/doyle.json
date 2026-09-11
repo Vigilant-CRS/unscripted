@@ -1,0 +1,94 @@
+{
+  "_note": "Has the case and none of the facts. He is not hiding anything and he is not stupid -- he simply has not met the three people who each hold a third of it. That is a thing a player can DO something about, and a flag world cannot express it at all.",
+  "id": "agent:doyle",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Doyle",
+    "objective": "Doyle",
+    "aliases": [
+      "doyle",
+      "officer",
+      "police",
+      "cop",
+      "detective"
+    ]
+  },
+  "big_five": {
+    "openness": 0.45,
+    "conscientiousness": 0.85,
+    "extraversion": 0.4,
+    "agreeableness": 0.4,
+    "emotional_stability": 0.75
+  },
+  "schwartz": {
+    "security": 0.6,
+    "self_direction": 0.5,
+    "power": 0.35
+  },
+  "needs": {
+    "income": 0.5,
+    "recognition": 0.4
+  },
+  "identities": [
+    {
+      "id": "officer",
+      "group": "district:lamb",
+      "accessibility": 0.75
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:officer",
+      "context": "district:lamb"
+    }
+  ],
+  "education": {
+    "domains": {
+      "general": 0.7,
+      "street": 0.7,
+      "law": 0.9
+    }
+  },
+  "relationships": {},
+  "secrets": [],
+  "goals": [
+    {
+      "content": "close the Cortez case",
+      "priority": 0.9,
+      "about": [
+        "shot_by",
+        "ran_from",
+        "car_waiting"
+      ]
+    }
+  ],
+  "social_status": 0.6,
+  "location": "place:precinct",
+  "routine": [
+    {
+      "from": "08:00",
+      "place": "place:precinct",
+      "activity": "the desk"
+    },
+    {
+      "from": "11:00",
+      "place": "place:street",
+      "activity": "walking the beat"
+    },
+    {
+      "from": "12:00",
+      "place": "place:shop",
+      "activity": "asking after things"
+    },
+    {
+      "from": "13:00",
+      "place": "place:precinct",
+      "activity": "the desk"
+    },
+    {
+      "from": "20:00",
+      "place": "place:precinct",
+      "activity": "nights"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "beliefs": [
+    {
+      "agent": "agent:yara",
+      "proposition": {
+        "predicate": "killed_by",
+        "slots": {
+          "who": "person:councillor",
+          "by": "group:contractors"
+        },
+        "polarity": "+"
+      },
+      "summary": "Yara was two metres away. Three men, no shouting, no panic, gone in eleven seconds.",
+      "origin_event": "incident:square_killing",
+      "trust": 0.98,
+      "competence": 0.9,
+      "importance": 0.95
+    },
+    {
+      "agent": "agent:yara",
+      "proposition": {
+        "predicate": "was_present",
+        "slots": {
+          "who": "agent:tomas",
+          "place": "place:alley"
+        },
+        "polarity": "+"
+      },
+      "summary": "Tomas was in the alley the whole time; she saw him there.",
+      "origin_event": "incident:square_killing",
+      "trust": 0.9,
+      "competence": 0.8,
+      "importance": 0.6
+    },
+    {
+      "agent": "agent:sela",
+      "proposition": {
+        "predicate": "killed_by",
+        "slots": {
+          "who": "person:councillor",
+          "by": "group:contractors"
+        },
+        "polarity": "+"
+      },
+      "summary": "Sela knows what the office arranged, and will not say it.",
+      "origin_event": "incident:square_killing",
+      "trust": 0.95,
+      "competence": 0.85,
+      "importance": 0.9
+    }
+  ]
+}

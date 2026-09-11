@@ -1,0 +1,90 @@
+Resuming at 120/163 after moving review artifacts out of packaged docs.
+RUN 120/163 test_packaging_manifest_covers_every_data_file
+ok  packaging: all 145 data files listed, licence present
+RUN 121/163 test_canon_layer_rejects_hallucinated_specifics
+ok  validator: canon parse-back rejects unlicensed names, numbers and invented things
+RUN 122/163 test_hallucinating_provider_never_reaches_the_player
+ok  provider: hallucinated line replaced before release -> 'Far as I know, the place was shut that night.'
+RUN 123/163 test_engine_contains_no_world_content
+ok  engine: 32 world-content patterns absent from the SDK core
+RUN 124/163 test_parser_free_text_contract
+ok  parser: free text maps to typed closed-catalog commands
+RUN 125/163 test_sdk_terminal_turn_and_provider_record
+ok  sdk: terminal turn returns dialogue + developer trace + provider record
+RUN 126/163 test_terminal_social_input_requires_reachable_target
+ok  terminal: social speech requires a reachable NPC target
+RUN 127/163 test_provider_failure_falls_back_safely
+ok  provider: external failure falls back to validated local template
+RUN 128/163 test_rejected_provider_output_never_reaches_player
+ok  provider: rejected external text is replaced before player release
+RUN 129/163 test_sdk_attack_mobilizes_social_consequence
+ok  sdk: attack creates off-screen ally-arrival social consequence
+RUN 130/163 test_initial_state_loaded_from_world_pack
+ok  initial state: authored world-pack beliefs load with provenance
+RUN 131/163 test_capability_config_requires_http_endpoint
+ok  capabilities: external HTTP text provider requires endpoint
+RUN 132/163 test_service_rejects_malformed_requests_with_4xx
+ok  service: malformed requests are precise 4xx and never mutate the world
+RUN 133/163 test_service_auth_and_debug_endpoint_gating
+ok  service: bearer auth, debug gating and safe-by-default bind hold
+RUN 134/163 test_service_over_real_http_caps_body_size
+ok  service: real HTTP enforces auth, body caps and validation
+RUN 135/163 test_snapshot_restore_rewinds_state
+ok  snapshot: restore rewinds player location and projections
+RUN 136/163 test_snapshot_roundtrip_is_exact
+ok  snapshot: full round-trip restores relationships, factions and timeline
+RUN 137/163 test_snapshot_reports_mismatches_instead_of_failing_silently
+ok  snapshot: schema, seed and roster mismatches are reported, not swallowed
+RUN 138/163 test_snapshot_size_is_independent_of_ledger_length
+ok  snapshot: 300 ledger events add 0 bytes, not a ledger copy
+RUN 139/163 test_replay_golden_file_and_second_pack
+RUN 140/163 test_character_generation_from_environment_and_appearance
+ok  generator: environment + appearance produce character profile and starting knowledge
+RUN 141/163 test_bridge_profiles_and_event_mapping
+ok  bridge: engine/front-end profiles and neutral event mapping work
+RUN 142/163 test_service_turn_and_generate_handlers
+ok  service: HTTP handler surface supports turns and character generation
+ok  replay: command replay works and second world pack loads
+RUN 143/163 test_llm_output_cleaning_is_safe
+ok  provider: messy LLM output is cleaned to a safe line or rejected for fallback
+RUN 144/163 test_prospect_reference_is_need_not_wealth
+ok  prospect: reference is need-aspiration (rich=0.0, desperate=0.8), not wealth
+RUN 145/163 test_metahuman_blendshapes_bounded_and_emotion_specific
+ok  metahuman: ARKit blendshapes are bounded and emotion-specific
+RUN 146/163 test_metahuman_neutral_and_avatar_packet
+ok  metahuman: neutral face is empty; avatar/face packets are well-formed
+RUN 147/163 test_population_lod_decay_is_exact
+ok  lod: decay is mathematically composable (LOD catch-up is exact)
+RUN 148/163 test_population_lod_preserves_behavior
+ok  lod: 200 characters over 40 places, LOD is behaviourally identical (17 sampled)
+RUN 149/163 test_golden_scenarios_all_pass
+ok  golden: 13 multi-step scenarios pass all assertions
+RUN 150/163 test_multiturn_continuity_and_resume
+ok  dialogue: multi-turn continuity counts re-asks and resumes across save/load
+RUN 151/163 test_structured_state_and_demo_endpoints
+ok  demo: structured scene/agent/world endpoints + HTML page are well-formed
+RUN 152/163 test_the_cpp_port_reproduces_python_exactly
+  cpp port: reproduces Python exactly -- determinism, rounding and the belief arithmetic, as raw bits; nine belief scenarios, field by field; the other forty-eight modules -- every engine, every optional layer, the parser, the validator, the tick loop, the turn loop and the pack reader -- across eighty-nine scenarios, including all five conformance fixtures played end to end; a world pack's tuning block -- 79 knobs across 14 engines, every name, every order and every value, and what a block changes
+RUN 153/163 test_recall_is_bounded_by_working_memory
+ok  memory: recall stops at seven, and returns the strongest seven
+RUN 154/163 test_a_retelling_carries_the_first_origin_not_the_latest
+ok  belief: a holder cites the incident they first heard, and the second telling of it persuades less
+RUN 155/163 test_nobody_is_convinced_by_the_sound_of_their_own_voice
+ok  runtime: an announcer is not persuaded by their own broadcast, and the audience is
+RUN 156/163 test_a_claim_stops_being_passed_on_after_enough_retellings
+ok  diffusion: a claim twelve mouths from its source stops travelling
+RUN 157/163 test_a_character_does_not_repeat_a_line_they_just_said
+ok  validator: a line refused three back, allowed four back (repetition window 3, pinned at both edges)
+RUN 158/163 test_the_c_abi_is_callable_from_c
+  c abi: every ABI check passed
+RUN 159/163 test_the_unreal_binding_talks_to_the_runtime
+  unreal binding: every Unreal-native check passed
+RUN 160/163 test_the_unity_binding_marshals_correctly
+  unity binding: every Unity-binding check passed
+RUN 161/163 test_the_godot_binding_loads_and_runs
+  godot binding: every check passed, driven from GDScript
+RUN 162/163 test_a_port_may_differ_in_the_last_bit_and_nowhere_else
+  a port may differ by <=8 ULP and nowhere else: 160 exact failures, 0 tolerated, 301 caught when genuinely wrong
+RUN 163/163 test_full_showcase_runs_all_checks
+ok  showcase: full SDK sales/regression demo passes all checks
+All remaining 44 tests passed; earlier 119 passed in the original run.

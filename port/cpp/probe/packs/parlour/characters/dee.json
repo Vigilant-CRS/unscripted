@@ -1,0 +1,10 @@
+{
+  "id": "agent:dee",
+  "names": {"public": "Dee"},
+  "location": "place:parlour",
+  "big_five": {"openness": 0.5, "conscientiousness": 0.5, "extraversion": 0.5,
+               "agreeableness": 0.6, "emotional_stability": 0.5},
+  "education": {"street": 0.6, "general": 0.5},
+  "values": {"truthfulness": 0.9},
+  "relationships": {"agent:player_1": {"trust": 0.7, "liking": 0.5, "familiarity": 0.5}}
+}

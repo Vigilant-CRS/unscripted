@@ -1,0 +1,16 @@
+; Tells Godot where the native library is and what to call in it.
+;
+; One entry symbol, and a per-platform library path. `compatibility_minimum` is
+; the oldest Godot whose GDExtension interface this build speaks -- 4.1 is when
+; the interface stopped moving between patch releases.
+[configuration]
+entry_symbol = "usc_gdextension_init"
+compatibility_minimum = "4.1"
+
+[libraries]
+linux.debug.x86_64 = "res://bin/libusc_godot.so"
+linux.release.x86_64 = "res://bin/libusc_godot.so"
+windows.debug.x86_64 = "res://bin/usc_godot.dll"
+windows.release.x86_64 = "res://bin/usc_godot.dll"
+macos.debug = "res://bin/libusc_godot.dylib"
+macos.release = "res://bin/libusc_godot.dylib"

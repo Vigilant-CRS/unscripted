@@ -1,0 +1,213 @@
+{
+  "_note": "One question the player can ask everybody -- 'what happened behind the Marchmont' -- and four different things the answer can be about. THE SAME QUESTION TO SIX PEOPLE MUST NOT PRODUCE SIX COPIES OF ONE ANSWER: that is the whole comparison, and it is why the phrasings below are written per fact rather than per character.",
+  "topics": [
+    {
+      "id": "killing",
+      "label": "The man behind the Marchmont",
+      "aliases": [
+        "killing",
+        "murder",
+        "cortez",
+        "shooting",
+        "marchmont",
+        "what happened",
+        "who did it",
+        "the case"
+      ],
+      "query": {
+        "predicate": "shot_by",
+        "slots": {
+          "who": "person:cortez",
+          "by": "person:mallory"
+        },
+        "polarity": "+"
+      },
+      "player_claim": {
+        "predicate": "shot_by",
+        "slots": {
+          "who": "person:cortez",
+          "by": "person:mallory"
+        },
+        "polarity": "+"
+      },
+      "phrasings": {
+        "affirm": {
+          "formal": "It was Mallory. I know because I was on that door.",
+          "neutral": "Mallory did it. I saw him come back through the door.",
+          "rough": "Mallory. And I'd thank you to forget I said it."
+        },
+        "deny": {
+          "formal": "I could not tell you who did it.",
+          "neutral": "No idea who it was.",
+          "rough": "Couldn't tell you."
+        }
+      }
+    },
+    {
+      "id": "radio_version",
+      "label": "What the radio said",
+      "aliases": [
+        "radio",
+        "police",
+        "statement",
+        "bulletin",
+        "news",
+        "suspect",
+        "lone man"
+      ],
+      "query": {
+        "predicate": "shot_by",
+        "slots": {
+          "who": "person:cortez",
+          "by": "person:unknown_man"
+        },
+        "polarity": "+"
+      },
+      "player_claim": {
+        "predicate": "shot_by",
+        "slots": {
+          "who": "person:cortez",
+          "by": "person:unknown_man"
+        },
+        "polarity": "+"
+      },
+      "phrasings": {
+        "affirm": {
+          "formal": "The police are looking for a man seen leaving the street.",
+          "neutral": "Radio says it was some fellow they haven't found yet.",
+          "rough": "Some bloke legged it, that's what they're saying."
+        },
+        "deny": {
+          "formal": "I do not believe that account.",
+          "neutral": "That's not what happened.",
+          "rough": "That's rubbish and I know it."
+        }
+      }
+    },
+    {
+      "id": "the_shot",
+      "label": "The shot itself",
+      "aliases": [
+        "shot",
+        "gunshot",
+        "noise",
+        "bang",
+        "crack",
+        "heard",
+        "sound",
+        "hear anything"
+      ],
+      "query": {
+        "predicate": "shot_heard",
+        "slots": {
+          "place": "place:hotel_back",
+          "hour": "21"
+        },
+        "polarity": "+"
+      },
+      "player_claim": {
+        "predicate": "shot_heard",
+        "slots": {
+          "place": "place:hotel_back",
+          "hour": "21"
+        },
+        "polarity": "+"
+      },
+      "phrasings": {
+        "affirm": {
+          "formal": "A single report from behind the hotel, shortly after nine.",
+          "neutral": "One crack, out the back, just after nine.",
+          "rough": "One bang round the back. Just gone nine."
+        },
+        "deny": {
+          "formal": "I heard nothing of the sort.",
+          "neutral": "I didn't hear anything.",
+          "rough": "Heard nothing."
+        }
+      }
+    },
+    {
+      "id": "the_runner",
+      "label": "The man who ran",
+      "aliases": [
+        "ran",
+        "running",
+        "runner",
+        "fled",
+        "escaped",
+        "man",
+        "coat",
+        "who ran"
+      ],
+      "query": {
+        "predicate": "ran_from",
+        "slots": {
+          "who": "person:unknown_man",
+          "place": "place:hotel_back"
+        },
+        "polarity": "+"
+      },
+      "player_claim": {
+        "predicate": "ran_from",
+        "slots": {
+          "who": "person:unknown_man",
+          "place": "place:hotel_back"
+        },
+        "polarity": "+"
+      },
+      "phrasings": {
+        "affirm": {
+          "formal": "A man left the rear of the hotel at speed and turned left.",
+          "neutral": "Somebody came out the back at a run and went left.",
+          "rough": "Fella shot out the back and went left. Didn't see a face."
+        },
+        "deny": {
+          "formal": "I saw nobody leave.",
+          "neutral": "I didn't see anyone.",
+          "rough": "Saw nobody."
+        }
+      }
+    },
+    {
+      "id": "the_car",
+      "label": "The car outside",
+      "aliases": [
+        "car",
+        "motor",
+        "vehicle",
+        "engine",
+        "plate",
+        "parked",
+        "waiting"
+      ],
+      "query": {
+        "predicate": "car_waiting",
+        "slots": {
+          "plate": "plate:KR_4471",
+          "place": "place:street"
+        },
+        "polarity": "+"
+      },
+      "player_claim": {
+        "predicate": "car_waiting",
+        "slots": {
+          "plate": "plate:KR_4471",
+          "place": "place:street"
+        },
+        "polarity": "+"
+      },
+      "phrasings": {
+        "affirm": {
+          "formal": "A car stood outside with its engine running for some time.",
+          "neutral": "There was a car sat outside with the engine going.",
+          "rough": "Motor sat there ticking over a good while."
+        },
+        "deny": {
+          "formal": "I noticed no such vehicle.",
+          "neutral": "No car that I saw.",
+          "rough": "Didn't see a car."
+        }
+      }
+    }
+  ]
+}

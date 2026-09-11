@@ -1,0 +1,298 @@
+[
+  {
+    "case": "contradictory_provider",
+    "invariant_holds": false,
+    "detail": {
+      "released": "The clinic was open all night.",
+      "verdict": "ACCEPT",
+      "propagated": [
+        "NOT clinic_open(place=place:clinic, when=last_night)"
+      ]
+    }
+  },
+  {
+    "case": "paraphrased_secret",
+    "invariant_holds": false,
+    "detail": {
+      "released": "Milan hides in a room behind the bar.",
+      "verdict": "ACCEPT",
+      "authored_secret": "Milan is alive and hiding in the back room behind the bar."
+    }
+  },
+  {
+    "case": "repeated_lie_origins",
+    "invariant_holds": false,
+    "detail": {
+      "probabilities": [
+        0.5126716222158699,
+        0.529573652771872,
+        0.5415033062735274,
+        0.5561459935853514,
+        0.5702635428974466,
+        0.5819173667526528,
+        0.5977742836646294,
+        0.6117692809028289
+      ],
+      "origins": [
+        "said_agent:corpo_okada_4335",
+        "said_agent:corpo_okada_4336",
+        "said_agent:corpo_okada_4337",
+        "said_agent:corpo_okada_4338",
+        "said_agent:corpo_okada_4339",
+        "said_agent:corpo_okada_4340",
+        "said_agent:corpo_okada_4341",
+        "said_agent:corpo_okada_4342"
+      ]
+    }
+  },
+  {
+    "case": "revision_retention",
+    "invariant_holds": false,
+    "detail": {
+      "before": 0.9634415286413136,
+      "after": 0.9634415286413136,
+      "dropped": 36,
+      "touched": 0
+    }
+  },
+  {
+    "case": "revision_dual_evidence",
+    "invariant_holds": false,
+    "detail": {
+      "before": {
+        "for": 2.9444389791664394,
+        "against": 0.0,
+        "conflict": 0.0
+      },
+      "after": {
+        "for": 2.9444389791664394,
+        "against": 2.6499951,
+        "conflict": 0.9473684245806127
+      }
+    }
+  },
+  {
+    "case": "negative_evidence_sign",
+    "invariant_holds": false,
+    "detail": {
+      "probability": 0.25000000000000006,
+      "logit": -1.0986122886681093,
+      "support_for": 1.0986122886681093,
+      "support_against": 0.0
+    }
+  },
+  {
+    "case": "standing_repeats",
+    "invariant_holds": false,
+    "detail": {
+      "first": {
+        "p": 0.5447304548560601,
+        "liking": -0.032683827291363605
+      },
+      "sixth": {
+        "p": 0.5496067731791462,
+        "liking": -0.19753003432636113
+      },
+      "twentieth": {
+        "p": 0.5496068255533976,
+        "liking": -0.6591997674660159
+      }
+    }
+  },
+  {
+    "case": "foreign_save",
+    "invariant_holds": false,
+    "detail": {
+      "report": {
+        "usable": true,
+        "code": "world_changed",
+        "detail": "",
+        "saved_at_world_time": 4334,
+        "written_by": "1.18.0",
+        "restored": [
+          "agent:player_1"
+        ],
+        "dropped": [
+          "agent:barkeep_12",
+          "agent:corpo_okada",
+          "agent:dima_broke",
+          "agent:npc_red_jacket",
+          "agent:officer_kane",
+          "agent:pavel",
+          "agent:son_ilya",
+          "agent:son_marko"
+        ],
+        "unsaved": [
+          "agent:clara",
+          "agent:marlow"
+        ]
+      },
+      "player_location": "place:main_street",
+      "location_exists": false
+    }
+  },
+  {
+    "case": "corrupt_save_atomicity",
+    "invariant_holds": false,
+    "detail": {
+      "inspect_usable": true,
+      "error": "KeyError",
+      "time_before": 4334,
+      "time_after": 5334,
+      "state_unchanged": false
+    }
+  },
+  {
+    "case": "ledger_branch_overwrite",
+    "invariant_holds": false,
+    "detail": {
+      "event_id": 1001,
+      "old": {
+        "summary": "branch A"
+      },
+      "now": {
+        "summary": "branch B"
+      },
+      "ledger_rows": 1
+    }
+  },
+  {
+    "case": "judgement_roundtrip",
+    "invariant_holds": false,
+    "detail": {
+      "before": {
+        "about": [
+          "agent:speaker",
+          "helped"
+        ],
+        "evidence": [
+          "event:1",
+          "event:2",
+          "event:3"
+        ]
+      },
+      "after": {
+        "about": [],
+        "evidence": []
+      }
+    }
+  },
+  {
+    "case": "unrecognized_memory",
+    "invariant_holds": false,
+    "detail": {
+      "interpreted_beliefs": [
+        {
+          "predicate": "seal_breached",
+          "slots": {
+            "section": "place:store",
+            "when": null
+          },
+          "polarity": "+",
+          "valid_start": null,
+          "valid_end": null,
+          "spatial": null,
+          "degree": null
+        }
+      ],
+      "retrievable_memories": [
+        {
+          "predicate": "seal_breached",
+          "slots": {
+            "section": "place:store",
+            "when": "night_cycle"
+          },
+          "polarity": "+",
+          "valid_start": null,
+          "valid_end": null,
+          "spatial": null,
+          "degree": null
+        }
+      ]
+    }
+  },
+  {
+    "case": "scheduled_witnesses",
+    "invariant_holds": false,
+    "detail": {
+      "advance_30": {
+        "has_incident_belief": true,
+        "location": "q",
+        "time": 30
+      },
+      "advance_10_then_20": {
+        "has_incident_belief": false,
+        "location": "q",
+        "time": 30
+      }
+    }
+  },
+  {
+    "case": "publicity_polarity",
+    "invariant_holds": false,
+    "detail": {
+      "broadcast": "NOT body:alive(agent=subject)",
+      "positive_marked_public": true
+    }
+  },
+  {
+    "case": "source_id_substring",
+    "invariant_holds": false,
+    "detail": {
+      "discredited": "agent:ann",
+      "actual_origin": "said_agent:anna_100",
+      "before": 0.9499999999999998,
+      "after": 0.6761445760331142
+    }
+  },
+  {
+    "case": "occ_fear_confirmation",
+    "invariant_holds": false,
+    "detail": {
+      "feared_event_confirmed": [
+        [
+          "relief",
+          0.8
+        ]
+      ],
+      "feared_event_disconfirmed": []
+    }
+  },
+  {
+    "case": "origin_growth",
+    "invariant_holds": false,
+    "detail": {
+      "updates": 2000,
+      "origin_count": 2000,
+      "retained_provenance": 64
+    }
+  },
+  {
+    "case": "tom_fear_direction",
+    "invariant_holds": false,
+    "detail": {
+      "target_unafraid_actor_afraid": 0.32000000000000006,
+      "target_afraid_actor_unafraid": -0.4
+    }
+  },
+  {
+    "case": "provider_changes_semantic_state",
+    "invariant_holds": false,
+    "detail": {
+      "runs": [
+        {
+          "released": "The clinic? Shutters were down all night.",
+          "verdict": "ACCEPT",
+          "player_beliefs": [
+            "clinic_open(place=place:clinic,when=last_night)[None,None,None]"
+          ]
+        },
+        {
+          "released": "Long day. I could use a drink.",
+          "verdict": "ACCEPT",
+          "player_beliefs": []
+        }
+      ]
+    }
+  }
+]

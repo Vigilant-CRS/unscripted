@@ -1,0 +1,33 @@
+{
+  "global_seed": "relay-station-001",
+  "world_id": "relay-station",
+  "world_time": 520,
+  "player_start": "place:hub",
+  "focus_agents": [
+    "agent:voss",
+    "agent:okonkwo",
+    "agent:rask"
+  ],
+  "events": [
+    {
+      "world_time": 610,
+      "type": "broadcast",
+      "actor": "channel:station_net",
+      "location": null,
+      "payload": {
+        "channel": "channel:station_net",
+        "credibility": 0.75,
+        "proposition": {
+          "predicate": "seal_breached",
+          "slots": {
+            "section": "place:store",
+            "when": "night_cycle"
+          },
+          "polarity": "+"
+        },
+        "summary": "Station net: a seal failed in Stores during the night cycle.",
+        "origin_event": "incident:store_seal_night"
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "multiturn_terse_resume",
+  "world_pack": "worldpacks/cyberpunk-block",
+  "commands": [
+    {
+      "input": "ask Honce about clinic",
+      "expect_contains": [
+        "Honce:"
+      ]
+    },
+    {
+      "input": "ask Honce about clinic",
+      "expect_contains": [
+        "Honce:"
+      ],
+      "expect_trace": [
+        "dialogue.topic_repeated"
+      ]
+    }
+  ]
+}

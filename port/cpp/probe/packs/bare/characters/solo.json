@@ -1,0 +1,5 @@
+{
+  "id": "agent:solo",
+  "names": {"public": "Solo"},
+  "education": {"street": 0.5}
+}

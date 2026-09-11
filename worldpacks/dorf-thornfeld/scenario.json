@@ -1,0 +1,32 @@
+{
+  "global_seed": "thornfeld-001",
+  "world_id": "thornfeld",
+  "world_time": 700,
+  "focus_agents": [
+    "agent:schmied_hanns",
+    "agent:pfarrer_konrad"
+  ],
+  "events": [
+    {
+      "world_time": 760,
+      "type": "broadcast",
+      "actor": "channel:kanzel",
+      "location": null,
+      "payload": {
+        "channel": "channel:kanzel",
+        "credibility": 0.7,
+        "proposition": {
+          "predicate": "korn_geliefert",
+          "slots": {
+            "hof": "hof:muehle",
+            "wann": "letzte_woche"
+          },
+          "polarity": "-"
+        },
+        "summary": "Von der Kanzel: die Muehle hat kein Korn geliefert.",
+        "origin_event": "evt_predigt"
+      }
+    }
+  ],
+  "player_start": "place:dorfplatz"
+}

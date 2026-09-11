@@ -1,0 +1,170 @@
+{
+  "topics": [
+    {
+      "id": "milan",
+      "label": "Milan, the missing medic",
+      "aliases": [
+        "milan",
+        "brother",
+        "bruder",
+        "medic"
+      ],
+      "query": {
+        "predicate": "looking_for",
+        "slots": {
+          "seeker": "$player",
+          "target": "milan"
+        }
+      },
+      "player_claim": {
+        "predicate": "looking_for",
+        "slots": {
+          "seeker": "$player",
+          "target": "milan"
+        }
+      },
+      "reactions": [
+        {
+          "type": "threat",
+          "payload": {
+            "summary": "stranger probing about Milan",
+            "importance": 0.7,
+            "appraisal": {
+              "desirability": -0.7,
+              "expectedness": 0.3,
+              "agency": "other",
+              "praiseworthiness": -0.2,
+              "target": "$addressee"
+            }
+          }
+        }
+      ],
+      "phrasings": {
+        "affirm": {
+          "formal": "I am aware you have been asking after him.",
+          "neutral": "I know you've been asking about him.",
+          "vernacular": "Yeah, I hear you're askin'."
+        },
+        "deny": {
+          "formal": "I know nothing of anyone by that name.",
+          "neutral": "That name means nothing to me.",
+          "vernacular": "Never heard of him."
+        }
+      }
+    },
+    {
+      "id": "clinic",
+      "label": "The clinic that night",
+      "aliases": [
+        "clinic",
+        "klinik",
+        "closed",
+        "geschlossen"
+      ],
+      "query": {
+        "predicate": "clinic_open",
+        "slots": {
+          "place": "place:clinic",
+          "when": "last_night"
+        },
+        "polarity": "-"
+      },
+      "player_claim": {
+        "predicate": "clinic_open",
+        "slots": {
+          "place": "place:clinic",
+          "when": "last_night"
+        },
+        "polarity": "-"
+      },
+      "phrasings": {
+        "affirm": {
+          "formal": "As far as I am aware, the establishment was closed during that period.",
+          "neutral": "Far as I know, the place was shut that night.",
+          "vernacular": "Place was shut that night. That's all I got."
+        },
+        "deny": {
+          "formal": "My understanding is that it was open at the time.",
+          "neutral": "It was open that night, far as I know.",
+          "vernacular": "Nah, it was open."
+        }
+      }
+    },
+    {
+      "id": "security",
+      "label": "Who was around that night",
+      "aliases": [
+        "police",
+        "security",
+        "badges",
+        "polizei",
+        "wache"
+      ],
+      "query": {
+        "predicate": "was_at",
+        "slots": {
+          "agent": null,
+          "place": "place:clinic",
+          "when": "last_night"
+        }
+      },
+      "player_assertion": {
+        "predicate": "core:holds_role",
+        "slots": {
+          "agent": "$player",
+          "role": "role:officer",
+          "context": "faction:badges"
+        }
+      },
+      "phrasings": {
+        "affirm": {
+          "formal": "There were people about that night, yes.",
+          "neutral": "Someone was around that night, sure.",
+          "vernacular": "Yeah, folks were around."
+        },
+        "deny": {
+          "formal": "I saw no one there at that hour.",
+          "neutral": "Nobody was around, far as I saw.",
+          "vernacular": "Nobody. Empty."
+        }
+      }
+    },
+    {
+      "id": "market_attack",
+      "label": "The market attack",
+      "aliases": [
+        "attack",
+        "angriff",
+        "market",
+        "markt"
+      ],
+      "query": {
+        "predicate": "connected_to_attack",
+        "slots": {
+          "agent": "$player"
+        }
+      },
+      "phrasings": {
+        "affirm": {
+          "formal": "The word going around does connect you to it.",
+          "neutral": "Word is you're tied to that mess.",
+          "vernacular": "They say it's on you."
+        },
+        "deny": {
+          "formal": "I have heard nothing tying you to it.",
+          "neutral": "Nothing I heard puts you there.",
+          "vernacular": "Ain't heard your name."
+        }
+      }
+    },
+    {
+      "id": "media",
+      "label": "City news",
+      "aliases": [
+        "radio",
+        "news",
+        "nachrichten"
+      ]
+    }
+  ]
+}

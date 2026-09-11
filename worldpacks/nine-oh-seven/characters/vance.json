@@ -1,0 +1,86 @@
+{
+  "_note": "SAW somebody run and could not see who. Partial in the other direction from Halloran: a person without a name, where Halloran has a time without a person.",
+  "id": "agent:vance",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Vance",
+    "objective": "Vance",
+    "aliases": [
+      "vance",
+      "driver",
+      "cabbie",
+      "taxi"
+    ]
+  },
+  "big_five": {
+    "openness": 0.45,
+    "conscientiousness": 0.5,
+    "extraversion": 0.5,
+    "agreeableness": 0.45,
+    "emotional_stability": 0.55
+  },
+  "schwartz": {
+    "security": 0.6,
+    "self_direction": 0.5,
+    "power": 0.35
+  },
+  "needs": {
+    "income": 0.5,
+    "recognition": 0.4
+  },
+  "identities": [
+    {
+      "id": "cabman",
+      "group": "district:lamb",
+      "accessibility": 0.7
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:driver",
+      "context": "district:lamb"
+    }
+  ],
+  "education": {
+    "domains": {
+      "general": 0.4,
+      "street": 0.85,
+      "gossip": 0.6
+    }
+  },
+  "relationships": {},
+  "secrets": [],
+  "goals": [
+    {
+      "content": "not get involved with the police",
+      "priority": 0.6,
+      "about": [
+        "ran_from"
+      ]
+    }
+  ],
+  "social_status": 0.4,
+  "location": "place:taxi_rank",
+  "routine": [
+    {
+      "from": "07:00",
+      "place": "place:taxi_rank",
+      "activity": "waiting for a fare"
+    },
+    {
+      "from": "13:00",
+      "place": "place:bar",
+      "activity": "lunch"
+    },
+    {
+      "from": "14:00",
+      "place": "place:taxi_rank",
+      "activity": "waiting for a fare"
+    },
+    {
+      "from": "01:00",
+      "place": "place:taxi_rank",
+      "activity": "last shift"
+    }
+  ]
+}

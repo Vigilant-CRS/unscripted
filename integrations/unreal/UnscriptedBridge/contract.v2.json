@@ -1,0 +1,351 @@
+{
+  "contract_version": "2.0.0",
+  "supersedes": "1.0.0",
+  "purpose": [
+    "Contract 2 exposes what the runtime decides, not only what it says. Contract 1",
+    "gave an engine a talking face: text, emotion, blendshapes, and a flat list of",
+    "who knows what. Everything that makes a character worth talking to -- what the",
+    "line COMMITTED to, whether it was honest, who overheard it, which incident a",
+    "claim belongs to, why someone misread a scene, and what stopped being true when",
+    "a liar was exposed -- was reachable from Python only.",
+    "",
+    "VERSION 1 IS FROZEN AND STILL SERVED. A shipped game keeps working. New paths",
+    "live under /v2/ and are additive: no field in contract 1 changed name, type or",
+    "meaning. Both contracts are asserted against a live service by the runtime's own",
+    "tests, so a rename fails loudly on both sides.",
+    "",
+    "Version and capability are different questions. The contract version says which",
+    "JSON shape is spoken; a capability says whether this particular runtime can do",
+    "the thing at all. A build without an action bridge reports it rather than",
+    "returning an empty array that reads like 'nothing happened'."
+  ],
+  "endpoints": {
+    "GET /capabilities": {
+      "called_by": "UUnscriptedSubsystem::Connect, before anything else",
+      "unversioned": true,
+      "fields": {
+        "runtime_version": "string",
+        "contract_versions": "array<string>",
+        "default_contract": "string",
+        "capabilities": "object<string,bool>"
+      },
+      "capability_keys": [
+        "semantic_moves",
+        "deception",
+        "retrospective_revision",
+        "knowledge_topology",
+        "story_grouping",
+        "judgements",
+        "action_bridge",
+        "tts",
+        "climate",
+        "pursuit",
+        "media",
+        "contagion",
+        "common_knowledge",
+        "notes"
+      ],
+      "notes": [
+        "A client asks for a contract version it understands and refuses to start if",
+        "the runtime does not list it. A capability that is false means the feature",
+        "is absent, not that it produced no data this turn."
+      ]
+    },
+    "POST /v2/avatar/turn": {
+      "called_by": "UUnscriptedSubsystem::SubmitPlayerLine",
+      "request": {
+        "text": "string"
+      },
+      "fields": {
+        "message": "string",
+        "world_time": "int",
+        "location_id": "string",
+        "done": "bool",
+        "contract_version": "string",
+        "avatar": {
+          "optional": true,
+          "present_when": "an NPC spoke this turn",
+          "fields": {
+            "speaker_id": "string",
+            "text": "string",
+            "act": "string",
+            "verdict": "string",
+            "honesty": "string",
+            "asserted": "array<object{proposition:string,text:string,certainty:string,honesty:string,heard_by:array<string>}>",
+            "blendshapes": "object<string,float>",
+            "emotion": "object{dominant:string,intensity:float,valence:float,arousal:float,dominance:float}",
+            "gaze": "object{target:string,aversion:float,make_contact:bool}",
+            "prosody": "object{speech_rate:float,pitch_shift:float,loudness:float}",
+            "posture": "string"
+          }
+        }
+      },
+      "notes": [
+        "`honesty` is one of: honest, lie, exaggeration, understatement. It is the",
+        "runtime's own record of whether the line matched what the speaker believes,",
+        "and it must never be inferred from the text -- that is the entire point of",
+        "the runtime owning it. A game may use it for a tell, for a detective",
+        "mechanic, or ignore it.",
+        "",
+        "`asserted` is what the line put INTO THE WORLD, and who was close enough to",
+        "hear it. A HUD can mark those characters as now knowing, without guessing."
+      ]
+    },
+    "GET /v2/state/knowledge": {
+      "called_by": "UUnscriptedSubsystem::RefreshKnowledge (debug HUD, journals)",
+      "fields": {
+        "world_time": "int",
+        "time_of_day": "string",
+        "contract_version": "string",
+        "facts": "array<object{text:string,predicate:string,detail:int,reach:int,first_hand:int,hearsay:int,max_hops:int,origins:array<string>}>",
+        "stories": "array<object{origin:string,versions:array<object>,widest_known:object,most_detailed:object}>",
+        "transmissions": "array<object{from_name:string,to_name:string,place_label:string,hops:int,distorted:bool,distortion_note:string}>",
+        "knowledge_classes": "array<object{predicate:string,classification:string,domain:string,access:array<string>,locality:array<string>,transmissibility:float}>",
+        "circles": "array<object{circle:string,members:array<string>}>",
+        "bridges": "array<object{agent:string,name:string,circles:array<string>}>",
+        "contested": "array<object{text:string,disagreement:float,believers:array<string>,doubters:array<string>}>",
+        "judgements": "array<object{holder:string,holder_name:string,about:string,about_name:string,text:string,occasions:int,evidence:array<string>}>",
+        "occupancy": "array<object{place:string,label:string,people:array<object>}>"
+      },
+      "notes": [
+        "`stories` is the one worth building UI around. A radio headline and an",
+        "eyewitness account of the same incident are not two facts; they are one",
+        "story at two levels of detail, and REACH AND DETAIL ARE INDEPENDENT. A claim",
+        "can be widely known and thin, narrowly known and precise, or widely known",
+        "and wrong -- all three at once, about the same event.",
+        "",
+        "`knowledge_classes` explains why something has NOT spread, which is the",
+        "question a designer asks when a world feels inert.",
+        "",
+        "`bridges` names the characters who belong to more than one circle. They are",
+        "the routes information can take between groups."
+      ]
+    },
+    "GET /v2/state/public": {
+      "purpose": "What is publicly known, and what is lying about. Unlike /v2/state/knowledge this is not a debug endpoint: a fact established in front of a crowd and a note left in a room are both things a player could find out in the world, so a shipping build may read them.",
+      "query": {
+        "place": "optional place id; limits `notes` to that room"
+      },
+      "fields": [
+        "common_knowledge",
+        "notes",
+        "contract_version"
+      ],
+      "empty_when": "the common_knowledge and notes layers are off; ask GET /capabilities first"
+    },
+    "GET /v2/state/character": {
+      "called_by": "a portrait, a greeting, a relationship screen",
+      "query": {
+        "id": "agent id"
+      },
+      "fields": {
+        "id": "string",
+        "name": "string",
+        "location": "string",
+        "affect": "object",
+        "face": "object<string,number> ARKit-52",
+        "regard": "object: trust, liking, familiarity, reputation, warmth (warmth only with the standing layer on)"
+      },
+      "note": "Shippable on purpose, and narrow on purpose. The debug /state/agent carries beliefs, secrets and reason traces and is off in a shipping build; how a character feels about the player is not debug output."
+    },
+    "GET /v2/state/export": {
+      "purpose": "The whole mutable world as one JSON-safe blob, to embed in YOUR save file. Not debug-gated: these bytes go to a file, not to a screen, and a shipping build must be able to save.",
+      "fields": [
+        "format",
+        "format_version",
+        "runtime_version",
+        "snapshot_schema_version",
+        "world_fingerprint",
+        "agents",
+        "world_time",
+        "state",
+        "contract_version"
+      ]
+    },
+    "POST /v2/state/inspect": {
+      "purpose": "What importing a blob WOULD do, without doing it. The call a load screen makes before offering 'continue'.",
+      "body": {
+        "state": "the blob from GET /v2/state/export"
+      },
+      "fields": [
+        "usable",
+        "code",
+        "detail",
+        "contract_version"
+      ]
+    },
+    "POST /v2/state/import": {
+      "purpose": "Load a blob. 409 state_not_usable when it is a different world or a save from a newer build; a save written before the cast changed loads and reports the difference.",
+      "body": {
+        "state": "the blob from GET /v2/state/export"
+      },
+      "fields": [
+        "usable",
+        "code",
+        "restored",
+        "dropped",
+        "unsaved",
+        "contract_version"
+      ]
+    },
+    "GET /v2/promises": {
+      "purpose": "What characters have undertaken and not yet made good, plus what recently became of the ones that settled. Not debug-gated: a promise made to the player is something the player was told, so a quest log may read it.",
+      "fields": [
+        "open",
+        "settled",
+        "contract_version"
+      ]
+    },
+    "POST /v2/promises/{promise_id}/settle": {
+      "purpose": "The game says what became of a promise. The authoritative path, and the same division of labour as the action bridge: the runtime tracks what was undertaken, the engine knows whether it happened. Without it the runtime falls back to judging on whether the promisee came to believe it, which models somebody noticing rather than a transaction completing.",
+      "body": {
+        "kept": "true or false",
+        "note": "optional, for the trace"
+      },
+      "fields": [
+        "promise_id",
+        "kept",
+        "reasons",
+        "contract_version"
+      ]
+    },
+    "POST /v2/discredit": {
+      "called_by": "gameplay: the player proves somebody lied",
+      "request": {
+        "source": "string",
+        "factor": "float?",
+        "reason": "string?",
+        "predicate": "string?"
+      },
+      "fields": {
+        "source": "string",
+        "factor": "float",
+        "reason": "string",
+        "beliefs_revised": "int",
+        "changes": "array<object{agent:string,belief:string,was:float,now:float,entries_reweighted:int,independent_entries:int,still_supported:bool}>"
+      },
+      "notes": [
+        "Exposing a source recomputes what they already convinced people of, in",
+        "proportion, and only where their word was carrying it. `still_supported`",
+        "false means that belief rested on them alone; true means somebody else said",
+        "it too and it stands, weakened. Being caught in one lie does not make",
+        "everything you ever said false."
+      ]
+    },
+    "GET /v2/resting_on": {
+      "called_by": "gameplay: is exposing this person worth it?",
+      "query": {
+        "source": "string"
+      },
+      "fields": {
+        "source": "string",
+        "beliefs": "array<object{agent:string,belief:string,probability:float,from_this_source:int,independent:int}>"
+      },
+      "notes": [
+        "Answers the question before the fact, changing nothing. What currently",
+        "stands on this person's word."
+      ]
+    },
+    "GET /v2/actions/pending": {
+      "called_by": "UUnscriptedSubsystem::PollIntents, after every turn and every advance",
+      "fields": {
+        "intents": "array<object{intent_id:string,actor:string,type:string,params:object,reason:string,issued_at:int,expires_at:int}>",
+        "bridge": "object{enabled:bool,issued:int,pending:int,timeout_minutes:int,succeeded:int,failed:int,interrupted:int,unreachable:int,timed_out:int}",
+        "contract_version": "string"
+      },
+      "intent_types": [
+        "MOVE_TO"
+      ],
+      "notes": [
+        "The closed catalogue is one entry. MOVE_TO is issued because relocation is",
+        "the one physical act the runtime decides on its own -- routines move the",
+        "cast daily, and until now it moved them without asking, which is how the",
+        "simulation and the rendered world drift apart. WARN and GIVE are in the",
+        "roadmap and are deliberately NOT declared: an intent type nothing issues",
+        "reads as a channel the integrator must handle, and it would never fire.",
+        "",
+        "`params` for MOVE_TO: {place, from, activity}. The character has NOT moved.",
+        "He is still at `from` and stays there until you report a result.",
+        "",
+        "An intent not answered by `expires_at` (world time, minutes) is closed by",
+        "the runtime as TIMED_OUT and treated as a failure -- the character stays",
+        "where you are showing him. `bridge.timed_out` is how you find out that an",
+        "integration is silently not answering, which otherwise looks exactly like",
+        "a build with no bridge at all."
+      ]
+    },
+    "POST /v2/actions/{intent_id}/result": {
+      "called_by": "UUnscriptedSubsystem::ReportIntentResult, when the engine finishes or abandons the act",
+      "request": {
+        "status": "string",
+        "detail": "string (optional)"
+      },
+      "status_values": [
+        "SUCCEEDED",
+        "FAILED",
+        "INTERRUPTED",
+        "UNREACHABLE"
+      ],
+      "fields": {
+        "intent": "object (the intent as issued)",
+        "status": "string",
+        "applied": "bool",
+        "reasons": "array<array>",
+        "contract_version": "string"
+      },
+      "notes": [
+        "SUCCEEDED applies the effect: the character's location changes, an arrival",
+        "event goes on the ledger, and everyone present perceives it. Every other",
+        "status records that it did not happen and changes nothing -- the runtime",
+        "keeps the character where the player last saw him.",
+        "",
+        "There is no fifth answer. A status outside the set is 400 rather than being",
+        "guessed at. An intent id that was never issued, or was already resolved, is",
+        "404: two results for one intent is an integration bug, not a state the",
+        "runtime holds.",
+        "",
+        "Reporting is not optional for correctness. A build that never reports gets",
+        "a world where nobody ever arrives anywhere."
+      ]
+    }
+  },
+  "unchanged_from_v1": [
+    "GET /health",
+    "GET /state/scene",
+    "GET /avatar/face",
+    "POST /advance",
+    "POST /event",
+    "POST /avatar/turn",
+    "GET /state/knowledge"
+  ],
+  "not_yet_implemented": {
+    "tts": [
+      "The runtime plans a voice -- rate, pitch and loudness derived from the",
+      "speaker's affect, composed with a per-character base voice -- and hands that",
+      "to a synthesiser it does not bundle. `capabilities.tts` reports whether this",
+      "build has a backend configured AND installed, so it is configuration rather",
+      "than a constant.",
+      "",
+      "What is NOT served over HTTP is the audio itself: there is no endpoint that",
+      "returns a WAV. A project drives `unscripted voice` or the SDK directly, because",
+      "streaming audio through the same JSON service that carries belief state is a",
+      "different problem with a different latency budget."
+    ],
+    "move_to_only": [
+      "The action bridge serves MOVE_TO only. WARN, GIVE and the rest of the",
+      "roadmap catalogue are not issued, because the runtime does not decide them",
+      "yet -- deliberation produces dialogue acts, flight and ally mobilisation, and",
+      "only the first of those is a physical act an engine must carry out.",
+      "`capabilities.action_bridge` reports whether the bridge is switched on in",
+      "this build, not how many intent types it can issue; read `intent_types` on",
+      "GET /v2/actions/pending for that."
+    ]
+  },
+  "error_shape": {
+    "note": "Every 4xx/5xx body has these two fields; the plugin surfaces `error` and branches on `code`.",
+    "fields": {
+      "error": "string",
+      "code": "string"
+    }
+  }
+}

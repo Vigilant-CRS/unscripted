@@ -1,0 +1,34 @@
+{
+  "name": "block17_smoke",
+  "world_pack": "worldpacks/cyberpunk-block",
+  "commands": [
+    {
+      "input": "look",
+      "expect_contains": ["Main Street", "Vee"]
+    },
+    {
+      "input": "ask Vee about Milan",
+      "expect_contains": ["Vee"]
+    },
+    {
+      "input": "ask Honce about clinic",
+      "expect_contains": ["Honce", "shut that night"]
+    },
+    {
+      "input": "go market",
+      "expect_contains": ["Market", "Pavel"]
+    },
+    {
+      "input": "attack Pavel",
+      "expect_contains": ["Pavel reacts with mobilize_allies"]
+    },
+    {
+      "input": "wait 20",
+      "expect_contains": ["Time advances by 20 minutes"]
+    },
+    {
+      "input": "inspect Pavel",
+      "expect_contains": ["affect of agent:pavel", "memory of agent:pavel"]
+    }
+  ]
+}

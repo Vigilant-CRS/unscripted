@@ -1,0 +1,21 @@
+{
+  "name": "trust_then_no_leak",
+  "world_pack": "worldpacks/cyberpunk-block",
+  "commands": [
+    {
+      "input": "promise Vee 300",
+      "expect_contains": [
+        "Vee"
+      ]
+    },
+    {
+      "input": "ask Vee about Milan",
+      "expect_contains": [
+        "Vee:"
+      ],
+      "expect_absent": [
+        "milan_location"
+      ]
+    }
+  ]
+}

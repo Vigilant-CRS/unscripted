@@ -1,0 +1,129 @@
+RUN 1/37 test_evidence_pools_follow_the_contribution_not_the_assertion
+ok  belief: the evidence pool follows what the evidence did, not how it was asserted
+PASS test_evidence_pools_follow_the_contribution_not_the_assertion
+RUN 2/37 test_discrediting_a_source_weakens_evidence_without_inventing_conflict
+ok  revision: exposing a source lowers support and raises ignorance; it does not manufacture a contradiction
+PASS test_discrediting_a_source_weakens_evidence_without_inventing_conflict
+RUN 3/37 test_revision_survives_a_trimmed_provenance_list
+ok  revision: survives a trimmed provenance list (0.963 -> 0.581 after 36 entries were dropped)
+PASS test_revision_survives_a_trimmed_provenance_list
+RUN 4/37 test_discredit_matches_a_whole_id_not_a_substring
+ok  revision: an origin names a whole id, not any string inside one
+PASS test_discredit_matches_a_whole_id_not_a_substring
+RUN 5/37 test_a_belief_tracks_a_bounded_number_of_sources
+ok  belief: bounded at 512 sources, and the first one is still the one cited (1488 forgotten)
+PASS test_a_belief_tracks_a_bounded_number_of_sources
+RUN 6/37 test_one_liar_telling_one_lie_is_one_source
+ok  dialogue: a repeated lie stays one source (p saturates at 0.5127)
+PASS test_one_liar_telling_one_lie_is_one_source
+RUN 7/37 test_being_told_again_is_not_being_wronged_again
+ok  standing: one incident restated twenty times moves standing once (liking -0.031, then flat)
+PASS test_being_told_again_is_not_being_wronged_again
+RUN 8/37 test_a_feared_event_that_happens_is_not_a_relief
+ok  affect: fears confirmed distress and fears dispelled relieve, which is the way round OCC has it
+PASS test_a_feared_event_that_happens_is_not_a_relief
+RUN 9/37 test_a_threat_is_judged_on_conduct_not_on_the_actor_s_own_fear
+ok  theory of mind: a threat is judged on what the threatener has done (+0.288), not on what they themselves fear
+PASS test_a_threat_is_judged_on_conduct_not_on_the_actor_s_own_fear
+RUN 10/37 test_publicity_carries_polarity
+ok  common knowledge: what a crowd established includes which way round it was said
+PASS test_publicity_carries_polarity
+RUN 11/37 test_memory_holds_what_was_understood_not_what_happened
+ok  memory: a witness remembers what they understood, not what the ledger knows
+PASS test_memory_holds_what_was_understood_not_what_happened
+RUN 12/37 test_who_witnessed_an_event_does_not_depend_on_the_step_size
+ok  runtime: the window is walked in order, so who witnessed what does not depend on how big a step the caller took
+PASS test_who_witnessed_an_event_does_not_depend_on_the_step_size
+RUN 13/37 test_a_judgement_still_names_its_evidence_after_a_reload
+ok  memory: a judgement survives a round trip still naming its subject and its evidence
+PASS test_a_judgement_still_names_its_evidence_after_a_reload
+RUN 14/37 test_a_released_line_must_agree_with_the_polarity_it_committed_to
+ok  grounding: a released line and the claim it propagates agree about which way round they are
+PASS test_a_released_line_must_agree_with_the_polarity_it_committed_to
+RUN 15/37 test_a_paraphrase_that_names_a_protected_place_is_refused
+ok  validator: naming what a secret is about is refused even when no forbidden phrase appears
+PASS test_a_paraphrase_that_names_a_protected_place_is_refused
+RUN 16/37 test_the_provider_chooses_the_wording_not_whether_the_world_hears_it
+ok  dialogue: the same commitment reaches the world whatever the provider wrote
+PASS test_the_provider_chooses_the_wording_not_whether_the_world_hears_it
+RUN 17/37 test_a_save_from_another_world_is_refused
+ok  snapshot: a save is refused unless it is a save of this map
+PASS test_a_save_from_another_world_is_refused
+RUN 18/37 test_a_corrupt_import_leaves_the_world_untouched
+ok  snapshot: a failed import is a no-op, not a half-applied one
+PASS test_a_corrupt_import_leaves_the_world_untouched
+RUN 19/37 test_the_event_ledger_only_appends
+ok  persistence: an abandoned branch stays on the ledger after a reload reuses its event ids
+PASS test_the_event_ledger_only_appends
+RUN 20/37 test_the_demo_page_does_not_hand_out_the_token
+Traceback (most recent call last):
+  File "/tmp/unscripted-fd76623-run.py", line 10, in <module>
+    ns[name]()
+    ~~~~~~~~^^
+  File "/run/media/dd/USB_40281/Projekte/AI NPC/tests/test_scenarios.py", line 9813, in test_the_demo_page_does_not_hand_out_the_token
+    server = create_server(config, host="127.0.0.1", port=0,
+                           options=ServiceOptions(auth_token=token,
+                                                  expose_debug_endpoints=True))
+  File "/run/media/dd/USB_40281/Projekte/AI NPC/unscripted/service.py", line 734, in create_server
+    server = ThreadingHTTPServer((host, port), Handler)
+  File "/usr/lib/python3.14/socketserver.py", line 453, in __init__
+    self.socket = socket.socket(self.address_family,
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+                                self.socket_type)
+                                ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socket.py", line 236, in __init__
+    _socket.socket.__init__(self, family, type, proto, fileno)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+RUN 21/37 test_the_native_json_parser_refuses_malformed_documents
+ok  native json: malformed documents are refused and a surrogate pair becomes one character
+PASS test_the_native_json_parser_refuses_malformed_documents
+RUN 22/37 test_memory_retrieval_is_a_draw_not_a_threshold
+ok  memory: recall is a seeded draw (19 distinct outcomes across thirty characters) and still replays exactly
+PASS test_memory_retrieval_is_a_draw_not_a_threshold
+RUN 23/37 test_there_is_one_speech_path_and_it_reaches_the_world
+ok  runtime: the deliberation path speaks into the world, and the SDK shares its implementation
+PASS test_there_is_one_speech_path_and_it_reaches_the_world
+RUN 24/37 test_the_pad_baseline_states_its_sign_convention
+ok  affect: the PAD arousal sign follows ALMA's -0.57*N under S = -N (0.456 against -0.456)
+PASS test_the_pad_baseline_states_its_sign_convention
+RUN 25/37 test_the_player_and_the_room_agree_across_adversarial_wordings
+ok  dialogue: 8 adversarial wordings, one claim in the world, and the player never read its opposite
+PASS test_the_player_and_the_room_agree_across_adversarial_wordings
+RUN 26/37 test_a_forgotten_source_is_never_fresh_evidence_again
+ok  belief: a forgotten source returns at 10% of fresh weight, not 100%
+PASS test_a_forgotten_source_is_never_fresh_evidence_again
+RUN 27/37 test_the_player_reads_the_sentence_the_runtime_wrote_for_the_claim
+ok  dialogue: six provider behaviours including a thrown one, one released line and one world state
+PASS test_the_player_reads_the_sentence_the_runtime_wrote_for_the_claim
+RUN 28/37 test_the_provider_mode_is_available_and_says_what_it_is
+ok  dialogue: provider mode is available, opt-in, and named
+PASS test_the_provider_mode_is_available_and_says_what_it_is
+RUN 29/37 test_the_history_of_a_snapshot_does_not_grow_a_future
+ok  persistence: a snapshot's history is fixed at the moment it was taken
+PASS test_the_history_of_a_snapshot_does_not_grow_a_future
+RUN 30/37 test_a_world_is_identified_not_guessed
+ok  snapshot: a world is identified by what it declares, not by an id two packs happen to share
+PASS test_a_world_is_identified_not_guessed
+RUN 31/37 test_full_showcase_runs_all_checks
+ok  showcase: full SDK sales/regression demo passes all checks
+PASS test_full_showcase_runs_all_checks
+RUN 32/37 test_provider_failure_costs_the_wording_and_not_the_content
+ok  provider: a failure costs the wording, and the world learns the same thing either way
+PASS test_provider_failure_costs_the_wording_and_not_the_content
+RUN 33/37 test_snapshot_roundtrip_is_exact
+ok  snapshot: full round-trip restores relationships, factions and timeline
+PASS test_snapshot_roundtrip_is_exact
+RUN 34/37 test_snapshot_restore_rewinds_state
+ok  snapshot: restore rewinds player location and projections
+PASS test_snapshot_restore_rewinds_state
+RUN 35/37 test_packaging_manifest_covers_every_data_file
+ok  packaging: all 147 data files listed, licence present
+PASS test_packaging_manifest_covers_every_data_file
+RUN 36/37 test_one_version_and_nothing_disagrees_with_it
+ok  version: 1.19.0 agrees across code, package and changelog
+PASS test_one_version_and_nothing_disagrees_with_it
+RUN 37/37 test_the_cpp_port_reproduces_python_exactly
+  cpp port: reproduces Python exactly -- determinism, rounding and the belief arithmetic, as raw bits; nine belief scenarios, field by field; the other forty-eight modules -- every engine, every optional layer, the parser, the validator, the tick loop, the turn loop and the pack reader -- across eighty-nine scenarios, including all five conformance fixtures played end to end; a world pack's tuning block -- 79 knobs across 14 engines, every name, every order and every value, and what a block changes
+PASS test_the_cpp_port_reproduces_python_exactly
+{"total": 37, "passed": 36, "failed": ["test_the_demo_page_does_not_hand_out_the_token"]}

@@ -1,0 +1,4 @@
+{
+  "_note": "The same idea as `bare`, but the scenario names a clock. An event that gives no time of its own must inherit the SCENARIO's, not zero -- which `bare` cannot show, because its clock is zero anyway.",
+  "places": {"place:hall": {"label": "Hall"}}
+}

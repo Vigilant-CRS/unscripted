@@ -1,0 +1,86 @@
+{
+  "_note": "What each of them walked away with at 21:07. THREE WITNESSES, THREE DIFFERENT FACTS, and not one of them holds the case. Halloran has a time without a person, Vance has a person without a name, Okonkwo has a car without a reason. Reyes has the whole thing and will not say it. Byrne and Doyle have nothing at all yet. A dialogue tree cannot represent this: it would have to store six answers to one question and would still not know why they differ.",
+  "beliefs": [
+    {
+      "agent": "agent:halloran",
+      "proposition": {
+        "predicate": "shot_heard",
+        "slots": {
+          "place": "place:hotel_back",
+          "hour": "21"
+        },
+        "polarity": "+"
+      },
+      "summary": "One flat crack behind the hotel. I was pouring. By the time I got to the door there was nothing to see.",
+      "origin_event": "incident:lamb_street",
+      "trust": 0.99,
+      "competence": 0.85,
+      "importance": 0.9
+    },
+    {
+      "agent": "agent:vance",
+      "proposition": {
+        "predicate": "ran_from",
+        "slots": {
+          "who": "person:unknown_man",
+          "place": "place:hotel_back"
+        },
+        "polarity": "+"
+      },
+      "summary": "Somebody came out of the back of the Marchmont at a run and went left. Coat, hat, no face. I was three cars back.",
+      "origin_event": "incident:lamb_street",
+      "trust": 0.97,
+      "competence": 0.5,
+      "importance": 0.85
+    },
+    {
+      "agent": "agent:okonkwo",
+      "proposition": {
+        "predicate": "car_waiting",
+        "slots": {
+          "plate": "plate:KR_4471",
+          "place": "place:street"
+        },
+        "polarity": "+"
+      },
+      "summary": "A car sat outside mine with the engine running for a quarter of an hour. I only thought about it afterwards.",
+      "origin_event": "incident:lamb_street",
+      "trust": 0.95,
+      "competence": 0.75,
+      "importance": 0.6
+    },
+    {
+      "agent": "agent:reyes",
+      "proposition": {
+        "predicate": "shot_by",
+        "slots": {
+          "who": "person:cortez",
+          "by": "person:mallory"
+        },
+        "polarity": "+"
+      },
+      "summary": "I was on the door. I know exactly who came back through it and how he looked when he did.",
+      "origin_event": "incident:lamb_street",
+      "trust": 0.99,
+      "competence": 0.95,
+      "importance": 0.98
+    },
+    {
+      "agent": "agent:reyes",
+      "proposition": {
+        "predicate": "works_for",
+        "slots": {
+          "who": "person:mallory",
+          "employer": "org:the_lyric"
+        },
+        "polarity": "+"
+      },
+      "summary": "Mallory is ours. That is the whole problem.",
+      "origin_event": "incident:lyric_payroll",
+      "trust": 0.99,
+      "competence": 0.95,
+      "importance": 0.9
+    }
+  ],
+  "_absent": "Byrne and Doyle appear nowhere above, deliberately. Byrne learns it from the radio in the morning and from everybody who passes his stand; Doyle learns it from whoever bothers to tell him. Their ignorance is authored by OMISSION, which is the only honest way to author ignorance."
+}

@@ -1,0 +1,104 @@
+{
+  "id": "agent:barkeep_12",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Honce",
+    "objective": "Hoshi N.",
+    "aliases": [
+      "honce",
+      "barkeep",
+      "bartender",
+      "wirt",
+      "keeper"
+    ]
+  },
+  "big_five": {
+    "openness": 0.4,
+    "conscientiousness": 0.6,
+    "extraversion": 0.5,
+    "agreeableness": 0.55,
+    "emotional_stability": 0.6
+  },
+  "schwartz": {
+    "security": 0.6,
+    "benevolence": 0.6,
+    "tradition": 0.5
+  },
+  "needs": {
+    "income": 0.5,
+    "safety": 0.4,
+    "sleep": 0.3
+  },
+  "identities": [
+    {
+      "id": "bartender",
+      "group": "role:service",
+      "accessibility": 0.8
+    },
+    {
+      "id": "resident",
+      "group": "district:watson",
+      "accessibility": 0.6
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:bartender",
+      "context": "place:bar"
+    }
+  ],
+  "appearance": {
+    "garment": "item:apron"
+  },
+  "education": {
+    "domains": {
+      "street": 0.7,
+      "gossip": 0.8
+    }
+  },
+  "relationships": {
+    "agent:player_1": {
+      "trust": 0.3,
+      "liking": 0.2,
+      "familiarity": 0.1
+    },
+    "agent:npc_red_jacket": {
+      "trust": 0.55,
+      "liking": 0.4,
+      "familiarity": 0.6
+    }
+  },
+  "secrets": [],
+  "goals": [
+    {
+      "content": "end_shift",
+      "priority": 0.5
+    }
+  ],
+  "location": "place:main_street",
+  "routine": [
+    {
+      "from": "00:00",
+      "place": "place:main_street",
+      "activity": "smoking outside after last call"
+    },
+    {
+      "from": "03:00",
+      "place": "place:bar",
+      "activity": "sleeping in the back"
+    },
+    {
+      "from": "16:00",
+      "place": "place:bar",
+      "activity": "behind the counter"
+    },
+    {
+      "from": "23:00",
+      "place": "place:main_street",
+      "activity": "last call, out front"
+    }
+  ],
+  "voice": {
+    "say_as": "Honss"
+  }
+}

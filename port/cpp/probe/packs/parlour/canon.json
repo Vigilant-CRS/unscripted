@@ -1,0 +1,32 @@
+{
+  "predicates": {
+    "dealt_with": {
+      "slots": [
+        "a",
+        "b"
+      ],
+      "domain": "street"
+    },
+    "paid": {
+      "slots": [
+        "who",
+        "amount"
+      ],
+      "domain": "street"
+    },
+    "hid": {
+      "slots": [
+        "who",
+        "what"
+      ],
+      "domain": "street"
+    },
+    "cheated": {
+      "slots": [
+        "by",
+        "who"
+      ],
+      "domain": "street"
+    }
+  }
+}

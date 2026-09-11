@@ -1,0 +1,128 @@
+{
+  "id": "agent:sela",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Sela",
+    "objective": "Sela Roan",
+    "aliases": [
+      "sela",
+      "aide",
+      "office"
+    ]
+  },
+  "big_five": {
+    "openness": 0.5,
+    "conscientiousness": 0.75,
+    "extraversion": 0.5,
+    "agreeableness": 0.35,
+    "emotional_stability": 0.6
+  },
+  "schwartz": {
+    "security": 0.5
+  },
+  "needs": {
+    "status": 0.7,
+    "safety": 0.6
+  },
+  "identities": [
+    {
+      "id": "aide",
+      "group": "district:square",
+      "accessibility": 0.8
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:aide",
+      "context": "district:square"
+    }
+  ],
+  "education": {
+    "domains": {
+      "general": 0.7,
+      "politics": 0.85,
+      "media": 0.6
+    }
+  },
+  "relationships": {
+    "agent:player_1": {
+      "trust": 0.15,
+      "liking": 0.0,
+      "familiarity": 0.0
+    },
+    "agent:bran": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.7
+    }
+  },
+  "secrets": [
+    {
+      "id": "secret:who_paid",
+      "avoid_label": "who_arranged_it",
+      "guards_topics": [
+        "killing"
+      ],
+      "summary": "The office arranged it, and Sela made the call that arranged it.",
+      "surface_forms": [
+        "contract",
+        "contract men",
+        "paid for",
+        "the office",
+        "professionals",
+        "arranged"
+      ],
+      "protects": [
+        "prop:who_paid"
+      ],
+      "min_trust": 0.75,
+      "cover_story": {
+        "predicate": "killed_by",
+        "slots": {
+          "who": "person:councillor",
+          "by": "group:eastside"
+        },
+        "polarity": "+"
+      },
+      "cover_phrasings": {
+        "formal": "The report named the east-side group. I have nothing to add to it.",
+        "neutral": "It was the east-side kids. That is what the report says.",
+        "vernacular": "East-side kids. Read the report."
+      }
+    }
+  ],
+  "goals": [
+    {
+      "content": "keep the office out of it",
+      "priority": 0.95,
+      "about": [
+        "killed_by"
+      ]
+    }
+  ],
+  "social_status": 0.7,
+  "resources": 0.7,
+  "location": "place:precinct",
+  "routine": [
+    {
+      "from": "08:00",
+      "place": "place:precinct",
+      "activity": "liaison"
+    },
+    {
+      "from": "12:00",
+      "place": "place:radio",
+      "activity": "briefing the desk"
+    },
+    {
+      "from": "17:00",
+      "place": "place:market",
+      "activity": "walking home"
+    },
+    {
+      "from": "20:00",
+      "place": "place:alley",
+      "activity": "a call she takes outside"
+    }
+  ]
+}

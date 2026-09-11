@@ -1,0 +1,18 @@
+{
+  "name": "com.vigilant.unscripted",
+  "version": "1.18.0",
+  "displayName": "Unscripted",
+  "description": "Causal social memory, belief and dialogue control for NPCs. Talks to a local Unscripted service over HTTP and JSON. No third-party dependencies. Minimum Unity version is reasoned from the APIs used (UnityWebRequest.Result, 2020.2) rather than verified: only 6000.0 has been compiled against.",
+  "unity": "2021.3",
+  "author": {
+    "name": "Vigilant e.K.",
+    "url": "https://vigilant-crs.de"
+  },
+  "keywords": [
+    "npc",
+    "ai",
+    "dialogue",
+    "simulation",
+    "narrative"
+  ]
+}

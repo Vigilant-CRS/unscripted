@@ -1,0 +1,82 @@
+{
+  "beliefs": [
+    {
+      "agent": "agent:lindqvist",
+      "proposition": {
+        "predicate": "skipped_check",
+        "slots": {
+          "agent": "agent:lindqvist",
+          "check": "check:seal"
+        },
+        "polarity": "+"
+      },
+      "summary": "Lindqvist knows they never did the check.",
+      "origin_event": "seed_lindqvist_knows",
+      "trust": 0.99,
+      "competence": 0.95,
+      "importance": 0.9
+    },
+    {
+      "agent": "agent:ferro",
+      "proposition": {
+        "predicate": "supply_short",
+        "slots": {
+          "item": "item:sealant"
+        },
+        "polarity": "+"
+      },
+      "summary": "Ferro has watched the sealant run out for weeks.",
+      "origin_event": "seed_ferro_stock",
+      "trust": 0.95,
+      "competence": 0.9,
+      "importance": 0.75
+    },
+    {
+      "agent": "agent:rask",
+      "proposition": {
+        "predicate": "supply_short",
+        "slots": {
+          "item": "item:sealant"
+        },
+        "polarity": "+"
+      },
+      "summary": "Rask has been refused sealant twice.",
+      "origin_event": "seed_rask_refused",
+      "trust": 0.9,
+      "competence": 0.8,
+      "importance": 0.7
+    },
+    {
+      "agent": "agent:voss",
+      "proposition": {
+        "predicate": "seal_breached",
+        "slots": {
+          "section": "place:store",
+          "when": "night_cycle"
+        },
+        "polarity": "+"
+      },
+      "summary": "Voss read the incident report first thing -- the same incident the station net announces.",
+      "origin_event": "incident:store_seal_night",
+      "trust": 0.95,
+      "competence": 0.9,
+      "importance": 0.85
+    },
+    {
+      "agent": "agent:hollis",
+      "proposition": {
+        "predicate": "logged_out",
+        "slots": {
+          "agent": "agent:lindqvist",
+          "when": "night_cycle"
+        },
+        "polarity": "+"
+      },
+      "summary": "Hollis noticed the access log while pulling data.",
+      "origin_event": "seed_hollis_saw_log",
+      "trust": 0.8,
+      "competence": 0.75,
+      "importance": 0.8
+    }
+  ]
+}

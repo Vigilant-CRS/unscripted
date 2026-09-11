@@ -1,0 +1,231 @@
+{
+  "places": {
+    "place:hub": {
+      "label": "Hub",
+      "aliases": [
+        "hub",
+        "atrium",
+        "concourse",
+        "centre",
+        "center"
+      ],
+      "exits": [
+        "place:mess",
+        "place:lab",
+        "place:dock",
+        "place:med"
+      ],
+      "noise_level": 0.45,
+      "surveillance_level": 0.7,
+      "privacy_level": 0.1,
+      "formality": 0.4,
+      "gossip_factor": 1.7
+    },
+    "place:mess": {
+      "label": "Mess",
+      "aliases": [
+        "mess",
+        "canteen",
+        "galley",
+        "cafeteria"
+      ],
+      "exits": [
+        "place:hub",
+        "place:quarters"
+      ],
+      "noise_level": 0.6,
+      "surveillance_level": 0.2,
+      "privacy_level": 0.35,
+      "formality": 0.25,
+      "gossip_factor": 1.9
+    },
+    "place:lab": {
+      "label": "Lab",
+      "aliases": [
+        "lab",
+        "laboratory",
+        "science"
+      ],
+      "exits": [
+        "place:hub"
+      ],
+      "noise_level": 0.2,
+      "surveillance_level": 0.55,
+      "privacy_level": 0.6,
+      "formality": 0.65,
+      "gossip_factor": 0.6
+    },
+    "place:dock": {
+      "label": "Dock",
+      "aliases": [
+        "dock",
+        "bay",
+        "hangar",
+        "airlock"
+      ],
+      "exits": [
+        "place:hub",
+        "place:store"
+      ],
+      "noise_level": 0.75,
+      "surveillance_level": 0.6,
+      "privacy_level": 0.2,
+      "formality": 0.3,
+      "gossip_factor": 1.2
+    },
+    "place:med": {
+      "label": "Medbay",
+      "aliases": [
+        "med",
+        "medbay",
+        "infirmary",
+        "sickbay"
+      ],
+      "exits": [
+        "place:hub"
+      ],
+      "noise_level": 0.15,
+      "surveillance_level": 0.4,
+      "privacy_level": 0.75,
+      "formality": 0.6,
+      "gossip_factor": 0.5
+    },
+    "place:quarters": {
+      "label": "Crew Quarters",
+      "aliases": [
+        "quarters",
+        "bunks",
+        "cabins",
+        "berths"
+      ],
+      "exits": [
+        "place:mess"
+      ],
+      "noise_level": 0.1,
+      "surveillance_level": 0.15,
+      "privacy_level": 0.85,
+      "formality": 0.2,
+      "gossip_factor": 0.9
+    },
+    "place:store": {
+      "label": "Stores",
+      "aliases": [
+        "stores",
+        "storage",
+        "hold",
+        "cargo"
+      ],
+      "exits": [
+        "place:dock"
+      ],
+      "noise_level": 0.25,
+      "surveillance_level": 0.3,
+      "privacy_level": 0.7,
+      "formality": 0.25,
+      "gossip_factor": 0.7
+    }
+  },
+  "identity_values": {
+    "scientist": [
+      "self_direction",
+      "achievement"
+    ],
+    "engineer": [
+      "achievement",
+      "security"
+    ],
+    "medic": [
+      "benevolence",
+      "universalism"
+    ],
+    "officer": [
+      "conformity",
+      "power"
+    ],
+    "hauler": [
+      "security",
+      "hedonism"
+    ]
+  },
+  "channels": {
+    "channel:station_net": {
+      "type": "intercom",
+      "reach": "station",
+      "directionality": "broadcast"
+    }
+  },
+  "entities": {
+    "group:crew": {
+      "class": "core:Group",
+      "name": "Station Crew"
+    },
+    "group:command": {
+      "class": "core:Organization",
+      "name": "Station Command"
+    }
+  },
+  "media_exposure": [
+    {
+      "agent": "agent:voss",
+      "channel": "channel:station_net",
+      "attention": 0.8
+    },
+    {
+      "agent": "agent:okonkwo",
+      "channel": "channel:station_net",
+      "attention": 0.7
+    },
+    {
+      "agent": "agent:rask",
+      "channel": "channel:station_net",
+      "attention": 0.3
+    },
+    {
+      "agent": "agent:lindqvist",
+      "channel": "channel:station_net",
+      "attention": 0.6
+    },
+    {
+      "agent": "agent:mbeki",
+      "channel": "channel:station_net",
+      "attention": 0.5
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction:command",
+      "influence": 0.75,
+      "resources": 0.6,
+      "territory": [
+        "place:hub",
+        "place:med",
+        "place:lab"
+      ],
+      "goals": [
+        "contain_the_leak"
+      ]
+    },
+    {
+      "id": "faction:dockhands",
+      "influence": 0.4,
+      "resources": 0.35,
+      "territory": [
+        "place:dock",
+        "place:store"
+      ],
+      "goals": [
+        "protect_our_own"
+      ]
+    }
+  ],
+  "diffusion": {
+    "encounters_per_hour": 0.45,
+    "distortion_prob": 0.16
+  },
+  "slang_lexicon": {
+    "yes": "aye",
+    "no": "negative",
+    "food": "paste",
+    "officer": "brass"
+  }
+}

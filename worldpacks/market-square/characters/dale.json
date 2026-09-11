@@ -1,0 +1,90 @@
+{
+  "id": "agent:dale",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Officer Dale",
+    "objective": "Ruth Dale",
+    "aliases": [
+      "dale",
+      "officer",
+      "police",
+      "cop"
+    ]
+  },
+  "big_five": {
+    "openness": 0.5,
+    "conscientiousness": 0.8,
+    "extraversion": 0.5,
+    "agreeableness": 0.5,
+    "emotional_stability": 0.7
+  },
+  "schwartz": {
+    "security": 0.5
+  },
+  "needs": {
+    "order": 0.8,
+    "safety": 0.4
+  },
+  "identities": [
+    {
+      "id": "officer",
+      "group": "district:square",
+      "accessibility": 0.8
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:officer",
+      "context": "district:square"
+    }
+  ],
+  "education": {
+    "domains": {
+      "general": 0.6,
+      "law": 0.8,
+      "street": 0.5
+    }
+  },
+  "relationships": {
+    "agent:player_1": {
+      "trust": 0.25,
+      "liking": 0.0,
+      "familiarity": 0.0
+    },
+    "agent:tomas": {
+      "trust": 0.2,
+      "liking": -0.2,
+      "familiarity": 0.5
+    }
+  },
+  "secrets": [],
+  "goals": [
+    {
+      "content": "close the case",
+      "priority": 0.8,
+      "about": [
+        "killed_by"
+      ]
+    }
+  ],
+  "social_status": 0.65,
+  "resources": 0.4,
+  "location": "place:precinct",
+  "routine": [
+    {
+      "from": "07:00",
+      "place": "place:precinct",
+      "activity": "the desk"
+    },
+    {
+      "from": "12:00",
+      "place": "place:market",
+      "activity": "the beat"
+    },
+    {
+      "from": "19:00",
+      "place": "place:precinct",
+      "activity": "paperwork"
+    }
+  ]
+}

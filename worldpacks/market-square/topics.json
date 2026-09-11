@@ -1,0 +1,82 @@
+{
+  "topics": [
+    {
+      "id": "killing",
+      "label": "The killing in the square",
+      "aliases": [
+        "killing",
+        "murder",
+        "councillor",
+        "ruiz",
+        "shooting"
+      ],
+      "query": {
+        "predicate": "killed_by",
+        "slots": {
+          "who": "person:councillor",
+          "by": "group:contractors"
+        },
+        "polarity": "+"
+      },
+      "player_claim": {
+        "predicate": "killed_by",
+        "slots": {
+          "who": "person:councillor",
+          "by": "group:contractors"
+        },
+        "polarity": "+"
+      },
+      "phrasings": {
+        "affirm": {
+          "formal": "They were professionals. That was not a robbery.",
+          "neutral": "That was no street crew. They knew what they were doing.",
+          "vernacular": "Pros. In and out. Nobody panicked."
+        },
+        "deny": {
+          "formal": "I understand it was a gang matter.",
+          "neutral": "Word is it was the east-side kids.",
+          "vernacular": "Kids from the east side, that's what they say."
+        }
+      }
+    },
+    {
+      "id": "gang",
+      "label": "What the radio said",
+      "aliases": [
+        "gang",
+        "east side",
+        "eastside",
+        "kids",
+        "radio"
+      ],
+      "query": {
+        "predicate": "killed_by",
+        "slots": {
+          "who": "person:councillor",
+          "by": "group:eastside"
+        },
+        "polarity": "+"
+      },
+      "player_claim": {
+        "predicate": "killed_by",
+        "slots": {
+          "who": "person:councillor",
+          "by": "group:eastside"
+        },
+        "polarity": "+"
+      },
+      "phrasings": {
+        "affirm": {
+          "formal": "The report named the east-side group.",
+          "neutral": "The radio said it was the east-side kids.",
+          "vernacular": "Radio says east-side kids."
+        },
+        "deny": {
+          "formal": "I do not believe that is what happened.",
+          "neutral": "That is not what I saw.",
+          "vernacular": "That's not it. Not even close."
+        }
+      }
+    }
+  ]
+}

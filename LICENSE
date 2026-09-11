@@ -1,0 +1,224 @@
+Unscripted — Source-Available Dual Licence
+Version 1.3
+
+Copyright (c) 2025-2026 Vigilant e.K., Stuttgart, Germany. All rights reserved.
+
+    Vigilant e.K.
+    Inhaber: Damir Dulovic
+    Königstr. 22, D-70173 Stuttgart, Germany
+    Telefon: +49 (0)711 540 464 08
+    E-Mail: info@vigilant-crs.de
+    Handelsregister: HRA 726240, Amtsgericht Stuttgart
+    Sitz: Stuttgart · USt-IdNr.: DE 239010954 · DUNS: 342017029
+
+Unscripted (the "Software") is source-available. The source is
+published so it can be read, audited, modified and evaluated. It is not open
+source: commercial use above the threshold in section 2 requires a paid licence.
+
+"THE SOFTWARE" INCLUDES WHAT YOU MAKE OF IT. Any modified version, adaptation,
+translation, port to another programming language, or work derived from the
+Software in whole or in part is a "Derivative Work", and every permission and
+every obligation in this licence applies to a Derivative Work exactly as it
+applies to the Software.
+
+You may fork it. Forking is expressly permitted by section 1 and needs no
+permission. What forking does not do is end the obligation to licence: changing
+the Software, renaming it, or rewriting it in another language does not produce
+a work that falls outside these terms.
+
+--------------------------------------------------------------------------------
+1. FREE LICENCE (no payment, no registration)
+--------------------------------------------------------------------------------
+
+Vigilant e.K. grants you a worldwide, royalty-free, non-exclusive licence to use,
+copy, modify and distribute the Software, and to distribute works built with it,
+for any of the following:
+
+  a) PRIVATE AND EDUCATIONAL USE
+     Personal projects, study, teaching and academic research.
+
+  b) GAME MODIFICATIONS
+     Mods, total conversions and community tools for third-party games,
+     including mods distributed for payment, provided the mod itself is the
+     product and the Software is not sublicensed separately.
+
+  c) NON-COMMERCIAL AND SMALL COMMERCIAL PROJECTS
+     Any Product of a Small Organisation whose Qualifying Income has not yet
+     reached EUR 200,000 (the "Threshold"). Below the Threshold no payment is
+     due and no notification is required.
+
+     A SMALL ORGANISATION is an individual, or an organisation whose total
+     revenue and funding in its last completed financial year -- counted
+     together with that of any parent company or group it belongs to -- was
+     less than EUR 1,000,000.
+
+     This free tier is for small teams. An organisation above that line needs a
+     commercial licence for commercial use of the Software however little any
+     single Product of theirs earns, because forty Products at EUR 150,000 is
+     not a small team and per-Product accounting alone would not have said so.
+     Subsections (a), (b), (d) and (e) apply to any organisation regardless of
+     size: private and educational use, mods, evaluation and research
+     publication are never gated on how large you are.
+
+     QUALIFYING INCOME means the cumulative total, from the Product's first
+     public availability onward and for its entire lifetime, of:
+       - gross revenue you receive from the Product, before platform fees,
+         refunds and tax; and
+       - money received specifically to develop or publish that Product,
+         including publisher advances, grants and platform funding.
+     It does not include your other products, your other activities, or general
+     investment in your company that is not tied to this Product.
+
+     A PRODUCT is one game or application, together with everything sold as part
+     of or as an addition to it: downloadable content, expansions, season passes,
+     ports of it to other platforms, and re-releases of substantially the same
+     work under any name. A sequel, or a different game that reuses the
+     technology, is a separate Product with its own Threshold.
+
+  d) EVALUATION
+     Internal evaluation, prototyping and technical due diligence by any
+     organisation, for up to 180 days, regardless of that organisation's size.
+
+  e) RESEARCH PUBLICATION
+     Reproducing results, publishing benchmarks and citing the Software.
+
+--------------------------------------------------------------------------------
+2. WHEN A COMMERCIAL LICENCE IS REQUIRED
+--------------------------------------------------------------------------------
+
+A separate written commercial licence from Vigilant e.K. is required to ship,
+operate or distribute a product that incorporates the Software or a Derivative
+Work, in whole or in part, once that product exceeds the Threshold in
+section 1(c).
+
+A product built on a fork, on a port of the Software to another language, or on
+a version with the names changed incorporates the Software for the purposes of
+this section. The Threshold and the cases below apply to it unchanged.
+
+The Threshold is measured per Product, not per company, and it is a lifetime
+total rather than an annual one: a Product that earns EUR 60,000 a year reaches
+it in the fourth year, and one that never reaches it never needs a commercial
+licence, however long it sells.
+
+Exceeding it does not invalidate work already done under the free licence; it
+makes a commercial licence necessary for continued distribution or operation of
+that Product. You have 90 days from the day the Threshold is reached to obtain
+one, during which distribution may continue.
+
+A commercial licence is also required, at any revenue, to:
+
+  a) offer the Software or a Derivative Work as a hosted or managed service
+     whose primary value is the Software's functionality;
+  b) redistribute the Software or a Derivative Work as a middleware product,
+     SDK, engine plugin or library under your own name or anyone else's;
+  c) sublicense the Software or a Derivative Work to third parties other than as
+     part of your own product;
+  d) use the Software commercially at all, if you are not a Small Organisation
+     as defined in section 1(c). Evaluation under section 1(d) remains free to
+     any organisation for its 180 days.
+
+Commercial terms, including per-title and site licences, support and source
+escrow, are available from: info@vigilant-crs.de
+
+Current list prices are published in the project's README rather than fixed
+here, so that a change to them is not a change to this licence. They are
+indicative: this section requires a written agreement, and that agreement
+governs.
+
+--------------------------------------------------------------------------------
+3. CONDITIONS APPLYING TO ALL USE
+--------------------------------------------------------------------------------
+
+  a) ATTRIBUTION
+     Retain this licence file and the copyright notice in all copies and
+     substantial portions of the Software. A product shipping the Software must
+     credit "Unscripted — Vigilant e.K." in its documentation,
+     credits or an about screen.
+
+  b) NO TRADEMARK LICENCE
+     This licence grants no rights to the names "Unscripted" or "Vigilant",
+     or to any logo, beyond the attribution required above and ordinary
+     nominative use.
+
+  c) MODIFICATIONS
+     Modified versions must be marked as modified and must not be presented as
+     the official distribution.
+
+  d) NO RELICENSING
+     You may not distribute the Software or a Derivative Work under terms other
+     than these, and you may not remove, weaken or add conditions to the terms
+     under which anyone receives it from you. A Derivative Work you distribute
+     carries this licence file and this section with it.
+
+  e) WORLD PACKS AND CONTENT
+     World packs, scenarios and other content YOU author are yours. This licence
+     covers the Software only. The reference packs shipped with the Software are
+     part of the Software.
+
+  f) CONTRIBUTIONS
+     Unless agreed otherwise in writing, contributions submitted for inclusion
+     are licensed to Vigilant e.K. under these terms, with the right to
+     relicense them commercially.
+
+--------------------------------------------------------------------------------
+4. NO WARRANTY
+--------------------------------------------------------------------------------
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, TITLE AND NONINFRINGEMENT.
+
+--------------------------------------------------------------------------------
+5. LIMITATION OF LIABILITY
+--------------------------------------------------------------------------------
+
+TO THE EXTENT PERMITTED BY LAW, VIGILANT E.K. SHALL NOT BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM
+OR IN CONNECTION WITH THE SOFTWARE OR ITS USE.
+
+Nothing in this licence excludes liability that cannot be excluded under German
+law, including liability for intent, gross negligence, or injury to life, body
+or health, or under the Produkthaftungsgesetz.
+
+--------------------------------------------------------------------------------
+6. TERMINATION
+--------------------------------------------------------------------------------
+
+The free licence terminates automatically if you use the Software beyond its
+scope and do not cure the breach within 30 days of written notice. Rights of end
+users who received a product built with the Software in good faith are not
+affected by such termination.
+
+--------------------------------------------------------------------------------
+7. GOVERNING LAW
+--------------------------------------------------------------------------------
+
+This licence is governed by the laws of the Federal Republic of Germany,
+excluding the UN Convention on Contracts for the International Sale of Goods
+(CISG). Place of jurisdiction for merchants is Stuttgart, Germany.
+
+If any provision is held unenforceable, the remainder stays in force.
+
+--------------------------------------------------------------------------------
+SUMMARY (not legally binding — sections 1 to 7 govern)
+--------------------------------------------------------------------------------
+
+  Modders, students, researchers, hobbyists           free, forever
+  A team under EUR 1M a year, per title under 200k    free, forever
+  A company above EUR 1M a year                       commercial licence
+  Any company evaluating it                           free, 180 days
+  A title that crosses EUR 200k                       commercial licence
+  Reselling it as middleware or SaaS                  commercial licence
+
+  Copying the source to read, audit or change it      free, and always allowed
+  -- and a fork carries these terms with it: the lines above apply to it
+     exactly as they apply to the original, whoever renamed it
+  Shipping a game built on your fork                  same terms, same threshold
+  Porting it to another language                      same terms, same threshold
+  A large company forking it and adding to it         commercial licence: what
+                                                      you add is yours, what you
+                                                      added it to is not
+  Selling your fork as middleware                     commercial licence, at any
+                                                      revenue
+
+  Questions, or want a licence: info@vigilant-crs.de

@@ -1,0 +1,29 @@
+; Unscripted — engine demo.
+;
+; Deliberately drawn rather than dressed: rooms, characters and the knowledge
+; panel are all _draw() calls, so the project has no third-party assets, no
+; licences to track, and a look that reads as engineered instead of as an asset
+; pack. It is also why this repository can ship it.
+
+config_version=5
+
+[application]
+config/name="Unscripted — the same events, twice"
+run/main_scene="res://Main.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+
+[display]
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+; The scene draws a fixed 1920x1080 layout. Without a stretch mode that layout
+; is at the mercy of whatever the desktop's scaling factor happens to be, and a
+; recording made on a HiDPI machine came out zoomed with both edges cut off.
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/canvas_textures/default_texture_filter=1
+
+[physics]
+common/physics_ticks_per_second=60

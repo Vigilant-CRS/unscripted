@@ -1,0 +1,151 @@
+{
+  "topics": [
+    {
+      "id": "breach",
+      "label": "The seal that failed in Stores",
+      "aliases": [
+        "breach",
+        "seal",
+        "leak",
+        "decompression",
+        "stores"
+      ],
+      "query": {
+        "predicate": "seal_breached",
+        "slots": {
+          "section": "place:store",
+          "when": "night_cycle"
+        },
+        "polarity": "+"
+      },
+      "player_claim": {
+        "predicate": "seal_breached",
+        "slots": {
+          "section": "place:store",
+          "when": "night_cycle"
+        },
+        "polarity": "+"
+      },
+      "reactions": [
+        {
+          "type": "threat",
+          "payload": {
+            "summary": "someone asking about the breach",
+            "importance": 0.6,
+            "appraisal": {
+              "desirability": -0.5,
+              "expectedness": 0.4,
+              "agency": "other",
+              "praiseworthiness": -0.2,
+              "target": "$addressee"
+            }
+          }
+        }
+      ],
+      "phrasings": {
+        "affirm": {
+          "formal": "The seal in Stores failed during the night cycle.",
+          "neutral": "Seal went in Stores, night cycle.",
+          "vernacular": "Seal blew. Stores. Night cycle."
+        },
+        "deny": {
+          "formal": "Nothing failed. The seal held.",
+          "neutral": "Seal held fine.",
+          "vernacular": "Nothing blew."
+        }
+      }
+    },
+    {
+      "id": "logs",
+      "label": "Who was signed out that night",
+      "aliases": [
+        "log",
+        "logs",
+        "roster",
+        "signed",
+        "logged"
+      ],
+      "query": {
+        "predicate": "logged_out",
+        "slots": {
+          "agent": null,
+          "when": "night_cycle"
+        },
+        "polarity": "+"
+      },
+      "phrasings": {
+        "affirm": {
+          "formal": "Someone was signed out during the night cycle.",
+          "neutral": "Somebody was out that night.",
+          "vernacular": "Someone was out."
+        },
+        "deny": {
+          "formal": "The roster shows nobody out.",
+          "neutral": "Roster's clean.",
+          "vernacular": "Nobody."
+        }
+      }
+    },
+    {
+      "id": "supplies",
+      "label": "What the station is short of",
+      "aliases": [
+        "supplies",
+        "rations",
+        "short",
+        "stock",
+        "paste"
+      ],
+      "query": {
+        "predicate": "supply_short",
+        "slots": {
+          "item": "item:sealant"
+        },
+        "polarity": "+"
+      },
+      "phrasings": {
+        "affirm": {
+          "formal": "We are short of sealant.",
+          "neutral": "We're short on sealant.",
+          "vernacular": "No sealant left."
+        },
+        "deny": {
+          "formal": "Stocks are adequate.",
+          "neutral": "We've got enough.",
+          "vernacular": "Plenty."
+        }
+      }
+    },
+    {
+      "id": "the_check",
+      "label": "Whether the seal check was actually done",
+      "aliases": [
+        "check",
+        "inspection",
+        "signed off",
+        "sign-off",
+        "certification"
+      ],
+      "query": {
+        "predicate": "skipped_check",
+        "slots": {
+          "agent": "agent:lindqvist",
+          "check": "check:seal"
+        },
+        "polarity": "+"
+      },
+      "phrasings": {
+        "affirm": {
+          "formal": "The check was not carried out.",
+          "neutral": "The check never happened.",
+          "vernacular": "Never got done."
+        },
+        "deny": {
+          "formal": "The check was carried out as scheduled.",
+          "neutral": "Check was done.",
+          "vernacular": "Done. Signed."
+        }
+      }
+    }
+  ]
+}

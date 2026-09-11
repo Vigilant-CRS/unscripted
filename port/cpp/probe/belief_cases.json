@@ -1,0 +1,126 @@
+{
+  "why": [
+    "One list, executed by both implementations, so a divergence is a real one",
+    "rather than two hand-written scripts that drifted. Each case is a sequence",
+    "of BeliefEngine.update calls against one shared belief store; the store is",
+    "serialised afterwards and compared field by field, bit for bit.",
+    "",
+    "The cases are chosen for the ways a port goes wrong, not for coverage:",
+    "repetition from one origin, independent corroboration, contradiction",
+    "across the three kinds, an integer origin id that JSON turns into a string,",
+    "the provenance trim, and extremes where a naive sigmoid overflows."
+  ],
+  "cases": [
+    {
+      "id": "one_origin_repeated",
+      "why": "The correlation discount. Twenty hearings of one rumour must saturate near the 1/(1-rho) ceiling, not approach certainty.",
+      "updates": [
+        {"repeat": 20, "predicate": "was_at",
+         "slots": {"agent": "agent:vee", "place": "place:clinic", "when": 1200},
+         "polarity": "+", "trust": 0.6, "competence": 0.5, "skepticism": 0.1,
+         "claim_id": "claim:rumour", "origin": 4711, "world_time": 1200,
+         "speaker": "agent:byrne"}
+      ]
+    },
+    {
+      "id": "independent_corroboration",
+      "why": "Four distinct origins are four pieces of evidence and must move the belief far further than four repeats of one.",
+      "updates": [
+        {"predicate": "was_at", "slots": {"agent": "agent:vee", "place": "place:clinic", "when": 1200},
+         "polarity": "+", "trust": 0.6, "competence": 0.5, "skepticism": 0.1,
+         "claim_id": "claim:a", "origin": 1, "world_time": 1200, "speaker": "agent:a"},
+        {"predicate": "was_at", "slots": {"agent": "agent:vee", "place": "place:clinic", "when": 1200},
+         "polarity": "+", "trust": 0.9, "competence": 0.8, "skepticism": 0.0,
+         "claim_id": "claim:b", "origin": 2, "world_time": 1201, "speaker": "agent:b"},
+        {"predicate": "was_at", "slots": {"agent": "agent:vee", "place": "place:clinic", "when": 1200},
+         "polarity": "+", "trust": 0.2, "competence": 0.1, "skepticism": 0.7,
+         "claim_id": "claim:c", "origin": 3, "world_time": 1202, "speaker": "agent:c"},
+        {"predicate": "was_at", "slots": {"agent": "agent:vee", "place": "place:clinic", "when": 1200},
+         "polarity": "-", "trust": 0.5, "competence": 0.5, "skepticism": 0.5,
+         "claim_id": "claim:d", "origin": 4, "world_time": 1203, "speaker": "agent:d"}
+      ]
+    },
+    {
+      "id": "contradiction_c1_direct",
+      "why": "Same core, opposite polarity. Both beliefs are kept -- the model is paraconsistent, so the contradiction is reported rather than resolved.",
+      "updates": [
+        {"predicate": "body:alive", "slots": {"agent": "agent:halloran"},
+         "polarity": "+", "trust": 0.8, "competence": 0.6, "skepticism": 0.1,
+         "claim_id": "claim:alive", "origin": 10, "world_time": 900, "speaker": "agent:x"},
+        {"predicate": "body:alive", "slots": {"agent": "agent:halloran"},
+         "polarity": "-", "trust": 0.8, "competence": 0.6, "skepticism": 0.1,
+         "claim_id": "claim:dead", "origin": 11, "world_time": 901, "speaker": "agent:y",
+         "store_negated": true}
+      ]
+    },
+    {
+      "id": "contradiction_c2_functional",
+      "why": "One entity in two places. `space:exactly_at` is functional in its second slot, so this is C2 and depends on the catalogue, not on polarity.",
+      "updates": [
+        {"predicate": "space:exactly_at", "slots": {"entity": "agent:vee", "place": "place:dock"},
+         "polarity": "+", "trust": 0.7, "competence": 0.7, "skepticism": 0.1,
+         "claim_id": "claim:dock", "origin": 20, "world_time": 800, "speaker": "agent:x"},
+        {"predicate": "space:exactly_at", "slots": {"entity": "agent:vee", "place": "place:clinic"},
+         "polarity": "+", "trust": 0.7, "competence": 0.7, "skepticism": 0.1,
+         "claim_id": "claim:clinic", "origin": 21, "world_time": 801, "speaker": "agent:y"}
+      ]
+    },
+    {
+      "id": "origin_id_types",
+      "why": "The one that bit before. Origin ids arrive as integers and JSON has only string keys, so 7 and \"7\" must be the SAME origin or a saved belief starts counting a repeat as fresh evidence.",
+      "updates": [
+        {"predicate": "looking_for", "slots": {"seeker": "agent:a", "target": "agent:b"},
+         "polarity": "+", "trust": 0.5, "competence": 0.5, "skepticism": 0.2,
+         "claim_id": "claim:i", "origin": 7, "world_time": 100, "speaker": "agent:a"},
+        {"predicate": "looking_for", "slots": {"seeker": "agent:a", "target": "agent:b"},
+         "polarity": "+", "trust": 0.5, "competence": 0.5, "skepticism": 0.2,
+         "claim_id": "claim:s", "origin": "7", "world_time": 101, "speaker": "agent:a"},
+        {"predicate": "looking_for", "slots": {"seeker": "agent:a", "target": "agent:b"},
+         "polarity": "+", "trust": 0.5, "competence": 0.5, "skepticism": 0.2,
+         "claim_id": "claim:n", "origin": null, "world_time": 102, "speaker": "agent:a"}
+      ]
+    },
+    {
+      "id": "provenance_trim",
+      "why": "Seventy hearings against a limit of sixty-four. The oldest entries go, the count of what was dropped is kept, and origin identity is never trimmed because the arithmetic needs it.",
+      "updates": [
+        {"repeat": 70, "predicate": "was_at",
+         "slots": {"agent": "agent:vee", "place": "place:dock", "when": 300},
+         "polarity": "+", "trust": 0.55, "competence": 0.45, "skepticism": 0.15,
+         "claim_id": "claim:many", "origin": "vary", "world_time": 300, "speaker": "agent:z"}
+      ]
+    },
+    {
+      "id": "unknown_predicate_sorted_slots",
+      "why": "A predicate outside the catalogue falls back to SORTED slot names for its core key, while __str__ keeps insertion order. Two different orders in one module, and a port that unifies them changes the key a belief is filed under.",
+      "updates": [
+        {"predicate": "world:zebra_seen",
+         "slots": {"zulu": "z", "alpha": "a", "mike": "m"},
+         "polarity": "+", "trust": 0.5, "competence": 0.5, "skepticism": 0.5,
+         "claim_id": "claim:zeb", "origin": 30, "world_time": 10, "speaker": "agent:q"}
+      ]
+    },
+    {
+      "id": "extremes",
+      "why": "Enough evidence one way that a one-line sigmoid loses the answer. NOT an arbitrary large number: at 245 steps the log-odds sit at -721, where exp(721) overflows to inf and `1/(1+exp(-x))` returns a flat 0 while the two-branch form still returns 5.07e-314. Below about 243 steps both are right, and above about 253 both are 0 -- the first version of this case used 400 and passed a deliberately broken sigmoid.",
+      "updates": [
+        {"repeat": 245, "predicate": "body:alive", "slots": {"agent": "agent:cold"},
+         "polarity": "-", "trust": 1.0, "competence": 1.0, "skepticism": 0.0,
+         "claim_id": "claim:x", "origin": "vary", "world_time": 5, "speaker": "agent:w"}
+      ]
+    },
+    {
+      "id": "missing_and_null_slots",
+      "why": "A slot the catalogue names and the claim omits renders as None in the core key, not as an empty string. So does every absent qualifier.",
+      "updates": [
+        {"predicate": "core:holds_role", "slots": {"agent": "agent:vee"},
+         "polarity": "+", "trust": 0.6, "competence": 0.9, "skepticism": 0.0,
+         "claim_id": "claim:role", "origin": 40, "world_time": 60, "speaker": "agent:p"},
+        {"predicate": "core:holds_role",
+         "slots": {"agent": "agent:vee", "role": null, "context": "ctx:dock"},
+         "polarity": "+", "trust": 0.6, "competence": 0.9, "skepticism": 0.0,
+         "claim_id": "claim:role2", "origin": 41, "world_time": 61, "speaker": "agent:p"}
+      ]
+    }
+  ]
+}

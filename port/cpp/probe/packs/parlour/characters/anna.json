@@ -1,0 +1,72 @@
+{
+  "id": "agent:anna",
+  "names": {
+    "public": "Anna"
+  },
+  "location": "place:parlour",
+  "big_five": {
+    "openness": 0.5,
+    "conscientiousness": 0.5,
+    "extraversion": 0.5,
+    "agreeableness": 0.6,
+    "emotional_stability": 0.5
+  },
+  "education": {
+    "street": 0.6,
+    "general": 0.5
+  },
+  "values": {
+    "truthfulness": 0.9
+  },
+  "relationships": {
+    "agent:player_1": {
+      "trust": 0.7,
+      "liking": 0.5,
+      "familiarity": 0.5
+    }
+  },
+  "secrets": [
+    {
+      "id": "secret:annas_ledger",
+      "avoid_label": "annas_ledger",
+      "guards_topics": [
+        "topic:nothing_at_all"
+      ],
+      "summary": "Anna hid the ledger.",
+      "surface_forms": [
+        "annas ledger"
+      ],
+      "protects": [
+        {
+          "predicate": "hid",
+          "slots": {
+            "who": "agent:anna",
+            "what": "ledger"
+          }
+        }
+      ],
+      "min_trust": 0.95
+    },
+    {
+      "id": "secret:the_deal",
+      "avoid_label": "the_deal",
+      "guards_topics": [
+        "topic:the_deal"
+      ],
+      "summary": "Anna will not discuss the deal with a stranger.",
+      "surface_forms": [
+        "the deal itself"
+      ],
+      "protects": [
+        {
+          "predicate": "dealt_with",
+          "slots": {
+            "a": "agent:anna",
+            "b": "agent:bo"
+          }
+        }
+      ],
+      "min_trust": 0.75
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "offscreen_time_passage",
+  "world_pack": "worldpacks/cyberpunk-block",
+  "commands": [
+    {
+      "input": "wait 60",
+      "expect_contains": [
+        "Time advances by 60 minutes"
+      ]
+    },
+    {
+      "input": "wait 60",
+      "expect_contains": [
+        "Time advances by 60 minutes"
+      ]
+    },
+    {
+      "input": "listen radio",
+      "expect_contains": []
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "_note": "One street, seven rooms, and a radio. Small enough that a player can walk the whole thing in a minute and see every face -- which is the point: a comparison nobody can hold in their head proves nothing.",
+  "layers": [
+    "pursuit",
+    "media",
+    "climate",
+    "common_knowledge"
+  ],
+  "places": {
+    "place:hotel_back": {
+      "label": "Behind the Marchmont",
+      "aliases": [
+        "behind the hotel",
+        "hotel",
+        "marchmont",
+        "alley",
+        "back"
+      ],
+      "exits": [
+        "place:street",
+        "place:club_door"
+      ],
+      "noise_level": 0.15,
+      "surveillance_level": 0.1,
+      "privacy_level": 0.8,
+      "formality": 0.2,
+      "gossip_factor": 0.4
+    },
+    "place:street": {
+      "label": "Lamb Street",
+      "aliases": [
+        "street",
+        "lamb",
+        "outside",
+        "road"
+      ],
+      "exits": [
+        "place:hotel_back",
+        "place:bar",
+        "place:kiosk",
+        "place:shop",
+        "place:taxi_rank",
+        "place:club_door",
+        "place:precinct"
+      ],
+      "noise_level": 0.5,
+      "surveillance_level": 0.3,
+      "privacy_level": 0.1,
+      "formality": 0.3,
+      "gossip_factor": 1.6
+    },
+    "place:bar": {
+      "label": "The Ninepin",
+      "aliases": [
+        "bar",
+        "pub",
+        "ninepin",
+        "halloran"
+      ],
+      "exits": [
+        "place:street"
+      ],
+      "noise_level": 0.6,
+      "surveillance_level": 0.15,
+      "privacy_level": 0.35,
+      "formality": 0.2,
+      "gossip_factor": 1.9
+    },
+    "place:kiosk": {
+      "label": "Byrne's stand",
+      "aliases": [
+        "kiosk",
+        "stand",
+        "papers",
+        "newsstand",
+        "byrne"
+      ],
+      "exits": [
+        "place:street"
+      ],
+      "noise_level": 0.4,
+      "surveillance_level": 0.25,
+      "privacy_level": 0.1,
+      "formality": 0.25,
+      "gossip_factor": 1.8
+    },
+    "place:shop": {
+      "label": "Okonkwo's",
+      "aliases": [
+        "shop",
+        "store",
+        "grocer",
+        "okonkwo"
+      ],
+      "exits": [
+        "place:street"
+      ],
+      "noise_level": 0.3,
+      "surveillance_level": 0.3,
+      "privacy_level": 0.25,
+      "formality": 0.35,
+      "gossip_factor": 1.1
+    },
+    "place:taxi_rank": {
+      "label": "The rank",
+      "aliases": [
+        "rank",
+        "taxi",
+        "cab",
+        "vance"
+      ],
+      "exits": [
+        "place:street"
+      ],
+      "noise_level": 0.45,
+      "surveillance_level": 0.2,
+      "privacy_level": 0.2,
+      "formality": 0.2,
+      "gossip_factor": 1.4
+    },
+    "place:club_door": {
+      "label": "The Lyric, side door",
+      "aliases": [
+        "club",
+        "lyric",
+        "door",
+        "reyes"
+      ],
+      "exits": [
+        "place:street",
+        "place:hotel_back"
+      ],
+      "noise_level": 0.7,
+      "surveillance_level": 0.55,
+      "privacy_level": 0.5,
+      "formality": 0.4,
+      "gossip_factor": 0.7
+    },
+    "place:precinct": {
+      "label": "The precinct",
+      "aliases": [
+        "precinct",
+        "station",
+        "police",
+        "doyle"
+      ],
+      "exits": [
+        "place:street"
+      ],
+      "noise_level": 0.35,
+      "surveillance_level": 0.85,
+      "privacy_level": 0.4,
+      "formality": 0.8,
+      "gossip_factor": 0.5
+    }
+  },
+  "entities": {
+    "person:cortez": {
+      "label": "Cortez"
+    },
+    "person:mallory": {
+      "label": "Mallory"
+    },
+    "org:the_lyric": {
+      "label": "The Lyric"
+    }
+  },
+  "channels": {
+    "channel:city_radio": {
+      "type": "radio",
+      "reach": "district",
+      "directionality": "broadcast",
+      "label": "City Radio",
+      "credibility": 0.62
+    }
+  },
+  "media_exposure": [
+    {
+      "agent": "agent:byrne",
+      "channel": "channel:city_radio",
+      "attention": 0.95
+    },
+    {
+      "agent": "agent:halloran",
+      "channel": "channel:city_radio",
+      "attention": 0.7
+    },
+    {
+      "agent": "agent:okonkwo",
+      "channel": "channel:city_radio",
+      "attention": 0.5
+    },
+    {
+      "agent": "agent:doyle",
+      "channel": "channel:city_radio",
+      "attention": 0.6
+    },
+    {
+      "agent": "agent:vance",
+      "channel": "channel:city_radio",
+      "attention": 0.15
+    },
+    {
+      "agent": "agent:reyes",
+      "channel": "channel:city_radio",
+      "attention": 0.1
+    }
+  ],
+  "diffusion": {
+    "_note": "A street where people talk. Higher than the reference pack on purpose: the whole demo is one night and a morning, and a rumour that needs a week is invisible in it.",
+    "encounters_per_hour": 0.55,
+    "distortion_prob": 0.3
+  }
+}

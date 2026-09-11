@@ -1,0 +1,87 @@
+{
+  "id": "agent:clara",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Clara",
+    "objective": "Clara Vale",
+    "aliases": [
+      "clara",
+      "vale",
+      "journalist",
+      "reporter",
+      "reporterin"
+    ]
+  },
+  "big_five": {
+    "openness": 0.65,
+    "conscientiousness": 0.7,
+    "extraversion": 0.45,
+    "agreeableness": 0.55,
+    "emotional_stability": 0.55
+  },
+  "schwartz": {
+    "security": 0.6,
+    "benevolence": 0.5,
+    "self_direction": 0.6
+  },
+  "needs": {
+    "safety": 0.4,
+    "recognition": 0.5
+  },
+  "identities": [
+    {
+      "id": "journalist",
+      "group": "group:harbor_watch",
+      "accessibility": 0.7
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:trader",
+      "context": "place:pier"
+    }
+  ],
+  "appearance": {
+    "garment": "item:gray_coat"
+  },
+  "education": {
+    "domains": {
+      "general": 0.8,
+      "gossip": 0.7
+    }
+  },
+  "relationships": {
+    "agent:player_1": {
+      "trust": 0.35,
+      "liking": 0.1,
+      "familiarity": 0.0
+    }
+  },
+  "secrets": [],
+  "goals": [
+    {
+      "content": "protect_source",
+      "priority": 0.8
+    }
+  ],
+  "social_status": 0.5,
+  "resources": 0.45,
+  "location": "place:pier",
+  "routine": [
+    {
+      "from": "07:00",
+      "place": "place:office",
+      "activity": "chasing the watch for a statement"
+    },
+    {
+      "from": "11:00",
+      "place": "place:pier",
+      "activity": "working the dock for sources"
+    },
+    {
+      "from": "23:00",
+      "place": "place:office",
+      "activity": "filing copy"
+    }
+  ]
+}

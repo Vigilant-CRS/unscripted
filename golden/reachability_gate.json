@@ -1,0 +1,19 @@
+{
+  "name": "reachability_gate",
+  "world_pack": "worldpacks/cyberpunk-block",
+  "commands": [
+    {
+      "input": "ask Pavel about milan",
+      "expect_contains": [
+        "not reachable"
+      ]
+    },
+    {
+      "input": "go market",
+      "expect_contains": [
+        "Market",
+        "Pavel"
+      ]
+    }
+  ]
+}

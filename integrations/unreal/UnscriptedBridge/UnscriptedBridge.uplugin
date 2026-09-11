@@ -1,0 +1,21 @@
+{
+  "FileVersion": 3,
+  "Version": 2,
+  "VersionName": "0.2.0",
+  "FriendlyName": "Unscripted Bridge",
+  "Description": "Drives NPC dialogue, affect and MetaHuman faces from Unscripted, and carries out the physical acts the runtime asks for. Built from source against whichever engine it is dropped into; declares no EngineVersion, because pinning one makes the plugin manager refuse to load it on every other. Speaks service contract 2.0.0; negotiates with GET /capabilities and refuses to start if the runtime does not list a version it understands.",
+  "Category": "AI",
+  "CreatedBy": "Unscripted",
+  "DocsURL": "",
+  "MarketplaceURL": "",
+  "SupportURL": "",
+  "CanContainContent": true,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "UnscriptedBridge",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ]
+}

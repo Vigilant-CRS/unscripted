@@ -1,0 +1,34 @@
+{
+  "predicates": {
+    "clinic_open": {
+      "slots": [
+        "place",
+        "when"
+      ],
+      "functional_in": 1
+    },
+    "connected_to_attack": {
+      "slots": [
+        "agent"
+      ],
+      "functional_in": null
+    },
+    "whereabouts": {
+      "slots": [
+        "who",
+        "place"
+      ],
+      "functional_in": 1
+    }
+  },
+  "canon_facts": [
+    {
+      "predicate": "clinic_open",
+      "slots": {
+        "place": "place:clinic",
+        "when": "last_night"
+      },
+      "polarity": "-"
+    }
+  ]
+}

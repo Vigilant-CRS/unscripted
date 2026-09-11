@@ -1,0 +1,27 @@
+; The Square -- what they think of you, and what they do about it.
+;
+; One plaza, seven people, and two things you can do to somebody: be decent or
+; be vile. Everything else in the scene is a readout of what the runtime already
+; holds -- how warm each of them is toward you, whether they saw it themselves
+; or were told, and what they would rather do when you speak to them.
+;
+; Nothing here is authored. There is no reputation table in this project.
+
+config_version=5
+
+[application]
+config/name="The Square"
+run/main_scene="res://Main.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[display]
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+; A fixed layout without this is at the mercy of the desktop's scaling factor,
+; which is how the other demo came out zoomed with both edges cut off.
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.035, 0.039, 0.055, 1)

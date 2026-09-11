@@ -1,0 +1,10 @@
+{
+  "predicates": {
+    "korn_geliefert": {"slots": ["hof", "wann"], "functional_in": 1},
+    "schuld_offen": {"slots": ["schuldner", "glaeubiger"], "functional_in": null}
+  },
+  "canon_facts": [
+    {"predicate": "korn_geliefert",
+     "slots": {"hof": "hof:muehle", "wann": "letzte_woche"}, "polarity": "-"}
+  ]
+}

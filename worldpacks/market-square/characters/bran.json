@@ -1,0 +1,95 @@
+{
+  "id": "agent:bran",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Bran",
+    "objective": "Bran Ash",
+    "aliases": [
+      "bran",
+      "anchor",
+      "reporter",
+      "radio"
+    ]
+  },
+  "big_five": {
+    "openness": 0.7,
+    "conscientiousness": 0.6,
+    "extraversion": 0.8,
+    "agreeableness": 0.5,
+    "emotional_stability": 0.55
+  },
+  "schwartz": {
+    "security": 0.5
+  },
+  "needs": {
+    "status": 0.7,
+    "safety": 0.2
+  },
+  "identities": [
+    {
+      "id": "reporter",
+      "group": "district:square",
+      "accessibility": 0.8
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:reporter",
+      "context": "district:square"
+    }
+  ],
+  "education": {
+    "domains": {
+      "general": 0.7,
+      "media": 0.85,
+      "street": 0.3
+    }
+  },
+  "relationships": {
+    "agent:player_1": {
+      "trust": 0.4,
+      "liking": 0.1,
+      "familiarity": 0.0
+    },
+    "agent:dale": {
+      "trust": 0.6,
+      "liking": 0.3,
+      "familiarity": 0.6
+    }
+  },
+  "secrets": [],
+  "goals": [
+    {
+      "content": "file the story first",
+      "priority": 0.9,
+      "about": [
+        "killed_by"
+      ]
+    }
+  ],
+  "social_status": 0.6,
+  "resources": 0.4,
+  "location": "place:radio",
+  "routine": [
+    {
+      "from": "05:00",
+      "place": "place:radio",
+      "activity": "the morning bulletin"
+    },
+    {
+      "from": "13:00",
+      "place": "place:market",
+      "activity": "asking around"
+    },
+    {
+      "from": "18:00",
+      "place": "place:radio",
+      "activity": "the evening bulletin"
+    },
+    {
+      "from": "22:00",
+      "place": "place:bar",
+      "activity": "off shift"
+    }
+  ]
+}

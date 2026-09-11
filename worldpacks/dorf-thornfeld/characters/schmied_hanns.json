@@ -1,0 +1,133 @@
+{
+  "id": "agent:schmied_hanns",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Hanns",
+    "objective": "Hanns Vogt",
+    "aliases": [
+      "hanns",
+      "schmied",
+      "vogt",
+      "meister hanns"
+    ]
+  },
+  "big_five": {
+    "openness": 0.35,
+    "conscientiousness": 0.6,
+    "extraversion": 0.5,
+    "agreeableness": 0.35,
+    "emotional_stability": 0.45
+  },
+  "schwartz": {
+    "achievement": 0.7,
+    "tradition": 0.6,
+    "security": 0.5
+  },
+  "needs": {
+    "income": 0.75,
+    "safety": 0.4
+  },
+  "identities": [
+    {
+      "id": "schmied",
+      "group": "group:zunft",
+      "accessibility": 0.85
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:trader",
+      "context": "group:zunft"
+    }
+  ],
+  "appearance": {
+    "garment": "item:lederschuerze"
+  },
+  "education": {
+    "domains": {
+      "general": 0.3,
+      "handwerk": 0.85,
+      "gossip": 0.5
+    }
+  },
+  "relationships": {
+    "agent:player_1": {
+      "trust": 0.28,
+      "liking": 0.0,
+      "familiarity": 0.0
+    },
+    "agent:muellerin_greta": {
+      "trust": 0.4,
+      "liking": 0.2,
+      "familiarity": 0.7
+    }
+  },
+  "secrets": [
+    {
+      "id": "secret:schuldschein",
+      "avoid_label": "offene_schuld",
+      "guards_topics": [
+        "schuld"
+      ],
+      "summary": "Hanns hat der Muellerin zwoelf Heller geliehen und kann nicht zahlen.",
+      "surface_forms": [
+        "zwoelf heller",
+        "zwölf heller",
+        "schuldschein",
+        "ich schulde",
+        "kann nicht zahlen",
+        "geliehen"
+      ],
+      "protects": [
+        {
+          "predicate": "schuld_offen",
+          "slots": {
+            "schuldner": "agent:schmied_hanns",
+            "glaeubiger": "agent:muellerin_greta"
+          },
+          "polarity": "+"
+        }
+      ],
+      "about": [
+        "agent:schmied_hanns"
+      ],
+      "min_trust": 0.55
+    }
+  ],
+  "goals": [
+    {
+      "content": "die_esse_halten",
+      "priority": 0.85
+    }
+  ],
+  "social_status": 0.45,
+  "resources": 0.25,
+  "location": "place:schmiede",
+  "routine": [
+    {
+      "from": "05:00",
+      "place": "place:schmiede",
+      "activity": "an der Esse"
+    },
+    {
+      "from": "12:00",
+      "place": "place:dorfplatz",
+      "activity": "Mittag"
+    },
+    {
+      "from": "14:00",
+      "place": "place:schmiede",
+      "activity": "an der Esse"
+    },
+    {
+      "from": "19:00",
+      "place": "place:dorfplatz",
+      "activity": "Feierabend"
+    },
+    {
+      "from": "22:00",
+      "place": "place:schmiede",
+      "activity": "schlafen"
+    }
+  ]
+}

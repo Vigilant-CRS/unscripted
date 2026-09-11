@@ -1,0 +1,31 @@
+{
+  "global_seed": "noir-harbor-001",
+  "world_id": "noir-harbor",
+  "world_time": 1200,
+  "events": [
+    {
+      "world_time": 1230,
+      "type": "broadcast",
+      "actor": "channel:harbor_wire",
+      "location": null,
+      "payload": {
+        "channel": "channel:harbor_wire",
+        "credibility": 0.72,
+        "proposition": {
+          "predicate": "linked_to_incident",
+          "slots": {
+            "agent": "agent:player_1"
+          },
+          "polarity": "-"
+        },
+        "summary": "Harbor Wire says the stranger was not seen near the assault.",
+        "origin_event": "evt_wire_clearance"
+      }
+    }
+  ],
+  "focus_agents": [
+    "agent:clara",
+    "agent:marlow"
+  ],
+  "player_start": "place:pier"
+}

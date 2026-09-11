@@ -1,0 +1,104 @@
+{
+  "runtime_id": "unscripted:main",
+  "schema_version": "0.9.0",
+  "global_seed": "project-seed",
+  "strict_mode": true,
+  "profile": "standalone_full",
+  "capabilities": {
+    "world.state": {
+      "mode": "BUILTIN"
+    },
+    "world.events": {
+      "mode": "BUILTIN"
+    },
+    "perception": {
+      "mode": "BUILTIN"
+    },
+    "beliefs": {
+      "mode": "BUILTIN"
+    },
+    "memory.personal": {
+      "mode": "BUILTIN"
+    },
+    "memory.collective": {
+      "mode": "BUILTIN"
+    },
+    "identity": {
+      "mode": "BUILTIN"
+    },
+    "personality": {
+      "mode": "BUILTIN"
+    },
+    "values": {
+      "mode": "BUILTIN"
+    },
+    "needs": {
+      "mode": "BUILTIN"
+    },
+    "affect": {
+      "mode": "BUILTIN"
+    },
+    "relationships": {
+      "mode": "BUILTIN"
+    },
+    "motivation": {
+      "mode": "BUILTIN"
+    },
+    "decision.policy": {
+      "mode": "BUILTIN"
+    },
+    "dialogue.state": {
+      "mode": "BUILTIN"
+    },
+    "dialogue.planning": {
+      "mode": "BUILTIN"
+    },
+    "dialogue.realization": {
+      "mode": "EXTERNAL",
+      "provider": "openai_compatible:local_model"
+    },
+    "dialogue.validation": {
+      "mode": "BUILTIN"
+    },
+    "society.propagation": {
+      "mode": "BUILTIN"
+    },
+    "society.reputation": {
+      "mode": "BUILTIN"
+    },
+    "society.factions": {
+      "mode": "BUILTIN"
+    },
+    "explainability": {
+      "mode": "BUILTIN"
+    },
+    "persistence": {
+      "mode": "BUILTIN"
+    },
+    "audio.stt": {
+      "mode": "DISABLED"
+    },
+    "audio.tts": {
+      "mode": "DISABLED"
+    },
+    "animation.expression": {
+      "mode": "DISABLED"
+    }
+  },
+  "providers": {
+    "openai_compatible:local_model": {
+      "type": "openai_compatible",
+      "base_url": "http://127.0.0.1:11434/v1",
+      "model": "replace-me",
+      "api_key_env": null,
+      "timeout_ms": 30000,
+      "max_retries": 1
+    }
+  },
+  "storage": {
+    "type": "sqlite",
+    "path": "./save/unscripted.db",
+    "reason_trace_mode": "ring_buffer",
+    "reason_trace_capacity": 2000
+  }
+}

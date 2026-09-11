@@ -1,0 +1,7 @@
+{
+  "global_seed": "parlour-seed",
+  "world_time": 600,
+  "player_start": "place:parlour",
+  "focus_agents": ["agent:bo"],
+  "intro": "Four people and a question."
+}

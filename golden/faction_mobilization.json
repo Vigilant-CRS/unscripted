@@ -1,0 +1,37 @@
+{
+  "name": "faction_mobilization",
+  "world_pack": "worldpacks/cyberpunk-block",
+  "commands": [
+    {
+      "input": "go market",
+      "expect_contains": [
+        "Market",
+        "Pavel"
+      ]
+    },
+    {
+      "input": "attack Pavel",
+      "expect_contains": [
+        "mobilize_allies"
+      ],
+      "expect_trace": [
+        "agency.reactive_fired",
+        "mobilize_allies"
+      ]
+    },
+    {
+      "input": "wait 20",
+      "expect_contains": [
+        "Time advances by 20 minutes"
+      ]
+    },
+    {
+      "input": "inspect Pavel",
+      "expect_contains": [
+        "affect of agent:pavel",
+        "fear",
+        "memory of agent:pavel"
+      ]
+    }
+  ]
+}

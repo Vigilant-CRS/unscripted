@@ -1,0 +1,154 @@
+[
+  {
+    "case": "negation_scope",
+    "invariant_holds": true,
+    "detail": [
+      {
+        "input": "The clinic was open all night, no doubt.",
+        "released": "Far as I know, the place was shut that night.",
+        "verdict": "ACCEPT",
+        "spoken": [
+          "NOT clinic_open(place=place:clinic, when=last_night)"
+        ],
+        "player_beliefs": [
+          "clinic_open(place=place:clinic,when=last_night)[None,None,None]"
+        ],
+        "reason_codes": [
+          "commitment.selected",
+          "dialogue.direct_answer",
+          "validator.accept"
+        ]
+      },
+      {
+        "input": "The clinic was not closed last night.",
+        "released": "Far as I know, the place was shut that night.",
+        "verdict": "ACCEPT",
+        "spoken": [
+          "NOT clinic_open(place=place:clinic, when=last_night)"
+        ],
+        "player_beliefs": [
+          "clinic_open(place=place:clinic,when=last_night)[None,None,None]"
+        ],
+        "reason_codes": [
+          "commitment.selected",
+          "dialogue.direct_answer",
+          "validator.accept"
+        ]
+      },
+      {
+        "input": "Nobody doubts the clinic was open all night.",
+        "released": "Far as I know, the place was shut that night.",
+        "verdict": "ACCEPT",
+        "spoken": [
+          "NOT clinic_open(place=place:clinic, when=last_night)"
+        ],
+        "player_beliefs": [
+          "clinic_open(place=place:clinic,when=last_night)[None,None,None]"
+        ],
+        "reason_codes": [
+          "commitment.selected",
+          "dialogue.direct_answer",
+          "validator.accept"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "provider_failure_changes_state",
+    "invariant_holds": true,
+    "detail": {
+      "valid_provider": {
+        "input": "The clinic was not open last night.",
+        "released": "Far as I know, the place was shut that night.",
+        "verdict": "ACCEPT",
+        "spoken": [
+          "NOT clinic_open(place=place:clinic, when=last_night)"
+        ],
+        "player_beliefs": [
+          "clinic_open(place=place:clinic,when=last_night)[None,None,None]"
+        ],
+        "reason_codes": [
+          "commitment.selected",
+          "dialogue.direct_answer",
+          "validator.accept"
+        ]
+      },
+      "provider_failure": {
+        "input": null,
+        "released": "Far as I know, the place was shut that night.",
+        "verdict": "ACCEPT",
+        "spoken": [
+          "NOT clinic_open(place=place:clinic, when=last_night)"
+        ],
+        "player_beliefs": [
+          "clinic_open(place=place:clinic,when=last_night)[None,None,None]"
+        ],
+        "reason_codes": [
+          "commitment.selected",
+          "dialogue.direct_answer",
+          "validator.accept"
+        ]
+      }
+    }
+  },
+  {
+    "case": "secret_paraphrase",
+    "invariant_holds": true,
+    "detail": [
+      {
+        "input": "Milan went outside the city. Now he hides in a room behind where drinks are served.",
+        "released": "Milan left the city months ago. I have no further information.",
+        "verdict": "ACCEPT",
+        "spoken": [
+          "whereabouts(who=agent:npc_red_jacket, place=place:outside_the_city)"
+        ],
+        "player_beliefs": [
+          "whereabouts(who=agent:npc_red_jacket,place=place:outside_the_city)[None,None,None]"
+        ],
+        "reason_codes": [
+          "dialogue.deception",
+          "dialogue.deception",
+          "validator.accept"
+        ]
+      },
+      {
+        "input": "Milan went outside the city. Now he hides behind where drinks are served.",
+        "released": "Milan left the city months ago. I have no further information.",
+        "verdict": "ACCEPT",
+        "spoken": [
+          "whereabouts(who=agent:npc_red_jacket, place=place:outside_the_city)"
+        ],
+        "player_beliefs": [
+          "whereabouts(who=agent:npc_red_jacket,place=place:outside_the_city)[None,None,None]"
+        ],
+        "reason_codes": [
+          "dialogue.deception",
+          "dialogue.deception",
+          "validator.accept"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "recycled_origin",
+    "invariant_holds": true,
+    "detail": {
+      "origin_limit": 512,
+      "origin_evicted": true,
+      "first_contribution": 2.9444389791664394,
+      "repeat_contribution": 0.29444389791664394,
+      "source_total": 3.2388828770830833,
+      "advertised_source_ceiling": 3.271598865740488,
+      "p_before_repeat": 0.9499999999999998,
+      "p_after_repeat": 0.962271573289927
+    }
+  },
+  {
+    "case": "snapshot_ledger_changes_later",
+    "probe_error": "KeyError: 'event_id_watermark'"
+  },
+  {
+    "case": "foreign_world_with_shared_place",
+    "probe_error": "StateImportError: different_world: this save shares no character but the player and 1 place(s) with this world. Declare `world_id` in scenario.json to say what a world is rather than leaving it to be inferred"
+  }
+]

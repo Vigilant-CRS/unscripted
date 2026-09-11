@@ -1,0 +1,98 @@
+{
+  "id": "agent:muellerin_greta",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Greta",
+    "objective": "Greta zur Muehle",
+    "aliases": [
+      "greta",
+      "muellerin",
+      "müllerin",
+      "muehle",
+      "mühle"
+    ]
+  },
+  "big_five": {
+    "openness": 0.55,
+    "conscientiousness": 0.65,
+    "extraversion": 0.6,
+    "agreeableness": 0.4,
+    "emotional_stability": 0.6
+  },
+  "schwartz": {
+    "security": 0.7,
+    "self_direction": 0.65,
+    "power": 0.45
+  },
+  "needs": {
+    "income": 0.5,
+    "recognition": 0.5
+  },
+  "identities": [
+    {
+      "id": "muellerin",
+      "group": "district:thornfeld",
+      "accessibility": 0.8
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:trader",
+      "context": "district:thornfeld"
+    }
+  ],
+  "appearance": {
+    "garment": "item:leinenkleid"
+  },
+  "education": {
+    "domains": {
+      "general": 0.5,
+      "handel": 0.8,
+      "gossip": 0.75
+    }
+  },
+  "relationships": {
+    "agent:player_1": {
+      "trust": 0.3,
+      "liking": 0.0,
+      "familiarity": 0.0
+    },
+    "agent:schmied_hanns": {
+      "trust": 0.35,
+      "liking": 0.1,
+      "familiarity": 0.7
+    }
+  },
+  "secrets": [],
+  "goals": [
+    {
+      "content": "die_muehle_retten",
+      "priority": 0.9
+    }
+  ],
+  "social_status": 0.5,
+  "resources": 0.45,
+  "location": "place:dorfplatz",
+  "routine": [
+    {
+      "from": "06:00",
+      "place": "place:dorfplatz",
+      "activity": "Mehl verkaufen"
+    },
+    {
+      "from": "15:00",
+      "place": "place:schmiede",
+      "activity": "Gerät bringen"
+    },
+    {
+      "from": "17:00",
+      "place": "place:dorfplatz",
+      "activity": "Stand abbauen"
+    },
+    {
+      "from": "20:00",
+      "place": "place:kapelle",
+      "activity": "Abendgebet"
+    }
+  ]
+}

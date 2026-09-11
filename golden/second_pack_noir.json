@@ -1,0 +1,62 @@
+{
+  "name": "second_pack_noir",
+  "world_pack": "worldpacks/noir-harbor",
+  "player_start": "place:pier",
+  "commands": [
+    {
+      "input": "look",
+      "expect_contains": [
+        "The Pier",
+        "Clara",
+        "Harbour Watch Office"
+      ],
+      "expect_absent": [
+        "place:pier",
+        "Main Street",
+        "Vee"
+      ]
+    },
+    {
+      "input": "go office",
+      "expect_contains": [
+        "Harbour Watch Office"
+      ],
+      "expect_absent": [
+        "cannot move",
+        "could not map"
+      ]
+    },
+    {
+      "input": "ask Marlow about the logbook",
+      "expect_contains": [
+        "Marlow",
+        "office as open"
+      ],
+      "expect_absent": [
+        "clinic",
+        "shut that night"
+      ],
+      "expect_trace": [
+        "dialogue.direct_answer"
+      ]
+    },
+    {
+      "input": "ask Marlow about the manifest",
+      "expect_absent": [
+        "crate 19",
+        "off the manifest",
+        "off the books"
+      ],
+      "expect_trace": [
+        "dialogue.secret_gate",
+        "secret:crate_19"
+      ]
+    },
+    {
+      "input": "ask Clara about the pier",
+      "expect_contains": [
+        "Clara"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+ok  determinism: identical seeds reproduce identical state
+ok  claim is not truth: one claim -> p=0.52 (stays uncertain)
+ok  correlation discount: same-origin +0.002 < independent +0.021
+ok  belief: one origin saturates at p=0.682 however often repeated (ceiling 1.11 hearings); 20 independent sources -> p=1.000
+ok  contradiction: C1 (negation) and C2 (functional conflict) detected; disjoint scopes ok
+ok  affect: negative event lowers valence -0.27 -> -0.87 (soft, unsaturated)
+ok  PAD baseline: extravert+agreeable -> valence +0.79 (>0)
+ok  register: fixer formality 0.11/slang 0.89 vs exec 0.80/0.00
+ok  trust kinetics: favor +0.040 < betrayal -0.160 (slow up, fast down)
+ok  utility: group aggregate stays bounded in [-1,1]
+ok  validator: pack-declared secret vocabulary blocks leaks in both packs
+ok  ally response: son p=0.96 > stranger p=0.29
+ok  reactive rule: 'summon kin when hurt' fires only when injured AND threatened
+ok  leverage: patron 0.55 > client 0.00
+ok  graded resolution: observed outcome bands ['consequence', 'full', 'miss', 'partial']
+ok  faction heat: threshold crossed -> mobilization scheduled (1)
+ok  social standing gates reach: high status reaches the officer, low status cannot
+ok  world pack validation: cyberpunk-block passes SDK checks
+ok  memory: trivia fades within a day, an important memory lasts a week (threshold -1.5)
+ok  parser: vocabulary is world-pack content, not an SDK table
+ok  parser: a custom player id is never resolved as an NPC target
+ok  evidence: dossier names commit 3c4524d1b09f (clean), python 3.14.4
+ok  stories: one incident, 3 versions -- reach 11 at detail 1, reach 2 at full detail
+ok  earshot: 4 of 39 in the room took it in
+ok  occupancy: the index follows every move, however it was made
+ok  memory: 430 occasions became one judgement (activation -1.04 vs threshold -1.5), naming 5 of them
+ok  revision: exposing one liar recomputed 4 belief(s); independently sourced ones unchanged
+ok  revision: two sources 0.988 -> one discredited 0.959, still standing on the other
+ok  topology: restricted claim held by 1, common claim by 9, of 11 agents
+ok  attention: absorbed 6 of 18 claims offered (budget 6/day), and recovered overnight
+ok  interpretation: engineer read seal_breached in full; the doctor assimilationed it
+ok  interpretation: a sober witness loses the detail, a biased one moves the scene somewhere familiar
+ok  grounding: in provider mode the released line and the propagated claim agree, and the world learns the same either way
+ok  grounding: invention is judged against the world, not a word list
+ok  deception: liar holds 0.868 in the truth, asserted the opposite to 4 listener(s), each recording him as source
+ok  deception: an unsayable commitment asserts nothing
+ok  commitment: a greedy provider moved nothing beyond the 0 committed proposition(s)
+ok  commitment: seeded selection replays exactly, 4 variants across 24 worlds ('seen_at(who=agent:c)' in world-2)
+ok  architecture: 76 modules in 6 layers, no upward imports
+ok  belief: 20 questions moved nothing (0.8355), 20 of them remembered
+ok  evidence: a partial run is labelled (9 cases selectable)
+ok  evidence: counts describe the run, not the truncated tail
+ok  evidence: forgetting is judged at the retrieval threshold (-1.5)
+ok  evidence: 9 cases produced 3745 recorded episodes
+ok  medium: 55 spoken and 77 called; a call loses detail 21% of the time against 11% in person, and nobody overhears one
+ok  pursuit: without it the town is silent by day 27 (0 conversations); with it, 72 — and a single origin still tops out at 0.84
+ok  climate: off is neutral, on closes the square (0.60 -> 0.41), it recovers, the mood travels with the traffic, and no trait moved
+ok  contagion: off is byte-identical, on moved 5 people's mood over 9 exchanges reaching 5 listeners, capped at 0.043, steady caught 0.0528 vs volatile 0.1192, and no trait moved; 34/47 transfers second-hand, bystanders peak 0.0550 from a threat worth ~0.9 and settle back to 0.0044
+ok  common knowledge: two crowds stay two crowds, a conversation is not one, the radio made 5 people unable to deny the false account without reaching the witness, and no confidence moved
+ok  notes: off is byte-identical; 78 written in a week, 43 delivered, 19 read by the wrong person, 7 never collected; with telephones only 0 were written
+Optional layers. Every one is off by default, and off is exactly
+neutral -- a run with the flag off reproduces byte-identically.
+
+  action_bridge
+      the runtime asks your engine to carry out physical acts and waits to
+      be told what happened
+
+  climate
+      places have a mood -- how candid, how suspicious, how open to a
+      stranger -- moved by what happens in them and carried between rooms
+      by whoever walks
+
+  pursuit
+      characters act on their goals instead of only moving on routines and
+      gossiping at random
+
+  media
+      a claim can travel by telephone as well as by conversation: fewer
+      bystanders, more detail lost, weighed a little lower (needs pursuit)
+      needs: pursuit
+
+  notes
+      somebody who cannot reach the person they needed leaves word where
+      they stand, and a note is still there afterwards (needs pursuit)
+      needs: pursuit
+
+  promises
+      a promise comes due and is judged on what the person it was made to
+      came to believe, moving trust, liking and a reputation for
+      reliability
+
+  contagion
+      a little of a speaker's mood moves to whoever they are talking to
+
+  common_knowledge
+      track not who knows a thing but who watched everyone else find out;
+      a secret that is out in the open stops working as one
+
+  standing
+      how you treat one person changes how the rest of them treat you --
+      carried as a claim, so somebody who was only told about it judges
+      you too, and judges you less far than somebody who watched
+
+  unscripted serve --world-pack worldpacks/market-square --layers pursuit,notes
+ok  layers: 9 optional mechanics, each off by default, each reachable as --layers climate, dependencies enforced, all reported by the runtime and all documented
+ok  save/load: exact round trip through JSON, 18.0 kB gzipped for 8 characters, six unusable blobs refused by name, and a save from before a patch still loads — dropping agent:sela and reporting it
+Traceback (most recent call last):
+  File "/run/media/dd/USB_40281/Projekte/AI NPC/tests/test_scenarios.py", line 10872, in <module>
+    fn()
+    ~~^^
+  File "/run/media/dd/USB_40281/Projekte/AI NPC/tests/test_scenarios.py", line 2287, in test_a_game_can_launch_the_runtime_as_a_child_process
+    assert wait_for(lambda: os.path.exists(announce)), (
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: the service never announced itself

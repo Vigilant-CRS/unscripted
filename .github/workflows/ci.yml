@@ -1,0 +1,145 @@
+name: CI
+
+# WHAT RUNS WHEN, and why it is not everything every time.
+#
+# A push to main used to start seven jobs, two of them on runners GitHub bills
+# at a multiple: Windows at 2x and macOS at 10x. Six pushes in an afternoon is
+# then most of a month's allowance, spent re-proving something that had not
+# changed.
+#
+# So a push runs ONE job -- the full suite on the oldest supported Python, where
+# a version-specific break is most likely -- and the full matrix runs where it
+# earns its cost: on a pull request, once a week, and whenever asked for. The
+# claim being defended is "Python 3.10+, no dependencies, three operating
+# systems", and a weekly run defends it just as well as an hourly one.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Monday, early. The full matrix, so a break on a platform nobody pushed
+    # from is found within the week rather than by a customer.
+    - cron: "0 5 * * 1"
+
+# A burst of pushes should leave one run standing, not five. Older runs on the
+# same ref are cancelled the moment a newer one starts.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Which matrix to run, decided in one place and in plain JSON rather than in a
+  # multi-line expression inside `strategy`. A broken workflow file is worse than
+  # an expensive one -- it fails every push and says nothing useful.
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.pick.outputs.matrix }}
+    steps:
+      - id: pick
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            # One job. 3.10 because the oldest supported interpreter is where a
+            # version-specific break actually shows up.
+            echo 'matrix={"include":[{"python-version":"3.10","os":"ubuntu-latest"}]}' >> "$GITHUB_OUTPUT"
+          else
+            echo 'matrix={"include":[{"python-version":"3.10","os":"ubuntu-latest"},{"python-version":"3.11","os":"ubuntu-latest"},{"python-version":"3.12","os":"ubuntu-latest"},{"python-version":"3.13","os":"ubuntu-latest"},{"python-version":"3.12","os":"windows-latest"},{"python-version":"3.12","os":"macos-latest"}]}' >> "$GITHUB_OUTPUT"
+          fi
+
+  verify:
+    needs: plan
+    name: Python ${{ matrix.python-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      # The SDK claims Python 3.10+, no third-party dependencies, three operating
+      # systems. `plan` decides how much of that to re-prove on this event.
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Assert a dependency-free install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e . --no-deps
+          python -c "import unscripted, sys; print('unscripted', unscripted.__version__, 'on', sys.version)"
+
+      - name: A synthesiser, so the voice claim is exercised and not skipped
+        # The voice test checks its mapping everywhere and the actual audio only
+        # where a backend exists. Without this the interesting half -- that affect
+        # survives into the waveform -- silently never runs in CI.
+        if: runner.os == 'Linux'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq espeak-ng
+
+      - name: Regression suite
+        run: python tests/test_scenarios.py
+
+      - name: Golden scenarios
+        run: python -m unscripted golden-all
+
+      - name: World-pack validation
+        run: |
+          python -m unscripted validate worldpacks/cyberpunk-block
+          python -m unscripted validate worldpacks/noir-harbor
+          python -m unscripted validate worldpacks/dorf-thornfeld
+          python -m unscripted validate worldpacks/relay-station
+          python -m unscripted validate worldpacks/market-square
+
+      - name: Semantic QA
+        # Exits 2 on a violation. The rules file states the envelope it searched;
+        # a rule that holds only because the budget ran out is not a passing gate,
+        # which is why the report prints both numbers.
+        run: python -m unscripted qa qa/relay-station.json --quiet
+
+      - name: Epistemic integrity benchmark
+        run: python -m unscripted benchmark --turns 1500 --quiet
+
+      - name: Showcase
+        run: python -m unscripted showcase
+
+      - name: Smoke scene
+        run: python -m unscripted smoke
+
+      - name: Bridge profiles
+        run: python -m unscripted bridges
+
+      - name: Layer map holds
+        run: python -m unscripted architecture
+
+      - name: Console entry point
+        run: unscripted validate worldpacks/cyberpunk-block
+
+  package:
+    name: Build and verify the distribution
+    runs-on: ubuntu-latest
+    # The packaging check answers "does the wheel install and find its world
+    # packs", which cannot change from a commit that does not touch packaging.
+    # It runs where that is in question rather than on every push.
+    if: github.event_name != 'push'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build sdist and wheel
+        run: |
+          python -m pip install --upgrade pip build twine
+          python -m build
+          python -m twine check dist/*
+
+      - name: Install the wheel into a clean environment and run it there
+        run: |
+          python -m venv /tmp/clean
+          /tmp/clean/bin/python -m pip install dist/*.whl
+          # A packaged install must find its bundled world packs; a missing data
+          # file only shows up here, never in a source checkout.
+          cd /tmp
+          /tmp/clean/bin/unscripted validate "$(/tmp/clean/bin/python -c 'import sys,os; print(os.path.join(sys.prefix, "share", "unscripted", "worldpacks", "cyberpunk-block"))')"
+          /tmp/clean/bin/python -c "import unscripted; print('installed ok:', unscripted.__version__)"

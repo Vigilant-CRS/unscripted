@@ -1,0 +1,20 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.18.0",
+  "FriendlyName": "Unscripted",
+  "Description": "Causal social memory, belief, dialogue control and off-screen consequences for NPCs. One C++17 core, no dependencies, no interpreter -- so it ships to a console.",
+  "Category": "Gameplay",
+  "CreatedBy": "Unscripted",
+  "EnabledByDefault": true,
+  "CanContainContent": false,
+  "IsBetaVersion": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "Unscripted",
+      "Type": "Runtime",
+      "LoadingPhase": "PreDefault"
+    }
+  ]
+}

@@ -1,0 +1,1823 @@
+{
+  "commands": [
+    "look",
+    "promise Honce that I will pay",
+    "wait 720 minutes"
+  ],
+  "expected_state": {
+    "agents": [
+      "agent:barkeep_12",
+      "agent:corpo_okada",
+      "agent:dima_broke",
+      "agent:npc_red_jacket",
+      "agent:officer_kane",
+      "agent:pavel",
+      "agent:player_1",
+      "agent:son_ilya",
+      "agent:son_marko"
+    ],
+    "format": "unscripted-state",
+    "format_version": 1,
+    "places": [
+      "place:back_room",
+      "place:bar",
+      "place:clinic",
+      "place:main_street",
+      "place:market",
+      "place:police_post"
+    ],
+    "runtime_version": "1.21.0",
+    "snapshot_schema_version": 11,
+    "state": {
+      "actions_out": {
+        "counter": 0,
+        "counts": {
+          "FAILED": 0,
+          "INTERRUPTED": 0,
+          "SUCCEEDED": 0,
+          "TIMED_OUT": 0,
+          "UNREACHABLE": 0
+        },
+        "enabled": false,
+        "pending": [],
+        "timeout_minutes": 60
+      },
+      "agents": {
+        "agent:barkeep_12": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.11399999999999999,
+              "dominance": -0.04800000000000002,
+              "valence": 0.09700000000000004
+            },
+            "mood": {
+              "arousal": 0.1178301748686495,
+              "dominance": -0.05285753718573086,
+              "valence": 0.09702675039057714
+            }
+          },
+          "attention_day": 3,
+          "attention_spent": 2,
+          "beliefs": [
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "\u001fseed_bar_clinic": [
+                  0.0,
+                  -1.3894222961068519
+                ]
+              },
+              "expected_prob": 0.1994999999999999,
+              "hops": 0,
+              "ignorance": 0.418511203159578,
+              "logit": -1.3894222961068519,
+              "origin_counts": {
+                "seed_bar_clinic": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "clinic_open",
+                "slots": {
+                  "place": "place:clinic",
+                  "when": "last_night"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "seed:seed_bar_clinic",
+                  "delta": -1.389422,
+                  "eta": 1.0,
+                  "kappa": 0.801,
+                  "origin_event": "seed_bar_clinic",
+                  "speaker": null
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 1.3894222961068519,
+              "support_for": 0.0,
+              "txn_time": 4334,
+              "valid_start": 4334
+            },
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "\u001fseed_bar_kane": [
+                  1.3279419172873355,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.7905000000000002,
+              "hops": 0,
+              "ignorance": 0.4295639820624318,
+              "logit": 1.3279419172873355,
+              "origin_counts": {
+                "seed_bar_kane": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "was_at",
+                "slots": {
+                  "agent": "agent:officer_kane",
+                  "place": "place:clinic",
+                  "when": "last_night"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "seed:seed_bar_kane",
+                  "delta": 1.327942,
+                  "eta": 1.0,
+                  "kappa": 0.791,
+                  "origin_event": "seed_bar_kane",
+                  "speaker": null
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 1.3279419172873355,
+              "txn_time": 4334,
+              "valid_start": 4334
+            },
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "agent:player_1\u001f1002": [
+                  0.18046116607200044,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.544993252681187,
+              "hops": 0,
+              "ignorance": 0.8471265542156823,
+              "logit": 0.18046116607200044,
+              "origin_counts": {
+                "1002": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "economy:owes_amount",
+                "slots": {
+                  "amount": "300",
+                  "creditor": "agent:barkeep_12",
+                  "debtor": "agent:player_1"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1002",
+                  "delta": 0.180461,
+                  "eta": 1.0,
+                  "kappa": 0.545,
+                  "origin_event": 1002,
+                  "speaker": "agent:player_1"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 0.18046116607200044,
+              "txn_time": 4334,
+              "valid_start": 4334
+            },
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "channel:city_news\u001fevt_market_attack": [
+                  0.4117190371844644,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.6015000000000001,
+              "hops": 0,
+              "ignorance": 0.7083562477094608,
+              "logit": 0.4117190371844644,
+              "origin_counts": {
+                "evt_market_attack": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "connected_to_attack",
+                "slots": {
+                  "agent": "agent:player_1"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1001",
+                  "delta": 0.411719,
+                  "eta": 1.0,
+                  "kappa": 0.602,
+                  "origin_event": "evt_market_attack",
+                  "speaker": "channel:city_news"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 0.4117190371844644,
+              "txn_time": 4360,
+              "valid_start": 4360
+            }
+          ],
+          "identity_salience": {
+            "_neutral": 0.12227071358930017,
+            "bartender": 0.6056108089617322,
+            "resident": 0.2721184774489676
+          },
+          "identity_threat": {},
+          "location": "place:bar",
+          "memory": [
+            {
+              "about": [],
+              "content": "Honce heard two separate regulars say the clinic was closed.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.7,
+              "last_recalled": null,
+              "memory_id": "mem:seed_bar_clinic",
+              "owner": "agent:barkeep_12",
+              "presentations": [
+                4334
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "-",
+                "predicate": "clinic_open",
+                "slots": {
+                  "place": "place:clinic",
+                  "when": "last_night"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.82,
+              "type": "episodic",
+              "world_time": 4334
+            },
+            {
+              "about": [],
+              "content": "Honce saw Officer Kane pass the clinic after closing.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.7,
+              "last_recalled": null,
+              "memory_id": "mem:seed_bar_kane",
+              "owner": "agent:barkeep_12",
+              "presentations": [
+                4334
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "was_at",
+                "slots": {
+                  "agent": "agent:officer_kane",
+                  "place": "place:clinic",
+                  "when": "last_night"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.78,
+              "type": "episodic",
+              "world_time": 4334
+            },
+            {
+              "about": [],
+              "content": "player promised to pay 300 credits",
+              "emotional_valence": 0.25,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.75,
+              "last_recalled": null,
+              "memory_id": "mem_1002_agent:barkeep_12",
+              "owner": "agent:barkeep_12",
+              "presentations": [
+                4334
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "economy:owes_amount",
+                "slots": {
+                  "amount": "300",
+                  "creditor": "agent:barkeep_12",
+                  "debtor": "agent:player_1"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.7932433690824939,
+              "type": "commitment",
+              "world_time": 4334
+            },
+            {
+              "about": [],
+              "content": "City News: the stranger is linked to the market attack",
+              "emotional_valence": -0.3,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.5,
+              "last_recalled": null,
+              "memory_id": "mem_1001_agent:barkeep_12",
+              "owner": "agent:barkeep_12",
+              "presentations": [
+                4360
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "connected_to_attack",
+                "slots": {
+                  "agent": "agent:player_1"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.3,
+              "type": "episodic",
+              "world_time": 4360
+            }
+          ],
+          "relationships": {
+            "agent:corpo_okada": {
+              "familiarity": 0.11361512828387085
+            },
+            "agent:dima_broke": {
+              "familiarity": 0.11361512828387085
+            },
+            "agent:npc_red_jacket": {
+              "familiarity": 0.6454460513135484,
+              "liking": 0.4,
+              "trust": 0.55
+            },
+            "agent:player_1": {
+              "familiarity": 0.2022536154554838,
+              "liking": 0.2,
+              "trust": 0.33499999999999996
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:corpo_okada": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.16799999999999993,
+              "dominance": 0.04600000000000004,
+              "valence": -0.08399999999999996
+            },
+            "mood": {
+              "arousal": 0.1704853704529237,
+              "dominance": 0.04849358531920451,
+              "valence": -0.07373888520938321
+            }
+          },
+          "attention_day": 3,
+          "attention_spent": 1,
+          "beliefs": [
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "\u001fseed_okada_visit": [
+                  1.3894222961068519,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.8005,
+              "hops": 0,
+              "ignorance": 0.418511203159578,
+              "logit": 1.3894222961068519,
+              "origin_counts": {
+                "seed_okada_visit": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "was_at",
+                "slots": {
+                  "agent": "agent:corpo_okada",
+                  "place": "place:clinic",
+                  "when": "last_night"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "seed:seed_okada_visit",
+                  "delta": 1.389422,
+                  "eta": 1.0,
+                  "kappa": 0.801,
+                  "origin_event": "seed_okada_visit",
+                  "speaker": null
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 1.3894222961068519,
+              "txn_time": 4334,
+              "valid_start": 4334
+            },
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "\u001fseed_okada_hid_milan": [
+                  1.8833897920739793,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.8679999999999999,
+              "hops": 0,
+              "ignorance": 0.34681401826033204,
+              "logit": 1.8833897920739793,
+              "origin_counts": {
+                "seed_okada_hid_milan": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "whereabouts",
+                "slots": {
+                  "place": "place:bar_back",
+                  "who": "agent:npc_red_jacket"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "seed:seed_okada_hid_milan",
+                  "delta": 1.88339,
+                  "eta": 1.0,
+                  "kappa": 0.868,
+                  "origin_event": "seed_okada_hid_milan",
+                  "speaker": null
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 1.8833897920739793,
+              "txn_time": 4334,
+              "valid_start": 4334
+            },
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "agent:player_1\u001f1002": [
+                  0.0708133965481269,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.5176959550030268,
+              "hops": 0,
+              "ignorance": 0.9338695268695731,
+              "logit": 0.0708133965481269,
+              "origin_counts": {
+                "1002": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "economy:owes_amount",
+                "slots": {
+                  "amount": "300",
+                  "creditor": "agent:barkeep_12",
+                  "debtor": "agent:player_1"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1002",
+                  "delta": 0.070813,
+                  "eta": 1.0,
+                  "kappa": 0.518,
+                  "origin_event": 1002,
+                  "speaker": "agent:player_1"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 0.0708133965481269,
+              "txn_time": 4334,
+              "valid_start": 4334
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:clinic",
+          "memory": [
+            {
+              "about": [],
+              "content": "Okada's restricted itinerary includes a clinic stop.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.7,
+              "last_recalled": null,
+              "memory_id": "mem:seed_okada_visit",
+              "owner": "agent:corpo_okada",
+              "presentations": [
+                4334
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "was_at",
+                "slots": {
+                  "agent": "agent:corpo_okada",
+                  "place": "place:clinic",
+                  "when": "last_night"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.85,
+              "type": "episodic",
+              "world_time": 4334
+            },
+            {
+              "about": [],
+              "content": "Okada put Milan in the back room himself.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.95,
+              "last_recalled": null,
+              "memory_id": "mem:seed_okada_hid_milan",
+              "owner": "agent:corpo_okada",
+              "presentations": [
+                4334
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "whereabouts",
+                "slots": {
+                  "place": "place:bar_back",
+                  "who": "agent:npc_red_jacket"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 1.0,
+              "type": "episodic",
+              "world_time": 4334
+            },
+            {
+              "about": [],
+              "content": "player promised to pay 300 credits",
+              "emotional_valence": 0.25,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.75,
+              "last_recalled": null,
+              "memory_id": "mem_1002_agent:corpo_okada",
+              "owner": "agent:corpo_okada",
+              "presentations": [
+                4334
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "economy:owes_amount",
+                "slots": {
+                  "amount": "300",
+                  "creditor": "agent:barkeep_12",
+                  "debtor": "agent:player_1"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.793919100060536,
+              "type": "commitment",
+              "world_time": 4334
+            }
+          ],
+          "relationships": {
+            "agent:barkeep_12": {
+              "familiarity": 0.11361512828387085
+            },
+            "agent:dima_broke": {
+              "familiarity": 0.11361512828387085
+            },
+            "agent:npc_red_jacket": {
+              "familiarity": 0.11361512828387085
+            },
+            "agent:player_1": {
+              "familiarity": 0.11361512828387085,
+              "liking": 0.0,
+              "trust": 0.2
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:dima_broke": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": -0.23099999999999998,
+              "dominance": 0.07300000000000004,
+              "valence": -0.15399999999999997
+            },
+            "mood": {
+              "arousal": -0.22870282466550673,
+              "dominance": 0.07542301214979305,
+              "valence": -0.14452303153617707
+            }
+          },
+          "attention_day": 3,
+          "attention_spent": 1,
+          "beliefs": [
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "agent:player_1\u001f1002": [
+                  0.0,
+                  -0.01647043598223551
+                ]
+              },
+              "expected_prob": 0.4958824840857041,
+              "hops": 0,
+              "ignorance": 0.9837964436552258,
+              "logit": -0.01647043598223551,
+              "origin_counts": {
+                "1002": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "economy:owes_amount",
+                "slots": {
+                  "amount": "300",
+                  "creditor": "agent:barkeep_12",
+                  "debtor": "agent:player_1"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1002",
+                  "delta": -0.01647,
+                  "eta": 1.0,
+                  "kappa": 0.496,
+                  "origin_event": 1002,
+                  "speaker": "agent:player_1"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.01647043598223551,
+              "support_for": 0.0,
+              "txn_time": 4334,
+              "valid_start": 4334
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:market",
+          "memory": [
+            {
+              "about": [],
+              "content": "player promised to pay 300 credits",
+              "emotional_valence": 0.25,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.75,
+              "last_recalled": null,
+              "memory_id": "mem_1002_agent:dima_broke",
+              "owner": "agent:dima_broke",
+              "presentations": [
+                4334
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "economy:owes_amount",
+                "slots": {
+                  "amount": "300",
+                  "creditor": "agent:barkeep_12",
+                  "debtor": "agent:player_1"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.7776496817140809,
+              "type": "commitment",
+              "world_time": 4334
+            }
+          ],
+          "relationships": {
+            "agent:barkeep_12": {
+              "familiarity": 0.11361512828387085
+            },
+            "agent:corpo_okada": {
+              "familiarity": 0.11361512828387085
+            },
+            "agent:npc_red_jacket": {
+              "familiarity": 0.11361512828387085
+            },
+            "agent:player_1": {
+              "familiarity": 0.11361512828387085,
+              "liking": 0.1,
+              "trust": 0.2
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:npc_red_jacket": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": -0.261,
+              "dominance": 0.4009999999999999,
+              "valence": -0.20900000000000002
+            },
+            "mood": {
+              "arousal": -0.25767867894761537,
+              "dominance": 0.39838750784587224,
+              "valence": -0.21405919729357498
+            }
+          },
+          "attention_day": 3,
+          "attention_spent": 2,
+          "beliefs": [
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "\u001fseed_vee_clinic": [
+                  0.0,
+                  -1.312911815185867
+                ]
+              },
+              "expected_prob": 0.21199999999999994,
+              "hops": 0,
+              "ignorance": 0.4323554376065304,
+              "logit": -1.312911815185867,
+              "origin_counts": {
+                "seed_vee_clinic": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "clinic_open",
+                "slots": {
+                  "place": "place:clinic",
+                  "when": "last_night"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "seed:seed_vee_clinic",
+                  "delta": -1.312912,
+                  "eta": 1.0,
+                  "kappa": 0.788,
+                  "origin_event": "seed_vee_clinic",
+                  "speaker": null
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 1.312911815185867,
+              "support_for": 0.0,
+              "txn_time": 4334,
+              "valid_start": 4334
+            },
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "agent:player_1\u001f1002": [
+                  0.0,
+                  -0.015412838628412178
+                ]
+              },
+              "expected_prob": 0.4961468666203775,
+              "hops": 0,
+              "ignorance": 0.9848211111362041,
+              "logit": -0.015412838628412178,
+              "origin_counts": {
+                "1002": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "economy:owes_amount",
+                "slots": {
+                  "amount": "300",
+                  "creditor": "agent:barkeep_12",
+                  "debtor": "agent:player_1"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1002",
+                  "delta": -0.015413,
+                  "eta": 1.0,
+                  "kappa": 0.496,
+                  "origin_event": 1002,
+                  "speaker": "agent:player_1"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.015412838628412178,
+              "support_for": 0.0,
+              "txn_time": 4334,
+              "valid_start": 4334
+            },
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "channel:city_news\u001fevt_market_attack": [
+                  0.5236463121950522,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.628,
+              "hops": 0,
+              "ignorance": 0.6563202969062699,
+              "logit": 0.5236463121950522,
+              "origin_counts": {
+                "evt_market_attack": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "connected_to_attack",
+                "slots": {
+                  "agent": "agent:player_1"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1001",
+                  "delta": 0.523646,
+                  "eta": 1.0,
+                  "kappa": 0.628,
+                  "origin_event": "evt_market_attack",
+                  "speaker": "channel:city_news"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 0.5236463121950522,
+              "txn_time": 4360,
+              "valid_start": 4360
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:back_room",
+          "memory": [
+            {
+              "about": [],
+              "content": "Vee saw the clinic shutters down after midnight.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.7,
+              "last_recalled": null,
+              "memory_id": "mem:seed_vee_clinic",
+              "owner": "agent:npc_red_jacket",
+              "presentations": [
+                4334
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "-",
+                "predicate": "clinic_open",
+                "slots": {
+                  "place": "place:clinic",
+                  "when": "last_night"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.92,
+              "type": "episodic",
+              "world_time": 4334
+            },
+            {
+              "about": [],
+              "content": "player promised to pay 300 credits",
+              "emotional_valence": 0.25,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.75,
+              "last_recalled": null,
+              "memory_id": "mem_1002_agent:npc_red_jacket",
+              "owner": "agent:npc_red_jacket",
+              "presentations": [
+                4334
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "economy:owes_amount",
+                "slots": {
+                  "amount": "300",
+                  "creditor": "agent:barkeep_12",
+                  "debtor": "agent:player_1"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.7703498659260389,
+              "type": "commitment",
+              "world_time": 4334
+            },
+            {
+              "about": [],
+              "content": "City News: the stranger is linked to the market attack",
+              "emotional_valence": -0.3,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.5,
+              "last_recalled": null,
+              "memory_id": "mem_1001_agent:npc_red_jacket",
+              "owner": "agent:npc_red_jacket",
+              "presentations": [
+                4360
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "connected_to_attack",
+                "slots": {
+                  "agent": "agent:player_1"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.7,
+              "type": "episodic",
+              "world_time": 4360
+            }
+          ],
+          "relationships": {
+            "agent:barkeep_12": {
+              "familiarity": 0.6454460513135484,
+              "liking": 0.4,
+              "trust": 0.55
+            },
+            "agent:corpo_okada": {
+              "familiarity": 0.11361512828387085
+            },
+            "agent:dima_broke": {
+              "familiarity": 0.11361512828387085
+            },
+            "agent:player_1": {
+              "familiarity": 0.11361512828387085,
+              "liking": 0.1,
+              "trust": 0.25
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:officer_kane": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.05399999999999998,
+              "dominance": -0.009999999999999988,
+              "valence": -0.04199999999999998
+            },
+            "mood": {
+              "arousal": 0.05399999999999998,
+              "dominance": -0.009999999999999988,
+              "valence": -0.04199999999999998
+            }
+          },
+          "attention_day": -1,
+          "attention_spent": 0,
+          "beliefs": [
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "\u001fseed_kane_clinic": [
+                  0.0,
+                  -1.4274263850954276
+                ]
+              },
+              "expected_prob": 0.1934999999999999,
+              "hops": 0,
+              "ignorance": 0.41195893978086084,
+              "logit": -1.4274263850954276,
+              "origin_counts": {
+                "seed_kane_clinic": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "clinic_open",
+                "slots": {
+                  "place": "place:clinic",
+                  "when": "last_night"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "seed:seed_kane_clinic",
+                  "delta": -1.427426,
+                  "eta": 1.0,
+                  "kappa": 0.807,
+                  "origin_event": "seed_kane_clinic",
+                  "speaker": null
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": false,
+              "support_against": 1.4274263850954276,
+              "support_for": 0.0,
+              "txn_time": 4334,
+              "valid_start": 4334
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:main_street",
+          "memory": [
+            {
+              "about": [],
+              "content": "Kane has an official incident note that the clinic was closed.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.7,
+              "last_recalled": null,
+              "memory_id": "mem:seed_kane_clinic",
+              "owner": "agent:officer_kane",
+              "presentations": [
+                4334
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "-",
+                "predicate": "clinic_open",
+                "slots": {
+                  "place": "place:clinic",
+                  "when": "last_night"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.88,
+              "type": "episodic",
+              "world_time": 4334
+            },
+            {
+              "about": [],
+              "content": "Marko arrives to hanging around",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.15,
+              "last_recalled": null,
+              "memory_id": "mem_1009_agent:officer_kane",
+              "owner": "agent:officer_kane",
+              "presentations": [
+                5054
+              ],
+              "proposition": null,
+              "source_conf": 0.8384679270929273,
+              "type": "episodic",
+              "world_time": 5054
+            }
+          ],
+          "relationships": {
+            "agent:corpo_okada": {
+              "familiarity": 0.4,
+              "liking": 0.3,
+              "trust": 0.5
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:pavel": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": -0.08699999999999997,
+              "dominance": -0.015999999999999993,
+              "valence": -0.018999999999999996
+            },
+            "mood": {
+              "arousal": -0.08699999999999997,
+              "dominance": -0.015999999999999993,
+              "valence": -0.018999999999999996
+            }
+          },
+          "attention_day": -1,
+          "attention_spent": 0,
+          "beliefs": [],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:market",
+          "memory": [
+            {
+              "about": [],
+              "content": "Dima arrives to hustling",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.15,
+              "last_recalled": null,
+              "memory_id": "mem_1006_agent:pavel",
+              "owner": "agent:pavel",
+              "presentations": [
+                5054
+              ],
+              "proposition": null,
+              "source_conf": 0.349066811392443,
+              "type": "episodic",
+              "world_time": 5054
+            }
+          ],
+          "relationships": {
+            "agent:player_1": {
+              "familiarity": 0.0,
+              "liking": 0.0,
+              "trust": 0.2
+            },
+            "agent:son_ilya": {
+              "familiarity": 0.11361512828387085
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:player_1": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.0,
+              "dominance": 0.0,
+              "valence": 0.0
+            },
+            "mood": {
+              "arousal": 0.0,
+              "dominance": 0.0,
+              "valence": 0.0
+            }
+          },
+          "attention_day": 3,
+          "attention_spent": 1,
+          "beliefs": [
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "agent:officer_kane\u001fseed_kane_clinic": [
+                  0.0,
+                  -0.09517851735923427
+                ]
+              },
+              "expected_prob": 0.476223317266078,
+              "hops": 1,
+              "ignorance": 0.9130931479657445,
+              "logit": -0.09517851735923427,
+              "origin_counts": {
+                "seed_kane_clinic": 2
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "clinic_open",
+                "slots": {
+                  "place": "place:clinic",
+                  "when": "last_night"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1010",
+                  "delta": -0.086589,
+                  "eta": 1.0,
+                  "kappa": 0.522,
+                  "origin_event": "seed_kane_clinic",
+                  "speaker": "agent:officer_kane"
+                },
+                {
+                  "claim_id": "clm_1011",
+                  "delta": -0.00859,
+                  "eta": 0.1,
+                  "kappa": 0.521,
+                  "origin_event": "seed_kane_clinic",
+                  "speaker": "agent:officer_kane"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.09517851735923427,
+              "support_for": 0.0,
+              "txn_time": 5054,
+              "valid_start": 5054
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:main_street",
+          "memory": [
+            {
+              "about": [],
+              "content": "Officer Kane arrives to patrol",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.15,
+              "last_recalled": null,
+              "memory_id": "mem_1008_agent:player_1",
+              "owner": "agent:player_1",
+              "presentations": [
+                5054
+              ],
+              "proposition": null,
+              "source_conf": 0.7848668662468242,
+              "type": "episodic",
+              "world_time": 5054
+            },
+            {
+              "about": [],
+              "content": "Marko arrives to hanging around",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.15,
+              "last_recalled": null,
+              "memory_id": "mem_1009_agent:player_1",
+              "owner": "agent:player_1",
+              "presentations": [
+                5054
+              ],
+              "proposition": null,
+              "source_conf": 0.8336660826995232,
+              "type": "episodic",
+              "world_time": 5054
+            },
+            {
+              "about": [],
+              "content": "Officer Kane passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1010_agent:player_1",
+              "owner": "agent:player_1",
+              "presentations": [
+                5054
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "clinic_open",
+                "slots": {
+                  "place": "place:clinic",
+                  "when": "last_night"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.7772281408062867,
+              "type": "episodic",
+              "world_time": 5054
+            },
+            {
+              "about": [],
+              "content": "Officer Kane passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1011_agent:player_1",
+              "owner": "agent:player_1",
+              "presentations": [
+                5054
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "clinic_open",
+                "slots": {
+                  "place": "place:clinic",
+                  "when": "last_night"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.7743510702432203,
+              "type": "episodic",
+              "world_time": 5054
+            }
+          ],
+          "relationships": {
+            "agent:barkeep_12": {
+              "familiarity": 0.11361512828387085
+            },
+            "agent:corpo_okada": {
+              "familiarity": 0.11361512828387085
+            },
+            "agent:dima_broke": {
+              "familiarity": 0.11361512828387085
+            },
+            "agent:npc_red_jacket": {
+              "familiarity": 0.11361512828387085
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:son_ilya": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.08700000000000004,
+              "dominance": -0.19999999999999996,
+              "valence": 0.095
+            },
+            "mood": {
+              "arousal": 0.08700000000000004,
+              "dominance": -0.19999999999999996,
+              "valence": 0.095
+            }
+          },
+          "attention_day": -1,
+          "attention_spent": 0,
+          "beliefs": [],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:market",
+          "memory": [
+            {
+              "about": [],
+              "content": "Dima arrives to hustling",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.15,
+              "last_recalled": null,
+              "memory_id": "mem_1006_agent:son_ilya",
+              "owner": "agent:son_ilya",
+              "presentations": [
+                5054
+              ],
+              "proposition": null,
+              "source_conf": 0.3534112750367995,
+              "type": "episodic",
+              "world_time": 5054
+            }
+          ],
+          "relationships": {
+            "agent:pavel": {
+              "familiarity": 0.9556807564141935,
+              "kinship": 0.95,
+              "liking": 0.85,
+              "loyalty": 0.85,
+              "trust": 0.85
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:son_marko": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.0,
+              "dominance": 0.11999999999999997,
+              "valence": 0.04199999999999999
+            },
+            "mood": {
+              "arousal": 0.0,
+              "dominance": 0.11999999999999997,
+              "valence": 0.04199999999999999
+            }
+          },
+          "attention_day": 3,
+          "attention_spent": 1,
+          "beliefs": [
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "agent:officer_kane\u001fseed_kane_clinic": [
+                  0.0,
+                  -0.10565620956470395
+                ]
+              },
+              "expected_prob": 0.4736104923979389,
+              "hops": 1,
+              "ignorance": 0.904440269361576,
+              "logit": -0.10565620956470395,
+              "origin_counts": {
+                "seed_kane_clinic": 2
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "clinic_open",
+                "slots": {
+                  "place": "place:clinic",
+                  "when": "last_night"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1010",
+                  "delta": -0.095697,
+                  "eta": 1.0,
+                  "kappa": 0.524,
+                  "origin_event": "seed_kane_clinic",
+                  "speaker": "agent:officer_kane"
+                },
+                {
+                  "claim_id": "clm_1011",
+                  "delta": -0.009959,
+                  "eta": 0.1,
+                  "kappa": 0.525,
+                  "origin_event": "seed_kane_clinic",
+                  "speaker": "agent:officer_kane"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.10565620956470395,
+              "support_for": 0.0,
+              "txn_time": 5054,
+              "valid_start": 5054
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:main_street",
+          "memory": [
+            {
+              "about": [],
+              "content": "Honce arrives to sleeping in the back",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.15,
+              "last_recalled": null,
+              "memory_id": "mem_1004_agent:son_marko",
+              "owner": "agent:son_marko",
+              "presentations": [
+                5054
+              ],
+              "proposition": null,
+              "source_conf": 0.46608392505172114,
+              "type": "episodic",
+              "world_time": 5054
+            },
+            {
+              "about": [],
+              "content": "Officer Kane passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1010_agent:son_marko",
+              "owner": "agent:son_marko",
+              "presentations": [
+                5054
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "clinic_open",
+                "slots": {
+                  "place": "place:clinic",
+                  "when": "last_night"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.8150992034720496,
+              "type": "episodic",
+              "world_time": 5054
+            },
+            {
+              "about": [],
+              "content": "Officer Kane passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1011_agent:son_marko",
+              "owner": "agent:son_marko",
+              "presentations": [
+                5054
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "clinic_open",
+                "slots": {
+                  "place": "place:clinic",
+                  "when": "last_night"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.8313004918147465,
+              "type": "episodic",
+              "world_time": 5054
+            }
+          ],
+          "relationships": {
+            "agent:pavel": {
+              "familiarity": 0.95,
+              "kinship": 0.95,
+              "liking": 0.8,
+              "loyalty": 0.9,
+              "trust": 0.9
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        }
+      },
+      "climate": {
+        "enabled": false,
+        "now": {
+          "place:back_room": {
+            "candour": 0.48,
+            "openness": 0.245,
+            "suspicion": 0.35
+          },
+          "place:bar": {
+            "candour": 0.79,
+            "openness": 0.47,
+            "suspicion": 0.42
+          },
+          "place:clinic": {
+            "candour": 0.41,
+            "openness": 0.425,
+            "suspicion": 0.49
+          },
+          "place:main_street": {
+            "candour": 0.51,
+            "openness": 0.56,
+            "suspicion": 0.56
+          },
+          "place:market": {
+            "candour": 0.625,
+            "openness": 0.56,
+            "suspicion": 0.525
+          },
+          "place:police_post": {
+            "candour": 0.195,
+            "openness": 0.605,
+            "suspicion": 0.665
+          }
+        }
+      },
+      "common_knowledge": {
+        "enabled": false,
+        "publics": []
+      },
+      "conversations": {
+        "conv_agent:barkeep_12_agent:player_1": {
+          "active_topic": null,
+          "conv_id": "conv",
+          "discussed_topics": {},
+          "last_acts": [
+            "request"
+          ],
+          "last_world_time": 0,
+          "participants": [
+            "agent:barkeep_12",
+            "agent:player_1"
+          ],
+          "recent_lines": [
+            "You still owe me. Time to pay."
+          ],
+          "turn_count": 1
+        }
+      },
+      "factions": {
+        "faction:badges": {
+          "clocks": {
+            "suppress_gang": {
+              "filled": 0,
+              "name": "suppress_gang",
+              "size": 6
+            }
+          },
+          "faction_id": "faction:badges",
+          "goals": [
+            "suppress_gang"
+          ],
+          "heat": 0.0,
+          "influence": 0.8,
+          "resources": 0.7,
+          "territory": [
+            "place:police_post",
+            "place:main_street",
+            "place:market"
+          ]
+        },
+        "faction:reds": {
+          "clocks": {
+            "expand_territory": {
+              "filled": 0,
+              "name": "expand_territory",
+              "size": 6
+            },
+            "intimidate_rivals": {
+              "filled": 0,
+              "name": "intimidate_rivals",
+              "size": 6
+            }
+          },
+          "faction_id": "faction:reds",
+          "goals": [
+            "expand_territory",
+            "intimidate_rivals"
+          ],
+          "heat": 0.0,
+          "influence": 0.45,
+          "resources": 0.4,
+          "territory": [
+            "place:main_street",
+            "place:bar",
+            "place:back_room"
+          ]
+        }
+      },
+      "global_seed": "conformance-promises",
+      "last_decay": {
+        "agent:barkeep_12": 5054,
+        "agent:corpo_okada": 5054,
+        "agent:dima_broke": 5054,
+        "agent:npc_red_jacket": 5054,
+        "agent:officer_kane": 5054,
+        "agent:pavel": 5054,
+        "agent:player_1": 5054,
+        "agent:son_ilya": 5054,
+        "agent:son_marko": 5054
+      },
+      "ledger_watermark": 10,
+      "next_event_id": 1011,
+      "notes": {
+        "counter": 0,
+        "enabled": false,
+        "notes": []
+      },
+      "promises": {
+        "counter": 1,
+        "enabled": true,
+        "open": [
+          {
+            "due_at": 7214,
+            "made_at": 4334,
+            "promise_id": "promise_1",
+            "promisee": "agent:barkeep_12",
+            "promisee_prior": 0.544993,
+            "promiser": "agent:player_1",
+            "proposition": "economy:owes_amount(debtor=agent:player_1,creditor=agent:barkeep_12,amount=300)[None,None,None]",
+            "resolved_at": null,
+            "state": "open",
+            "witnesses": [
+              "agent:barkeep_12",
+              "agent:corpo_okada",
+              "agent:dima_broke",
+              "agent:npc_red_jacket",
+              "agent:player_1"
+            ]
+          }
+        ],
+        "settled": []
+      },
+      "pursuit": {
+        "enabled": true,
+        "last_acted": {}
+      },
+      "scenario_events": [],
+      "snapshot_schema_version": 11,
+      "world_time": 5054
+    },
+    "world_fingerprint": "bfabd30e306131e1",
+    "world_id": "block-17",
+    "world_time": 5054
+  },
+  "format": "unscripted/conformance",
+  "format_version": 1,
+  "id": "promises",
+  "layers": [
+    "pursuit",
+    "promises"
+  ],
+  "seed": "conformance-promises",
+  "transcript": [
+    {
+      "input": "look",
+      "message_for_humans": "Main Street\nnoise=0.15 surveillance=0.60 privacy=0.20\nNPCs: Honce, Mr. Okada, Dima, Vee\nExits: Bar, Clinic, Market"
+    },
+    {
+      "input": "promise Honce that I will pay",
+      "message_for_humans": "Honce: \"You still owe me. Time to pay.\""
+    },
+    {
+      "input": "wait 720 minutes",
+      "message_for_humans": "Time advances by 720 minutes.\nMain Street\nnoise=0.15 surveillance=0.60 privacy=0.20\nNPCs: Officer Kane, Marko\nExits: Bar, Clinic, Market"
+    }
+  ],
+  "why": "a commitment coming due, and reputation reaching the people who heard it made",
+  "world_pack": "worldpacks/cyberpunk-block"
+}

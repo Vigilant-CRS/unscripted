@@ -1,0 +1,95 @@
+{
+  "id": "agent:dima_broke",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Dima",
+    "objective": "Dima R.",
+    "aliases": [
+      "dima",
+      "hustler"
+    ]
+  },
+  "big_five": {
+    "openness": 0.5,
+    "conscientiousness": 0.35,
+    "extraversion": 0.55,
+    "agreeableness": 0.4,
+    "emotional_stability": 0.35
+  },
+  "schwartz": {
+    "security": 0.4,
+    "stimulation": 0.6,
+    "power": 0.5
+  },
+  "needs": {
+    "income": 0.9,
+    "safety": 0.5
+  },
+  "identities": [
+    {
+      "id": "hustler",
+      "group": "district:watson",
+      "accessibility": 0.7
+    }
+  ],
+  "roles": [],
+  "appearance": {
+    "garment": "item:worn_jacket"
+  },
+  "education": {
+    "domains": {
+      "general": 0.3,
+      "street": 0.7
+    }
+  },
+  "relationships": {
+    "agent:player_1": {
+      "trust": 0.2,
+      "liking": 0.1,
+      "familiarity": 0.0
+    }
+  },
+  "secrets": [],
+  "goals": [
+    {
+      "content": "make_rent",
+      "priority": 0.95
+    }
+  ],
+  "social_status": 0.2,
+  "resources": 0.08,
+  "location": "place:main_street",
+  "routine": [
+    {
+      "from": "00:00",
+      "place": "place:main_street",
+      "activity": "hustling the late crowd"
+    },
+    {
+      "from": "05:00",
+      "place": "place:market",
+      "activity": "sleeping rough"
+    },
+    {
+      "from": "11:00",
+      "place": "place:market",
+      "activity": "hustling"
+    },
+    {
+      "from": "18:00",
+      "place": "place:bar",
+      "activity": "nursing one drink"
+    },
+    {
+      "from": "22:00",
+      "place": "place:main_street",
+      "activity": "hustling the late crowd"
+    }
+  ],
+  "epistemic": {
+    "drawn_to": [
+      "item:tailored_suit"
+    ],
+    "_note": "`drawn_to` lists the appearance tokens this person is taken with. Authored, never decided by an engine: what somebody finds striking is a characterisation."
+  }
+}

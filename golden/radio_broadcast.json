@@ -1,0 +1,12 @@
+{
+  "name": "radio_broadcast",
+  "world_pack": "worldpacks/cyberpunk-block",
+  "commands": [
+    {
+      "input": "listen radio",
+      "expect_contains": [
+        "bulletin"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+[
+  {
+    "case": "controlled_multiple_facts",
+    "invariant_holds": true,
+    "detail": {
+      "text": "Far as I know, the place was shut that night.",
+      "verdict": "ACCEPT",
+      "spoken": [
+        "NOT clinic_open(place=place:clinic, when=last_night)"
+      ],
+      "reason_codes": [
+        "commitment.selected",
+        "commitment.unsayable_dropped",
+        "dialogue.direct_answer",
+        "validator.accept"
+      ]
+    }
+  },
+  {
+    "case": "controlled_shortening",
+    "invariant_holds": true,
+    "detail": {
+      "text": "Listen carefully. Place was shut that night. That's all I got.",
+      "verdict": "ACCEPT",
+      "spoken": [
+        "NOT clinic_open(place=place:clinic, when=last_night)"
+      ],
+      "reason_codes": [
+        "commitment.selected",
+        "dialogue.direct_answer",
+        "validator.accept"
+      ],
+      "authored_variants": {
+        "formal": "Listen carefully. As far as I am aware, the establishment was closed during that period.",
+        "neutral": "Listen carefully. Far as I know, the place was shut that night.",
+        "vernacular": "Listen carefully. Place was shut that night. That's all I got."
+      }
+    }
+  },
+  {
+    "case": "controlled_nonfactual_plan",
+    "invariant_holds": true,
+    "detail": {
+      "text": "Good evening.",
+      "verdict": "ACCEPT",
+      "spoken": [],
+      "reason_codes": [
+        "policy.selected",
+        "validator.accept"
+      ],
+      "provider_calls": [],
+      "mode": "controlled"
+    }
+  },
+  {
+    "case": "provider_history_changes_controlled_fact",
+    "invariant_holds": true,
+    "detail": [
+      {
+        "provider_line": "Evening.",
+        "calls": [],
+        "first": {
+          "text": "Not sure that's any of your business.",
+          "verdict": "ACCEPT",
+          "spoken": [],
+          "reason_codes": [
+            "policy.selected",
+            "validator.accept"
+          ]
+        },
+        "second": {
+          "text": "Far as I know, the place was shut that night.",
+          "verdict": "ACCEPT",
+          "spoken": [
+            "NOT clinic_open(place=place:clinic, when=last_night)"
+          ],
+          "reason_codes": [
+            "commitment.selected",
+            "dialogue.direct_answer",
+            "validator.accept"
+          ]
+        },
+        "player_beliefs": [
+          "clinic_open(place=place:clinic,when=last_night)[None,None,None]"
+        ]
+      },
+      {
+        "provider_line": "Far as I know, the place was shut that night.",
+        "calls": [],
+        "first": {
+          "text": "Not sure that's any of your business.",
+          "verdict": "ACCEPT",
+          "spoken": [],
+          "reason_codes": [
+            "policy.selected",
+            "validator.accept"
+          ]
+        },
+        "second": {
+          "text": "Far as I know, the place was shut that night.",
+          "verdict": "ACCEPT",
+          "spoken": [
+            "NOT clinic_open(place=place:clinic, when=last_night)"
+          ],
+          "reason_codes": [
+            "commitment.selected",
+            "dialogue.direct_answer",
+            "validator.accept"
+          ]
+        },
+        "player_beliefs": [
+          "clinic_open(place=place:clinic,when=last_night)[None,None,None]"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "origin_over_many_cycles",
+    "invariant_holds": true,
+    "detail": {
+      "initial_p": 0.9499999999999998,
+      "initial_contribution": 2.9444389791664394,
+      "distinct_origins_total": 513,
+      "cycles": [
+        {
+          "cycle": 1,
+          "repeat_delta": 0.29444389791664394,
+          "p": 0.962271573289927
+        },
+        {
+          "cycle": 2,
+          "repeat_delta": 0.0,
+          "p": 0.962271573289927
+        },
+        {
+          "cycle": 5,
+          "repeat_delta": 0.0,
+          "p": 0.962271573289927
+        },
+        {
+          "cycle": 10,
+          "repeat_delta": 0.0,
+          "p": 0.962271573289927
+        },
+        {
+          "cycle": 20,
+          "repeat_delta": 0.0,
+          "p": 0.962271573289927
+        }
+      ],
+      "total_logit": 3.2388828770830833,
+      "global_ceiling_before_eviction": 3.271598865740488,
+      "scope": "Original global saturation guarantee, not the weaker per-cycle bound."
+    }
+  },
+  {
+    "case": "world_identity_fallback",
+    "probe_error": "StateImportError: different_world: this save belongs to 'block-17', not 'noir-harbor'"
+  },
+  {
+    "case": "provider_error_recovers_content",
+    "invariant_holds": true,
+    "detail": [
+      {
+        "text": "The clinic was not open last night.",
+        "verdict": "ACCEPT",
+        "spoken": [
+          "NOT clinic_open(place=place:clinic, when=last_night)"
+        ],
+        "reason_codes": [
+          "commitment.selected",
+          "dialogue.direct_answer",
+          "validator.accept"
+        ],
+        "calls": [
+          {
+            "act": "inform",
+            "facts": [
+              "NOT clinic_open(place=place:clinic, when=last_night)"
+            ],
+            "avoid": []
+          }
+        ]
+      },
+      {
+        "text": "Far as I know, the place was shut that night.",
+        "verdict": "ACCEPT",
+        "spoken": [
+          "NOT clinic_open(place=place:clinic, when=last_night)"
+        ],
+        "reason_codes": [
+          "provider.failure",
+          "commitment.selected",
+          "dialogue.direct_answer",
+          "validator.accept"
+        ],
+        "calls": [
+          {
+            "act": "inform",
+            "facts": [
+              "NOT clinic_open(place=place:clinic, when=last_night)"
+            ],
+            "avoid": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "case": "ledger_watermark_stays_fixed",
+    "invariant_holds": true,
+    "detail": {
+      "watermark": 1,
+      "before": [
+        {
+          "entry": 1,
+          "event_id": 1001,
+          "world_time": 1,
+          "type": "incident",
+          "actor": null,
+          "location": "p",
+          "payload": "{\"summary\": \"branch A\"}",
+          "canonical": 1
+        }
+      ],
+      "after": [
+        {
+          "entry": 1,
+          "event_id": 1001,
+          "world_time": 1,
+          "type": "incident",
+          "actor": null,
+          "location": "p",
+          "payload": "{\"summary\": \"branch A\"}",
+          "canonical": 1
+        }
+      ],
+      "all_audit_rows": 2
+    }
+  }
+]

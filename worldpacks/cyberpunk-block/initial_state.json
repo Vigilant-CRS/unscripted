@@ -1,0 +1,102 @@
+{
+  "beliefs": [
+    {
+      "agent": "agent:npc_red_jacket",
+      "proposition": {
+        "predicate": "clinic_open",
+        "slots": {
+          "place": "place:clinic",
+          "when": "last_night"
+        },
+        "polarity": "-"
+      },
+      "summary": "Vee saw the clinic shutters down after midnight.",
+      "origin_event": "seed_vee_clinic",
+      "trust": 0.92,
+      "competence": 0.85,
+      "importance": 0.7
+    },
+    {
+      "agent": "agent:barkeep_12",
+      "proposition": {
+        "predicate": "clinic_open",
+        "slots": {
+          "place": "place:clinic",
+          "when": "last_night"
+        },
+        "polarity": "-"
+      },
+      "summary": "Honce heard two separate regulars say the clinic was closed.",
+      "origin_event": "seed_bar_clinic",
+      "trust": 0.82,
+      "competence": 0.85,
+      "importance": 0.7
+    },
+    {
+      "agent": "agent:barkeep_12",
+      "proposition": {
+        "predicate": "was_at",
+        "slots": {
+          "agent": "agent:officer_kane",
+          "place": "place:clinic",
+          "when": "last_night"
+        },
+        "polarity": "+"
+      },
+      "summary": "Honce saw Officer Kane pass the clinic after closing.",
+      "origin_event": "seed_bar_kane",
+      "trust": 0.78,
+      "competence": 0.85,
+      "importance": 0.7
+    },
+    {
+      "agent": "agent:officer_kane",
+      "proposition": {
+        "predicate": "clinic_open",
+        "slots": {
+          "place": "place:clinic",
+          "when": "last_night"
+        },
+        "polarity": "-"
+      },
+      "summary": "Kane has an official incident note that the clinic was closed.",
+      "origin_event": "seed_kane_clinic",
+      "trust": 0.88,
+      "competence": 0.85,
+      "importance": 0.7
+    },
+    {
+      "agent": "agent:corpo_okada",
+      "proposition": {
+        "predicate": "was_at",
+        "slots": {
+          "agent": "agent:corpo_okada",
+          "place": "place:clinic",
+          "when": "last_night"
+        },
+        "polarity": "+"
+      },
+      "summary": "Okada's restricted itinerary includes a clinic stop.",
+      "origin_event": "seed_okada_visit",
+      "trust": 0.85,
+      "competence": 0.85,
+      "importance": 0.7
+    },
+    {
+      "agent": "agent:corpo_okada",
+      "proposition": {
+        "predicate": "whereabouts",
+        "slots": {
+          "who": "agent:npc_red_jacket",
+          "place": "place:bar_back"
+        },
+        "polarity": "+"
+      },
+      "summary": "Okada put Milan in the back room himself.",
+      "origin_event": "seed_okada_hid_milan",
+      "trust": 1.0,
+      "competence": 1.0,
+      "importance": 0.95
+    }
+  ]
+}

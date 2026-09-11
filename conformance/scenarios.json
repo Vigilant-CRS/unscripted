@@ -1,0 +1,81 @@
+{
+  "_note": "What a second implementation must reproduce. Read this file, run the commands against your port with the given seed and layers, and compare your exported state with `expected_state` in the matching fixture. The transcript is recorded for humans and is not compared: a port may phrase a sentence differently.",
+  "format": "unscripted/conformance-scenarios",
+  "format_version": 1,
+  "scenarios": [
+    {
+      "id": "asking",
+      "why": "belief, provenance and the correlation discount: the same claim heard twice from one origin must not count twice",
+      "world_pack": "worldpacks/cyberpunk-block",
+      "seed": "conformance-asking",
+      "layers": [],
+      "commands": [
+        "look",
+        "ask Vee about Milan",
+        "ask Honce about clinic",
+        "ask Vee about Milan"
+      ]
+    },
+    {
+      "id": "time",
+      "why": "routines, diffusion and decay across a day, which is where iteration order and seeded sampling show up",
+      "world_pack": "worldpacks/market-square",
+      "seed": "conformance-time",
+      "layers": [
+        "pursuit"
+      ],
+      "commands": [
+        "look",
+        "wait 240 minutes",
+        "wait 480 minutes"
+      ]
+    },
+    {
+      "id": "violence",
+      "why": "affect, identity threat and the place's climate -- the paths a port is most likely to leave out because nothing asks them a question",
+      "world_pack": "worldpacks/cyberpunk-block",
+      "seed": "conformance-violence",
+      "layers": [
+        "climate",
+        "pursuit"
+      ],
+      "commands": [
+        "look",
+        "threaten Honce",
+        "attack Honce",
+        "wait 120 minutes"
+      ]
+    },
+    {
+      "id": "conduct",
+      "why": "standing: what the town comes to think of you, including the part that reaches somebody who was told rather than present",
+      "world_pack": "worldpacks/nine-oh-seven",
+      "seed": "conformance-conduct",
+      "layers": [
+        "pursuit",
+        "standing"
+      ],
+      "commands": [
+        "go to the bar",
+        "help halloran",
+        "threaten halloran",
+        "wait 360 minutes"
+      ]
+    },
+    {
+      "id": "promises",
+      "why": "a commitment coming due, and reputation reaching the people who heard it made",
+      "world_pack": "worldpacks/cyberpunk-block",
+      "seed": "conformance-promises",
+      "layers": [
+        "pursuit",
+        "promises"
+      ],
+      "commands": [
+        "look",
+        "promise Honce that I will pay",
+        "wait 720 minutes"
+      ]
+    }
+  ]
+}

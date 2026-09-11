@@ -1,0 +1,59 @@
+{
+  "topics": [
+    {
+      "id": "korn",
+      "label": "Die ausgebliebene Kornlieferung",
+      "aliases": ["korn", "getreide", "lieferung", "muehle", "mehl"],
+      "query": {"predicate": "korn_geliefert",
+                "slots": {"hof": "hof:muehle", "wann": "letzte_woche"},
+                "polarity": "-"},
+      "player_claim": {"predicate": "korn_geliefert",
+                       "slots": {"hof": "hof:muehle", "wann": "letzte_woche"},
+                       "polarity": "-"},
+      "phrasings": {
+        "affirm": {
+          "formal": "Es ist wahr, vergangene Woche kam kein Korn von der Muehle.",
+          "neutral": "Kein Korn kam letzte Woche. So ist es.",
+          "vernacular": "Kein Korn. Nix kam."
+        },
+        "deny": {
+          "formal": "Das Korn traf sehr wohl ein, wie es sich gehoert.",
+          "neutral": "Das Korn kam, wie immer.",
+          "vernacular": "Freilich kam das Korn."
+        }
+      }
+    },
+    {
+      "id": "schuld",
+      "label": "Die offenen Schulden des Schmieds",
+      "aliases": ["schuld", "schulden", "heller", "geld", "borg"],
+      "query": {"predicate": "schuld_offen",
+                "slots": {"schuldner": "agent:schmied_hanns",
+                          "glaeubiger": "agent:muellerin_greta"}},
+      "reactions": [
+        {
+          "type": "threat",
+          "payload": {
+            "summary": "ein Fremder fragt nach den Schulden",
+            "importance": 0.6,
+            "appraisal": {"desirability": -0.55, "expectedness": 0.4,
+                          "agency": "other", "praiseworthiness": -0.2,
+                          "target": "$player"}
+          }
+        }
+      ],
+      "phrasings": {
+        "affirm": {
+          "formal": "Es stehen Betraege aus, das laesst sich nicht leugnen.",
+          "neutral": "Ja, da steht was offen.",
+          "vernacular": "Steht was offen, ja."
+        },
+        "deny": {
+          "formal": "Es steht nichts aus, mein Herr.",
+          "neutral": "Nichts steht offen.",
+          "vernacular": "Nix offen."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "global_seed": "market-square-001",
+  "world_id": "market-square",
+  "world_time": 500,
+  "player_start": "place:market",
+  "focus_agents": [
+    "agent:yara",
+    "agent:tomas"
+  ],
+  "events": [
+    {
+      "id": "evt_radio_gang",
+      "world_time": 540,
+      "type": "broadcast",
+      "actor": "channel:city_radio",
+      "location": null,
+      "payload": {
+        "channel": "channel:city_radio",
+        "credibility": 0.7,
+        "proposition": {
+          "predicate": "killed_by",
+          "slots": {
+            "who": "person:councillor",
+            "by": "group:eastside"
+          },
+          "polarity": "+"
+        },
+        "summary": "City Radio: the councillor was killed by east-side kids.",
+        "origin_event": "evt_radio_gang"
+      }
+    }
+  ]
+}

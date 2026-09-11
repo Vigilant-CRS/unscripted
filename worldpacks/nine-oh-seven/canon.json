@@ -1,0 +1,41 @@
+{
+  "_note": "What is TRUE, which is not the same as what anybody believes. Three witnesses hold three DIFFERENT facts and none of them holds the case; only putting them together gets you there. That is the shape a dialogue tree cannot represent, because a tree stores answers rather than knowledge.",
+  "predicates": {
+    "shot_by": {
+      "_note": "Who killed Cortez. functional_in 1: he was killed by one party, so two answers are a contradiction the runtime must surface rather than average.",
+      "slots": ["who", "by"],
+      "functional_in": 1
+    },
+    "shot_heard": {
+      "_note": "A gunshot at a place and an hour. Halloran has this and nothing else -- he was pouring a drink with his back to the door.",
+      "slots": ["place", "hour"],
+      "functional_in": null
+    },
+    "ran_from": {
+      "_note": "Somebody leaving somewhere at speed. Vance saw this without seeing a face.",
+      "slots": ["who", "place"],
+      "functional_in": null
+    },
+    "car_waiting": {
+      "_note": "A car with its engine running. Okonkwo saw it and did not think about it until later.",
+      "slots": ["plate", "place"],
+      "functional_in": null
+    },
+    "works_for": {
+      "slots": ["who", "employer"],
+      "functional_in": 1
+    }
+  },
+  "canon_facts": [
+    {
+      "predicate": "shot_by",
+      "slots": {"who": "person:cortez", "by": "person:mallory"},
+      "polarity": "+"
+    },
+    {
+      "predicate": "works_for",
+      "slots": {"who": "person:mallory", "employer": "org:the_lyric"},
+      "polarity": "+"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "id": "agent:yara",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Yara",
+    "objective": "Yara Sol",
+    "aliases": [
+      "yara",
+      "trader",
+      "stall"
+    ]
+  },
+  "big_five": {
+    "openness": 0.5,
+    "conscientiousness": 0.6,
+    "extraversion": 0.7,
+    "agreeableness": 0.5,
+    "emotional_stability": 0.4
+  },
+  "schwartz": {
+    "security": 0.5
+  },
+  "needs": {
+    "income": 0.7,
+    "safety": 0.5
+  },
+  "identities": [
+    {
+      "id": "trader",
+      "group": "district:square",
+      "accessibility": 0.8
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:trader",
+      "context": "district:square"
+    }
+  ],
+  "education": {
+    "domains": {
+      "general": 0.5,
+      "street": 0.85,
+      "gossip": 0.8
+    }
+  },
+  "relationships": {
+    "agent:player_1": {
+      "trust": 0.3,
+      "liking": 0.0,
+      "familiarity": 0.0
+    },
+    "agent:nadia": {
+      "trust": 0.7,
+      "liking": 0.6,
+      "familiarity": 0.8
+    },
+    "agent:tomas": {
+      "trust": 0.6,
+      "liking": 0.5,
+      "familiarity": 0.7
+    }
+  },
+  "secrets": [],
+  "goals": [
+    {
+      "content": "not be the next one",
+      "priority": 0.9,
+      "about": [
+        "killed_by"
+      ]
+    }
+  ],
+  "social_status": 0.4,
+  "resources": 0.4,
+  "location": "place:market",
+  "routine": [
+    {
+      "from": "06:00",
+      "place": "place:market",
+      "activity": "running the stall"
+    },
+    {
+      "from": "20:00",
+      "place": "place:bar",
+      "activity": "a drink after close"
+    },
+    {
+      "from": "23:30",
+      "place": "place:market",
+      "activity": "sleeping by the stall"
+    }
+  ],
+  "epistemic": {
+    "skepticism": 0.6
+  }
+}

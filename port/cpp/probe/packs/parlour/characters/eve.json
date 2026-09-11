@@ -1,0 +1,14 @@
+{
+  "id": "agent:eve",
+  "names": {"public": "Eve"},
+  "location": "place:cellar",
+  "big_five": {"openness": 0.5, "conscientiousness": 0.5, "extraversion": 0.5,
+               "agreeableness": 0.5, "emotional_stability": 0.5},
+  "relationships": {"agent:player_1": {"trust": 0.2, "liking": 0.2}},
+  "secrets": [{"id": "secret:the_ledger", "avoid_label": "the_ledger",
+               "guards_topics": ["topic:the_ledger"],
+               "summary": "Eve kept the ledger.",
+               "surface_forms": ["the ledger", "ledger"],
+               "protects": ["hid(what=ledger,who=agent:eve)"],
+               "min_trust": 0.6}]
+}

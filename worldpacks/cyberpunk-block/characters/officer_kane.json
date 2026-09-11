@@ -1,0 +1,94 @@
+{
+  "id": "agent:officer_kane",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Officer Kane",
+    "objective": "R. Kane",
+    "aliases": [
+      "kane",
+      "officer",
+      "cop",
+      "police",
+      "polizist",
+      "security"
+    ]
+  },
+  "big_five": {
+    "openness": 0.4,
+    "conscientiousness": 0.7,
+    "extraversion": 0.45,
+    "agreeableness": 0.45,
+    "emotional_stability": 0.6
+  },
+  "schwartz": {
+    "security": 0.8,
+    "conformity": 0.7,
+    "power": 0.5
+  },
+  "needs": {
+    "safety": 0.4,
+    "recognition": 0.4
+  },
+  "identities": [
+    {
+      "id": "officer",
+      "group": "faction:badges",
+      "accessibility": 0.9
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:officer",
+      "context": "faction:badges"
+    }
+  ],
+  "appearance": {
+    "garment": "item:uniform"
+  },
+  "education": {
+    "domains": {
+      "general": 0.6,
+      "law": 0.7,
+      "street": 0.5
+    }
+  },
+  "relationships": {
+    "agent:corpo_okada": {
+      "trust": 0.5,
+      "liking": 0.3,
+      "familiarity": 0.4
+    }
+  },
+  "secrets": [],
+  "goals": [
+    {
+      "content": "keep_order",
+      "priority": 0.7
+    }
+  ],
+  "social_status": 0.6,
+  "resources": 0.5,
+  "location": "place:police_post",
+  "routine": [
+    {
+      "from": "00:00",
+      "place": "place:police_post",
+      "activity": "night desk"
+    },
+    {
+      "from": "08:00",
+      "place": "place:market",
+      "activity": "patrol"
+    },
+    {
+      "from": "11:00",
+      "place": "place:main_street",
+      "activity": "patrol"
+    },
+    {
+      "from": "14:00",
+      "place": "place:police_post",
+      "activity": "shift"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "agent:otto",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Otto",
+    "objective": "Otto Behn",
+    "aliases": [
+      "otto",
+      "bystander",
+      "old man"
+    ]
+  },
+  "big_five": {
+    "openness": 0.35,
+    "conscientiousness": 0.6,
+    "extraversion": 0.6,
+    "agreeableness": 0.5,
+    "emotional_stability": 0.55
+  },
+  "schwartz": {
+    "security": 0.5
+  },
+  "needs": {
+    "belonging": 0.7,
+    "safety": 0.3
+  },
+  "identities": [
+    {
+      "id": "keeper",
+      "group": "district:square",
+      "accessibility": 0.8
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:resident",
+      "context": "district:square"
+    }
+  ],
+  "education": {
+    "domains": {
+      "general": 0.45,
+      "gossip": 0.9
+    }
+  },
+  "relationships": {
+    "agent:player_1": {
+      "trust": 0.4,
+      "liking": 0.2,
+      "familiarity": 0.0
+    },
+    "agent:nadia": {
+      "trust": 0.6,
+      "liking": 0.5,
+      "familiarity": 0.7
+    }
+  },
+  "secrets": [],
+  "goals": [
+    {
+      "content": "have something to tell",
+      "priority": 0.6,
+      "about": [
+        "killed_by"
+      ]
+    }
+  ],
+  "social_status": 0.3,
+  "resources": 0.4,
+  "location": "place:market",
+  "routine": [
+    {
+      "from": "07:00",
+      "place": "place:market",
+      "activity": "the bench"
+    },
+    {
+      "from": "14:00",
+      "place": "place:bar",
+      "activity": "the afternoon glass"
+    },
+    {
+      "from": "19:00",
+      "place": "place:market",
+      "activity": "the bench again"
+    }
+  ]
+}

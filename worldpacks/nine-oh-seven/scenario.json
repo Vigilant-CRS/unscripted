@@ -1,0 +1,41 @@
+{
+  "global_seed": "lamb-street-2107",
+  "world_id": "nine-oh-seven",
+  "_note": "The world starts at 21:07 -- the murder is already over when the player arrives, and that is the whole design. A player who saw it happen has nothing to find out.",
+  "world_time": 1267,
+  "player_start": "place:street",
+  "focus_agents": [
+    "agent:halloran",
+    "agent:vance",
+    "agent:okonkwo",
+    "agent:reyes",
+    "agent:byrne",
+    "agent:doyle"
+  ],
+  "events": [
+    {
+      "id": "evt_morning_bulletin",
+      "_note": "09:00 the next morning, which is minute 1980 of the world clock. The police statement is what Doyle GUESSED, not what happened -- so the version the whole street ends up sharing is wrong, and it is wrong because it came from the one source everybody hears. That is the beat the video is built on.",
+      "world_time": 1980,
+      "type": "broadcast",
+      "actor": "channel:city_radio",
+      "location": null,
+      "payload": {
+        "channel": "channel:city_radio",
+        "credibility": 0.62,
+        "proposition": {
+          "predicate": "shot_by",
+          "slots": {
+            "who": "person:cortez",
+            "by": "person:unknown_man"
+          },
+          "polarity": "+"
+        },
+        "summary": "City Radio: police are looking for a lone man seen leaving Lamb Street.",
+        "origin_event": "evt_morning_bulletin",
+        "importance": 0.8,
+        "domain": "street"
+      }
+    }
+  ]
+}

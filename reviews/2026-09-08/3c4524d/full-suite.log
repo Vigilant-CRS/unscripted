@@ -1,0 +1,247 @@
+ok  determinism: identical seeds reproduce identical state
+ok  claim is not truth: one claim -> p=0.52 (stays uncertain)
+ok  correlation discount: same-origin +0.002 < independent +0.021
+ok  belief: one origin saturates at p=0.682 however often repeated (ceiling 1.11 hearings); 20 independent sources -> p=1.000
+ok  contradiction: C1 (negation) and C2 (functional conflict) detected; disjoint scopes ok
+ok  affect: negative event lowers valence -0.27 -> -0.87 (soft, unsaturated)
+ok  PAD baseline: extravert+agreeable -> valence +0.79 (>0)
+ok  register: fixer formality 0.11/slang 0.89 vs exec 0.80/0.00
+ok  trust kinetics: favor +0.040 < betrayal -0.160 (slow up, fast down)
+ok  utility: group aggregate stays bounded in [-1,1]
+ok  validator: pack-declared secret vocabulary blocks leaks in both packs
+ok  ally response: son p=0.96 > stranger p=0.29
+ok  reactive rule: 'summon kin when hurt' fires only when injured AND threatened
+ok  leverage: patron 0.55 > client 0.00
+ok  graded resolution: observed outcome bands ['consequence', 'full', 'miss', 'partial']
+ok  faction heat: threshold crossed -> mobilization scheduled (1)
+ok  social standing gates reach: high status reaches the officer, low status cannot
+ok  world pack validation: cyberpunk-block passes SDK checks
+ok  memory: trivia fades within a day, an important memory lasts a week (threshold -1.5)
+ok  parser: vocabulary is world-pack content, not an SDK table
+ok  parser: a custom player id is never resolved as an NPC target
+ok  evidence: dossier names commit 3c4524d1b09f (clean), python 3.14.4
+ok  stories: one incident, 3 versions -- reach 11 at detail 1, reach 2 at full detail
+ok  earshot: 4 of 39 in the room took it in
+ok  occupancy: the index follows every move, however it was made
+ok  memory: 430 occasions became one judgement (activation -1.04 vs threshold -1.5), naming 5 of them
+ok  revision: exposing one liar recomputed 4 belief(s); independently sourced ones unchanged
+ok  revision: two sources 0.988 -> one discredited 0.959, still standing on the other
+ok  topology: restricted claim held by 1, common claim by 9, of 11 agents
+ok  attention: absorbed 6 of 18 claims offered (budget 6/day), and recovered overnight
+ok  interpretation: engineer read seal_breached in full; the doctor assimilationed it
+ok  interpretation: a sober witness loses the detail, a biased one moves the scene somewhere familiar
+ok  grounding: in provider mode the released line and the propagated claim agree, and the world learns the same either way
+ok  grounding: invention is judged against the world, not a word list
+ok  deception: liar holds 0.868 in the truth, asserted the opposite to 4 listener(s), each recording him as source
+ok  deception: an unsayable commitment asserts nothing
+ok  commitment: a greedy provider moved nothing beyond the 0 committed proposition(s)
+ok  commitment: seeded selection replays exactly, 4 variants across 24 worlds ('seen_at(who=agent:c)' in world-2)
+ok  architecture: 76 modules in 6 layers, no upward imports
+ok  belief: 20 questions moved nothing (0.8355), 20 of them remembered
+ok  evidence: a partial run is labelled (9 cases selectable)
+ok  evidence: counts describe the run, not the truncated tail
+ok  evidence: forgetting is judged at the retrieval threshold (-1.5)
+ok  evidence: 9 cases produced 4371 recorded episodes
+ok  medium: 55 spoken and 77 called; a call loses detail 21% of the time against 11% in person, and nobody overhears one
+ok  pursuit: without it the town is silent by day 27 (0 conversations); with it, 72 — and a single origin still tops out at 0.84
+ok  climate: off is neutral, on closes the square (0.60 -> 0.41), it recovers, the mood travels with the traffic, and no trait moved
+ok  contagion: off is byte-identical, on moved 5 people's mood over 9 exchanges reaching 5 listeners, capped at 0.043, steady caught 0.0528 vs volatile 0.1192, and no trait moved; 34/47 transfers second-hand, bystanders peak 0.0550 from a threat worth ~0.9 and settle back to 0.0044
+ok  common knowledge: two crowds stay two crowds, a conversation is not one, the radio made 5 people unable to deny the false account without reaching the witness, and no confidence moved
+ok  notes: off is byte-identical; 78 written in a week, 43 delivered, 19 read by the wrong person, 7 never collected; with telephones only 0 were written
+Optional layers. Every one is off by default, and off is exactly
+neutral -- a run with the flag off reproduces byte-identically.
+
+  action_bridge
+      the runtime asks your engine to carry out physical acts and waits to
+      be told what happened
+
+  climate
+      places have a mood -- how candid, how suspicious, how open to a
+      stranger -- moved by what happens in them and carried between rooms
+      by whoever walks
+
+  pursuit
+      characters act on their goals instead of only moving on routines and
+      gossiping at random
+
+  media
+      a claim can travel by telephone as well as by conversation: fewer
+      bystanders, more detail lost, weighed a little lower (needs pursuit)
+      needs: pursuit
+
+  notes
+      somebody who cannot reach the person they needed leaves word where
+      they stand, and a note is still there afterwards (needs pursuit)
+      needs: pursuit
+
+  promises
+      a promise comes due and is judged on what the person it was made to
+      came to believe, moving trust, liking and a reputation for
+      reliability
+
+  contagion
+      a little of a speaker's mood moves to whoever they are talking to
+
+  common_knowledge
+      track not who knows a thing but who watched everyone else find out;
+      a secret that is out in the open stops working as one
+
+  standing
+      how you treat one person changes how the rest of them treat you --
+      carried as a claim, so somebody who was only told about it judges
+      you too, and judges you less far than somebody who watched
+
+  unscripted serve --world-pack worldpacks/market-square --layers pursuit,notes
+ok  layers: 9 optional mechanics, each off by default, each reachable as --layers climate, dependencies enforced, all reported by the runtime and all documented
+ok  save/load: exact round trip through JSON, 18.0 kB gzipped for 8 characters, six unusable blobs refused by name, and a save from before a patch still loads — dropping agent:sela and reporting it
+ok  embedding: --port 0 chose 34965, announced atomically once listening, token enforced, SIGTERM removed the file, and an orphaned service exited when its parent did
+ok  promises: off is byte-identical; making one still reads 0.335, keeping it 0.415, breaking it 0.055 — below the 0.300 of never having promised — and a broken one is the first thing in this runtime ever to write a reputation ({'reliable': -0.4})
+ok  docs: 123 documented command lines across 23 files, 36 distinct flags, every one real
+ok  traces: a week with every layer on reports all of 22 distinct reason codes — 126 carries for 126 moves — and a single turn still answers only for itself
+ok  social identity: attacking a keeper in front of another raised her threat to 0.480 and her keeper salience 0.832 -> 0.902, halving in a day; the victim, strangers and the absent are untouched
+ok  engines: 33 constructed by the runtime, every one of them reached by something
+ok  bundle: 410 kB single file, no install, serving a real world — a turn answered and 14 kB of state exported out of it, with world packs left outside
+ok  film: 8 intro, 8 running, 16 question and 11 outro lines, each with a card where it needs one, none repeated, no address read aloud
+ok  tuning: 80 parameters across 14 engines authorable from world.json; a typo, an unknown engine and a wrong type are each refused by name; distortion 31 -> 128 and memories 119 -> 61 when asked; and no rate buys a belief without a source
+ok  client: 11 of 14 contract endpoints reachable from the shipped Godot client, 3 excluded on purpose and each still real
+ok  phrasing: 6 of 18 lines rewritten and 12 refused -- a leak, a flipped stance and an empty answer -- with every refusal keeping its original and the pack still passing the gate
+ok  conformance: 5 fixtures still describe this runtime field for field -- the acceptance test a port is held to
+ok  onboarding: the Godot host finds the runtime beside the project and names the command that builds one when it cannot
+ok  bundle: a world pack beside the archive is found, which is what a self-contained build has instead of an install
+ok  pipeline: a premise became 40 characters across 12 places that both gates accept and that spreads a claim from 2 heads to 10 in three days; identical on a re-run, and a place cut off the map is repaired from the gate's own report
+ok  wiring: 12 fields are read by an engine; 8 of them move in play and 6 are declared authored-only with a reason, and neither list has drifted
+ok  versions: the page and the docs agree on ['6000.0.82f1', '6000.6.0f1'] as the Unity editors this was run in, say of any other that it was not, and the Unreal plugin still pins no engine version
+ok  appearance: a suit reads +0.45 status and a worn jacket -0.30; gang colours read +0.35 threat and signal group:reds, and being dressed dangerously moved evading 0.28 -> 0.41
+ok  credence: the same announcement in the same second is credited at 0.698 by somebody with no view of the intercom and 0.571 by somebody who distrusts it
+ok  topology: a public claim reaches all 9 of the crew; a claim restricted to its trade reaches 2 and is walled off from 7, and 10 people stand in more than one circle, which is how anything crosses at all
+ok  standing: six threats put fear at 0.208 and made a further threat worth +0.400 against +0.000 to a stranger and -0.216 after kindness; six kindnesses put respect at 0.091 and moved the register toward deference; off produces neither
+ok  standing: off is off; the man you hit thinks -0.217 of you and the man he told thinks -0.192 -- less, because he believes it 0.638 against 0.723; five kindnesses (+0.44) make answering beat evading and five threats (-0.65) make evading beat greeting; no personality moved
+ok  player effect: a public attack took the street's openness 0.56 -> 0.40; a broken promise put 'unreliable' in 4 heads including 3 who only watched; 4 characters ended the third day with more to say; same conduct reproduces exactly, different conduct moved 7 of 30 beliefs
+ok  layers: a world pack names its own, --layers adds, 'none' overrides
+ok  demos: 2 run the shipped Godot addon unmodified (2 scripts each)
+ok  bounds: 34 bounded parameters, 94 extreme values driven at them, every one either refused by the validator or survived a running world — and no shipped default sits outside its own bound
+ok  unity: package compiles against 6000.0.82f1 — warnings as errors, against the engine's real assemblies, and without a licence
+ok  unreal: plugin compiles against UE5.8
+ok  unreal behaviour: version pin absent, honesty and asserted parsed; the live run is `python3 tools/unreal_smoke.py` (a full editor build is too slow for this suite)
+ok  noir: four witnesses hold four different facts, the morning broadcast convinces 4 of a wrong story while missing the two who saw something, and Reyes lies
+ok  market-square: 8 hold the radio's version and 5 the witness's; leaning on her costs 0.30 trust and a sentence
+ok  godot: 8 questions, narration in step, every preload resolves, and the flag model still cannot answer
+ok  parser: a leading verb decides the intent, so a topic named after one is still askable
+ok  compare: 10 rows, both columns computed, 2 of them won by flags
+ok  film: 6 beats from the recording, cut to the voice, and a playable file with both tracks
+ok  quickstart: 5 live calls captured, 1 of them a deliberate mistake
+ok  voice: affect moves the voice (2.18s calm vs 1.33s frightened, same words), a character keeps theirs, and each backend states what it drops
+ok  viz: 48 frames reproduce byte-identically, 21 tellings, 1 lie(s) from the trace
+ok  tour: 6 scenes, each reproducible, none invented (16 KB page, 692 word script)
+ok  provenance: asking one person four times is one origin; a lie is its own
+ok  qa: finds a planted break in 1 action(s), and states its envelope when it finds none
+ok  contract: 12 declared plugin call sites exist in the C++
+ok  actions: intents out, results back; off is unchanged, silence times out
+ok  contract: v2 serves 14 endpoints, 16 capabilities declared, v1 unchanged
+ok  bridge: all 7 plugin endpoints match contract v1.0.0
+ok  calibration: rate is pacing (110h vs 12h, reach 78% vs 65%); the gate sits at trust ~0.5
+ok  distortion: levelling, sharpening and assimilation change a claim structurally
+ok  distortion: 3 claim(s) exist in several versions, each tracing to a real origin
+ok  authoring: `unscripted new` produces a valid, navigable, answerable world
+ok  authoring: report names 10 problems, each with a fix
+ok  studio: preview never writes, traversal refused, off-loopback refused
+ok  calibration: reach 75.8% vs Daley-Kendall 79.7% (control without stifling: 100%, with credibility gate: 51.7%)
+ok  knowledge map: 5 facts, widest reached 8 people (5 by hearsay), 3 retellings
+ok  edge: a slow model never blocks a turn and upgrades are validated first
+ok  edge: a hallucinated late line is rejected, not offered
+ok  edge: startup probe classifies a model and stays world-neutral
+ok  routine: cyberpunk-block — 3 meeting places, 22 movements and 22 arrivals in a day
+ok  routine: noir-harbor — 2 meeting places, 4 movements and 4 arrivals in a day
+ok  routine: dorf-thornfeld — 3 meeting places, 12 movements and 12 arrivals in a day
+ok  routine: a one-week skip lands everyone correctly in 2 movements
+ok  routine: validation rejects contradictory and unschedulable routines
+ok  benchmark: every claim holds on all three packs
+ok  diffusion: 6 -> 15 known facts in 12h (7 learned by hearsay, origins preserved), 3 retellings on the ledger
+ok  diffusion: a relayed rumour stays one source however often it is repeated
+ok  diffusion: no secret gossiped, 3 retellings reproduce exactly
+ok  belief: provenance capped at 16 (dropped 185), 200 repeats -> p=0.52, discount survives reload
+ok  persistence: 10 vs 200 observers cost 5 vs 5 SQL statements per event
+ok  bounded: recall history <= 32, memories <= 600, traces trimmed to 602
+ok  version: 1.20.0 agrees across code, package and changelog
+ok  packaging: all 147 data files listed, licence present
+ok  validator: canon parse-back rejects unlicensed names, numbers and invented things
+ok  provider: hallucinated line replaced before release -> "I've got nothing for you."
+ok  engine: 32 world-content patterns absent from the SDK core
+ok  parser: free text maps to typed closed-catalog commands
+ok  sdk: terminal turn returns dialogue + developer trace + provider record
+ok  terminal: social speech requires a reachable NPC target
+ok  provider: a failure costs the wording, and the world learns the same thing either way
+ok  provider: rejected external text is replaced before player release
+ok  sdk: attack creates off-screen ally-arrival social consequence
+ok  initial state: authored world-pack beliefs load with provenance
+ok  capabilities: external HTTP text provider requires endpoint
+ok  service: malformed requests are precise 4xx and never mutate the world
+ok  service: bearer auth, debug gating and safe-by-default bind hold
+ok  service: real HTTP enforces auth, body caps and validation
+ok  snapshot: restore rewinds player location and projections
+ok  snapshot: full round-trip restores relationships, factions and timeline
+ok  snapshot: schema, seed and roster mismatches are reported, not swallowed
+ok  snapshot: 300 ledger events add 2 bytes, not a ledger copy
+ok  generator: environment + appearance produce character profile and starting knowledge
+ok  bridge: engine/front-end profiles and neutral event mapping work
+ok  service: HTTP handler surface supports turns and character generation
+ok  replay: command replay works and second world pack loads
+ok  provider: messy LLM output is cleaned to a safe line or rejected for fallback
+ok  prospect: reference is need-aspiration (rich=0.0, desperate=0.8), not wealth
+ok  metahuman: ARKit blendshapes are bounded and emotion-specific
+ok  metahuman: neutral face is empty; avatar/face packets are well-formed
+ok  lod: decay is mathematically composable (LOD catch-up is exact)
+ok  lod: 200 characters over 40 places, LOD is behaviourally identical (17 sampled)
+ok  golden: 13 multi-step scenarios pass all assertions
+ok  dialogue: multi-turn continuity counts re-asks and resumes across save/load
+ok  demo: structured scene/agent/world endpoints + HTML page are well-formed
+  cpp port: reproduces Python exactly -- determinism, rounding and the belief arithmetic, as raw bits; nine belief scenarios, field by field; the other forty-eight modules -- every engine, every optional layer, the parser, the validator, the tick loop, the turn loop and the pack reader -- across eighty-nine scenarios, including all five conformance fixtures played end to end; a world pack's tuning block -- 79 knobs across 14 engines, every name, every order and every value, and what a block changes
+ok  memory: recall stops at seven, and returns the strongest seven
+ok  belief: a holder cites the incident they first heard, and the second telling of it persuades less
+ok  runtime: an announcer is not persuaded by their own broadcast, and the audience is
+ok  diffusion: a claim twelve mouths from its source stops travelling
+ok  validator: a line refused three back, allowed four back (repetition window 3, pinned at both edges)
+  c abi: every ABI check passed
+  unreal binding: every Unreal-native check passed
+  unity binding: every Unity-binding check passed
+  godot binding: every check passed, driven from GDScript
+  a port may differ by <=8 ULP and nowhere else: 243 exact failures, 0 tolerated, 381 caught when genuinely wrong
+ok  belief: the evidence pool follows what the evidence did, not how it was asserted
+ok  revision: exposing a source lowers support and raises ignorance; it does not manufacture a contradiction
+ok  revision: survives a trimmed provenance list (0.963 -> 0.581 after 36 entries were dropped)
+ok  revision: an origin names a whole id, not any string inside one
+ok  belief: bounded at 512 sources, and the first one is still the one cited (1488 forgotten)
+ok  dialogue: a repeated lie stays one source (p saturates at 0.5145)
+ok  standing: one incident restated twenty times moves standing once (liking -0.031, then flat)
+ok  affect: fears confirmed distress and fears dispelled relieve, which is the way round OCC has it
+ok  theory of mind: a threat is judged on what the threatener has done (+0.288), not on what they themselves fear
+ok  common knowledge: what a crowd established includes which way round it was said
+ok  memory: a witness remembers what they understood, not what the ledger knows
+ok  runtime: the window is walked in order, so who witnessed what does not depend on how big a step the caller took
+ok  memory: a judgement survives a round trip still naming its subject and its evidence
+ok  grounding: a released line and the claim it propagates agree about which way round they are
+ok  validator: naming what a secret is about is refused even when no forbidden phrase appears
+ok  dialogue: the same commitment reaches the world whatever the provider wrote
+ok  snapshot: a save is refused unless it is a save of this map
+ok  snapshot: a failed import is a no-op, not a half-applied one
+ok  persistence: an abandoned branch stays on the ledger after a reload reuses its event ids
+ok  service: the demo page is behind the same token it embeds
+ok  native json: malformed documents are refused and a surrogate pair becomes one character
+ok  memory: recall is a seeded draw (19 distinct outcomes across thirty characters) and still replays exactly
+ok  runtime: the deliberation path speaks into the world, and the SDK shares its implementation
+ok  affect: the PAD arousal sign follows ALMA's -0.57*N under S = -N (0.456 against -0.456)
+ok  dialogue: 8 adversarial wordings, one claim in the world, and the player never read its opposite
+ok  belief: a forgotten source returns at 0% of fresh weight, not 100%, against a shared allowance already 0.111 spent
+ok  dialogue: six provider behaviours including a thrown one, one released line and one world state
+ok  dialogue: provider mode is available, opt-in, and named
+ok  persistence: a snapshot's history is fixed at the moment it was taken
+ok  snapshot: a world is identified by what it declares, not by an id two packs happen to share
+ok  dialogue: 1 selected claim(s) with no authored wording were dropped instead of propagated silently (covered: clinic_open(place=place:clinic,when=last_night)[None,None,None])
+ok  dialogue: an agitated speaker released a complete authored wording (62 chars) for 1 claim(s), not its first sentence
+ok  dialogue: controlled release writes every line, including the ones that plan no facts; `provider` mode still opts out
+ok  dialogue: the same 1 claim(s) reached the room whether or not the answer's own words already stood in the history (reworded)
+ok  belief: 20 eviction cycles of one repeated claim end at p=0.9623 and 3.23888 log-odds, under the 3.27160 ceiling, with the last cycle worth 0
+ok  snapshot: an undeclared world is never matched on place names alone, and an inferred match reports `world_unverified`
+ok  showcase: full SDK sales/regression demo passes all checks
+
+All tests passed. (199 tests)

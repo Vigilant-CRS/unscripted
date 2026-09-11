@@ -1,0 +1,182 @@
+{
+  "id": "agent:lindqvist",
+  "class": "core:NPCAgent",
+  "names": {
+    "public": "Lindqvist",
+    "objective": "Lindqvist",
+    "aliases": [
+      "lindqvist",
+      "lin",
+      "engineer",
+      "eng"
+    ]
+  },
+  "big_five": {
+    "openness": 0.5,
+    "conscientiousness": 0.6,
+    "extraversion": 0.5,
+    "agreeableness": 0.5,
+    "emotional_stability": 0.55
+  },
+  "schwartz": {
+    "security": 0.5,
+    "achievement": 0.5
+  },
+  "needs": {
+    "safety": 0.4,
+    "recognition": 0.4
+  },
+  "identities": [
+    {
+      "id": "engineer",
+      "group": "group:crew",
+      "accessibility": 0.8
+    }
+  ],
+  "roles": [
+    {
+      "role": "role:engineer",
+      "context": "group:crew"
+    }
+  ],
+  "education": {
+    "domains": {
+      "general": 0.6,
+      "gossip": 0.55,
+      "engineering": 0.8,
+      "medicine": 0.2
+    }
+  },
+  "relationships": {
+    "agent:voss": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:okonkwo": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:rask": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:mbeki": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:tan": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:ferro": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:nakamura": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:adeyemi": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:hollis": {
+      "trust": 0.5,
+      "liking": 0.2,
+      "familiarity": 0.6
+    },
+    "agent:player_1": {
+      "trust": 0.3,
+      "liking": 0.0,
+      "familiarity": 0.0
+    }
+  },
+  "secrets": [
+    {
+      "id": "secret:the_seal",
+      "avoid_label": "who_broke_the_seal",
+      "guards_topics": [
+        "breach",
+        "the_check"
+      ],
+      "summary": "Lindqvist signed off the seal check without doing it.",
+      "surface_forms": [
+        "i skipped",
+        "never checked",
+        "no sealant",
+        "my fault",
+        "i signed it off"
+      ],
+      "protects": [
+        {
+          "predicate": "skipped_check",
+          "slots": {
+            "agent": "agent:lindqvist",
+            "check": "check:seal"
+          },
+          "polarity": "+"
+        }
+      ],
+      "about": [
+        "agent:lindqvist"
+      ],
+      "min_trust": 0.6
+    }
+  ],
+  "goals": [
+    {
+      "content": "keep_the_station_running",
+      "priority": 0.7
+    }
+  ],
+  "social_status": 0.5,
+  "resources": 0.45,
+  "location": "place:store",
+  "routine": [
+    {
+      "from": "06:00",
+      "place": "place:store",
+      "activity": "repairs"
+    },
+    {
+      "from": "10:00",
+      "place": "place:hub",
+      "activity": "status"
+    },
+    {
+      "from": "14:00",
+      "place": "place:dock",
+      "activity": "repairs"
+    },
+    {
+      "from": "19:00",
+      "place": "place:mess",
+      "activity": "evening meal"
+    },
+    {
+      "from": "22:00",
+      "place": "place:quarters",
+      "activity": "off shift"
+    }
+  ],
+  "epistemic": {
+    "curiosity": 0.6,
+    "confirmation_bias": 0.25,
+    "secrecy_discipline": 0.85
+  },
+  "networks": [
+    "shift:night",
+    "clique:command"
+  ],
+  "voice": {
+    "say_as": "Lind-kvist"
+  }
+}

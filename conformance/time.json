@@ -1,0 +1,2559 @@
+{
+  "commands": [
+    "look",
+    "wait 240 minutes",
+    "wait 480 minutes"
+  ],
+  "expected_state": {
+    "agents": [
+      "agent:bran",
+      "agent:dale",
+      "agent:nadia",
+      "agent:otto",
+      "agent:player_1",
+      "agent:sela",
+      "agent:tomas",
+      "agent:yara"
+    ],
+    "format": "unscripted-state",
+    "format_version": 1,
+    "places": [
+      "place:alley",
+      "place:bar",
+      "place:market",
+      "place:precinct",
+      "place:radio"
+    ],
+    "runtime_version": "1.21.0",
+    "snapshot_schema_version": 11,
+    "state": {
+      "actions_out": {
+        "counter": 0,
+        "counts": {
+          "FAILED": 0,
+          "INTERRUPTED": 0,
+          "SUCCEEDED": 0,
+          "TIMED_OUT": 0,
+          "UNREACHABLE": 0
+        },
+        "enabled": false,
+        "pending": [],
+        "timeout_minutes": 60
+      },
+      "agents": {
+        "agent:bran": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.11700000000000002,
+              "dominance": 0.494,
+              "valence": 0.14500000000000002
+            },
+            "mood": {
+              "arousal": 0.11700000000000002,
+              "dominance": 0.494,
+              "valence": 0.14500000000000002
+            }
+          },
+          "attention_day": 0,
+          "attention_spent": 2,
+          "beliefs": [
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "agent:sela\u001fevt_radio_gang": [
+                  0.006152721756829196,
+                  0.0
+                ],
+                "channel:city_radio\u001fevt_radio_gang": [
+                  0.9222483454301201,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.7167507841277295,
+              "hops": 0,
+              "ignorance": 0.5185643261745067,
+              "logit": 0.9284010671869494,
+              "origin_counts": {
+                "evt_radio_gang": 2
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1001",
+                  "delta": 0.922248,
+                  "eta": 1.0,
+                  "kappa": 0.716,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "channel:city_radio"
+                },
+                {
+                  "claim_id": "clm_1008",
+                  "delta": 0.006153,
+                  "eta": 0.1,
+                  "kappa": 0.515,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "agent:sela"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": false,
+              "support_against": 0.0,
+              "support_for": 0.9284010671869494,
+              "txn_time": 740,
+              "valid_start": 540
+            },
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "agent:sela\u001fincident:square_killing": [
+                  0.06686609080627957,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.5167102970841008,
+              "hops": 1,
+              "ignorance": 0.9373247576406278,
+              "logit": 0.06686609080627957,
+              "origin_counts": {
+                "incident:square_killing": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1006",
+                  "delta": 0.066866,
+                  "eta": 1.0,
+                  "kappa": 0.517,
+                  "origin_event": "incident:square_killing",
+                  "speaker": "agent:sela"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 0.06686609080627957,
+              "txn_time": 740,
+              "valid_start": 740
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:radio",
+          "memory": [
+            {
+              "about": [],
+              "content": "City Radio: the councillor was killed by east-side kids.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.5,
+              "last_recalled": null,
+              "memory_id": "mem_1001_agent:bran",
+              "owner": "agent:bran",
+              "presentations": [
+                540
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.9,
+              "type": "episodic",
+              "world_time": 540
+            },
+            {
+              "about": [],
+              "content": "Sela arrives to briefing the desk",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.15,
+              "last_recalled": null,
+              "memory_id": "mem_1003_agent:bran",
+              "owner": "agent:bran",
+              "presentations": [
+                740
+              ],
+              "proposition": null,
+              "source_conf": 0.6440133289971208,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Sela passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1006_agent:bran",
+              "owner": "agent:bran",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.6451716180683464,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Sela passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1008_agent:bran",
+              "owner": "agent:bran",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.6229492297278654,
+              "type": "episodic",
+              "world_time": 740
+            }
+          ],
+          "relationships": {
+            "agent:dale": {
+              "familiarity": 0.6,
+              "liking": 0.3,
+              "trust": 0.6
+            },
+            "agent:player_1": {
+              "familiarity": 0.0,
+              "liking": 0.1,
+              "trust": 0.4
+            },
+            "agent:sela": {
+              "familiarity": 0.07725530557207994
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:dale": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.22799999999999992,
+              "dominance": 0.10200000000000002,
+              "valence": 0.07599999999999998
+            },
+            "mood": {
+              "arousal": 0.22799999999999992,
+              "dominance": 0.10200000000000002,
+              "valence": 0.07599999999999998
+            }
+          },
+          "attention_day": 0,
+          "attention_spent": 2,
+          "beliefs": [
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "agent:otto\u001fevt_radio_gang": [
+                  0.05386433361182422,
+                  0.0
+                ],
+                "channel:city_radio\u001fevt_radio_gang": [
+                  0.8808580568795059,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.7180323732412918,
+              "hops": 0,
+              "ignorance": 0.516870019654885,
+              "logit": 0.9347223904913301,
+              "origin_counts": {
+                "evt_radio_gang": 2
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1001",
+                  "delta": 0.880858,
+                  "eta": 1.0,
+                  "kappa": 0.707,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "channel:city_radio"
+                },
+                {
+                  "claim_id": "clm_1004",
+                  "delta": 0.053864,
+                  "eta": 0.1,
+                  "kappa": 0.631,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "agent:otto"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": false,
+              "support_against": 0.0,
+              "support_for": 0.9347223904913301,
+              "txn_time": 740,
+              "valid_start": 540
+            },
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "agent:yara\u001fincident:square_killing": [
+                  0.4981365172623931,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.6220213060099283,
+              "hops": 1,
+              "ignorance": 0.6674959114055516,
+              "logit": 0.4981365172623931,
+              "origin_counts": {
+                "incident:square_killing": 2
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1005",
+                  "delta": 0.45319,
+                  "eta": 1.0,
+                  "kappa": 0.611,
+                  "origin_event": "incident:square_killing",
+                  "speaker": "agent:yara"
+                },
+                {
+                  "claim_id": "clm_1011",
+                  "delta": 0.044947,
+                  "eta": 0.1,
+                  "kappa": 0.611,
+                  "origin_event": "incident:square_killing",
+                  "speaker": "agent:yara"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": false,
+              "support_against": 0.0,
+              "support_for": 0.4981365172623931,
+              "txn_time": 740,
+              "valid_start": 740
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:precinct",
+          "memory": [
+            {
+              "about": [],
+              "content": "City Radio: the councillor was killed by east-side kids.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.5,
+              "last_recalled": null,
+              "memory_id": "mem_1001_agent:dale",
+              "owner": "agent:dale",
+              "presentations": [
+                540
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.8,
+              "type": "episodic",
+              "world_time": 540
+            },
+            {
+              "about": [],
+              "content": "Otto passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1004_agent:dale",
+              "owner": "agent:dale",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.4082794457104664,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Yara passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1005_agent:dale",
+              "owner": "agent:dale",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.4066236240030274,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Yara passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1011_agent:dale",
+              "owner": "agent:dale",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.39186766632270537,
+              "type": "episodic",
+              "world_time": 740
+            }
+          ],
+          "relationships": {
+            "agent:otto": {
+              "familiarity": 0.07725530557207994
+            },
+            "agent:player_1": {
+              "familiarity": 0.07725530557207994,
+              "liking": 0.0,
+              "trust": 0.25
+            },
+            "agent:sela": {
+              "familiarity": 0.039403990000000014
+            },
+            "agent:tomas": {
+              "familiarity": 0.5,
+              "liking": -0.2,
+              "trust": 0.2
+            },
+            "agent:yara": {
+              "familiarity": 0.07725530557207994
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:nadia": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.14700000000000005,
+              "dominance": 0.23799999999999993,
+              "valence": 0.30100000000000005
+            },
+            "mood": {
+              "arousal": 0.14700000000000005,
+              "dominance": 0.23799999999999993,
+              "valence": 0.30100000000000005
+            }
+          },
+          "attention_day": 0,
+          "attention_spent": 2,
+          "beliefs": [
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "agent:yara\u001fevt_radio_gang": [
+                  0.05845422345795535,
+                  0.0
+                ],
+                "channel:city_radio\u001fevt_radio_gang": [
+                  0.737733333669888,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.6891583725379179,
+              "hops": 0,
+              "ignorance": 0.5567347329802403,
+              "logit": 0.7961875571278434,
+              "origin_counts": {
+                "evt_radio_gang": 2
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1001",
+                  "delta": 0.737733,
+                  "eta": 1.0,
+                  "kappa": 0.677,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "channel:city_radio"
+                },
+                {
+                  "claim_id": "clm_1018",
+                  "delta": 0.058454,
+                  "eta": 0.1,
+                  "kappa": 0.642,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "agent:yara"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": false,
+              "support_against": 0.0,
+              "support_for": 0.7961875571278434,
+              "txn_time": 1220,
+              "valid_start": 540
+            },
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "agent:yara\u001fincident:square_killing": [
+                  0.6703317477607597,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.6615774390961107,
+              "hops": 1,
+              "ignorance": 0.5986834659286074,
+              "logit": 0.6703317477607597,
+              "origin_counts": {
+                "incident:square_killing": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "was_present",
+                "slots": {
+                  "place": "place:alley",
+                  "who": "agent:tomas"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1019",
+                  "delta": 0.670332,
+                  "eta": 1.0,
+                  "kappa": 0.662,
+                  "origin_event": "incident:square_killing",
+                  "speaker": "agent:yara"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": false,
+              "support_against": 0.0,
+              "support_for": 0.6703317477607597,
+              "txn_time": 1220,
+              "valid_start": 1220
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:bar",
+          "memory": [
+            {
+              "about": [],
+              "content": "City Radio: the councillor was killed by east-side kids.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.5,
+              "last_recalled": null,
+              "memory_id": "mem_1001_agent:nadia",
+              "owner": "agent:nadia",
+              "presentations": [
+                540
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.6,
+              "type": "episodic",
+              "world_time": 540
+            },
+            {
+              "about": [],
+              "content": "Yara arrives to a drink after close",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.15,
+              "last_recalled": null,
+              "memory_id": "mem_1015_agent:nadia",
+              "owner": "agent:nadia",
+              "presentations": [
+                1220
+              ],
+              "proposition": null,
+              "source_conf": 0.4643194968309515,
+              "type": "episodic",
+              "world_time": 1220
+            },
+            {
+              "about": [],
+              "content": "Yara passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1018_agent:nadia",
+              "owner": "agent:nadia",
+              "presentations": [
+                1220
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.4217658615239031,
+              "type": "episodic",
+              "world_time": 1220
+            },
+            {
+              "about": [],
+              "content": "Yara passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1019_agent:nadia",
+              "owner": "agent:nadia",
+              "presentations": [
+                1220
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "was_present",
+                "slots": {
+                  "place": "place:alley",
+                  "who": "agent:tomas"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.4671829273074025,
+              "type": "episodic",
+              "world_time": 1220
+            }
+          ],
+          "relationships": {
+            "agent:player_1": {
+              "familiarity": 0.0,
+              "liking": 0.1,
+              "trust": 0.35
+            },
+            "agent:yara": {
+              "familiarity": 0.8,
+              "liking": 0.6,
+              "trust": 0.75
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:otto": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.012000000000000038,
+              "dominance": 0.07899999999999996,
+              "valence": 0.061000000000000006
+            },
+            "mood": {
+              "arousal": 0.012000000000000038,
+              "dominance": 0.07899999999999996,
+              "valence": 0.061000000000000006
+            }
+          },
+          "attention_day": 0,
+          "attention_spent": 2,
+          "beliefs": [
+            {
+              "conflict": 3.2895917520254756e-05,
+              "contributions": {
+                "agent:dale\u001fevt_radio_gang": [
+                  0.0003706891860009916,
+                  0.0
+                ],
+                "agent:tomas\u001fevt_radio_gang": [
+                  0.0,
+                  -1.2442118925659663e-05
+                ],
+                "channel:city_radio\u001fevt_radio_gang": [
+                  0.7560705482739312,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.6805778849506078,
+              "hops": 0,
+              "ignorance": 0.5693289903550252,
+              "logit": 0.7564287953410065,
+              "origin_counts": {
+                "evt_radio_gang": 3
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1001",
+                  "delta": 0.756071,
+                  "eta": 1.0,
+                  "kappa": 0.68,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "channel:city_radio"
+                },
+                {
+                  "claim_id": "clm_1010",
+                  "delta": 0.000371,
+                  "eta": 0.1,
+                  "kappa": 0.501,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "agent:dale"
+                },
+                {
+                  "claim_id": "clm_1016",
+                  "delta": -1.2e-05,
+                  "eta": 0.01,
+                  "kappa": 0.5,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "agent:tomas"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": false,
+              "support_against": 1.2442118925659663e-05,
+              "support_for": 0.7564412374599322,
+              "txn_time": 1220,
+              "valid_start": 540
+            },
+            {
+              "conflict": 0.008933411690028538,
+              "contributions": {
+                "agent:dale\u001fincident:square_killing": [
+                  0.0,
+                  -0.0018214896732572797
+                ],
+                "agent:yara\u001fincident:square_killing": [
+                  0.40597112897218673,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.5996842459948623,
+              "hops": 1,
+              "ignorance": 0.7103318960161791,
+              "logit": 0.40414963929892944,
+              "origin_counts": {
+                "incident:square_killing": 3
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1005",
+                  "delta": 0.40194,
+                  "eta": 1.0,
+                  "kappa": 0.599,
+                  "origin_event": "incident:square_killing",
+                  "speaker": "agent:yara"
+                },
+                {
+                  "claim_id": "clm_1009",
+                  "delta": -0.001821,
+                  "eta": 0.1,
+                  "kappa": 0.495,
+                  "origin_event": "incident:square_killing",
+                  "speaker": "agent:dale"
+                },
+                {
+                  "claim_id": "clm_1011",
+                  "delta": 0.004031,
+                  "eta": 0.01,
+                  "kappa": 0.599,
+                  "origin_event": "incident:square_killing",
+                  "speaker": "agent:yara"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0018214896732572797,
+              "support_for": 0.40597112897218673,
+              "txn_time": 740,
+              "valid_start": 740
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:market",
+          "memory": [
+            {
+              "about": [],
+              "content": "City Radio: the councillor was killed by east-side kids.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.5,
+              "last_recalled": null,
+              "memory_id": "mem_1001_agent:otto",
+              "owner": "agent:otto",
+              "presentations": [
+                540
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.7,
+              "type": "episodic",
+              "world_time": 540
+            },
+            {
+              "about": [],
+              "content": "Officer Dale arrives to the beat",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.15,
+              "last_recalled": null,
+              "memory_id": "mem_1002_agent:otto",
+              "owner": "agent:otto",
+              "presentations": [
+                740
+              ],
+              "proposition": null,
+              "source_conf": 0.36034610859596505,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Yara passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1005_agent:otto",
+              "owner": "agent:otto",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.3525617995673767,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Officer Dale passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1009_agent:otto",
+              "owner": "agent:otto",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.36346670242704837,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Officer Dale passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1010_agent:otto",
+              "owner": "agent:otto",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.38211203173042174,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Yara passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1011_agent:otto",
+              "owner": "agent:otto",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.3572033229527858,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Tomas arrives to running errands",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.15,
+              "last_recalled": null,
+              "memory_id": "mem_1014_agent:otto",
+              "owner": "agent:otto",
+              "presentations": [
+                1220
+              ],
+              "proposition": null,
+              "source_conf": 0.346927725275335,
+              "type": "episodic",
+              "world_time": 1220
+            },
+            {
+              "about": [],
+              "content": "Tomas passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1016_agent:otto",
+              "owner": "agent:otto",
+              "presentations": [
+                1220
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.3614824511164314,
+              "type": "episodic",
+              "world_time": 1220
+            }
+          ],
+          "relationships": {
+            "agent:dale": {
+              "familiarity": 0.07725530557207994
+            },
+            "agent:nadia": {
+              "familiarity": 0.7,
+              "liking": 0.5,
+              "trust": 0.6
+            },
+            "agent:player_1": {
+              "familiarity": 0.11361512828387076,
+              "liking": 0.2,
+              "trust": 0.4
+            },
+            "agent:yara": {
+              "familiarity": 0.11361512828387076
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:player_1": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.0,
+              "dominance": 0.0,
+              "valence": 0.0
+            },
+            "mood": {
+              "arousal": 0.0,
+              "dominance": 0.0,
+              "valence": 0.0
+            }
+          },
+          "attention_day": 0,
+          "attention_spent": 2,
+          "beliefs": [
+            {
+              "conflict": 0.00024801433810775074,
+              "contributions": {
+                "agent:dale\u001fevt_radio_gang": [
+                  0.0,
+                  -5.851522901330529e-05
+                ],
+                "agent:otto\u001fevt_radio_gang": [
+                  0.4717912016090095,
+                  0.0
+                ],
+                "agent:tomas\u001fevt_radio_gang": [
+                  2.0010208831604875e-05,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.6157985121845587,
+              "hops": 1,
+              "ignorance": 0.6794079541308256,
+              "logit": 0.4717526965888278,
+              "origin_counts": {
+                "evt_radio_gang": 3
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1004",
+                  "delta": 0.471791,
+                  "eta": 1.0,
+                  "kappa": 0.616,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "agent:otto"
+                },
+                {
+                  "claim_id": "clm_1010",
+                  "delta": -5.9e-05,
+                  "eta": 0.1,
+                  "kappa": 0.5,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "agent:dale"
+                },
+                {
+                  "claim_id": "clm_1016",
+                  "delta": 2e-05,
+                  "eta": 0.01,
+                  "kappa": 0.501,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "agent:tomas"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 5.851522901330529e-05,
+              "support_for": 0.4718112118178411,
+              "txn_time": 1220,
+              "valid_start": 740
+            },
+            {
+              "conflict": 0.012796155598758244,
+              "contributions": {
+                "agent:dale\u001fincident:square_killing": [
+                  0.0,
+                  -0.0025934661458674297
+                ],
+                "agent:yara\u001fincident:square_killing": [
+                  0.402757363773566,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.5987270376417013,
+              "hops": 1,
+              "ignorance": 0.7115660934695776,
+              "logit": 0.4001638976276986,
+              "origin_counts": {
+                "incident:square_killing": 2
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1005",
+                  "delta": 0.402757,
+                  "eta": 1.0,
+                  "kappa": 0.599,
+                  "origin_event": "incident:square_killing",
+                  "speaker": "agent:yara"
+                },
+                {
+                  "claim_id": "clm_1009",
+                  "delta": -0.002593,
+                  "eta": 0.1,
+                  "kappa": 0.494,
+                  "origin_event": "incident:square_killing",
+                  "speaker": "agent:dale"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0025934661458674297,
+              "support_for": 0.402757363773566,
+              "txn_time": 740,
+              "valid_start": 740
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:market",
+          "memory": [
+            {
+              "about": [],
+              "content": "Officer Dale arrives to the beat",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.15,
+              "last_recalled": null,
+              "memory_id": "mem_1002_agent:player_1",
+              "owner": "agent:player_1",
+              "presentations": [
+                740
+              ],
+              "proposition": null,
+              "source_conf": 0.4090728788763541,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Otto passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1004_agent:player_1",
+              "owner": "agent:player_1",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.34679370122987696,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Yara passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1005_agent:player_1",
+              "owner": "agent:player_1",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.4058327624033894,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Officer Dale passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1009_agent:player_1",
+              "owner": "agent:player_1",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.3857645421653035,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Officer Dale passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1010_agent:player_1",
+              "owner": "agent:player_1",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.41422853219401323,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Yara passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1011_agent:player_1",
+              "owner": "agent:player_1",
+              "presentations": [
+                740
+              ],
+              "proposition": null,
+              "source_conf": 0.3373919927533891,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Tomas arrives to running errands",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.15,
+              "last_recalled": null,
+              "memory_id": "mem_1014_agent:player_1",
+              "owner": "agent:player_1",
+              "presentations": [
+                1220
+              ],
+              "proposition": null,
+              "source_conf": 0.3685874222655089,
+              "type": "episodic",
+              "world_time": 1220
+            },
+            {
+              "about": [],
+              "content": "Tomas passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1016_agent:player_1",
+              "owner": "agent:player_1",
+              "presentations": [
+                1220
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.425004250897802,
+              "type": "episodic",
+              "world_time": 1220
+            }
+          ],
+          "relationships": {
+            "agent:dale": {
+              "familiarity": 0.07725530557207994
+            },
+            "agent:otto": {
+              "familiarity": 0.11361512828387076
+            },
+            "agent:yara": {
+              "familiarity": 0.11361512828387076
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:sela": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": 0.023999999999999952,
+              "dominance": 0.18100000000000002,
+              "valence": -0.139
+            },
+            "mood": {
+              "arousal": 0.023999999999999952,
+              "dominance": 0.18100000000000002,
+              "valence": -0.139
+            }
+          },
+          "attention_day": 0,
+          "attention_spent": 2,
+          "beliefs": [
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "\u001fincident:square_killing": [
+                  1.482832288162539,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.8150000000000002,
+              "hops": 0,
+              "ignorance": 0.40276582706279623,
+              "logit": 1.482832288162539,
+              "origin_counts": {
+                "incident:square_killing": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "seed:incident:square_killing",
+                  "delta": 1.482832,
+                  "eta": 1.0,
+                  "kappa": 0.815,
+                  "origin_event": "incident:square_killing",
+                  "speaker": null
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 1.482832288162539,
+              "txn_time": 500,
+              "valid_start": 500
+            },
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "channel:city_radio\u001fevt_radio_gang": [
+                  0.44206093254243706,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.6087500000000001,
+              "hops": 0,
+              "ignorance": 0.6934519737920796,
+              "logit": 0.44206093254243706,
+              "origin_counts": {
+                "evt_radio_gang": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1001",
+                  "delta": 0.442061,
+                  "eta": 1.0,
+                  "kappa": 0.609,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "channel:city_radio"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": false,
+              "support_against": 0.0,
+              "support_for": 0.44206093254243706,
+              "txn_time": 540,
+              "valid_start": 540
+            },
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "agent:bran\u001fevt_radio_gang": [
+                  0.13648795363921112,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.5340691154704139,
+              "hops": 1,
+              "ignorance": 0.8799037392326461,
+              "logit": 0.13648795363921112,
+              "origin_counts": {
+                "evt_radio_gang": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": null,
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1007",
+                  "delta": 0.136488,
+                  "eta": 1.0,
+                  "kappa": 0.534,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "agent:bran"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 0.13648795363921112,
+              "txn_time": 740,
+              "valid_start": 740
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:alley",
+          "memory": [
+            {
+              "about": [],
+              "content": "Sela knows what the office arranged, and will not say it.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.9,
+              "last_recalled": null,
+              "memory_id": "mem:incident:square_killing",
+              "owner": "agent:sela",
+              "presentations": [
+                500
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.95,
+              "type": "episodic",
+              "world_time": 500
+            },
+            {
+              "about": [],
+              "content": "City Radio: the councillor was killed by east-side kids.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.5,
+              "last_recalled": null,
+              "memory_id": "mem_1001_agent:sela",
+              "owner": "agent:sela",
+              "presentations": [
+                540
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.35,
+              "type": "episodic",
+              "world_time": 540
+            },
+            {
+              "about": [],
+              "content": "Bran passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1007_agent:sela",
+              "owner": "agent:sela",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": null,
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.6656911547041389,
+              "type": "episodic",
+              "world_time": 740
+            }
+          ],
+          "relationships": {
+            "agent:bran": {
+              "familiarity": 0.723176591671624,
+              "liking": 0.2,
+              "trust": 0.5
+            },
+            "agent:dale": {
+              "familiarity": 0.039403990000000014
+            },
+            "agent:player_1": {
+              "familiarity": 0.0,
+              "liking": 0.0,
+              "trust": 0.15
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:tomas": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": -0.16799999999999998,
+              "dominance": -0.029999999999999992,
+              "valence": 0.041999999999999954
+            },
+            "mood": {
+              "arousal": -0.16799999999999998,
+              "dominance": -0.029999999999999992,
+              "valence": 0.041999999999999954
+            }
+          },
+          "attention_day": 0,
+          "attention_spent": 1,
+          "beliefs": [
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "channel:city_radio\u001fevt_radio_gang": [
+                  0.5731946642938939,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.6395000000000001,
+              "hops": 0,
+              "ignorance": 0.635649244620872,
+              "logit": 0.5731946642938939,
+              "origin_counts": {
+                "evt_radio_gang": 1
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1001",
+                  "delta": 0.573195,
+                  "eta": 1.0,
+                  "kappa": 0.64,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "channel:city_radio"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": false,
+              "support_against": 0.0,
+              "support_for": 0.5731946642938939,
+              "txn_time": 540,
+              "valid_start": 540
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:market",
+          "memory": [
+            {
+              "about": [],
+              "content": "City Radio: the councillor was killed by east-side kids.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.5,
+              "last_recalled": null,
+              "memory_id": "mem_1001_agent:tomas",
+              "owner": "agent:tomas",
+              "presentations": [
+                540
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.5,
+              "type": "episodic",
+              "world_time": 540
+            },
+            {
+              "about": [],
+              "content": "Sela arrives to a call she takes outside",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.15,
+              "last_recalled": null,
+              "memory_id": "mem_1013_agent:tomas",
+              "owner": "agent:tomas",
+              "presentations": [
+                1220
+              ],
+              "proposition": null,
+              "source_conf": 0.7873606804460124,
+              "type": "episodic",
+              "world_time": 1220
+            }
+          ],
+          "relationships": {
+            "agent:dale": {
+              "familiarity": 0.5,
+              "liking": -0.4,
+              "trust": 0.1
+            },
+            "agent:player_1": {
+              "familiarity": 0.0,
+              "liking": 0.0,
+              "trust": 0.2
+            },
+            "agent:yara": {
+              "familiarity": 0.7,
+              "liking": 0.6,
+              "trust": 0.7
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        },
+        "agent:yara": {
+          "affect": {
+            "active_emotions": {},
+            "baseline": {
+              "arousal": -0.11399999999999996,
+              "dominance": 0.2739999999999999,
+              "valence": 0.045999999999999985
+            },
+            "mood": {
+              "arousal": -0.11399999999999996,
+              "dominance": 0.2739999999999999,
+              "valence": 0.045999999999999985
+            }
+          },
+          "attention_day": 0,
+          "attention_spent": 1,
+          "beliefs": [
+            {
+              "conflict": 0.005536485890474603,
+              "contributions": {
+                "\u001fincident:square_killing": [
+                  1.6142456140022041,
+                  0.0
+                ],
+                "agent:dale\u001fincident:square_killing": [
+                  0.0,
+                  -0.004481028608675229
+                ]
+              },
+              "expected_prob": 0.8333786996373134,
+              "hops": 0,
+              "ignorance": 0.3818649811432768,
+              "logit": 1.609764585393529,
+              "origin_counts": {
+                "incident:square_killing": 2
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "seed:incident:square_killing",
+                  "delta": 1.614246,
+                  "eta": 1.0,
+                  "kappa": 0.834,
+                  "origin_event": "incident:square_killing",
+                  "speaker": null
+                },
+                {
+                  "claim_id": "clm_1009",
+                  "delta": -0.004481,
+                  "eta": 0.1,
+                  "kappa": 0.489,
+                  "origin_event": "incident:square_killing",
+                  "speaker": "agent:dale"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": false,
+              "support_against": 0.004481028608675229,
+              "support_for": 1.6142456140022041,
+              "txn_time": 740,
+              "valid_start": 500
+            },
+            {
+              "conflict": 0.0,
+              "contributions": {
+                "\u001fincident:square_killing": [
+                  1.3492072924575549,
+                  0.0
+                ],
+                "agent:nadia\u001fincident:square_killing": [
+                  0.05228710725105992,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.8024209201394942,
+              "hops": 0,
+              "ignorance": 0.41640738371962677,
+              "logit": 1.401494399708615,
+              "origin_counts": {
+                "incident:square_killing": 2
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "was_present",
+                "slots": {
+                  "place": "place:alley",
+                  "who": "agent:tomas"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "seed:incident:square_killing",
+                  "delta": 1.349207,
+                  "eta": 1.0,
+                  "kappa": 0.794,
+                  "origin_event": "incident:square_killing",
+                  "speaker": null
+                },
+                {
+                  "claim_id": "clm_1020",
+                  "delta": 0.052287,
+                  "eta": 0.1,
+                  "kappa": 0.628,
+                  "origin_event": "incident:square_killing",
+                  "speaker": "agent:nadia"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": true,
+              "support_against": 0.0,
+              "support_for": 1.401494399708615,
+              "txn_time": 1220,
+              "valid_start": 500
+            },
+            {
+              "conflict": 0.009932884935248795,
+              "contributions": {
+                "agent:dale\u001fevt_radio_gang": [
+                  0.0,
+                  -0.002262865623979342
+                ],
+                "agent:nadia\u001fevt_radio_gang": [
+                  0.005895907520202437,
+                  0.0
+                ],
+                "agent:otto\u001fevt_radio_gang": [
+                  0.4474723227017227,
+                  0.0
+                ]
+              },
+              "expected_prob": 0.6109020121226949,
+              "hops": 1,
+              "ignorance": 0.6869872475614259,
+              "logit": 0.4511053645979458,
+              "origin_counts": {
+                "evt_radio_gang": 3
+              },
+              "origins_refused": 0,
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "provenance": [
+                {
+                  "claim_id": "clm_1004",
+                  "delta": 0.447472,
+                  "eta": 1.0,
+                  "kappa": 0.61,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "agent:otto"
+                },
+                {
+                  "claim_id": "clm_1010",
+                  "delta": -0.002263,
+                  "eta": 0.1,
+                  "kappa": 0.494,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "agent:dale"
+                },
+                {
+                  "claim_id": "clm_1017",
+                  "delta": 0.005896,
+                  "eta": 0.01,
+                  "kappa": 0.643,
+                  "origin_event": "evt_radio_gang",
+                  "speaker": "agent:nadia"
+                }
+              ],
+              "provenance_dropped": 0,
+              "spreading": false,
+              "support_against": 0.002262865623979342,
+              "support_for": 0.45336823022192513,
+              "txn_time": 1220,
+              "valid_start": 740
+            }
+          ],
+          "identity_salience": {},
+          "identity_threat": {},
+          "location": "place:bar",
+          "memory": [
+            {
+              "about": [],
+              "content": "Yara was two metres away. Three men, no shouting, no panic, gone in eleven seconds.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.95,
+              "last_recalled": null,
+              "memory_id": "mem:incident:square_killing",
+              "owner": "agent:yara",
+              "presentations": [
+                500
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.98,
+              "type": "episodic",
+              "world_time": 500
+            },
+            {
+              "about": [],
+              "content": "Tomas was in the alley the whole time; she saw him there.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.6,
+              "last_recalled": null,
+              "memory_id": "mem:incident:square_killing",
+              "owner": "agent:yara",
+              "presentations": [
+                500
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "was_present",
+                "slots": {
+                  "place": "place:alley",
+                  "who": "agent:tomas"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.9,
+              "type": "episodic",
+              "world_time": 500
+            },
+            {
+              "about": [],
+              "content": "City Radio: the councillor was killed by east-side kids.",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.5,
+              "last_recalled": null,
+              "memory_id": "mem_1001_agent:yara",
+              "owner": "agent:yara",
+              "presentations": [
+                540
+              ],
+              "proposition": null,
+              "source_conf": 0.05,
+              "type": "episodic",
+              "world_time": 540
+            },
+            {
+              "about": [],
+              "content": "Officer Dale arrives to the beat",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.15,
+              "last_recalled": null,
+              "memory_id": "mem_1002_agent:yara",
+              "owner": "agent:yara",
+              "presentations": [
+                740
+              ],
+              "proposition": null,
+              "source_conf": 0.3484909628649415,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Otto passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1004_agent:yara",
+              "owner": "agent:yara",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.3506348037879881,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Officer Dale passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1009_agent:yara",
+              "owner": "agent:yara",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:contractors",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.4124854714563869,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Officer Dale passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1010_agent:yara",
+              "owner": "agent:yara",
+              "presentations": [
+                740
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.42238462210773114,
+              "type": "episodic",
+              "world_time": 740
+            },
+            {
+              "about": [],
+              "content": "Tomas arrives to running errands",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.15,
+              "last_recalled": null,
+              "memory_id": "mem_1014_agent:yara",
+              "owner": "agent:yara",
+              "presentations": [
+                1220
+              ],
+              "proposition": null,
+              "source_conf": 0.3608758752194664,
+              "type": "episodic",
+              "world_time": 1220
+            },
+            {
+              "about": [],
+              "content": "Nadia passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1017_agent:yara",
+              "owner": "agent:yara",
+              "presentations": [
+                1220
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "killed_by",
+                "slots": {
+                  "by": "group:eastside",
+                  "who": "person:councillor"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.4590802835434519,
+              "type": "episodic",
+              "world_time": 1220
+            },
+            {
+              "about": [],
+              "content": "Nadia passes on what they heard",
+              "emotional_valence": 0.0,
+              "episodes": 1,
+              "evidence": [],
+              "importance": 0.35,
+              "last_recalled": null,
+              "memory_id": "mem_1020_agent:yara",
+              "owner": "agent:yara",
+              "presentations": [
+                1220
+              ],
+              "proposition": {
+                "degree": null,
+                "polarity": "+",
+                "predicate": "was_present",
+                "slots": {
+                  "place": "place:alley",
+                  "who": "agent:tomas"
+                },
+                "spatial": null,
+                "valid_end": null,
+                "valid_start": null
+              },
+              "source_conf": 0.4358828003719334,
+              "type": "episodic",
+              "world_time": 1220
+            }
+          ],
+          "relationships": {
+            "agent:dale": {
+              "familiarity": 0.07725530557207994
+            },
+            "agent:nadia": {
+              "familiarity": 0.8,
+              "liking": 0.6,
+              "trust": 0.7
+            },
+            "agent:otto": {
+              "familiarity": 0.11361512828387076
+            },
+            "agent:player_1": {
+              "familiarity": 0.11361512828387076,
+              "liking": 0.0,
+              "trust": 0.3
+            },
+            "agent:tomas": {
+              "familiarity": 0.7,
+              "liking": 0.5,
+              "trust": 0.6
+            }
+          },
+          "reputation": {},
+          "standing_applied": {},
+          "tom_models": []
+        }
+      },
+      "climate": {
+        "enabled": false,
+        "now": {
+          "place:alley": {
+            "candour": 0.5275,
+            "openness": 0.2675,
+            "suspicion": 0.3675
+          },
+          "place:bar": {
+            "candour": 0.755,
+            "openness": 0.425,
+            "suspicion": 0.385
+          },
+          "place:market": {
+            "candour": 0.74,
+            "openness": 0.605,
+            "suspicion": 0.49
+          },
+          "place:precinct": {
+            "candour": 0.285,
+            "openness": 0.425,
+            "suspicion": 0.665
+          },
+          "place:radio": {
+            "candour": 0.505,
+            "openness": 0.47,
+            "suspicion": 0.525
+          }
+        }
+      },
+      "common_knowledge": {
+        "enabled": false,
+        "publics": []
+      },
+      "conversations": {},
+      "factions": {},
+      "global_seed": "conformance-time",
+      "last_decay": {
+        "agent:bran": 1220,
+        "agent:dale": 1220,
+        "agent:nadia": 1220,
+        "agent:otto": 1220,
+        "agent:player_1": 1220,
+        "agent:sela": 1220,
+        "agent:tomas": 1220,
+        "agent:yara": 1220
+      },
+      "ledger_watermark": 20,
+      "next_event_id": 1020,
+      "notes": {
+        "counter": 0,
+        "enabled": false,
+        "notes": []
+      },
+      "promises": {
+        "counter": 0,
+        "enabled": false,
+        "open": [],
+        "settled": []
+      },
+      "pursuit": {
+        "enabled": true,
+        "last_acted": {
+          "agent:bran": 740,
+          "agent:dale": 740,
+          "agent:nadia": 1220,
+          "agent:otto": 1220,
+          "agent:sela": 740,
+          "agent:tomas": 1220,
+          "agent:yara": 1220
+        }
+      },
+      "scenario_events": [],
+      "snapshot_schema_version": 11,
+      "world_time": 1220
+    },
+    "world_fingerprint": "2c99bbfba6b0bd4c",
+    "world_id": "market-square",
+    "world_time": 1220
+  },
+  "format": "unscripted/conformance",
+  "format_version": 1,
+  "id": "time",
+  "layers": [
+    "pursuit"
+  ],
+  "seed": "conformance-time",
+  "transcript": [
+    {
+      "input": "look",
+      "message_for_humans": "Market Square\nnoise=0.60 surveillance=0.40 privacy=0.10\nNPCs: Otto, Yara\nExits: The Filament, Back Alley, City Radio, Precinct"
+    },
+    {
+      "input": "wait 240 minutes",
+      "message_for_humans": "Time advances by 240 minutes.\nMarket Square\nnoise=0.60 surveillance=0.40 privacy=0.10\nNPCs: Officer Dale, Otto, Yara\nExits: The Filament, Back Alley, City Radio, Precinct"
+    },
+    {
+      "input": "wait 480 minutes",
+      "message_for_humans": "Time advances by 480 minutes.\nMarket Square\nnoise=0.60 surveillance=0.40 privacy=0.10\nNPCs: Otto, Tomas\nExits: The Filament, Back Alley, City Radio, Precinct"
+    }
+  ],
+  "why": "routines, diffusion and decay across a day, which is where iteration order and seeded sampling show up",
+  "world_pack": "worldpacks/market-square"
+}

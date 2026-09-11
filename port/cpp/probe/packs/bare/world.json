@@ -1,0 +1,10 @@
+{
+  "_note": "A pack that declares almost nothing. Every optional key is absent on purpose: no global seed, no world time, no player start, an event with no time of its own, a media exposure with no attention, and a `_note` key in a table that is otherwise read as data. It exists so the loader's defaults are exercised by something, which no shipped pack does -- they all fill everything in.",
+  "places": {"place:only_room": {"label": "The Only Room"}, "place:second": {}},
+  "media_exposure": [{"agent": "agent:solo", "channel": "chan:whatever"}],
+  "appearance_reactions": {
+    "_note": "this one is prose and must not be read as a reaction",
+    "item:hat": {"status": 0.1},
+    "not_an_object": "neither must this"
+  }
+}

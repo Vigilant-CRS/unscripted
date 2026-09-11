@@ -1,0 +1,234 @@
+{
+  "places": {
+    "place:main_street": {
+      "label": "Main Street",
+      "aliases": [
+        "main street",
+        "street",
+        "hauptstrasse",
+        "hauptstraße",
+        "strasse",
+        "straße",
+        "vor der bar",
+        "outside"
+      ],
+      "exits": [
+        "place:bar",
+        "place:clinic",
+        "place:market"
+      ],
+      "noise_level": 0.15,
+      "surveillance_level": 0.6,
+      "privacy_level": 0.2,
+      "formality": 0.4,
+      "gossip_factor": 1.2
+    },
+    "place:bar": {
+      "label": "Bar",
+      "aliases": [
+        "bar",
+        "kneipe",
+        "tavern"
+      ],
+      "exits": [
+        "place:main_street",
+        "place:back_room"
+      ],
+      "noise_level": 0.55,
+      "surveillance_level": 0.2,
+      "privacy_level": 0.4,
+      "formality": 0.25,
+      "gossip_factor": 1.8
+    },
+    "place:back_room": {
+      "label": "Back Room",
+      "aliases": [
+        "back room",
+        "hinterzimmer"
+      ],
+      "exits": [
+        "place:bar"
+      ],
+      "noise_level": 0.1,
+      "surveillance_level": 0.0,
+      "privacy_level": 0.9,
+      "formality": 0.2,
+      "gossip_factor": 0.6
+    },
+    "place:clinic": {
+      "label": "Clinic",
+      "aliases": [
+        "clinic",
+        "klinik",
+        "medical"
+      ],
+      "exits": [
+        "place:main_street"
+      ],
+      "noise_level": 0.2,
+      "surveillance_level": 0.4,
+      "privacy_level": 0.5,
+      "formality": 0.6,
+      "gossip_factor": 0.7
+    },
+    "place:market": {
+      "label": "Market",
+      "aliases": [
+        "market",
+        "markt",
+        "stall"
+      ],
+      "exits": [
+        "place:main_street",
+        "place:police_post"
+      ],
+      "noise_level": 0.6,
+      "surveillance_level": 0.5,
+      "privacy_level": 0.2,
+      "formality": 0.3,
+      "gossip_factor": 1.5
+    },
+    "place:police_post": {
+      "label": "Police Post",
+      "aliases": [
+        "police post",
+        "polizeiposten",
+        "security post",
+        "wache"
+      ],
+      "exits": [
+        "place:market"
+      ],
+      "noise_level": 0.3,
+      "surveillance_level": 0.9,
+      "privacy_level": 0.1,
+      "formality": 0.8,
+      "gossip_factor": 0.4
+    }
+  },
+  "identity_values": {
+    "sister": [
+      "benevolence",
+      "security"
+    ],
+    "gang_member": [
+      "power",
+      "loyalty"
+    ],
+    "bartender": [
+      "benevolence",
+      "tradition"
+    ],
+    "resident": [
+      "security"
+    ],
+    "officer": [
+      "conformity",
+      "security"
+    ],
+    "executive": [
+      "power",
+      "achievement"
+    ]
+  },
+  "channels": {
+    "channel:city_news": {
+      "type": "radio",
+      "reach": "citywide",
+      "directionality": "broadcast"
+    }
+  },
+  "entities": {
+    "group:reds": {
+      "class": "core:Group",
+      "name": "The Reds"
+    },
+    "group:badges": {
+      "class": "core:Organization",
+      "name": "City Security"
+    }
+  },
+  "media_exposure": [
+    {
+      "agent": "agent:npc_red_jacket",
+      "channel": "channel:city_news",
+      "attention": 0.7
+    },
+    {
+      "agent": "agent:barkeep_12",
+      "channel": "channel:city_news",
+      "attention": 0.3
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction:reds",
+      "influence": 0.45,
+      "resources": 0.4,
+      "territory": [
+        "place:main_street",
+        "place:bar",
+        "place:back_room"
+      ],
+      "goals": [
+        "expand_territory",
+        "intimidate_rivals"
+      ]
+    },
+    {
+      "id": "faction:badges",
+      "influence": 0.8,
+      "resources": 0.7,
+      "territory": [
+        "place:police_post",
+        "place:main_street",
+        "place:market"
+      ],
+      "goals": [
+        "suppress_gang"
+      ]
+    }
+  ],
+  "slang_lexicon": {
+    "yes": "yeah",
+    "no": "nah",
+    "friend": "choom",
+    "money": "eddies",
+    "police": "badges",
+    "person": "gonk",
+    "okay": "aight"
+  },
+  "diffusion": {
+    "encounters_per_hour": 0.35,
+    "distortion_prob": 0.06
+  },
+  "appearance_reactions": {
+    "_note": "What a garment does to how its wearer is read, before they have said anything. `status` is how seriously they are taken, `threat` is how dangerous they look, and they are two different things: gang colours are not low-status, they are something else. `signals` says which circle a symbol claims membership of, whether or not the wearer belongs to it -- which is what a symbol is for.",
+    "item:tailored_suit": {
+      "status": 0.45
+    },
+    "item:uniform": {
+      "status": 0.35,
+      "threat": 0.15
+    },
+    "item:work_coat": {
+      "status": 0.05
+    },
+    "item:apron": {
+      "status": 0.0
+    },
+    "item:worn_jacket": {
+      "status": -0.3,
+      "threat": 0.05
+    },
+    "item:red_cyberjacket": {
+      "status": -0.05,
+      "threat": 0.35,
+      "signals": "group:reds"
+    },
+    "sym:reds": {
+      "threat": 0.25,
+      "signals": "group:reds"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+; Lamb Street -- the same scene twice, with a switch.
+;
+; The point of this project is a comparison nobody can accuse of being rigged:
+; one scene, one camera, one cast, one question, and a toggle between a
+; conventional authored dialogue tree and the Unscripted runtime. Two separate
+; builds would always invite "you made the other one worse on purpose".
+
+config_version=5
+
+[application]
+config/name="Lamb Street"
+run/main_scene="res://Main.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[display]
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.043, 0.051, 0.067, 1)
+
+[input]
+
+interact={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"keycode":32,"pressed":true)]
+}
+toggle_mode={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"keycode":84,"pressed":true)]
+}
+reset_scene={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"keycode":82,"pressed":true)]
+}

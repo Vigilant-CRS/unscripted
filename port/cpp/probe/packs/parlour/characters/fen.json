@@ -1,0 +1,8 @@
+{
+  "id": "agent:fen",
+  "names": {"public": "Fen"},
+  "location": "place:parlour",
+  "big_five": {"openness": 0.5, "conscientiousness": 0.5, "extraversion": 0.5,
+               "agreeableness": 0.5, "emotional_stability": 0.5},
+  "relationships": {"agent:player_1": {"trust": 0.4, "liking": 0.3}}
+}

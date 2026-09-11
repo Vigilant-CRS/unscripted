@@ -1,0 +1,89 @@
+{
+  "places": {
+    "place:pier": {
+      "label": "The Pier",
+      "aliases": [
+        "pier",
+        "kai",
+        "waterfront",
+        "dock",
+        "docks"
+      ],
+      "exits": [
+        "place:office"
+      ],
+      "noise_level": 0.25,
+      "surveillance_level": 0.2,
+      "privacy_level": 0.5,
+      "formality": 0.3,
+      "gossip_factor": 1.3
+    },
+    "place:office": {
+      "label": "Harbour Watch Office",
+      "aliases": [
+        "office",
+        "watch office",
+        "buero",
+        "büro",
+        "harbour watch",
+        "harbor watch"
+      ],
+      "exits": [
+        "place:pier"
+      ],
+      "noise_level": 0.1,
+      "surveillance_level": 0.4,
+      "privacy_level": 0.7,
+      "formality": 0.75,
+      "gossip_factor": 0.5
+    }
+  },
+  "identity_values": {
+    "journalist": [
+      "self_direction",
+      "universalism"
+    ],
+    "watchman": [
+      "conformity",
+      "security"
+    ]
+  },
+  "channels": {
+    "channel:harbor_wire": {
+      "type": "radio",
+      "reach": "district",
+      "directionality": "broadcast"
+    }
+  },
+  "entities": {
+    "group:harbor_watch": {
+      "class": "core:Organization",
+      "name": "Harbor Watch"
+    }
+  },
+  "media_exposure": [
+    {
+      "agent": "agent:clara",
+      "channel": "channel:harbor_wire",
+      "attention": 0.6
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction:harbor_watch",
+      "influence": 0.55,
+      "resources": 0.45,
+      "territory": [
+        "place:pier",
+        "place:office"
+      ],
+      "goals": [
+        "contain_scandal"
+      ]
+    }
+  ],
+  "diffusion": {
+    "encounters_per_hour": 0.3,
+    "distortion_prob": 0.08
+  }
+}
