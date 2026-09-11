@@ -475,7 +475,7 @@ CARDS = [
     {"kicker": "the same events, twice", "text":
      "As <em>flags</em> &mdash; and as this runtime"},
     {"kicker": "why you can trust it", "text":
-     "Same seed, same world.<br><em>204 tests. 3.25 million turns, sealed.</em>"},
+     "Same seed, same world.<br><em>204 tests. 2.99 million turns, sealed.</em>"},
     {"kicker": "what it is for", "text":
      "Studios shipping <em>systemic games</em><br>"
      "<span style='font-size:.6em'>vigilant-crs.de</span>",

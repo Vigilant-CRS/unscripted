@@ -2,17 +2,13 @@
 
 **every case held (1 untestable in the world given)** · 120 minutes of running · packs: cyberpunk-block, noir-harbor, dorf-thornfeld, relay-station · text: deterministic templates only
 
-> *Recorded at commit `7f90ef6`, under the project's previous name. The
-> digests derive from world, agent and event data and never from the package
-> name, so the rename to Unscripted leaves every figure below unchanged.*
-
 | | |
 | --- | --- |
-| commit | `7f90ef6111a1` A world an author just made says what it is |
+| commit | `f991fc20f993` Unscripted |
 | working tree | clean |
 | python | 3.14.4 |
 | platform | Linux 7.0.0-31-generic (x86_64) |
-| started / finished | 2026-09-09T08:22:15Z → 2026-09-09T10:22:15Z |
+| started / finished | 2026-09-11T09:17:55Z → 2026-09-11T11:17:55Z |
 
 > Cases marked *n/a* were not run to a verdict because the world never exercised the mechanism — a three-character village produces almost no gossip. They are untested there, not disproved; the same case passes on the larger packs in the same run.
 
@@ -50,7 +46,7 @@
 | disagreement | relay-station | pass | 0s |
 | conversation | relay-station | pass | 0s |
 | cross_examination | relay-station | pass | 0s |
-| long_life | cyberpunk-block | pass | 1800s |
+| long_life | cyberpunk-block | pass | 1799s |
 | long_life | noir-harbor | pass | 1800s |
 | long_life | dorf-thornfeld | pass | 1800s |
 | long_life | relay-station | pass | 1800s |
@@ -298,116 +294,116 @@ pack                             cyberpunk-block
   > Walk away while you still can.
   reasoning: `policy.selected, validator.accept`
 - `day 3 00:14` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
+  > Milan's gone. Left the city months back.
+  reasoning: `dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
 - `day 3 00:44` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
+  > Milan left the city months ago. I have no further information.
+  reasoning: `dialogue.reworded, dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
 - `day 3 00:44` **agent:corpo_okada** — player: *threaten Mr. Okada*
-  > Not sure that's any of your business.
+  > I've got nothing for you.
   reasoning: `policy.selected, validator.accept`
 - `day 3 00:44` **agent:corpo_okada** — player: *promise Mr. Okada 500*
-  > I've got nothing for you.
-  reasoning: `policy.selected, validator.repetition, dialogue.released_anyway`
-- `day 3 00:44` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
-- `day 3 01:14` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
-- `day 3 01:14` **agent:corpo_okada** — player: *threaten Mr. Okada*
   > Not sure that's any of your business.
   reasoning: `policy.selected, validator.accept`
-- `day 3 01:14` **agent:corpo_okada** — player: *promise Mr. Okada 500*
+- `day 3 00:44` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
+  > Milan's gone. Left the city months back.
+  reasoning: `dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
+- `day 3 01:14` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
+  > Milan left the city months ago. I have no further information.
+  reasoning: `dialogue.reworded, dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
+- `day 3 01:14` **agent:corpo_okada** — player: *threaten Mr. Okada*
   > I am afraid that is not something I am able to discuss.
   reasoning: `policy.selected, validator.repetition, dialogue.reworded`
-- `day 3 01:14` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
-- `day 3 01:44` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
-- `day 3 01:44` **agent:corpo_okada** — player: *threaten Mr. Okada*
+- `day 3 01:14` **agent:corpo_okada** — player: *promise Mr. Okada 500*
   > Evening.
   reasoning: `policy.selected, validator.accept`
+- `day 3 01:14` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
+  > Milan's gone. Left the city months back.
+  reasoning: `dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
+- `day 3 01:44` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
+  > Milan left the city months ago. I have no further information.
+  reasoning: `dialogue.reworded, dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
+- `day 3 01:44` **agent:corpo_okada** — player: *threaten Mr. Okada*
+  > Good evening.
+  reasoning: `policy.selected, validator.repetition, dialogue.reworded`
 - `day 3 01:44` **agent:corpo_okada** — player: *promise Mr. Okada 500*
-  > Not sure that's any of your business.
+  > I've got nothing for you.
   reasoning: `policy.selected, validator.accept`
 - `day 3 01:44` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
+  > Milan's gone. Left the city months back.
+  reasoning: `dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
 - `day 3 02:14` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
+  > Milan left the city months ago. I have no further information.
+  reasoning: `dialogue.reworded, dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
 - `day 3 02:14` **agent:corpo_okada** — player: *threaten Mr. Okada*
-  > I am afraid that is not something I am able to discuss.
-  reasoning: `policy.selected, validator.repetition, dialogue.reworded`
+  > Evening.
+  reasoning: `policy.selected, validator.accept`
 - `day 3 02:14` **agent:corpo_okada** — player: *promise Mr. Okada 500*
   > Not sure that's any of your business.
   reasoning: `policy.selected, validator.accept`
 - `day 3 02:14` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
+  > Milan's gone. Left the city months back.
+  reasoning: `dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
 - `day 3 02:44` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
+  > Milan left the city months ago. I have no further information.
+  reasoning: `dialogue.reworded, dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
 - `day 3 02:44` **agent:corpo_okada** — player: *threaten Mr. Okada*
-  > Walk away while you still can.
-  reasoning: `policy.selected, validator.accept`
-- `day 3 02:44` **agent:corpo_okada** — player: *promise Mr. Okada 500*
-  > Not sure that's any of your business.
-  reasoning: `policy.selected, validator.accept`
-- `day 3 02:44` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
-- `day 3 03:14` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
-- `day 3 03:14` **agent:corpo_okada** — player: *threaten Mr. Okada*
   > I am afraid that is not something I am able to discuss.
   reasoning: `policy.selected, validator.repetition, dialogue.reworded`
+- `day 3 02:44` **agent:corpo_okada** — player: *promise Mr. Okada 500*
+  > I've got nothing for you.
+  reasoning: `policy.selected, validator.accept`
+- `day 3 02:44` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
+  > Milan's gone. Left the city months back.
+  reasoning: `dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
+- `day 3 03:14` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
+  > Milan left the city months ago. I have no further information.
+  reasoning: `dialogue.reworded, dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
+- `day 3 03:14` **agent:corpo_okada** — player: *threaten Mr. Okada*
+  > Not sure that's any of your business.
+  reasoning: `policy.selected, validator.accept`
 - `day 3 03:14` **agent:corpo_okada** — player: *promise Mr. Okada 500*
   > Evening.
   reasoning: `policy.selected, validator.accept`
 - `day 3 03:14` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
+  > Milan's gone. Left the city months back.
+  reasoning: `dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
 - `day 3 03:44` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
+  > Milan left the city months ago. I have no further information.
+  reasoning: `dialogue.reworded, dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
 - `day 3 03:44` **agent:corpo_okada** — player: *threaten Mr. Okada*
-  > I've got nothing for you.
-  reasoning: `policy.selected, validator.repetition, dialogue.released_anyway`
+  > Not sure that's any of your business.
+  reasoning: `policy.selected, validator.accept`
 - `day 3 03:44` **agent:corpo_okada** — player: *promise Mr. Okada 500*
   > Evening.
   reasoning: `policy.selected, validator.accept`
 - `day 3 03:44` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
+  > Milan's gone. Left the city months back.
+  reasoning: `dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
 - `day 3 04:14` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
+  > Milan left the city months ago. I have no further information.
+  reasoning: `dialogue.reworded, dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
 - `day 3 04:14` **agent:corpo_okada** — player: *threaten Mr. Okada*
-  > Not sure that's any of your business.
-  reasoning: `policy.selected, validator.accept`
-- `day 3 04:14` **agent:corpo_okada** — player: *promise Mr. Okada 500*
-  > I am afraid that is not something I am able to discuss.
+  > Good evening.
   reasoning: `policy.selected, validator.repetition, dialogue.reworded`
+- `day 3 04:14` **agent:corpo_okada** — player: *promise Mr. Okada 500*
+  > Evening.
+  reasoning: `policy.selected, validator.accept`
 - `day 3 04:14` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
+  > Milan's gone. Left the city months back.
+  reasoning: `dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
 - `day 3 04:44` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
+  > Milan left the city months ago. I have no further information.
+  reasoning: `dialogue.reworded, dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
 - `day 3 04:44` **agent:corpo_okada** — player: *threaten Mr. Okada*
   > Not sure that's any of your business.
   reasoning: `policy.selected, validator.accept`
 - `day 3 04:44` **agent:corpo_okada** — player: *promise Mr. Okada 500*
-  > I am afraid that is not something I am able to discuss.
-  reasoning: `policy.selected, validator.repetition, dialogue.reworded`
+  > Walk away while you still can.
+  reasoning: `policy.selected, validator.accept`
 - `day 3 04:44` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.repetition, dialogue.topic_repeated`
+  > Milan's gone. Left the city months back.
+  reasoning: `dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
 
 ## disagreement — cyberpunk-block
 
@@ -496,18 +492,18 @@ pack                             cyberpunk-block
   > Good evening.
   reasoning: `policy.selected, validator.repetition, dialogue.reworded`
 - `day 3 00:14` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.accept`
+  > Milan's gone. Left the city months back.
+  reasoning: `dialogue.deception, dialogue.deception, validator.accept`
 - `day 3 00:14` **world** — player: *ask Mr. Okada about security*
   > Officer Kane is not reachable from Main Street. Move closer or emit an engine event.
 - `day 3 00:14` **agent:npc_red_jacket** — player: *ask Vee about clinic*
   > Place was shut that night. That's all I got.
   reasoning: `commitment.selected, dialogue.direct_answer, validator.accept`
 - `day 3 00:14` **agent:npc_red_jacket** — player: *ask Vee about market_attack*
-  > Hey.
+  > Maybe.
   reasoning: `policy.selected, validator.accept`
 - `day 3 00:14` **agent:npc_red_jacket** — player: *ask Vee about media*
-  > Maybe.
+  > Nothin' to say.
   reasoning: `policy.selected, validator.accept`
 - `day 3 00:14` **agent:npc_red_jacket** — player: *ask Vee about milan*
   > Maybe. Why do you care?
@@ -525,7 +521,7 @@ pack                             cyberpunk-block
   > Good evening.
   reasoning: `policy.selected, validator.repetition, dialogue.reworded`
 - `day 3 02:14` **agent:dima_broke** — player: *ask Dima about milan*
-  > Maybe.
+  > Hey.
   reasoning: `policy.selected, validator.accept`
 - `day 3 02:14` **world** — player: *ask Dima about security*
   > Officer Kane is not reachable from Main Street. Move closer or emit an engine event.
@@ -539,7 +535,7 @@ pack                             cyberpunk-block
   > Not sure that's any of your business.
   reasoning: `policy.selected, validator.accept`
 - `day 3 02:14` **agent:barkeep_12** — player: *ask Honce about milan*
-  > Maybe.
+  > Hey.
   reasoning: `policy.selected, validator.accept`
 - `day 3 02:14` **world** — player: *ask Honce about security*
   > Officer Kane is not reachable from Main Street. Move closer or emit an engine event.
@@ -550,10 +546,10 @@ pack                             cyberpunk-block
   > They say it's on you.
   reasoning: `commitment.selected, dialogue.direct_answer, validator.accept`
 - `day 3 02:14` **agent:npc_red_jacket** — player: *ask Vee about media*
-  > Maybe.
+  > Nothin' to say.
   reasoning: `policy.selected, validator.accept`
 - `day 3 02:14` **agent:npc_red_jacket** — player: *ask Vee about milan*
-  > Nothin' to say.
+  > Maybe.
   reasoning: `dialogue.secret_gate, policy.selected, validator.accept`
   **withheld**: trust 0.25 < required 0.45 for ['secret:milan_location']
 - `day 3 02:14` **world** — player: *ask Vee about security*
@@ -562,13 +558,13 @@ pack                             cyberpunk-block
   > Far as I know, the place was shut that night.
   reasoning: `commitment.selected, dialogue.direct_answer, validator.accept, dialogue.topic_repeated`
 - `day 3 04:14` **agent:dima_broke** — player: *ask Dima about market_attack*
-  > Evening.
-  reasoning: `policy.selected, validator.accept`
-- `day 3 04:14` **agent:dima_broke** — player: *ask Dima about media*
   > Not sure that's any of your business.
   reasoning: `policy.selected, validator.accept`
+- `day 3 04:14` **agent:dima_broke** — player: *ask Dima about media*
+  > Evening.
+  reasoning: `policy.selected, validator.accept`
 - `day 3 04:14` **agent:dima_broke** — player: *ask Dima about milan*
-  > Hey.
+  > Maybe.
   reasoning: `policy.selected, validator.accept`
 - `day 3 04:14` **world** — player: *ask Dima about security*
   > Officer Kane is not reachable from Main Street. Move closer or emit an engine event.
@@ -583,10 +579,10 @@ lines_spoken                     160
 beliefs_moved_by_questioning     0
 beliefs_invented_by_questioning  0
 beliefs_moved_by_being_told      2
-propositions_said_aloud          1
+propositions_said_aloud          2
 speakers_persuaded_by_themselves 0
-distinct_phrasings_max           6
-distinct_phrasings_mean          3.75
+distinct_phrasings_max           7
+distinct_phrasings_mean          3.38
 acts_used                        ['deflect', 'evade', 'greet', 'inform', 'threaten']
 spoken_by                        authored templates
 model_lines                      0
@@ -635,18 +631,18 @@ pack                             cyberpunk-block
   > Good evening.
   reasoning: `policy.selected, validator.repetition, dialogue.reworded`
 - `day 3 00:14` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.accept`
+  > Milan's gone. Left the city months back.
+  reasoning: `dialogue.deception, dialogue.deception, validator.accept`
 - `day 3 00:14` **world** — player: *ask Mr. Okada about security*
   > Officer Kane is not reachable from Main Street. Move closer or emit an engine event.
 - `day 3 00:14` **agent:npc_red_jacket** — player: *ask Vee about clinic*
   > Place was shut that night. That's all I got.
   reasoning: `commitment.selected, dialogue.direct_answer, validator.accept`
 - `day 3 00:14` **agent:npc_red_jacket** — player: *ask Vee about market_attack*
-  > Hey.
+  > Maybe.
   reasoning: `policy.selected, validator.accept`
 - `day 3 00:14` **agent:npc_red_jacket** — player: *ask Vee about media*
-  > Maybe.
+  > Nothin' to say.
   reasoning: `policy.selected, validator.accept`
 - `day 3 00:14` **agent:npc_red_jacket** — player: *ask Vee about milan*
   > Maybe. Why do you care?
@@ -658,10 +654,10 @@ pack                             cyberpunk-block
   > Place was shut that night. That's all I got.
   reasoning: `commitment.selected, dialogue.direct_answer, validator.accept`
 - `day 3 00:14` **agent:dima_broke** — player: *ask Dima about market_attack*
-  > Maybe.
+  > Back off.
   reasoning: `policy.selected, validator.accept`
 - `day 3 00:14` **agent:dima_broke** — player: *ask Dima about media*
-  > Back off.
+  > Maybe.
   reasoning: `policy.selected, validator.accept`
 - `day 3 00:14` **agent:dima_broke** — player: *ask Dima about milan*
   > Maybe. Why do you care?
@@ -692,19 +688,19 @@ pack                             cyberpunk-block
   > I am afraid that is not something I am able to discuss.
   reasoning: `policy.selected, validator.repetition, dialogue.reworded`
 - `day 3 00:14` **agent:corpo_okada** — player: *ask Mr. Okada about milan*
-  > I've got nothing for you.
-  reasoning: `validator.secret_referent, dialogue.validation_fallback, dialogue.commitment_unexpressed, dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
+  > Milan's gone. Left the city months back.
+  reasoning: `dialogue.deception, dialogue.deception, validator.accept, dialogue.topic_repeated`
 - `day 3 00:14` **world** — player: *ask Mr. Okada about security*
   > Officer Kane is not reachable from Main Street. Move closer or emit an engine event.
 - `day 3 00:14` **agent:npc_red_jacket** — player: *ask Vee about clinic*
   > Place was shut that night. That's all I got.
   reasoning: `commitment.selected, dialogue.direct_answer, validator.accept, dialogue.topic_repeated`
 - `day 3 00:14` **agent:npc_red_jacket** — player: *ask Vee about market_attack*
-  > Not sure that's any of your business.
-  reasoning: `policy.selected, validator.repetition, dialogue.reworded`
-- `day 3 00:14` **agent:npc_red_jacket** — player: *ask Vee about media*
   > Maybe.
   reasoning: `policy.selected, validator.accept`
+- `day 3 00:14` **agent:npc_red_jacket** — player: *ask Vee about media*
+  > Not sure that's any of your business.
+  reasoning: `policy.selected, validator.repetition, dialogue.reworded`
 - `day 3 00:14` **agent:npc_red_jacket** — player: *ask Vee about milan*
   > Maybe. Why do you care?
   reasoning: `dialogue.secret_gate, policy.selected, validator.repetition, dialogue.reworded`
@@ -1767,7 +1763,7 @@ pack                             dorf-thornfeld
   > Gruess Euch.
   reasoning: `policy.selected, validator.accept`
 - `day 0 19:40` **agent:schmied_hanns** — player: *ask Hanns about korn*
-  > Kein Korn. Nix kam.
+  > Es ist wahr, vergangene Woche kam kein Korn von der Muehle.
   reasoning: `dialogue.reworded, commitment.selected, dialogue.direct_answer, validator.accept, dialogue.topic_repeated`
 - `day 0 19:40` **agent:schmied_hanns** — player: *ask Hanns about schuld*
   > Gott zum Gruusse.
@@ -2592,310 +2588,299 @@ pack                             relay-station
 *Does it all still hold after days of continuous play?*
 
 ```
-turns                            627382
-simulated_days                   16089.8
-invariant_sweeps                 12547
+turns                            519500
+simulated_days                   13323.6
+invariant_sweeps                 10390
 retellings                       19
 distortions                      2
-forgettings                      7889454
-forgettings_by_decay             459741
-forgettings_by_eviction          7429713
+forgettings                      6531526
+forgettings_by_decay             381453
+forgettings_by_eviction          6150073
 beliefs_acquired                 40
-episodes_recorded                16771202
-episodes_kept                    2457
-episodes_dropped_for_readability 8352000
+episodes_recorded                13884732
+episodes_kept                    2000
+episodes_dropped_for_readability 6914000
 pack                             cyberpunk-block
 ```
 
 **Record** (excerpt):
 
-- `day 16085 07:44` **agent:player_1** can no longer recall: *agent:son_marko said so to agent:player_1* — decayed below the retrieval threshold (still stored, no longer retrievable)
-- `day 16085 07:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 07:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 07:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 07:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 07:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 07:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 07:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 07:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 07:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 07:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 07:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 07:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 07:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 08:29` **world** — player: *wait 45*
-  > Time advances by 45 minutes.
-- `day 16085 10:29` **world** — player: *wait 90*
-  > Time advances by 90 minutes.
-- `day 16085 10:59` **world** — player: *look*
-  > Main Street
-- `day 16085 11:29` **agent:officer_kane** — player: *ask Officer Kane about security*
+- `day 13319 22:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13319 22:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13319 22:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13319 22:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13319 22:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13319 22:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13319 22:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13319 22:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13319 22:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13319 22:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13319 22:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13319 22:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13319 22:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13319 22:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13319 22:44` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13319 22:44` **agent:son_ilya** — player: *ask Ilya about market_attack*
   > I am afraid that is not something I am able to discuss.
+  reasoning: `policy.selected, validator.repetition, dialogue.reworded`
+- `day 13319 23:14` **agent:corpo_okada** — player: *ask Mr. Okada about media*
+  > I have nothing further to add.
   reasoning: `policy.selected, validator.accept`
-- `day 16085 11:59` **agent:officer_kane** — player: *ask Officer Kane about clinic*
-  > As far as I am aware, the establishment was closed during that period.
-  reasoning: `commitment.selected, dialogue.direct_answer, validator.accept, dialogue.topic_repeated`
-- `day 16085 12:29` **agent:son_marko** — player: *ask Marko about market_attack*
-  > The word going around does connect you to it.
-  reasoning: `dialogue.reworded, commitment.selected, dialogue.direct_answer, validator.accept, dialogue.topic_repeated`
-- `day 16085 12:59` **agent:officer_kane** — player: *ask Officer Kane about media*
-  > Good evening.
-  reasoning: `policy.selected, validator.accept`
-- `day 16085 13:29` **agent:son_marko** — player: *ask Marko about milan*
-  > Not sure that's any of your business.
-  reasoning: `policy.selected, validator.accept`
-- `day 16085 13:59` **agent:officer_kane** — player: *ask Officer Kane about security*
-  > Evening.
-  reasoning: `policy.selected, validator.accept`
-- `day 16085 14:29` **agent:son_marko** — player: *ask Marko about clinic*
+- `day 13319 23:44` **agent:npc_red_jacket** — player: *ask Vee about milan*
+  > Nothin' to say.
+  reasoning: `dialogue.secret_gate, policy.selected, validator.secret_referent, validator.accept`
+  **withheld**: trust 0.25 < required 0.45 for ['secret:milan_location']
+- `day 13320 00:14` **world** — player: *ask Dima about security*
+  > Officer Kane is not reachable from Main Street. Move closer or emit an engine event.
+- `day 13320 00:44` **agent:barkeep_12** — player: *ask Honce about clinic*
   > Far as I know, the place was shut that night.
+  reasoning: `validator.repetition, dialogue.released_anyway, commitment.selected, dialogue.direct_answer, validator.repetition, dialogue.topic_repeated`
+- `day 13320 01:14` **agent:corpo_okada** — player: *ask Mr. Okada about market_attack*
+  > The word going around does connect you to it.
   reasoning: `commitment.selected, dialogue.direct_answer, validator.accept, dialogue.topic_repeated`
-- `day 16085 14:59` **agent:barkeep_12** can no longer recall: *stranger probing about Milan* — decayed below the retrieval threshold (still stored, no longer retrievable)
-- `day 16085 14:59` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 14:59` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 14:59` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 14:59` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 14:59` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 14:59` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 14:59` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 14:59` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 14:59` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 14:59` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 14:59` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 14:59` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 14:59` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 16085 14:59` **agent:corpo_okada** can no longer recall: *stranger probing about Milan* — decayed below the retrieval threshold (still stored, no longer retrievable)
-- `day 16085 14:59` **agent:corpo_okada** can no longer recall: *stranger probing about Milan* — decayed below the retrieval threshold (still stored, no longer retrievable)
+- `day 13320 01:44` **agent:npc_red_jacket** — player: *ask Vee about media*
+  > Hey.
+  reasoning: `policy.selected, validator.accept`
+- `day 13320 02:14` **agent:npc_red_jacket** — player: *ask Vee about milan*
+  > Maybe.
+  reasoning: `dialogue.secret_gate, policy.selected, validator.accept`
+  **withheld**: trust 0.25 < required 0.45 for ['secret:milan_location']
+- `day 13320 02:44` **world** — player: *ask Dima about security*
+  > Officer Kane is not reachable from Main Street. Move closer or emit an engine event.
+- `day 13320 03:14` **agent:dima_broke** — player: *ask Dima about clinic*
+  > Hey.
+  reasoning: `policy.selected, validator.repetition, dialogue.reworded`
+- `day 13320 03:44` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13320 03:44` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13320 03:44` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13320 03:44` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13320 03:44` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13320 03:44` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13320 03:44` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13320 03:44` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13320 03:44` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13320 03:44` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13320 03:44` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13320 03:44` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13320 03:44` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13320 03:44` **agent:barkeep_12** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 13320 03:44` **agent:corpo_okada** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
 
 ## long_life — noir-harbor
 
 *Does it all still hold after days of continuous play?*
 
 ```
-turns                            1215539
-simulated_days                   27012.8
-invariant_sweeps                 24310
+turns                            1159742
+simulated_days                   25772.9
+invariant_sweeps                 23194
 retellings                       9
 distortions                      0
-forgettings                      5100870
-forgettings_by_decay             648363
-forgettings_by_eviction          4452507
+forgettings                      4866523
+forgettings_by_decay             618605
+forgettings_by_eviction          4247918
 beliefs_acquired                 9
-episodes_recorded                11644193
-episodes_kept                    4088
-episodes_dropped_for_readability 6070000
+episodes_recorded                11109286
+episodes_kept                    3026
+episodes_dropped_for_readability 5792000
 pack                             noir-harbor
 ```
 
 **Record** (excerpt):
 
-- `day 26995 22:30` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26995 22:30` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26995 22:30` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26995 22:30` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26995 22:30` **agent:marlow** — player: *ask Marlow about logbook*
-  > The duty log records the office as open through the night.
-  reasoning: `dialogue.reworded, commitment.selected, dialogue.direct_answer, validator.accept, dialogue.topic_repeated`
-- `day 26995 23:00` **agent:marlow** — player: *ask Marlow about manifest*
-  > Evening.
-  reasoning: `dialogue.secret_gate, policy.selected, validator.accept`
-  **withheld**: trust 0.25 < required 0.5 for ['secret:crate_19']
-- `day 26995 23:30` **agent:marlow** — player: *ask Marlow about marlow_pier*
-  > Not sure that's any of your business.
-  reasoning: `policy.selected, validator.accept`
-- `day 26996 00:00` **agent:marlow** — player: *ask Marlow about clearance*
-  > Good evening.
-  reasoning: `policy.selected, validator.repetition, dialogue.reworded`
-- `day 26996 00:30` **agent:marlow** — player: *ask Marlow about logbook*
-  > Log says the office was open all night.
-  reasoning: `commitment.selected, dialogue.direct_answer, validator.accept, dialogue.topic_repeated`
-- `day 26996 01:00` **agent:marlow** — player: *ask Marlow about manifest*
-  > Evening.
-  reasoning: `dialogue.secret_gate, policy.selected, validator.accept`
-  **withheld**: trust 0.25 < required 0.5 for ['secret:crate_19']
-- `day 26996 01:30` **agent:marlow** — player: *ask Marlow about marlow_pier*
+- `day 25760 09:30` **agent:marlow** — player: *ask Marlow about marlow_pier*
   > Hey.
   reasoning: `policy.selected, validator.repetition, dialogue.reworded`
-- `day 26996 02:00` **agent:marlow** — player: *ask Marlow about clearance*
-  > Not sure that's any of your business.
+- `day 25760 11:30` **world** — player: *wait 90*
+  > Time advances by 90 minutes.
+- `day 25760 12:00` **agent:clara** — player: *ask Clara about logbook*
+  > I am afraid that is not something I am able to discuss.
   reasoning: `policy.selected, validator.accept`
-- `day 26996 02:30` **agent:marlow** — player: *ask Marlow about logbook*
-  > Log says the office was open all night.
-  reasoning: `commitment.selected, dialogue.direct_answer, validator.accept, dialogue.topic_repeated`
-- `day 26996 03:00` **agent:marlow** — player: *ask Marlow about manifest*
+- `day 25760 12:30` **agent:clara** — player: *ask Clara about manifest*
+  > That load never made the paperwork.
+  reasoning: `dialogue.reworded, commitment.selected, dialogue.direct_answer, validator.accept, dialogue.topic_repeated`
+- `day 25760 13:00` **world** — player: *ask Clara about marlow_pier*
+  > Marlow is not reachable from The Pier. Move closer or emit an engine event.
+- `day 25760 13:30` **agent:clara** — player: *ask Clara about clearance*
+  > Good evening.
+  reasoning: `policy.selected, validator.accept`
+- `day 25760 14:00` **agent:clara** — player: *ask Clara about logbook*
   > Evening.
-  reasoning: `dialogue.secret_gate, policy.selected, validator.accept`
-  **withheld**: trust 0.25 < required 0.5 for ['secret:crate_19']
-- `day 26996 03:30` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:marlow** can no longer recall: *player asks about logbook* — decayed below the retrieval threshold (still stored, no longer retrievable)
-- `day 26996 03:30` **agent:marlow** can no longer recall: *player asks about logbook* — decayed below the retrieval threshold (still stored, no longer retrievable)
-- `day 26996 03:30` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26996 03:30` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+  reasoning: `policy.selected, validator.repetition, dialogue.reworded`
+- `day 25760 14:30` **agent:clara** — player: *ask Clara about manifest*
+  > That consignment never made it onto the paperwork.
+  reasoning: `commitment.selected, dialogue.direct_answer, validator.accept, dialogue.topic_repeated`
+- `day 25760 15:00` **agent:clara** can no longer recall: *player asks about logbook* — decayed below the retrieval threshold (still stored, no longer retrievable)
+- `day 25760 15:00` **agent:clara** can no longer recall: *player asks about logbook* — decayed below the retrieval threshold (still stored, no longer retrievable)
+- `day 25760 15:00` **agent:clara** can no longer recall: *player asks about logbook* — decayed below the retrieval threshold (still stored, no longer retrievable)
+- `day 25760 15:00` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:clara** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:marlow** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 25760 15:00` **agent:player_1** can no longer recall: *agent:clara said so to agent:player_1* — decayed below the retrieval threshold (still stored, no longer retrievable)
+- `day 25760 15:00` **agent:player_1** can no longer recall: *agent:clara said so to agent:player_1* — decayed below the retrieval threshold (still stored, no longer retrievable)
+- `day 25760 15:00` **agent:player_1** can no longer recall: *agent:clara said so to agent:player_1* — decayed below the retrieval threshold (still stored, no longer retrievable)
 
 ## long_life — dorf-thornfeld
 
 *Does it all still hold after days of continuous play?*
 
 ```
-turns                            959979
-simulated_days                   26666.5
-invariant_sweeps                 19199
+turns                            895038
+simulated_days                   24862.6
+invariant_sweeps                 17900
 retellings                       4
 distortions                      2
-forgettings                      6635783
-forgettings_by_decay             960220
-forgettings_by_eviction          5675563
+forgettings                      6186611
+forgettings_by_decay             895278
+forgettings_by_eviction          5291333
 beliefs_acquired                 6
-episodes_recorded                14613416
-episodes_kept                    3900
-episodes_dropped_for_readability 7672000
+episodes_recorded                13624298
+episodes_kept                    2315
+episodes_dropped_for_readability 7154000
 pack                             dorf-thornfeld
 ```
 
 **Record** (excerpt):
 
-- `day 26653 11:55` **agent:muellerin_greta** — player: *ask Greta about schuld*
-  > Geht weiter, solange Ihr noch koennt.
+- `day 24854 19:40` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24854 19:40` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24854 19:40` **agent:player_1** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24854 19:40` **agent:pfarrer_konrad** — player: *ask Konrad about schuld*
+  > Gott zum Gruusse.
   reasoning: `policy.selected, validator.accept`
-- `day 26653 12:25` **agent:muellerin_greta** — player: *ask Greta about korn*
-  > Kein Korn kam letzte Woche. So ist es.
-  reasoning: `commitment.selected, dialogue.direct_answer, validator.accept, dialogue.topic_repeated`
-- `day 26653 12:55` **agent:schmied_hanns** — player: *ask Hanns about schuld*
+- `day 24854 20:10` **agent:schmied_hanns** — player: *ask Hanns about korn*
+  > Das geht Euch nichts an.
+  reasoning: `policy.selected, validator.accept`
+- `day 24854 20:40` **agent:pfarrer_konrad** — player: *ask Konrad about schuld*
+  > Geht Euch nix an.
+  reasoning: `policy.selected, validator.repetition, dialogue.reworded`
+- `day 24854 21:10` **agent:schmied_hanns** — player: *ask Hanns about korn*
+  > Gruess Euch.
+  reasoning: `policy.selected, validator.accept`
+- `day 24854 21:40` **agent:schmied_hanns** — player: *ask Hanns about schuld*
   > Gott zum Gruusse.
   reasoning: `dialogue.secret_gate, policy.selected, validator.repetition, dialogue.reworded`
   **withheld**: trust 0.28 < required 0.55 for ['secret:schuldschein']
-- `day 26653 13:25` **agent:muellerin_greta** — player: *ask Greta about korn*
-  > Kein Korn. Nix kam.
-  reasoning: `dialogue.reworded, commitment.selected, dialogue.direct_answer, validator.accept, dialogue.topic_repeated`
-- `day 26653 13:55` **agent:schmied_hanns** — player: *ask Hanns about schuld*
-  > Tag.
-  reasoning: `dialogue.secret_gate, policy.selected, validator.repetition, dialogue.reworded`
-  **withheld**: trust 0.28 < required 0.55 for ['secret:schuldschein']
-- `day 26653 14:25` **agent:muellerin_greta** — player: *ask Greta about korn*
-  > Es ist wahr, vergangene Woche kam kein Korn von der Muehle.
-  reasoning: `dialogue.reworded, commitment.selected, dialogue.direct_answer, validator.accept, dialogue.topic_repeated`
-- `day 26653 14:55` **agent:pfarrer_konrad** — player: *ask Konrad about schuld*
-  > Gruess Euch.
-  reasoning: `policy.selected, validator.repetition, dialogue.reworded`
-- `day 26653 15:25` **agent:pfarrer_konrad** — player: *ask Konrad about korn*
-  > Es ist wahr, vergangene Woche kam kein Korn von der Muehle.
-  reasoning: `commitment.selected, commitment.unsayable_dropped, dialogue.direct_answer, validator.accept, dialogue.topic_repeated`
-- `day 26653 15:55` **agent:pfarrer_konrad** — player: *ask Konrad about schuld*
-  > Tag.
-  reasoning: `policy.selected, validator.repetition, dialogue.reworded`
-- `day 26653 16:25` **world** — player: *look*
+- `day 24854 22:55` **world** — player: *wait 45*
+  > Time advances by 45 minutes.
+- `day 24855 00:55` **world** — player: *wait 90*
+  > Time advances by 90 minutes.
+- `day 24855 01:25` **world** — player: *look*
   > Dorfplatz
-- `day 26653 16:55` **agent:muellerin_greta** can no longer recall: *player asks about korn* — decayed below the retrieval threshold (still stored, no longer retrievable)
-- `day 26653 16:55` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:pfarrer_konrad** can no longer recall: *player asks about korn* — decayed below the retrieval threshold (still stored, no longer retrievable)
-- `day 26653 16:55` **agent:pfarrer_konrad** can no longer recall: *player asks about korn* — decayed below the retrieval threshold (still stored, no longer retrievable)
-- `day 26653 16:55` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 26653 16:55` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 02:40` **world** — player: *wait 45*
+  > Time advances by 45 minutes.
+- `day 24855 04:40` **world** — player: *wait 90*
+  > Time advances by 90 minutes.
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *player asks about korn* — decayed below the retrieval threshold (still stored, no longer retrievable)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *player asks about korn* — decayed below the retrieval threshold (still stored, no longer retrievable)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *player asks about korn* — decayed below the retrieval threshold (still stored, no longer retrievable)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *player asks about korn* — decayed below the retrieval threshold (still stored, no longer retrievable)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *player asks about korn* — decayed below the retrieval threshold (still stored, no longer retrievable)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:muellerin_greta** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 24855 05:10` **agent:pfarrer_konrad** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
 
 ## long_life — relay-station
 
 *Does it all still hold after days of continuous play?*
 
 ```
-turns                            450290
-simulated_days                   12508.4
-invariant_sweeps                 9005
+turns                            413086
+simulated_days                   11474.8
+invariant_sweeps                 8261
 retellings                       18
 distortions                      5
-forgettings                      8185953
-forgettings_by_decay             1041441
-forgettings_by_eviction          7144512
+forgettings                      7509012
+forgettings_by_decay             955664
+forgettings_by_eviction          6553348
 beliefs_acquired                 35
-episodes_recorded                17414134
-episodes_kept                    3877
-episodes_dropped_for_readability 8992000
+episodes_recorded                15974147
+episodes_kept                    3749
+episodes_dropped_for_readability 8248000
 pack                             relay-station
 ```
 
 **Record** (excerpt):
 
-- `day 12503 08:55` **agent:adeyemi** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:adeyemi** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:adeyemi** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:adeyemi** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:adeyemi** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:adeyemi** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:adeyemi** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:adeyemi** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:adeyemi** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:adeyemi** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *Lindqvist arrives to repairs* — decayed below the retrieval threshold (still stored, no longer retrievable)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *Hollis arrives to lunch* — decayed below the retrieval threshold (still stored, no longer retrievable)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *Mbeki arrives to lunch* — decayed below the retrieval threshold (still stored, no longer retrievable)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *Nakamura arrives to lunch* — decayed below the retrieval threshold (still stored, no longer retrievable)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
-- `day 12503 08:55` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:ferro** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:hollis** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:lindqvist** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:lindqvist** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:lindqvist** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:lindqvist** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:lindqvist** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:lindqvist** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:lindqvist** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:lindqvist** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:lindqvist** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:lindqvist** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:lindqvist** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:lindqvist** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:lindqvist** can no longer recall: *(no longer stored)* — evicted: the agent was at capacity (dropped from the store)
+- `day 11469 21:40` **agent:mbeki** can no longer recall: *Lindqvist arrives to off shift* — decayed below the retrieval threshold (still stored, no longer retrievable)
+- `day 11469 21:40` **agent:mbeki** can no longer recall: *Dr Okonkwo arrives to off shift* — decayed below the retrieval threshold (still stored, no longer retrievable)
+- `day 11469 21:40` **agent:mbeki** can no longer recall: *Tan arrives to off shift* — decayed below the retrieval threshold (still stored, no longer retrievable)
+- `day 11469 21:40` **agent:mbeki** can no longer recall: *Adeyemi arrives to off shift* — decayed below the retrieval threshold (still stored, no longer retrievable)
+- `day 11469 21:40` **agent:mbeki** can no longer recall: *Nakamura arrives to off shift* — decayed below the retrieval threshold (still stored, no longer retrievable)
+- `day 11469 21:40` **agent:mbeki** can no longer recall: *Rask arrives to off shift* — decayed below the retrieval threshold (still stored, no longer retrievable)

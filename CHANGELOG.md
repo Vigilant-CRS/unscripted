@@ -65,34 +65,31 @@ All notable changes to Unscripted.
   literals alone was the alternative and it was worse: the retired name would
   have gone on appearing in every save file and every world fingerprint.
 
-  **The sealed evidence run is unaffected.** Its digests derive from world, agent
-  and event data and never from the package name, so every figure quoted here
-  still describes commit `7f90ef6` — recorded, as the dossiers now say, under the
-  previous name.
+  **The evidence run is sealed afresh**, to this repository's first commit (see
+  below). Its digests never depended on the package name, but a seal has to point
+  at a commit the repository it sits in contains.
 
-- **The sealed evidence run is redone and sealed to `7f90ef6`.** The previous one
-  described `36bf7097`, and `belief.py`, `memory.py`, `runtime.py` and
-  `revision.py` had all changed since — `belief.py` three times over five external
-  reviews, ending with an origin index that never evicts. A seal describing code
-  that no longer exists is worth nothing.
+- **The evidence run is sealed to this repository's first commit, `f991fc2`.**
+  The previous seal described `7f90ef6`, which is in a history this repository
+  does not carry, and a seal nobody can check is worth nothing.
 
   Two hours, four packs, 36 cases: 35 held, 1 untestable in the world given, none
-  failed. **3,253,190 turns, 82,278 simulated days, 65,061 invariant checks, 0
+  failed. **2,987,366 turns, 75,434 simulated days, 59,745 invariant checks, 0
   violations**, every optional layer off.
 
-  **It is slower than the run it replaces, and every quoted figure moved down.**
-  3,560,466 turns, then 3,282,740 (−7.8%), now 3,253,190 (−0.90%); simulated days
-  and invariant sweeps fell with it, which is a per-tick cost rather than noise.
-  The non-evicting origin index is the likely source: it does strictly more
-  bookkeeping per hearing than the version that threw entries away. Recorded in
-  three places rather than quietly replaced, because a number that only ever
-  improves is a number nobody measured.
+  **It is 8.2% below the previous seal, and the code did not get slower.** The ten
+  core modules are identical to `7f90ef6` once the rename is taken out; the
+  validator fix under *Fixed* profiles at under one percent of a long run; and the
+  two commits, run alternately on the same machine for 45 seconds each, were
+  within 1% of each other, the new one ahead. The two hours were slower hours.
+  That retires the reading the earlier seals were given — "simulated days and
+  invariant sweeps fell with it, which is a per-tick cost rather than noise" —
+  because days and sweeps move with the turns whatever slows them. The series is
+  kept in `evidence/README.md`, with that said beside it.
 
-Requoted everywhere it appears: `README.md`, `docs/SPECIFICATION.md`,
-`docs/CONCEPT.md`, `evidence/README.md` and `unscripted/pursuit.py`, which
-quotes the dossier in its own docstring. `docs/CONCEPT.md` had been carrying
-figures from a run older than either seal (3,791,879 turns / 95,926 days) and
-now agrees with the others.
+  Requoted everywhere it appears: `README.md`, `docs/SPECIFICATION.md`,
+  `docs/CONCEPT.md`, `evidence/README.md`, `unscripted/pursuit.py`, which quotes
+  the dossier in its own docstring, and the film's closing card.
 
 ### Added
 

@@ -23,7 +23,7 @@ written by hand.
 [![from EUR 3,500 per title](https://img.shields.io/badge/commercial-from%20EUR%203%2C500%20per%20title-blue)](#what-a-commercial-licence-costs)
 [![Impressum](https://img.shields.io/badge/Impressum-%C2%A7%205%20DDG-lightgrey)](IMPRESSUM.md)
 [![tests](https://img.shields.io/badge/tests-204%20passing-brightgreen)](tests/test_scenarios.py)
-[![evidence](https://img.shields.io/badge/evidence-3.3M%20turns%2C%200%20violations-brightgreen)](evidence/)
+[![evidence](https://img.shields.io/badge/evidence-2.99M%20turns%2C%200%20violations-brightgreen)](evidence/)
 [![no dependencies](https://img.shields.io/badge/dependencies-none-blue)](pyproject.toml)
 [![console port](https://img.shields.io/badge/console%20port-50%2F51%20modules%20bit--exact-blue)](port/)
 
@@ -351,7 +351,7 @@ each page prints the command that reproduces it.
 | **204 tests** | `python3 tests/test_scenarios.py` — one file, no framework, no dependencies. What each family proves, and what a failure would mean, is in `tests/README.md` |
 | **The tests are mutation-tested too** | Deliberate defects introduced into the runtime and the suite asked whether it notices. Nineteen defects so far, and **five** behaviours this runtime is sold on turned out to have nothing asserting them — including whether a retelling cites the source it first heard, which is the sentence the whole design rests on. All five are now pinned at the boundary; `tests/README.md` names them, and records the poisoned-bytecode trap that made one of them report *caught* when it was not |
 | **Line coverage** | `python3 tools/coverage_check.py` — measured with `sys.monitoring`, so it needs nothing installed. Reach, not assertion: a line executed is not a line tested |
-| **A sealed evidence run** | two hours, four world packs: **3,253,190 turns, 82,278 simulated days, 65,061 invariant checks, 0 violations** — sealed to the commit that produced it, and re-run when that commit changes. It has now been re-run twice for that reason, and each run has been slower per turn than the one before it (−7.8%, then −0.90%); `evidence/README.md` keeps all three numbers and says why |
+| **A sealed evidence run** | two hours, four world packs: **2,987,366 turns, 75,434 simulated days, 59,745 invariant checks, 0 violations** — sealed to this repository's first commit, and re-run when the code on the turn path changes. Its throughput is a record of one machine on one day, not a benchmark: this seal came in 8.2% below the previous one with that code unchanged, and both commits run side by side on the same machine were within 1% of each other. `evidence/README.md` keeps every seal and says what that means for the earlier ones |
 | **Adversarial search** | `unscripted qa` looks for the shortest player sequence that breaks a stated rule, and says how far it looked when it finds none |
 | **Both engines compile** | `tools/unity_check.py` (no licence needed), `tools/unreal_check.py` for the HTTP plugin and `--plugin native` for the one that compiles the C++ core in |
 | **All three native bindings are verified** | A C99 program drives the C ABI; a real C# compiler drives the Unity P/Invoke layer against the real library; a headless Godot loads the GDExtension and drives it from GDScript; the Unreal plugin compiles and links against 5.8.2 with UnrealHeaderTool over its reflection macros. None has been run inside a game — that is the gap |

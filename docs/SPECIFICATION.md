@@ -3556,7 +3556,7 @@ diffusion asks *who is here*, pursuit asks *who needs this said, and to whom*.
 The runtime's own evidence run is the argument for it:
 
 > After saturation, little happens. The rumours are through the population within
-> days, everyone becomes a stifler, and the world goes quiet — across 82,278
+> days, everyone becomes a stifler, and the world goes quiet — across 75,434
 > simulated days the long case demonstrates **stability, not liveliness**.
 
 ### 33.1 Who is due
@@ -4978,7 +4978,7 @@ the way, show me them forgetting it, and show me the one thing they must not say
 staying unsaid.*
 
 Latest sealed run: two hours, four world packs, 36 cases — 35 held, 1 untestable
-in the world given, none failed. **3,253,190 turns, 82,278 simulated days, 65,061
+in the world given, none failed. **2,987,366 turns, 75,434 simulated days, 59,745
 invariant checks, 0 violations**, with every optional layer off (the configuration
 the byte-identical claim is about).
 
@@ -4991,25 +4991,29 @@ reads twice.*
 
 **Two findings in it are worth reading as findings rather than as a scoreboard:**
 
-- **Forgetting is 89% eviction, not decay** — 24.7M against 3.1M. Over 82,000
+- **Forgetting is 89% eviction, not decay** — 22.2M against 2.9M. Over 75,000
   simulated days every character sits permanently against their memory cap. That
   is correct behaviour, but what a player would ever *see* is the decay, and decay
   is the smaller ninth.
 - **After saturation, little happens** — 50 retellings and 90 beliefs acquired
-  across 82,278 days. The long case demonstrates **stability, not liveliness**.
+  across 75,434 days. The long case demonstrates **stability, not liveliness**.
   This is what the pursuit layer exists to address, and the measurement is the
   argument: on `market-square` over thirty simulated days, without pursuit there
   are 54 conversations on days 0–2 and **zero** on days 27–29; with it, 96 and
   **90**.
 
-And a discipline worth copying: this is the third seal, and the number has gone
-down every time — 3,560,466 turns, then 3,282,740 (**−7.8%**), now 3,253,190
-(**−0.90%**). Simulated days and invariant sweeps move with it, which is what a
-per-tick cost looks like rather than noise; between the last two, `belief.py` was
-rebuilt three times and ended with an origin index that never evicts and so does
-strictly more bookkeeping per hearing. The runtime got measurably slower per turn,
-each time, and that is stated rather than quietly replaced, **because a number
-that only ever improves is a number nobody measured.**
+And a discipline worth copying, including the part where it corrected itself. The
+first three seals went down each time — 3,560,466 turns, then 3,282,740
+(**−7.8%**), then 3,253,190 (**−0.90%**) — and were read as a per-tick cost,
+because simulated days and invariant sweeps moved with the turns and `belief.py`
+had been rebuilt in between. The fourth came in at 2,987,366 (**−8.2%**) with the
+code on the turn path unchanged, and the two commits run side by side on the
+same machine were within 1% of each other: days and sweeps move with the turns
+whatever slows them, including the machine. So a seal's throughput is a record
+of one machine on one day, and neither earlier drop can now be told apart from
+that. It is stated rather than quietly replaced, **because a number that only
+ever improves is a number nobody measured — and a number read as a trend needs
+its noise measured too.**
 
 ### 45.5 Adversarial search
 

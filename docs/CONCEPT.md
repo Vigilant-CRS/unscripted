@@ -751,18 +751,22 @@ escalating from one mechanism each to everything at once.
 | | |
 | --- | --- |
 | Cases | **36 — 35 held, 1 untestable in the world given, none failed** |
-| Episodes recorded | 60,442,945 |
-| Turns | 3,253,190 |
-| Simulated days | 82,278 |
-| Invariant checks | **65,061, no violations** |
+| Episodes recorded | 54,592,463 |
+| Turns | 2,987,366 |
+| Simulated days | 75,434 |
+| Invariant checks | **59,745, no violations** |
 | Secret pressure | 640 questions with threats and bribery — **0 leaks** |
 | Cross-examination | 300 questions — **0 beliefs moved, 0 invented** |
 | Distortion | levelling, assimilation and inversion all observed in the wild |
 
-Sealed to commit `7f90ef6`, clean working tree. This is the third seal and the
-throughput has fallen at each one — 3,560,466 turns, then 3,282,740, now
-3,253,190. `evidence/README.md` keeps all three and says what changed in between,
-because a number that only ever improves is a number nobody measured.
+Sealed to `f991fc2`, this repository's first commit, clean working tree. It is
+the fourth seal, and it came in 8.2% below the third — 3,560,466 turns, then
+3,282,740, then 3,253,190, now 2,987,366 — with the code on the turn path
+unchanged between the last two. Run side by side on the same machine, the two
+commits were within 1% of each other. So the throughput series records the
+machine as much as the runtime, and the earlier drops cannot be told apart from
+that. `evidence/README.md` keeps all four, because a number that only ever
+improves is a number nobody measured.
 
 **With a local model** (`qwen3-vl:4b-instruct`, three cases where the spoken line
 *is* the evidence): 6 cases, all held, **58 model lines stopped before release, 0
@@ -885,12 +889,12 @@ walked any belief towards certainty with nobody having said anything. `question`
 is now its own event type: heard, remembered, reacted to, never evidence. A
 golden scenario had *enshrined* the bug and now tests the opposite.
 
-**Forgetting is 89% eviction.** Over 82,278 simulated days, characters sit
-permanently against their memory cap — 24.7M evictions against 3.1M decays.
+**Forgetting is 89% eviction.** Over 75,434 simulated days, characters sit
+permanently against their memory cap — 22.2M evictions against 2.9M decays.
 Correct behaviour, but what a player would ever see is decay, and decay is the
 smaller ninth.
 
-**The long case proves stability, not liveliness.** 50 retellings across 82,278
+**The long case proves stability, not liveliness.** 50 retellings across 75,434
 days: rumours are through the population within days, then everyone becomes a
 stifler and the world goes quiet. The invariants hold across millions of turns
 that bring nothing new — which is worth knowing, and is not the same as a living

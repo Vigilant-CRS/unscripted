@@ -11,7 +11,7 @@ written before this module existed:
 
     After saturation, little happens. The rumours are through the population
     within days, everyone becomes a stifler, and the world goes quiet -- across
-    82,278 simulated days the long case demonstrates stability, not liveliness.
+    75,434 simulated days the long case demonstrates stability, not liveliness.
 
 A world that goes quiet is not a living one. It is a stable one, which is a
 different and lesser claim.

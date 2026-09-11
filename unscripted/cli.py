@@ -588,6 +588,22 @@ __FILM__
    underneath Unity, Unreal and Godot &mdash; no sidecar process, no IPC, nothing
    to certify.</p>
   </div>
+  <div>
+   <h3>The town answers to how you play</h3>
+   <p>Hit somebody in the open and the street itself closes up, and the mood drifts
+   into the next street. Somebody who only heard about it treats you differently.
+   Break a promise and people who merely watched now call you unreliable; keep one
+   and nobody remarks on it. Same seed and same conduct give the same world, exactly;
+   different conduct gives a different one &mdash; because of you, not noise.</p>
+  </div>
+  <div>
+   <h3>It runs in the engine you already use</h3>
+   <p>A Godot addon with two playable demos, a Unity package and an Unreal plugin,
+   each tested inside the editor against a live service &mdash; and anything else
+   speaks HTTP and JSON. One bundled file beside the game, no install, no network
+   calls; saves go into your own save file. A language model is optional: none,
+   authored text, or any OpenAI-compatible endpoint, including a local GPU.</p>
+  </div>
  </div>
  <p class="not">It is not a renderer, a quest engine, a voice or a chatbot. It sits
  behind whichever of those you already have and decides what becomes true in the
