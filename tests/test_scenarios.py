@@ -3355,6 +3355,19 @@ def test_the_conformance_fixtures_still_describe_this_runtime():
         "the fixtures are gone; regenerate with `unscripted conformance --out conformance`")
 
     failures = conformance.check(fixtures, pack_root=root)
+    # WHERE EXACT IS THE WRONG QUESTION. The fixtures are this runtime on Python
+    # 3.12+, where sum() over floats compensates; on 3.10 and 3.11 the reference
+    # itself sums naively and twelve identity-salience fields land one bit away
+    # -- the same twelve the port test documents, no discrete outcome among them.
+    # Held exactly, this failed every push, because the push job runs 3.10. So
+    # below 3.12 the runtime is judged the way a port is: floats within the
+    # measured tolerance, everything else exact. From 3.12 it stays exact.
+    tolerated = 0
+    if sys.version_info < (3, 12) and failures:
+        exact = len(failures)
+        failures = conformance.check(fixtures, pack_root=root,
+                                     ulp_tolerance=conformance.DEFAULT_ULP_TOLERANCE)
+        tolerated = exact - len(failures)
     assert not failures, (
         f"{len(failures)} field(s) no longer match the fixtures. The first few:\n"
         + "\n".join(f"  [{scenario}] {where}\n     expected {expected}\n"
@@ -3375,7 +3388,10 @@ def test_the_conformance_fixtures_still_describe_this_runtime():
     assert {"ask", "attack", "wait", "promise", "help"} <= verbs, (
         f"the fixtures stopped exercising some of what a player can do: {sorted(verbs)}")
     print(f"ok  conformance: {len(catalogue)} fixtures still describe "
-          f"this runtime field for field -- the acceptance test a port is held to")
+          f"this runtime field for field -- the acceptance test a port is held to"
+          + (f" ({tolerated} float(s) within {conformance.DEFAULT_ULP_TOLERANCE:g} "
+             f"ULP on Python {sys.version_info[0]}.{sys.version_info[1]}, "
+             f"where sum() does not compensate)" if tolerated else ""))
 
 
 def test_the_host_finds_the_runtime_and_says_so_when_it_cannot():

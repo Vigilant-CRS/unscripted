@@ -184,6 +184,15 @@ All notable changes to Unscripted.
   the backend's own, `af_heart` only for kokoro, resolved in one place for both
   commands, and a test parses the real defaults and renders a line with them.
   Found by building the pages the way CI does before the first push.
+- **The suite could not pass on Python 3.10 or 3.11, which is what the push job
+  runs.** The conformance test compared the fixtures exactly on every version,
+  but the fixtures are this runtime on 3.12+, where `sum()` over floats
+  compensates; below that the reference itself sums naively and twelve
+  identity-salience fields land one bit away. They are the same twelve the port
+  test already documents and skips those versions for, and no discrete outcome is
+  among them. Below 3.12 the runtime is now judged the way a port is — floats
+  within the measured 8-ULP tolerance, everything else exact — and from 3.12 it
+  stays exact. Found by running the suite on 3.10 before the first push.
 - The film's caption on the showcase index gave its length a minute too long
   whenever the seconds ran past thirty: the minutes were rounded rather than
   floored, so a 2:41 film was captioned 3:41 directly under a player saying 2:41.
